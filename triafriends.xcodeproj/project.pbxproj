@@ -61,6 +61,7 @@
 		8D99A43425416E67006FF45A /* triafriends */ = {
 			isa = PBXGroup;
 			children = (
+				8D99A44F254181FC006FF45A /* views */,
 				8D99A44A25416E7A006FF45A /* triafriends.entitlements */,
 				8D99A43525416E67006FF45A /* triafriendsApp.swift */,
 				8D99A43725416E67006FF45A /* ContentView.swift */,
@@ -87,6 +88,13 @@
 				8D99A44C25416E85006FF45A /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D99A44F254181FC006FF45A /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
