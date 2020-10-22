@@ -13,6 +13,7 @@
 		8D99A43D25416E6A006FF45A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D99A43C25416E6A006FF45A /* Preview Assets.xcassets */; };
 		8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43E25416E6A006FF45A /* Persistence.swift */; };
 		8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A44025416E6A006FF45A /* triafriends.xcdatamodeld */; };
+		8D99A44D25416E85006FF45A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D99A44C25416E85006FF45A /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		8D99A43E25416E6A006FF45A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		8D99A44125416E6A006FF45A /* triafriends.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = triafriends.xcdatamodel; sourceTree = "<group>"; };
 		8D99A44325416E6A006FF45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D99A44A25416E7A006FF45A /* triafriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = triafriends.entitlements; sourceTree = "<group>"; };
+		8D99A44C25416E85006FF45A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D99A44D25416E85006FF45A /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +46,7 @@
 			children = (
 				8D99A43425416E67006FF45A /* triafriends */,
 				8D99A43325416E67006FF45A /* Products */,
+				8D99A44B25416E85006FF45A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +61,7 @@
 		8D99A43425416E67006FF45A /* triafriends */ = {
 			isa = PBXGroup;
 			children = (
+				8D99A44A25416E7A006FF45A /* triafriends.entitlements */,
 				8D99A43525416E67006FF45A /* triafriendsApp.swift */,
 				8D99A43725416E67006FF45A /* ContentView.swift */,
 				8D99A43925416E6A006FF45A /* Assets.xcassets */,
@@ -73,6 +79,14 @@
 				8D99A43C25416E6A006FF45A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8D99A44B25416E85006FF45A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D99A44C25416E85006FF45A /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +289,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = triafriends/triafriends.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
 				DEVELOPMENT_TEAM = 7QAVKC3WGP;
@@ -297,6 +312,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = triafriends/triafriends.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
 				DEVELOPMENT_TEAM = 7QAVKC3WGP;
