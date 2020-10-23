@@ -6,14 +6,19 @@
 //
 
 import Foundation
-
+import Combine
+import SwiftUI
 
 
 
 
 struct a {
     //------------------------------------------------------------
-    var result: ColorScale
+    
+   
+    
+    
+    var result: ColorScale?
     enum ColorScale {
         
         case category5
@@ -37,14 +42,17 @@ struct a {
         //Merah
         
     }
+    
     //----------------------------------------------------------------------
     
     
-    var cat5: Int
-    var cat4: Int
-    var cat3: Int
-    var cat2: Int
-    var cat1: Int
+    //STATE untuk track value change di swift ui tapi apakah harus terjadi disini ya?
+    
+    @State var cat5: Int
+    @State var cat4: Int
+    @State var cat3: Int
+    @State var cat2: Int
+    @State var cat1: Int
     
     
     func nafas(data: TriageData, scale: ColorScale) {
@@ -61,9 +69,9 @@ struct a {
     }
     //-------------
     
-    func calculateAll(hasil: ColorScale){
+    func calculateAll() -> ColorScale{
         
-        var results: ColorScale
+        var results: ColorScale = .category5
         
         if cat1 > 0 {
             results = .category1
@@ -78,7 +86,7 @@ struct a {
         }
         
         //return
-        
+        return results
     }
     
     
