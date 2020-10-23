@@ -103,8 +103,9 @@ struct TriageData {
             case agitasi
             case tidakKooperatif
         }
-    
+
 }
+
 let data = [
     TriageData(jalanNafas: .paten, distress: .RRnormal, respiratoryRate: .RRlessthan30, hentiNafas: .berhenti, hipoventilasi: true, hemodinamik: .berat, nadi: .lemahKuat, denyutNadi: .kapilerLessthan2, warnaKulit: .merahHangat, gcs: 2, psikologis: .agitasi)
 ]
