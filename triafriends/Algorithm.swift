@@ -57,13 +57,15 @@ struct a {
     
     func nafas(data: TriageData, scale: ColorScale) {
         if data.hemodinamik == .berat  {
-            cat1 + 1
+            cat1 += 1
         } else if data.hemodinamik == .sedang {
-            cat2 + 1
+            cat2 += 1
         } else if data.hemodinamik == .ringan {
-            cat3 + 1
+            cat3 += 1
         } else if data.hemodinamik == .tidakAda {
-            cat4 + 1
+            cat4 += 1
+        } else {
+            cat5 += 1
         }
         
     }
