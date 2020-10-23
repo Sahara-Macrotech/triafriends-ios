@@ -19,11 +19,14 @@ struct ContentView: View {
                 
                 
                 TriageListView()
-                    .listRowBackground(Color(.black))
-                    .background(Color(.white))
+                    .cornerRadius(30)
+                    .scaleEffect(CGSize(width: 0.9, height: 0.9))
+                   
                 
-                Spacer(minLength: 15)
+                    
+                    
                 
+              
                 HStack{
                     Text("Laporan Harian")
                         .font(.title2)

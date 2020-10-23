@@ -10,26 +10,55 @@ import SwiftUI
 struct TriageListView: View {
     var triageData = triages
     var body: some View {
-       
-        HStack{
+        
+        ZStack{
             
-            List(triages){triages in
-                Text(triages.name)
-                Spacer()
+            Color(hue: 0, saturation: 0, brightness: 0.8)
+                .ignoresSafeArea()
+            
+            
+            VStack(alignment: .center, spacing: nil) {
+               
+                Divider()
+                Divider()
                 
-                Image("\(triages.status)")
-                    .clipShape(Circle(), style: /*@START_MENU_TOKEN@*/FillStyle()/*@END_MENU_TOKEN@*/)
+                ScrollView{
+                ForEach(triages) { triages in
+                    VStack{
+                        
+                        //example--------------
+                        HStack{
+                            Text(triages.name)
+                            
+                            Spacer()
+                            Image("\(triages.status)")
+                                .resizable()
+                                .frame(width: 75, height: 75, alignment: .top)
+                                .cornerRadius(15)
+                   
+                        }.padding()
+                        
+                        
+                        
+                    }
                     
+                }.padding()
+               
+                }
+                
+                Divider()
+                Divider()
+                
+                //-----------
+                
+                
                 
             }
-            .onAppear(){
-            UITableView.appearance().backgroundColor = UIColor.clear
-           
-            }
-        
-        
+            
+            
+            
         }
-      
+        
     }
 }
 
