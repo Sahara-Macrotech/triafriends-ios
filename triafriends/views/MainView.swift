@@ -18,7 +18,7 @@ struct MainView: App {
                     
              }
                 
-                AddView().tabItem { Image(systemName: "plus.rectangle.fill")
+                AddView(namefield: "Dr. sumanto").tabItem { Image(systemName: "plus.rectangle.fill")
                     Text("Add")
                 }
             AccountView().tabItem { Image(systemName: "list.dash")

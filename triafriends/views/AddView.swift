@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct AddView: View {
+    @State var namefield: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack{
+            Text("Isi nama anda")
+            TextField("Dr. Sumanto", text: $namefield)
+            Button(action: {
+                print("buttonTapped")
+                //Set name value
+                
+            }, label: {
+                Text("Next")
+            })
             
+        }
+        .padding()
     }
 }
 
 struct Add_Previews: PreviewProvider {
     static var previews: some View {
-        AddView()
+        AddView(namefield: "Ceritanyastring")
     }
 }
