@@ -13,41 +13,47 @@ struct TriageListView: View {
         
         ZStack{
             
-            Color(hue: 0, saturation: 0, brightness: 0.8)
-                .ignoresSafeArea()
+            
             
             
             VStack(alignment: .center, spacing: nil) {
                
-                Divider()
-                Divider()
+                
                 
                 ScrollView{
                 ForEach(triages) { triages in
                     VStack{
                         
                         //example--------------
+                        ZStack{
+                        
+                        //Rectangle()
+                        Color(hue: 0, saturation: 0, brightness: 0.8)
+                            .cornerRadius(20)
                         HStack{
                             Text(triages.name)
                             
                             Spacer()
                             Image("\(triages.status)")
                                 .resizable()
-                                .frame(width: 75, height: 75, alignment: .top)
-                                .cornerRadius(15)
+                                .frame(width: 25, height: 25, alignment: .top)
+                                .cornerRadius(10)
                    
                         }.padding()
+                    }
                         
                         
                         
                     }
                     
+                    
                 }.padding()
+                
+                
                
                 }
                 
-                Divider()
-                Divider()
+              
                 
                 //-----------
                 

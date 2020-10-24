@@ -22,10 +22,7 @@ struct ContentView: View {
                     .cornerRadius(30)
                     .scaleEffect(CGSize(width: 0.9, height: 0.9))
                    
-                
-                    
-                    
-                
+
               
                 HStack{
                     Text("Laporan Harian")
