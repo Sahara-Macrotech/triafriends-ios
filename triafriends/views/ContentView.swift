@@ -19,7 +19,7 @@ struct ContentView: View {
                 
                 
                 TriageListView()
-                    .cornerRadius(30)
+                    .cornerRadius(0)
                     .scaleEffect(CGSize(width: 0.9, height: 0.9))
                    
 
@@ -30,7 +30,6 @@ struct ContentView: View {
                         .bold()
                         
                     
-                    //.position(x: 95, y: 40)
                     Spacer()
                     
                     //Fake button
@@ -45,16 +44,16 @@ struct ContentView: View {
                 }
                 .padding()
                 Spacer()
+                
+                
+                
                 HStack{
+                    
                     ReportView()
                         .scaleEffect(0.8)
                     Spacer()
                     ReportView()
                         .scaleEffect(0.8)
-                        
-                    
-                    
-                    
                     
                 }
                 .padding()

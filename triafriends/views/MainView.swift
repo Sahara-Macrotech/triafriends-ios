@@ -11,20 +11,43 @@ import SwiftUI
 struct MainView: App {
     var body: some Scene {
         WindowGroup {
-            TabView {
-            ContentView().tabItem {
-                Image(systemName: "list.dash")
-                Text("Dashboard")
-                    
-             }
+            ZStack{
                 
-                AddView(namefield: "Dr. sumanto").tabItem { Image(systemName: "plus.rectangle.fill")
-                    Text("Add")
-                }
-            AccountView().tabItem { Image(systemName: "list.dash")
-                Text("Account") }
+                TabView {
+                    
+                    ContentView().tabItem {
+                        Image(systemName: "list.dash")
+                        Text("Dashboard")
+                        
+                    }
             
+                    AccountView().tabItem { Image(systemName: "list.dash")
+                        Text("Account") }
+                    
+                    
+                }.accentColor(.purple)
+                
+                
+                VStack{
+                    Spacer(minLength: 760)
+                    //Ganti minlength jadi UIScreen.main.bound / x
+                    
+                    Button(action:
+                            {
+                                print("buttonPressed")
+                            }, label: {
+                                Image(systemName: "circle.fill")
+                                    .scaleEffect(CGSize(width: 4, height: 4))
+                                    .accentColor(.white)
+                                    .shadow(radius: 3)
+                            })
+                    
+                    Spacer()
+                    
+                    
+                }
             }
+            
             
         }
     }

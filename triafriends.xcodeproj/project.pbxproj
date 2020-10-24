@@ -20,6 +20,7 @@
 		C0792B362542DD9300A40B69 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B352542DD9300A40B69 /* AddView.swift */; };
 		C0792B392542DD9C00A40B69 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B382542DD9C00A40B69 /* AccountView.swift */; };
 		C0792B3C2542DDAE00A40B69 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B3B2542DDAE00A40B69 /* MainView.swift */; };
+		C08AAAD92543C7B40001AFEA /* PatientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */; };
 		C09BABA82542844A00C985AA /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BABA72542844A00C985AA /* DataModel.swift */; };
 		C09BABAC2542893900C985AA /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BABAB2542893900C985AA /* Algorithm.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		C0792B352542DD9300A40B69 /* AddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		C0792B382542DD9C00A40B69 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		C0792B3B2542DDAE00A40B69 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailView.swift; sourceTree = "<group>"; };
 		C09BABA72542844A00C985AA /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		C09BABAB2542893900C985AA /* Algorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				C0792B352542DD9300A40B69 /* AddView.swift */,
 				C0792B3B2542DDAE00A40B69 /* MainView.swift */,
 				C0792B282542DB9800A40B69 /* TriageListView.swift */,
+				C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */,
 				C0792B302542DC1200A40B69 /* ReportView.swift */,
 				C0792B382542DD9C00A40B69 /* AccountView.swift */,
 				8D99A43725416E67006FF45A /* ContentView.swift */,
@@ -205,6 +208,7 @@
 				C09BABAC2542893900C985AA /* Algorithm.swift in Sources */,
 				C0792B2D2542DBDD00A40B69 /* AccountData.swift in Sources */,
 				C0792B2E2542DBDD00A40B69 /* Triage.swift in Sources */,
+				C08AAAD92543C7B40001AFEA /* PatientDetailView.swift in Sources */,
 				8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */,
 				C0792B362542DD9300A40B69 /* AddView.swift in Sources */,
 				8D99A43825416E67006FF45A /* ContentView.swift in Sources */,

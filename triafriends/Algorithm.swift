@@ -69,7 +69,11 @@ struct a {
         }
         
     }
-    //-------------
+    
+    
+    //Buat function untuk track data lainnya seperti respiratory darah dan coma
+    
+    //-----------------------------------
     
     func calculateAll() -> ColorScale{
         

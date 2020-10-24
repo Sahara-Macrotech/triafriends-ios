@@ -28,8 +28,8 @@ struct TriageListView: View {
                         ZStack{
                         
                         //Rectangle()
-                        Color(hue: 0, saturation: 0, brightness: 0.8)
-                            .cornerRadius(20)
+                        Color(hue: 0, saturation: 0, brightness: 0.9)
+                            .cornerRadius(6)
                         HStack{
                             Text(triages.name)
                             
@@ -37,7 +37,7 @@ struct TriageListView: View {
                             Image("\(triages.status)")
                                 .resizable()
                                 .frame(width: 25, height: 25, alignment: .top)
-                                .cornerRadius(10)
+                                .cornerRadius(6)
                    
                         }.padding()
                     }

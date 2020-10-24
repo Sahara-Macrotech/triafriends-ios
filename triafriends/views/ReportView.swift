@@ -11,10 +11,10 @@ struct ReportView: View {
     var body: some View {
         
         ZStack{
-            Image("gray")
-                .cornerRadius(15)
-                .scaleEffect(2)
-                .contrast(-1)
+            Color(hue: 0, saturation: 0, brightness: 0.9)
+                .frame(width: 179, height: 131, alignment: .center)
+                .cornerRadius(6)
+           
                 
         
         VStack{
