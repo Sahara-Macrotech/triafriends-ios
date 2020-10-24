@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D6B4A5A25441F4400B2C380 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4A5925441F4400B2C380 /* LoginView.swift */; };
+		8D6B4A5E254422D900B2C380 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4A5D254422D900B2C380 /* SignInWithApple.swift */; };
 		8D99A43625416E67006FF45A /* triafriendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43525416E67006FF45A /* triafriendsApp.swift */; };
 		8D99A43825416E67006FF45A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43725416E67006FF45A /* ContentView.swift */; };
 		8D99A43A25416E6A006FF45A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D99A43925416E6A006FF45A /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D6B4A5925441F4400B2C380 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		8D6B4A5D254422D900B2C380 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		8D99A43225416E67006FF45A /* triafriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = triafriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D99A43525416E67006FF45A /* triafriendsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = triafriendsApp.swift; sourceTree = "<group>"; };
 		8D99A43725416E67006FF45A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D6B4A5C254422CE00B2C380 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B4A5D254422D900B2C380 /* SignInWithApple.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
 		8D99A42925416E67006FF45A = {
 			isa = PBXGroup;
 			children = (
@@ -61,10 +73,10 @@
 		8D99A43425416E67006FF45A /* triafriends */ = {
 			isa = PBXGroup;
 			children = (
+				8D6B4A5C254422CE00B2C380 /* helpers */,
 				8D99A44F254181FC006FF45A /* views */,
 				8D99A44A25416E7A006FF45A /* triafriends.entitlements */,
 				8D99A43525416E67006FF45A /* triafriendsApp.swift */,
-				8D99A43725416E67006FF45A /* ContentView.swift */,
 				8D99A43925416E6A006FF45A /* Assets.xcassets */,
 				8D99A43E25416E6A006FF45A /* Persistence.swift */,
 				8D99A44325416E6A006FF45A /* Info.plist */,
@@ -93,6 +105,8 @@
 		8D99A44F254181FC006FF45A /* views */ = {
 			isa = PBXGroup;
 			children = (
+				8D99A43725416E67006FF45A /* ContentView.swift */,
+				8D6B4A5925441F4400B2C380 /* LoginView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -169,6 +183,8 @@
 				8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */,
 				8D99A43825416E67006FF45A /* ContentView.swift in Sources */,
 				8D99A43625416E67006FF45A /* triafriendsApp.swift in Sources */,
+				8D6B4A5A25441F4400B2C380 /* LoginView.swift in Sources */,
+				8D6B4A5E254422D900B2C380 /* SignInWithApple.swift in Sources */,
 				8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
