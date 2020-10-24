@@ -56,6 +56,7 @@ struct TriageData {
     var hemodinamik: Hemodinamik
         enum Hemodinamik {
             case tidakAda
+            //tidakada
             case ringan
             case sedang
             case berat

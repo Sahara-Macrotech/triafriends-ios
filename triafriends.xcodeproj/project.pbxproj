@@ -21,6 +21,7 @@
 		C0792B392542DD9C00A40B69 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B382542DD9C00A40B69 /* AccountView.swift */; };
 		C0792B3C2542DDAE00A40B69 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B3B2542DDAE00A40B69 /* MainView.swift */; };
 		C08AAAD92543C7B40001AFEA /* PatientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */; };
+		C08AAADD2543E57F0001AFEA /* NameCensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AAADC2543E57E0001AFEA /* NameCensor.swift */; };
 		C09BABA82542844A00C985AA /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BABA72542844A00C985AA /* DataModel.swift */; };
 		C09BABAC2542893900C985AA /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BABAB2542893900C985AA /* Algorithm.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		C0792B382542DD9C00A40B69 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		C0792B3B2542DDAE00A40B69 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailView.swift; sourceTree = "<group>"; };
+		C08AAADC2543E57E0001AFEA /* NameCensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCensor.swift; sourceTree = "<group>"; };
 		C09BABA72542844A00C985AA /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		C09BABAB2542893900C985AA /* Algorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,7 +85,7 @@
 				8D99A43925416E6A006FF45A /* Assets.xcassets */,
 				8D99A43E25416E6A006FF45A /* Persistence.swift */,
 				8D99A44325416E6A006FF45A /* Info.plist */,
-				C09BABAB2542893900C985AA /* Algorithm.swift */,
+				C08AAAE02543E5B10001AFEA /* Helper */,
 				8D99A44F254181FC006FF45A /* views */,
 				C09BABAA254288D000C985AA /* Model */,
 				8D99A43B25416E6A006FF45A /* Preview Content */,
@@ -114,12 +116,21 @@
 				C0792B352542DD9300A40B69 /* AddView.swift */,
 				C0792B3B2542DDAE00A40B69 /* MainView.swift */,
 				C0792B282542DB9800A40B69 /* TriageListView.swift */,
-				C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */,
 				C0792B302542DC1200A40B69 /* ReportView.swift */,
+				C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */,
 				C0792B382542DD9C00A40B69 /* AccountView.swift */,
 				8D99A43725416E67006FF45A /* ContentView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		C08AAAE02543E5B10001AFEA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C09BABAB2542893900C985AA /* Algorithm.swift */,
+				C08AAADC2543E57E0001AFEA /* NameCensor.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		C09BABAA254288D000C985AA /* Model */ = {
@@ -213,6 +224,7 @@
 				C0792B362542DD9300A40B69 /* AddView.swift in Sources */,
 				8D99A43825416E67006FF45A /* ContentView.swift in Sources */,
 				C0792B312542DC1200A40B69 /* ReportView.swift in Sources */,
+				C08AAADD2543E57F0001AFEA /* NameCensor.swift in Sources */,
 				8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

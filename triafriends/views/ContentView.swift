@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
- 
+    
     var accountData = AccountData()
     var body: some View {
         NavigationView{
@@ -17,91 +17,78 @@ struct ContentView: View {
                 
                 ExtractedView()
                 
-                
                 TriageListView()
                     .cornerRadius(0)
                     .scaleEffect(CGSize(width: 0.9, height: 0.9))
-                   
-
-              
+                
+                //Title Laporan Harian and button
                 HStack{
                     Text("Laporan Harian")
                         .font(.title2)
                         .bold()
-                        
                     
                     Spacer()
                     
-                    //Fake button
+                    //Dummy button
                     NavigationLink(
                         destination: TriageListView(),
                         label: {
                             Text("Lihat semua")
                         })
-                        
-                    
                     
                 }
                 .padding()
                 Spacer()
-                
-                
-                
-                HStack{
                     
+                //Horizontal View Stack  laporan harian
+                HStack{
                     ReportView()
                         .scaleEffect(0.8)
                     Spacer()
                     ReportView()
                         .scaleEffect(0.8)
-                    
                 }
                 .padding()
-                
-                
                 
             }
             .navigationTitle(
                 Text(accountData.username)
                     .font(.largeTitle)
                     .fontWeight(.semibold)
-                
-                
-                // .lineLimit(2)
             )
-            
         }
-     
-        
-        
-        
-        
-        
     }
     
+    
+    
+    
+    
+    
+    
+    
     struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
-struct ExtractedView: View {
-    var body: some View {
-        HStack{
-            Text("Prioritas Triase")
-                .font(.title2)
-                .bold()
-            
-            
-            Spacer()
-            
-            NavigationLink(
-                destination: TriageListView(),
-                label: {
-                    Text("Lihat semua")
-                })
+        static var previews: some View {
+            ContentView()
         }
-        .padding()
     }
-}
+    
+    struct ExtractedView: View {
+        var body: some View {
+            HStack{
+                Text("Prioritas Triase")
+                    .font(.title2)
+                    .bold()
+                
+                
+                Spacer()
+                
+                NavigationLink(
+                    destination: TriageListView(),
+                    label: {
+                        Text("Lihat semua")
+                    })
+            }
+            .padding()
+        }
+    }
 }

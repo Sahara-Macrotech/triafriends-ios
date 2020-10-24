@@ -22,7 +22,7 @@ struct MainView: App {
                     }
             
                     AccountView().tabItem { Image(systemName: "list.dash")
-                        Text("Account") }
+                        Text("Account")  }
                     
                     
                 }.accentColor(.purple)
@@ -32,15 +32,20 @@ struct MainView: App {
                     Spacer(minLength: 760)
                     //Ganti minlength jadi UIScreen.main.bound / x
                     
-                    Button(action:
-                            {
-                                print("buttonPressed")
-                            }, label: {
-                                Image(systemName: "circle.fill")
-                                    .scaleEffect(CGSize(width: 4, height: 4))
-                                    .accentColor(.white)
-                                    .shadow(radius: 3)
-                            })
+                
+                    
+                    //--------
+                    NavigationLink(
+                        destination: AddView(namefield: " "),
+                        label: {
+                            Image(systemName: "circle.fill")
+                                .scaleEffect(CGSize(width: 4, height: 4))
+                                .accentColor(.white)
+                                .shadow(radius: 3)
+                        })
+                    //Does not work, Button juga gabisa..
+                    //Try to insert into each View
+                    //---------
                     
                     Spacer()
                     
