@@ -29,7 +29,7 @@ struct MainView: App {
                 
                 
                 VStack{
-                    Spacer(minLength: 760)
+                    Spacer(minLength: 730)
                     //Ganti minlength jadi UIScreen.main.bound / x
                     
                 
@@ -38,10 +38,15 @@ struct MainView: App {
                     NavigationLink(
                         destination: AddView(namefield: " "),
                         label: {
+                            ZStack{
                             Image(systemName: "circle.fill")
                                 .scaleEffect(CGSize(width: 4, height: 4))
                                 .accentColor(.white)
                                 .shadow(radius: 3)
+                                
+                            Image("add")
+                                .scaleEffect(0.35)
+                            }
                         })
                     //Does not work, Button juga gabisa..
                     //Try to insert into each View

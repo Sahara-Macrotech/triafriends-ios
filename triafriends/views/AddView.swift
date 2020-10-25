@@ -18,6 +18,7 @@ struct AddView: View {
             //First input. Kayaknya jangan nama deh
             Text("Isi nama anda")
             //Field
+            
             TextField("Dr. Sumanto", text: $namefield)
                 .accentColor(.gray)
             
