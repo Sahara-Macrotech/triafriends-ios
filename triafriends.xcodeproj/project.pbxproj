@@ -7,22 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D6B4A5A25441F4400B2C380 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4A5925441F4400B2C380 /* LoginView.swift */; };
-		8D6B4A5E254422D900B2C380 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4A5D254422D900B2C380 /* SignInWithApple.swift */; };
-		8D99A43625416E67006FF45A /* triafriendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43525416E67006FF45A /* triafriendsApp.swift */; };
 		8D99A43825416E67006FF45A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43725416E67006FF45A /* ContentView.swift */; };
 		8D99A43A25416E6A006FF45A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D99A43925416E6A006FF45A /* Assets.xcassets */; };
 		8D99A43D25416E6A006FF45A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D99A43C25416E6A006FF45A /* Preview Assets.xcassets */; };
 		8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43E25416E6A006FF45A /* Persistence.swift */; };
 		8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A44025416E6A006FF45A /* triafriends.xcdatamodeld */; };
 		8D99A44D25416E85006FF45A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D99A44C25416E85006FF45A /* CloudKit.framework */; };
+		C0792B292542DB9800A40B69 /* TriageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B282542DB9800A40B69 /* TriageListView.swift */; };
+		C0792B2D2542DBDD00A40B69 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B2B2542DBDD00A40B69 /* AccountData.swift */; };
+		C0792B2E2542DBDD00A40B69 /* Triage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B2C2542DBDD00A40B69 /* Triage.swift */; };
+		C0792B312542DC1200A40B69 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B302542DC1200A40B69 /* ReportView.swift */; };
+		C0792B362542DD9300A40B69 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B352542DD9300A40B69 /* AddView.swift */; };
+		C0792B392542DD9C00A40B69 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B382542DD9C00A40B69 /* AccountView.swift */; };
+		C0792B3C2542DDAE00A40B69 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B3B2542DDAE00A40B69 /* MainView.swift */; };
+		C08AAAD92543C7B40001AFEA /* PatientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */; };
+		C08AAADD2543E57F0001AFEA /* NameCensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AAADC2543E57E0001AFEA /* NameCensor.swift */; };
+		C09BABA82542844A00C985AA /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BABA72542844A00C985AA /* DataModel.swift */; };
+		C09BABAC2542893900C985AA /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BABAB2542893900C985AA /* Algorithm.swift */; };
+		C0E147B02545828000189E2E /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E147AF2545828000189E2E /* Interface.swift */; };
+		C0E147C5254588F900189E2E /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0E147B6254588F800189E2E /* NunitoSans-ExtraBold.ttf */; };
+		C0E147C7254588F900189E2E /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0E147B8254588F800189E2E /* NunitoSans-Regular.ttf */; };
+		C0E147C9254588F900189E2E /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0E147BA254588F800189E2E /* NunitoSans-SemiBold.ttf */; };
+		C0E147CB254588F900189E2E /* NunitoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0E147BC254588F900189E2E /* NunitoSans-Black.ttf */; };
+		C0E147CC254588F900189E2E /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0E147BD254588F900189E2E /* NunitoSans-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8D6B4A5925441F4400B2C380 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8D6B4A5D254422D900B2C380 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		8D99A43225416E67006FF45A /* triafriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = triafriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D99A43525416E67006FF45A /* triafriendsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = triafriendsApp.swift; sourceTree = "<group>"; };
 		8D99A43725416E67006FF45A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8D99A43925416E6A006FF45A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D99A43C25416E6A006FF45A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -31,6 +44,23 @@
 		8D99A44325416E6A006FF45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D99A44A25416E7A006FF45A /* triafriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = triafriends.entitlements; sourceTree = "<group>"; };
 		8D99A44C25416E85006FF45A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		C0792B282542DB9800A40B69 /* TriageListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriageListView.swift; sourceTree = "<group>"; };
+		C0792B2B2542DBDD00A40B69 /* AccountData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
+		C0792B2C2542DBDD00A40B69 /* Triage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triage.swift; sourceTree = "<group>"; };
+		C0792B302542DC1200A40B69 /* ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		C0792B352542DD9300A40B69 /* AddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		C0792B382542DD9C00A40B69 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		C0792B3B2542DDAE00A40B69 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailView.swift; sourceTree = "<group>"; };
+		C08AAADC2543E57E0001AFEA /* NameCensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCensor.swift; sourceTree = "<group>"; };
+		C09BABA72542844A00C985AA /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		C09BABAB2542893900C985AA /* Algorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
+		C0E147AF2545828000189E2E /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		C0E147B6254588F800189E2E /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		C0E147B8254588F800189E2E /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
+		C0E147BA254588F800189E2E /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		C0E147BC254588F900189E2E /* NunitoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Black.ttf"; sourceTree = "<group>"; };
+		C0E147BD254588F900189E2E /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,14 +103,15 @@
 		8D99A43425416E67006FF45A /* triafriends */ = {
 			isa = PBXGroup;
 			children = (
-				8D6B4A5C254422CE00B2C380 /* helpers */,
-				8D99A44F254181FC006FF45A /* views */,
 				8D99A44A25416E7A006FF45A /* triafriends.entitlements */,
-				8D99A43525416E67006FF45A /* triafriendsApp.swift */,
 				8D99A43925416E6A006FF45A /* Assets.xcassets */,
 				8D99A43E25416E6A006FF45A /* Persistence.swift */,
 				8D99A44325416E6A006FF45A /* Info.plist */,
-				8D99A44025416E6A006FF45A /* triafriends.xcdatamodeld */,
+				C0E147B3254588BF00189E2E /* UI */,
+				C0E147AC2545359700189E2E /* ViewModel */,
+				C08AAAE02543E5B10001AFEA /* Helper */,
+				8D99A44F254181FC006FF45A /* views */,
+				C09BABAA254288D000C985AA /* Model */,
 				8D99A43B25416E6A006FF45A /* Preview Content */,
 			);
 			path = triafriends;
@@ -89,6 +120,7 @@
 		8D99A43B25416E6A006FF45A /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				8D99A44025416E6A006FF45A /* triafriends.xcdatamodeld */,
 				8D99A43C25416E6A006FF45A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -105,10 +137,62 @@
 		8D99A44F254181FC006FF45A /* views */ = {
 			isa = PBXGroup;
 			children = (
+				C0792B352542DD9300A40B69 /* AddView.swift */,
+				C0792B3B2542DDAE00A40B69 /* MainView.swift */,
+				C0792B282542DB9800A40B69 /* TriageListView.swift */,
+				C0792B302542DC1200A40B69 /* ReportView.swift */,
+				C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */,
+				C0792B382542DD9C00A40B69 /* AccountView.swift */,
 				8D99A43725416E67006FF45A /* ContentView.swift */,
-				8D6B4A5925441F4400B2C380 /* LoginView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		C08AAAE02543E5B10001AFEA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C09BABAB2542893900C985AA /* Algorithm.swift */,
+				C08AAADC2543E57E0001AFEA /* NameCensor.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C09BABAA254288D000C985AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C09BABA72542844A00C985AA /* DataModel.swift */,
+				C0792B2C2542DBDD00A40B69 /* Triage.swift */,
+				C0792B2B2542DBDD00A40B69 /* AccountData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C0E147AC2545359700189E2E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C0E147B3254588BF00189E2E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C0E147AF2545828000189E2E /* Interface.swift */,
+				C0E147B4254588DD00189E2E /* Fonts */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C0E147B4254588DD00189E2E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C0E147BC254588F900189E2E /* NunitoSans-Black.ttf */,
+				C0E147BD254588F900189E2E /* NunitoSans-Bold.ttf */,
+				C0E147B6254588F800189E2E /* NunitoSans-ExtraBold.ttf */,
+				C0E147B8254588F800189E2E /* NunitoSans-Regular.ttf */,
+				C0E147BA254588F800189E2E /* NunitoSans-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +252,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E147C5254588F900189E2E /* NunitoSans-ExtraBold.ttf in Resources */,
+				C0E147C9254588F900189E2E /* NunitoSans-SemiBold.ttf in Resources */,
+				C0E147C7254588F900189E2E /* NunitoSans-Regular.ttf in Resources */,
+				C0E147CB254588F900189E2E /* NunitoSans-Black.ttf in Resources */,
 				8D99A43D25416E6A006FF45A /* Preview Assets.xcassets in Resources */,
+				C0E147CC254588F900189E2E /* NunitoSans-Bold.ttf in Resources */,
 				8D99A43A25416E6A006FF45A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,11 +269,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0792B392542DD9C00A40B69 /* AccountView.swift in Sources */,
+				C0792B3C2542DDAE00A40B69 /* MainView.swift in Sources */,
+				C09BABA82542844A00C985AA /* DataModel.swift in Sources */,
+				C0792B292542DB9800A40B69 /* TriageListView.swift in Sources */,
+				C09BABAC2542893900C985AA /* Algorithm.swift in Sources */,
+				C0792B2D2542DBDD00A40B69 /* AccountData.swift in Sources */,
+				C0792B2E2542DBDD00A40B69 /* Triage.swift in Sources */,
+				C08AAAD92543C7B40001AFEA /* PatientDetailView.swift in Sources */,
 				8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */,
+				C0792B362542DD9300A40B69 /* AddView.swift in Sources */,
 				8D99A43825416E67006FF45A /* ContentView.swift in Sources */,
-				8D99A43625416E67006FF45A /* triafriendsApp.swift in Sources */,
-				8D6B4A5A25441F4400B2C380 /* LoginView.swift in Sources */,
-				8D6B4A5E254422D900B2C380 /* SignInWithApple.swift in Sources */,
+				C0E147B02545828000189E2E /* Interface.swift in Sources */,
+				C0792B312542DC1200A40B69 /* ReportView.swift in Sources */,
+				C08AAADD2543E57F0001AFEA /* NameCensor.swift in Sources */,
 				8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
