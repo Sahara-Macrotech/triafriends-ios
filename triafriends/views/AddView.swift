@@ -11,12 +11,16 @@ struct AddView: View {
     @State var namefield: String = " "
     
     var body: some View {
-        
+    ZStack{
+        Color.white
+            .ignoresSafeArea()
+            .edgesIgnoringSafeArea(.all)
         VStack{
             
             
             //First input. Kayaknya jangan nama deh
             Text("Isi nama anda")
+              
             //Field
             
             TextField("Dr. Sumanto", text: $namefield)
@@ -30,6 +34,8 @@ struct AddView: View {
             
             
         }
+    }
+    .cornerRadius(16)
         .padding()
     }
 }

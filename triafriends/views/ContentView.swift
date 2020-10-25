@@ -11,9 +11,11 @@ struct ContentView: View {
     
     var accountData = AccountData()
     var body: some View {
+       
         NavigationView{
             
             VStack{
+                
                 
                 ExtractedView()
                 
@@ -52,7 +54,7 @@ struct ContentView: View {
                 
             }
             .navigationTitle(
-                Text(accountData.username)
+                    Text(accountData.username)
                     .font(.largeTitle)
                     .fontWeight(.semibold)
             )
