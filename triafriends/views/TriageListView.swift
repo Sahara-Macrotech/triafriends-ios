@@ -33,6 +33,7 @@ struct TriageListView: View {
                                 label: {
                                     Color(hue: 0, saturation: 0, brightness: 0.9)
                                         .cornerRadius(6)
+                                   
                                 })
                             
                            
