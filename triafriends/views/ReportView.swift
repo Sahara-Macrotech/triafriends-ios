@@ -11,7 +11,7 @@ struct ReportView: View {
     var body: some View {
         
         ZStack{
-            Color(hue: 0, saturation: 0, brightness: 0.9)
+            colorLightGray
                 .frame(width: 179, height: 131, alignment: .center)
                 .cornerRadius(6)
            

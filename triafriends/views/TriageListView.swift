@@ -31,8 +31,9 @@ struct TriageListView: View {
                             NavigationLink(
                                 destination: PatientDetailView(triages: triages),
                                 label: {
-                                    Color(hue: 0, saturation: 0, brightness: 0.9)
+                                    colorLightGray
                                         .cornerRadius(6)
+                                    
                                    
                                 })
                             
@@ -43,6 +44,7 @@ struct TriageListView: View {
                             Text(triages.name)
                             
                             Spacer()
+                            //TODO : ganti image jadi color yang sudah diset interface
                             Image("\(triages.status)")
                                 .resizable()
                                 .frame(width: 25, height: 25, alignment: .top)

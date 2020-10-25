@@ -31,7 +31,7 @@ struct MainView: App {
                         
                     }
             
-                }.accentColor(.purple)
+                }.accentColor(colorPurple)
                 
                 
                 
