@@ -28,8 +28,16 @@ struct TriageListView: View {
                         ZStack{
                         
                         //Rectangle()
-                        Color(hue: 0, saturation: 0, brightness: 0.9)
-                            .cornerRadius(6)
+                            NavigationLink(
+                                destination: PatientDetailView(triages: triages),
+                                label: {
+                                    Color(hue: 0, saturation: 0, brightness: 0.9)
+                                        .cornerRadius(6)
+                                })
+                            
+                           
+                       
+                            
                         HStack{
                             Text(triages.name)
                             

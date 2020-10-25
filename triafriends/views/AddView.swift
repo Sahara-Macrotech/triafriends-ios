@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddView: View {
-    @State var namefield: String = " "
+    @State var namefield: String = ""
     
     var body: some View {
     ZStack{

@@ -85,6 +85,7 @@
 				8D99A43925416E6A006FF45A /* Assets.xcassets */,
 				8D99A43E25416E6A006FF45A /* Persistence.swift */,
 				8D99A44325416E6A006FF45A /* Info.plist */,
+				C0E147AC2545359700189E2E /* ViewModel */,
 				C08AAAE02543E5B10001AFEA /* Helper */,
 				8D99A44F254181FC006FF45A /* views */,
 				C09BABAA254288D000C985AA /* Model */,
@@ -141,6 +142,13 @@
 				C0792B2B2542DBDD00A40B69 /* AccountData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C0E147AC2545359700189E2E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
