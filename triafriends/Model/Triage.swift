@@ -19,6 +19,7 @@ struct Triage: Identifiable {
     
   
 }
+
 //Dummy datas
 let triages = [
     Triage(id: "1", status: 0, name: "A*** M*** W***"),

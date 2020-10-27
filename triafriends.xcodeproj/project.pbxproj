@@ -13,6 +13,7 @@
 		8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43E25416E6A006FF45A /* Persistence.swift */; };
 		8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A44025416E6A006FF45A /* triafriends.xcdatamodeld */; };
 		8D99A44D25416E85006FF45A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D99A44C25416E85006FF45A /* CloudKit.framework */; };
+		C04A0AB12546BA8400C5EC19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C04A0AB02546BA8300C5EC19 /* GoogleService-Info.plist */; };
 		C0792B292542DB9800A40B69 /* TriageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B282542DB9800A40B69 /* TriageListView.swift */; };
 		C0792B2D2542DBDD00A40B69 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B2B2542DBDD00A40B69 /* AccountData.swift */; };
 		C0792B2E2542DBDD00A40B69 /* Triage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B2C2542DBDD00A40B69 /* Triage.swift */; };
@@ -42,6 +43,7 @@
 		8D99A44325416E6A006FF45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D99A44A25416E7A006FF45A /* triafriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = triafriends.entitlements; sourceTree = "<group>"; };
 		8D99A44C25416E85006FF45A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		C04A0AB02546BA8300C5EC19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0792B282542DB9800A40B69 /* TriageListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriageListView.swift; sourceTree = "<group>"; };
 		C0792B2B2542DBDD00A40B69 /* AccountData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
 		C0792B2C2542DBDD00A40B69 /* Triage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triage.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				8D99A44A25416E7A006FF45A /* triafriends.entitlements */,
 				8D99A43925416E6A006FF45A /* Assets.xcassets */,
 				8D99A43E25416E6A006FF45A /* Persistence.swift */,
+				C04A0AB02546BA8300C5EC19 /* GoogleService-Info.plist */,
 				8D99A44325416E6A006FF45A /* Info.plist */,
 				C0E147B3254588BF00189E2E /* UI */,
 				C0E147AC2545359700189E2E /* ViewModel */,
@@ -247,6 +250,7 @@
 				C0E147C7254588F900189E2E /* NunitoSans-Regular.ttf in Resources */,
 				C0E147CB254588F900189E2E /* NunitoSans-Black.ttf in Resources */,
 				8D99A43D25416E6A006FF45A /* Preview Assets.xcassets in Resources */,
+				C04A0AB12546BA8400C5EC19 /* GoogleService-Info.plist in Resources */,
 				C0E147CC254588F900189E2E /* NunitoSans-Bold.ttf in Resources */,
 				8D99A43A25416E6A006FF45A /* Assets.xcassets in Resources */,
 			);
