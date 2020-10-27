@@ -14,6 +14,7 @@ struct TriageListView: View {
         ZStack{
             
             
+           
             
             
             VStack(alignment: .center, spacing: nil) {
@@ -47,7 +48,7 @@ struct TriageListView: View {
                             //TODO : ganti image jadi color yang sudah diset interface
                             Image("\(triages.status)")
                                 .resizable()
-                                .frame(width: 25, height: 25, alignment: .top)
+                                .frame(width: 26, height: 25, alignment: .top)
                                 .cornerRadius(6)
                    
                         }.padding()
