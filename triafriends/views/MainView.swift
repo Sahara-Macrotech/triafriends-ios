@@ -53,7 +53,10 @@ struct MainView: App {
                         Image("add")
                             .scaleEffect(0.35)
                         }.onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-//                            firestore.getDoctors(hospital: "Siloam Hospital")
+                            firestore.getDoctors(hospital: "LVSH") {
+                                (value) -> Any in
+                                print(value)
+                            }
                             isPopUpEnabled = true
                         })
                     })
