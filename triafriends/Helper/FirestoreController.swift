@@ -30,4 +30,17 @@ class FirestoreController {
             }
         }
     }
+    
+    func getDoctors(hospital: String) {
+        let db = Firestore.firestore()
+        db.collection("doctors").whereField("hospital", isEqualTo: hospital).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
+    }
 }
