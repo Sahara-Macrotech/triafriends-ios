@@ -11,7 +11,7 @@ struct PatientDetailView: View {
     var triages: Triage?
     var body: some View {
         Text(triages!.name)
-        Text("ll")
+        Text("ljjl")
     }
 }
 
