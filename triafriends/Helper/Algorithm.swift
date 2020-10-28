@@ -60,7 +60,7 @@ struct a {
     
     
     //JALAN NAFAS ---------- JALAN NAFAS
-    func jalanNafasCalc(data: TriageData) {
+    func jalanNafasCalc(data: Triage) {
         if data.jalanNafas == .sumbatanSebagian {
             cat1 += 1
         } else if data.jalanNafas == .sumbatanTotal {
@@ -74,7 +74,7 @@ struct a {
     
     
     //PERNAFASAN ------------ PERNAFASAN
-    func distressCalc(data: TriageData) {
+    func distressCalc(data: Triage) {
         if data.distress == .berat {
             cat1 += 1
         } else if data.distress == .sedang {
@@ -88,7 +88,7 @@ struct a {
         }
     }
     
-    func respiratoryRateCalc(data: TriageData) {
+    func respiratoryRateCalc(data: Triage) {
         if data.respiratoryRate == .tidakMampuBicara {
             cat1 += 1
         } else if data.respiratoryRate == .RRmorethan30 {
@@ -102,7 +102,7 @@ struct a {
         }
     }
     
-    func hentiNafasCalc(data: TriageData) {
+    func hentiNafasCalc(data: Triage) {
         if data.hentiNafas == .berhenti {
             cat1 += 1
         } else if data.hentiNafas == .pengunaanOtotBantu {
@@ -112,7 +112,7 @@ struct a {
         }
     }
     
-    func hipoventilasiCalc(data: TriageData) {
+    func hipoventilasiCalc(data: Triage) {
         if data.hipoventilasi == true {
             cat1 += 1
         } else {
@@ -125,7 +125,7 @@ struct a {
     
     
     //SIRKULASI -------------- SIRKULASI
-    func hemodinamikCalc(data: TriageData) {
+    func hemodinamikCalc(data: Triage) {
         if data.hemodinamik == .berat  {
             cat1 += 1
         } else if data.hemodinamik == .sedang {
@@ -140,7 +140,7 @@ struct a {
         
     }
     
-    func nadiTerabaCalc(data: TriageData) {
+    func nadiTerabaCalc(data: Triage) {
         if data.nadi == .tidakTeraba {
             cat1 += 1
         } else if data.nadi == .sangatHalus {
@@ -154,7 +154,7 @@ struct a {
         }
     }
     
-    func pendarahanCalc(data: TriageData) {
+    func pendarahanCalc(data: Triage) {
         if data.denyutNadi == .perdarahanAktif {
             cat1 += 1
         } else if data.denyutNadi == .kapilerMorethan2 {
@@ -169,7 +169,7 @@ struct a {
     
     
     
-    func warnaKulitCalc(data: TriageData) {
+    func warnaKulitCalc(data: Triage) {
         if data.warnaKulit == .pucatMerahHangat {
             cat4 += 1
         } else {
@@ -178,12 +178,12 @@ struct a {
     }
     
             //****cara bikin range number gitu gak sih****
-    func comaScaleCalc(data: TriageData) {
-        if data.gcs <= 8 {
+    func comaScaleCalc(data: Triage) {
+        if data.gcs! <= 8 {
             cat1 += 1
-        } else if data.gcs >= 9 && data.gcs <= 12 {
+        } else if data.gcs! >= 9 && data.gcs! <= 12 {
             cat2 += 1
-        } else if data.gcs >= 13 && data.gcs <= 14 {
+        } else if data.gcs! >= 13 && data.gcs! <= 14 {
             cat3 += 1
         } else {
             cat5 += 1
@@ -193,7 +193,7 @@ struct a {
     
     
     
-    func psikologisCalc(data: TriageData) {
+    func psikologisCalc(data: Triage) {
         if data.psikologis == .agitasi {
             cat4 += 1
         } else if data.psikologis == .tidakKooperatif {
