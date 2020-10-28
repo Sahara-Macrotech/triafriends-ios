@@ -10,6 +10,9 @@ import SwiftUI
 @main
 struct MainView: App {
     @State var isPopUpEnabled = false
+    let firestore = FirestoreController()
+    let realtimeDb = RealtimeDBController()
+    
     var body: some Scene {
         WindowGroup {
             ZStack{
@@ -51,11 +54,9 @@ struct MainView: App {
                         Image("add")
                             .scaleEffect(0.35)
                         }.onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-                            print("Add button tapped")
                             isPopUpEnabled = true
                         })
                     })
-//
                     Spacer()
                     
                     
