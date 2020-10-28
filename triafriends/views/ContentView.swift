@@ -33,7 +33,7 @@ struct ContentView: View {
                     
                     //Dummy button
                     NavigationLink(
-                        destination: TriageListView(),
+                        destination: ListAllView(selectedColoumn: .queue),
                         label: {
                             Text("Lihat semua")
                         })
@@ -88,7 +88,7 @@ struct ContentView: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: TriageListView(),
+                    destination: ListAllView(selectedColoumn: .queue),
                     label: {
                         Text("Lihat semua")
                     })

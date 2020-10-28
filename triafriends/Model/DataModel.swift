@@ -10,39 +10,39 @@ import Foundation
 struct TriageData {
     
     var jalanNafas: JalanNafas
-        enum JalanNafas {
-            case paten
-            case sumbatanSebagian
-            case sumbatanTotal
+    enum JalanNafas: String {
+            case paten = "Paten"
+            case sumbatanSebagian = "Sumbatan Sebagian"
+            case sumbatanTotal = "Sumbatan Total"
         }
    
     
     var distress: Distress
     
-        enum Distress {
-            case RRnormal
-            case tidakAda
-            case ringan
-            case sedang
-            case berat
+    enum Distress: String {
+            case RRnormal = "RR Normal"
+            case tidakAda = "Tidak ada"
+            case ringan = "Ringan"
+            case sedang = "Sedang"
+            case berat = "Berat"
         }
     
     var respiratoryRate: RespiratoryRate
-        enum RespiratoryRate {
-            case komunikasiBaik
-            case RRnormal
-            case RRlessthan30
-            case RRmorethan30
-            case tidakMampuBicara
+    enum RespiratoryRate: String {
+            case komunikasiBaik = "Komunikasi Baik"
+            case RRnormal = "RR Normal"
+            case RRlessthan30 = "RR < 30"
+            case RRmorethan30 = "RR > 30"
+            case tidakMampuBicara = "Tidak mampu bicara"
         }
     
         
     
     
     var hentiNafas: HentiNafas
-        enum HentiNafas {
-            case berhenti
-            case pengunaanOtotBantu
+    enum HentiNafas: String {
+            case berhenti = "Berhenti"
+            case pengunaanOtotBantu = "Penggunaan Otot Bantu"
         }
    
     var hipoventilasi: Bool
@@ -54,42 +54,43 @@ struct TriageData {
   //  -----------------------
     
     var hemodinamik: Hemodinamik
-        enum Hemodinamik {
-            case tidakAda
+    enum Hemodinamik: String {
+            case tidakAda = "Tidak ada"
             //tidakada
-            case ringan
-            case sedang
-            case berat
+            case ringan = "Ringan"
+            case sedang = "Sedang"
+            case berat = "Berat"
         
         }
   
     
     var nadi: Nadi
-        enum Nadi{
-            case normal
-            case teraba
-            case lemahKuat
-            case sangatHalus
-            case tidakTeraba
+    enum Nadi: String{
+            case normal = "Normal"
+            case teraba = "Teraba"
+            case lemahKuat = "Lemah Kuat"
+            case sangatHalus = "Sangat Halus"
+            case tidakTeraba = "Tidak Teraba"
         }
     
     
     var denyutNadi: DenyutNadi
-        enum DenyutNadi {
-            case teraba
-            case kapilerLessthan2
-            case kapilerMorethan2
-            case perdarahanAktif
+    enum DenyutNadi: String {
+            case teraba = "Teraba"
+            case kapilerLessthan2 = "Kapiler < 2detik"
+            case kapilerMorethan2 = "Kapiler > 2detik"
+            case perdarahanAktif = "Perdarahan aktif"
         }
     
         
    
     var warnaKulit: WarnaKulit
-    
-        enum WarnaKulit {
-            case merahHangat
-            case pucatMerahHangat
+    enum WarnaKulit: String {
+            case merahHangat = "Merah Hangat"
+            case pucatMerahHangat = "Pucat Merah Hangat"
         }
+    
+    //GCS  MASIH INTEGER
     var gcs:
         Int
     //15
@@ -99,11 +100,13 @@ struct TriageData {
     //8>
     
     var psikologis :Psikologis
-        enum Psikologis {
-            case kooperatif
-            case agitasi
-            case tidakKooperatif
+    enum Psikologis: String {
+            case kooperatif = "Kooperatif"
+            case agitasi = "Agitasi"
+            case tidakKooperatif = "Tidak kooperatif"
         }
+    
+  
 
 }
 

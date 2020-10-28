@@ -14,6 +14,7 @@
 		8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43E25416E6A006FF45A /* Persistence.swift */; };
 		8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A44025416E6A006FF45A /* triafriends.xcdatamodeld */; };
 		8D99A44D25416E85006FF45A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D99A44C25416E85006FF45A /* CloudKit.framework */; };
+		C0236FAE2548FCED004A1635 /* ListAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0236FAD2548FCED004A1635 /* ListAllView.swift */; };
 		C04A0AB12546BA8400C5EC19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C04A0AB02546BA8300C5EC19 /* GoogleService-Info.plist */; };
 		C0792B292542DB9800A40B69 /* TriageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B282542DB9800A40B69 /* TriageListView.swift */; };
 		C0792B2D2542DBDD00A40B69 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B2B2542DBDD00A40B69 /* AccountData.swift */; };
@@ -47,6 +48,7 @@
 		8D99A44325416E6A006FF45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D99A44A25416E7A006FF45A /* triafriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = triafriends.entitlements; sourceTree = "<group>"; };
 		8D99A44C25416E85006FF45A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		C0236FAD2548FCED004A1635 /* ListAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllView.swift; sourceTree = "<group>"; };
 		C04A0AB02546BA8300C5EC19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0792B282542DB9800A40B69 /* TriageListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriageListView.swift; sourceTree = "<group>"; };
 		C0792B2B2542DBDD00A40B69 /* AccountData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				C0792B352542DD9300A40B69 /* AddView.swift */,
 				C0792B3B2542DDAE00A40B69 /* MainView.swift */,
 				C0792B282542DB9800A40B69 /* TriageListView.swift */,
+				C0236FAD2548FCED004A1635 /* ListAllView.swift */,
 				C0792B302542DC1200A40B69 /* ReportView.swift */,
 				C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */,
 				C0792B382542DD9C00A40B69 /* AccountView.swift */,
@@ -335,6 +338,7 @@
 				C0792B362542DD9300A40B69 /* AddView.swift in Sources */,
 				8D99A43825416E67006FF45A /* ContentView.swift in Sources */,
 				C0E147B02545828000189E2E /* Interface.swift in Sources */,
+				C0236FAE2548FCED004A1635 /* ListAllView.swift in Sources */,
 				C0792B312542DC1200A40B69 /* ReportView.swift in Sources */,
 				C08AAADD2543E57F0001AFEA /* NameCensor.swift in Sources */,
 				8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */,
