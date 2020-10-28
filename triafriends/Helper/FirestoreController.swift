@@ -48,6 +48,7 @@ class FirestoreController {
             }
         }
         group.notify(queue: .main) {
+            // just ignore the warning
             completion(result)
         }
     }
