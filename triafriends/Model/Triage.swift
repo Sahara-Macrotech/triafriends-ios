@@ -8,7 +8,17 @@
 import SwiftUI
 
 
-
+struct Filter {
+    
+    var filterTypes: Filters
+    enum Filters {
+        case all
+        case queue
+        case handled
+        case done
+    }
+    
+    }
 //Public
 struct Triage: Identifiable {
     

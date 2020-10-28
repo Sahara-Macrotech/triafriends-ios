@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct ListAllView: View {
-    @State var selectedColoumn: Triage.PatientState
+    @State var selectedColoumn: Filter.Filters
 //0 = All
 //1 = Queue
 //2 = Handled
@@ -27,11 +27,11 @@ struct ListAllView: View {
                 
                 //TO DO : FIX ALL == .QUEUE
                 Button(action: {
-                    selectedColoumn = .queue
+                    selectedColoumn = .all
                 }, label: {
                     Text("All")
-                        .font(.custom(selectedColoumn == .queue ? nameBold : nameSemiBold, size: selectedColoumn == .queue ? 24 : 18))
-                        .foregroundColor(selectedColoumn == .queue ? colorPurple : colorTextGray)
+                        .font(.custom(selectedColoumn == .all ? nameBold : nameSemiBold, size: selectedColoumn == .all ? 24 : 18))
+                        .foregroundColor(selectedColoumn == .all ? colorPurple : colorTextGray)
                     
                 })
                 Spacer()

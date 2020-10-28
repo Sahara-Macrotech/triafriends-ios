@@ -10,7 +10,9 @@ import SwiftUI
 
 struct TriageListView: View {
     
-    var filteredQueue: Triage.PatientState = .queue
+   
+    
+    var filteredQueue: Filter.Filters = .all
 //    var triageData = triages
     
     var filteredTriages: [Triage] {
@@ -28,6 +30,8 @@ struct TriageListView: View {
                 return item.patientState == .queue
             }
 
+        case .all:
+            return triages
         }
     }
     

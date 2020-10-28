@@ -76,6 +76,7 @@ struct PatientDetailView: View {
                     
                 }.padding()
                 //TO DO :  Bikin loop horizontal dan ambil data dari model
+                // DATA DIBAWAH ADALAH DUMMY
                 HStack{
                     Text("pernafasan : ")
                         .font(Font.custom(nameBold, size: 18))
@@ -83,9 +84,14 @@ struct PatientDetailView: View {
                     
                     Spacer()
                     Text(data[0].jalanNafas.rawValue)
+                        
                 }
+                .padding()
+                
+                
                 
             }.position(x: UIScreen.main.bounds.midX, y: -120)
+          
             
             
             
