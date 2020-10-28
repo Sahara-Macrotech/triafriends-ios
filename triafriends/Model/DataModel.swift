@@ -9,7 +9,7 @@ import Foundation
 
 struct TriageData {
     
-    var jalanNafas: JalanNafas
+    var jalanNafas: JalanNafas?
     enum JalanNafas: String {
             case paten = "Paten"
             case sumbatanSebagian = "Sumbatan Sebagian"
@@ -17,7 +17,7 @@ struct TriageData {
         }
    
     
-    var distress: Distress
+    var distress: Distress?
     
     enum Distress: String {
             case RRnormal = "RR Normal"
