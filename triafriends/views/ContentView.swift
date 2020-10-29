@@ -91,6 +91,7 @@ struct ContentView: View {
                     destination: ListAllView(selectedColoumn: .queue),
                     label: {
                         Text("Lihat semua")
+                            
                     })
             }
             .padding()
