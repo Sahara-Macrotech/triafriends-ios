@@ -19,7 +19,7 @@ class Options {
 class Questions {
     var question: String
     var options: [Options]
-    var optionList = [OptionsCell]()
+    var optionList = [String]()
     
     init(question: String, options: [Options]) {
         self.question = question
@@ -29,9 +29,7 @@ class Questions {
     
     func setOptionList() {
         for option in options {
-            var tempOption = OptionsCell()
-            tempOption.setOption(option: option.option)
-            optionList.append(tempOption)
+            optionList.append(option.option)
         }
     }
 }

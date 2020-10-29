@@ -19,20 +19,12 @@ struct OptionsCell: View {
     var backgroundColor = Color.gray
     var cornerRadius = 10
     
-    @State var cellPressed = false
+    @State var triageValue: String = ""
+    
+    var group = DispatchGroup()
     
     var body: some View {
-        Button(action: {
-            self.cellPressed.toggle()
-        }) {
-            Text(option)
-            .font(Font.system(size: CGFloat(fontSize)))
-            .frame(width: CGFloat(frameWidth), height: CGFloat(frameHeight), alignment: alignment)
-            .padding().overlay(RoundedRectangle(cornerRadius: CGFloat(cornerRadius)).stroke(borderColor, lineWidth: 4))
-                .background(cellPressed ? Color.red : Color.gray)
-            .cornerRadius(CGFloat(cornerRadius))
-            .foregroundColor(Color.black)
-        }
+        Text("")
     }
     
     mutating func setOption(option: String) {

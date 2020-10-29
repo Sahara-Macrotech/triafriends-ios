@@ -10,6 +10,10 @@
 		118813709087B0387AE5BBD2 /* Pods_triafriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CEB9BD7686CFA6CF69CE94 /* Pods_triafriends.framework */; };
 		8D4A70A02548166E004035A0 /* FirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A709F2548166E004035A0 /* FirestoreController.swift */; };
 		8D71830E2548D4D00004E139 /* RealtimeDBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D71830D2548D4D00004E139 /* RealtimeDBController.swift */; };
+		8D71835F254A2FFF0004E139 /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D718359254A2FFF0004E139 /* QuestionList.swift */; };
+		8D718360254A2FFF0004E139 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D71835A254A2FFF0004E139 /* OptionsCell.swift */; };
+		8D718361254A2FFF0004E139 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D71835C254A2FFF0004E139 /* QuestionModel.swift */; };
+		8D718362254A2FFF0004E139 /* TriageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D71835E254A2FFF0004E139 /* TriageViewModel.swift */; };
 		8D99A43825416E67006FF45A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43725416E67006FF45A /* ContentView.swift */; };
 		8D99A43A25416E6A006FF45A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D99A43925416E6A006FF45A /* Assets.xcassets */; };
 		8D99A43D25416E6A006FF45A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D99A43C25416E6A006FF45A /* Preview Assets.xcassets */; };
@@ -42,6 +46,10 @@
 		4C6127170F74B0721A47E023 /* Pods-triafriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-triafriends.debug.xcconfig"; path = "Target Support Files/Pods-triafriends/Pods-triafriends.debug.xcconfig"; sourceTree = "<group>"; };
 		8D4A709F2548166E004035A0 /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
 		8D71830D2548D4D00004E139 /* RealtimeDBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDBController.swift; sourceTree = "<group>"; };
+		8D718359254A2FFF0004E139 /* QuestionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
+		8D71835A254A2FFF0004E139 /* OptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
+		8D71835C254A2FFF0004E139 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		8D71835E254A2FFF0004E139 /* TriageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriageViewModel.swift; sourceTree = "<group>"; };
 		8D99A43225416E67006FF45A /* triafriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = triafriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D99A43725416E67006FF45A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8D99A43925416E6A006FF45A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +92,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D718357254A2FFF0004E139 /* TriageProcess */ = {
+			isa = PBXGroup;
+			children = (
+				8D718358254A2FFF0004E139 /* TriageView */,
+				8D71835B254A2FFF0004E139 /* TriageModel */,
+				8D71835D254A2FFF0004E139 /* TriageViewModel */,
+			);
+			path = TriageProcess;
+			sourceTree = "<group>";
+		};
+		8D718358254A2FFF0004E139 /* TriageView */ = {
+			isa = PBXGroup;
+			children = (
+				8D718359254A2FFF0004E139 /* QuestionList.swift */,
+				8D71835A254A2FFF0004E139 /* OptionsCell.swift */,
+			);
+			path = TriageView;
+			sourceTree = "<group>";
+		};
+		8D71835B254A2FFF0004E139 /* TriageModel */ = {
+			isa = PBXGroup;
+			children = (
+				8D71835C254A2FFF0004E139 /* QuestionModel.swift */,
+			);
+			path = TriageModel;
+			sourceTree = "<group>";
+		};
+		8D71835D254A2FFF0004E139 /* TriageViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8D71835E254A2FFF0004E139 /* TriageViewModel.swift */,
+			);
+			path = TriageViewModel;
+			sourceTree = "<group>";
+		};
 		8D99A42925416E67006FF45A = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +153,7 @@
 				8D99A43E25416E6A006FF45A /* Persistence.swift */,
 				C04A0AB02546BA8300C5EC19 /* GoogleService-Info.plist */,
 				8D99A44325416E6A006FF45A /* Info.plist */,
+				8D718357254A2FFF0004E139 /* TriageProcess */,
 				C0E147B3254588BF00189E2E /* UI */,
 				C08AAAE02543E5B10001AFEA /* Helper */,
 				8D99A44F254181FC006FF45A /* views */,
@@ -330,14 +374,18 @@
 				C0792B2E2542DBDD00A40B69 /* Triage.swift in Sources */,
 				C08AAAD92543C7B40001AFEA /* PatientDetailView.swift in Sources */,
 				8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */,
+				8D71835F254A2FFF0004E139 /* QuestionList.swift in Sources */,
 				C0792B362542DD9300A40B69 /* AddView.swift in Sources */,
+				8D718360254A2FFF0004E139 /* OptionsCell.swift in Sources */,
 				8D99A43825416E67006FF45A /* ContentView.swift in Sources */,
 				8D4A70A02548166E004035A0 /* FirestoreController.swift in Sources */,
+				8D718362254A2FFF0004E139 /* TriageViewModel.swift in Sources */,
 				C0E147B02545828000189E2E /* Interface.swift in Sources */,
 				8D71830E2548D4D00004E139 /* RealtimeDBController.swift in Sources */,
 				C0792B312542DC1200A40B69 /* ReportView.swift in Sources */,
 				C08AAADD2543E57F0001AFEA /* NameCensor.swift in Sources */,
 				8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */,
+				8D718361254A2FFF0004E139 /* QuestionModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
