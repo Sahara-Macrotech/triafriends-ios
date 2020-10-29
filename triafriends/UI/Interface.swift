@@ -8,13 +8,13 @@
 import Foundation
 import SwiftUI
 
-    var radius = 6
+var radius: CGFloat = 6
 
 
     
     var colorGreen = Color(red: 0.94, green: 0.31, blue: 0.17)
     var colorYellow = Color(red: 1.00, green: 0.75, blue: 0.06)
-    var colorRed = Color(red: 0.33, green: 0.67, blue: 0.37)
+    var colorRed = Color(red: 0.94, green: 0.31, blue: 0.17)
     var colorBlue = Color(red: 0.28, green: 0.73, blue: 0.93)
     var colorPurple = Color(red: 0.29, green: 0.15, blue: 0.40)
     var colorLightPurple = Color(red: 0.88, green: 0.78, blue: 0.95)
@@ -23,13 +23,13 @@ import SwiftUI
     
 
 
-struct ProjectFonts {
-    var nameBlack = "NunitoSans-Black.ttf"
-    var nameExtraBold = "NunitoSans-ExtraBold.ttf"
-    var nameBold = "NunitoSans-Bold.ttf"
-    var nameSemiBold = "NunitoSans-SemiBold.ttf"
-    var nameRegular = "NunitoSans-Regular.ttf"
-}
+
+    var nameBlack = "NunitoSans-Black"
+    var nameExtraBold = "NunitoSans-ExtraBold"
+    var nameBold = "NunitoSans-Bold"
+    var nameSemiBold = "NunitoSans-SemiBold"
+    var nameRegular = "NunitoSans-Regular"
+
 
 struct Element {
     
