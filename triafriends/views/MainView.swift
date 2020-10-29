@@ -55,16 +55,9 @@ struct MainView: App {
                         Image("add")
                             .scaleEffect(0.35)
                         }.onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-//                            firestore.getDoctors(hospital: "LVSH") {
-//                                (value) -> Any in
-//                                print(value)
-//                            }
-//                            realtimeDb.updatePatientQueue(name: "Jack", score: "2", hospital: "LVSH")
-                            realtimeDb.moveToHandled(uid: "D685734B-71D4-4866-AD31-1E5BF7087765", hospital: "LVSH")
                             isPopUpEnabled = true
                         })
                     })
-//
                     Spacer()
 
 
