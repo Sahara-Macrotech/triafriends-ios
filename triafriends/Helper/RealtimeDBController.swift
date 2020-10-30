@@ -13,6 +13,24 @@ class RealtimeDBController {
     
     var ref: DatabaseReference!
     
+    
+    
+    
+    
+/////QUERYNYA
+    func query(){
+        ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/patients/SILOAM2122")
+        //bisa juga with path, bisa juga masukin parameter
+        
+        ref.child("uid").observe(.value) { (snapshot) in
+            let postDict = snapshot.value as? NSDictionary
+          
+            let dN = postDict?["denyutNadi"] as? String
+            print(dN)
+         }
+    }
+    
+    
     func updatePatientQueue(name: String, score: String, hospital: String) -> Void {
         
         ref = Database.database().reference()

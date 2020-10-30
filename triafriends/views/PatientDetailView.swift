@@ -23,7 +23,7 @@ struct PatientDetailView: View {
                         VStack{
                             Spacer(minLength: 15)
                             HStack{
-                                Text(triages!.name)
+                                Text("triages!.name")
                                     .multilineTextAlignment(.leading)
                                     .font(Font.custom(nameBold, size: 24 ))
                                 
@@ -80,7 +80,7 @@ struct PatientDetailView: View {
                 
                 VStack{
                 HStack{
-                    Text("pernafasan : ")
+                    Text("jalan nafas : ")
                         .font(Font.custom(nameBold, size: 18))
                         .foregroundColor(colorPurple)
                     
@@ -224,5 +224,6 @@ struct PatientDetailView: View {
 struct PatientDetailView_Previews: PreviewProvider {
     static var previews: some View {
         PatientDetailView()
+            .previewDevice("iPhone 11 Pro")
     }
 }

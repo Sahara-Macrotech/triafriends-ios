@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    var helper = RealtimeDBController()
     var accountData = AccountData()
     var body: some View {
        
@@ -58,7 +58,9 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .fontWeight(.semibold)
             )
-        }
+        }.onAppear(perform: {
+            helper.query()
+        })
     }
     
     
