@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    var helper = RealtimeDBController()
     var accountData = AccountData()
     var body: some View {
-       
+        //DUMMY
+        let hospitalID = "SILOAM2122"
+        
+        
         NavigationView{
             
             VStack{
@@ -58,7 +61,9 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .fontWeight(.semibold)
             )
-        }
+        }.onAppear(perform: {
+            helper.query(hospitalID: hospitalID)
+        })
     }
     
     
@@ -91,6 +96,7 @@ struct ContentView: View {
                     destination: ListAllView(selectedColoumn: .queue),
                     label: {
                         Text("Lihat semua")
+                            
                     })
             }
             .padding()
