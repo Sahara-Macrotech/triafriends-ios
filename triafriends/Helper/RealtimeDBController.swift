@@ -12,58 +12,72 @@ class RealtimeDBController {
     
     var ref: DatabaseReference!
     
-    func updatePatientQueue(name: String, score: String, hospital: String) -> Void {
+    func updatePatientQueue(hospital: String, uid: String, denyutNadi: String, distress: String, gcs: Int, hemodinamik: String, hipoventilasi: String, jalanNafas: String, nadi: String, name: String, patientState: String, psikologis: String, respiratoryRate: String, status: Int, warnaKulit: String) -> Void {
         
         ref = Database.database().reference()
-        let uuid = UUID().uuidString
 
-        let post = ["uid": uuid,
+        let post = ["denyutNadi": denyutNadi,
+                    "distress": distress,
+                    "gcs": gcs,
+                    "hemodinamik": hemodinamik,
+                    "hipoventilasi": hipoventilasi,
+                    "jalanNafas": jalanNafas,
+                    "nadi": nadi,
                     "name": name,
-                    "score": score]
-        let childUpdates = ["\(hospital)/patients/queue/\(uuid)": post]
+                    "patientState": patientState,
+                    "psikologis": psikologis,
+                    "respiratoryRate": respiratoryRate,
+                    "status": status,
+                    "warnaKulit": warnaKulit
+        ] as [String : Any]
+        let childUpdates = ["patients/\(hospital)/\(uid))": post]
         ref.updateChildValues(childUpdates)
-        
     }
     
-    func deletePatientFromQueue(uid: String, hospital: String) -> Void {
+    func changePatientState(uid: String, hospital: String, state: String) -> Void {
         ref = Database.database().reference()
-        let childToBeDeleted = ref.child(hospital).child("patients").child("queue").child(uid)
-        childToBeDeleted.removeValue()
+        ref.root.child("patients").child(hospital).child("\(uid)").updateChildValues(["patientState": state])
     }
     
-    func deletePatientFromHandled(uid: String, hospital: String) -> Void {
-        ref = Database.database().reference()
-        let childToBeDeleted = ref.child(hospital).child("patients").child("handled").child(uid)
-        childToBeDeleted.removeValue()
-    }
-    
-    func moveToHandled(uid: String, hospital: String) -> Void {
-        let group = DispatchGroup()
-        let moveRef = Database.database().reference()
-        DispatchQueue.global(qos: .userInitiated).async(group: group) {
-            print(uid)
-            moveRef.child(hospital).child("patients").child("queue").child(uid).observe(.childAdded, with: { (snapshot) in
-                moveRef.child(hospital).child("patients").child("handled").child(uid).child(snapshot.key).setValue(snapshot.value)
-            })
-           }
-
-        group.notify(queue: .main) {
-            self.deletePatientFromQueue(uid: uid, hospital: hospital)
-        }
-    }
-    
-    func moveToDone(uid: String, hospital: String) -> Void {
-        let group = DispatchGroup()
-        let moveRef = Database.database().reference()
-        DispatchQueue.global(qos: .userInitiated).async(group: group) {
-            print(uid)
-            moveRef.child(hospital).child("patients").child("handled").child(uid).observe(.childAdded, with: { (snapshot) in
-                moveRef.child(hospital).child("patients").child("done").child(uid).child(snapshot.key).setValue(snapshot.value)
-            })
-           }
-
-        group.notify(queue: .main) {
-            self.deletePatientFromQueue(uid: uid, hospital: hospital)
-        }
-    }
+//    func deletePatientFromQueue(uid: String, hospital: String) -> Void {
+//        ref = Database.database().referen ce()
+//        let childToBeDeleted = ref.child("patients").child(hospital).child(uid)
+//        childToBeDeleted.removeValue()
+//    }
+//
+//    func deletePatientFromHandled(uid: String, hospital: String) -> Void {
+//        ref = Database.database().reference()
+//        let childToBeDeleted = ref.child(hospital).child("patients").child("handled").child(uid)
+//        childToBeDeleted.removeValue()
+//    }
+//
+//    func moveToHandled(uid: String, hospital: String) -> Void {
+//        let group = DispatchGroup()
+//        let moveRef = Database.database().reference()
+//        DispatchQueue.global(qos: .userInitiated).async(group: group) {
+//            print(uid)
+//            moveRef.child(hospital).child("patients").child("queue").child(uid).observe(.childAdded, with: { (snapshot) in
+//                moveRef.child(hospital).child("patients").child("handled").child(uid).child(snapshot.key).setValue(snapshot.value)
+//            })
+//           }
+//
+//        group.notify(queue: .main) {
+//            self.deletePatientFromQueue(uid: uid, hospital: hospital)
+//        }
+//    }
+//
+//    func moveToDone(uid: String, hospital: String) -> Void {
+//        let group = DispatchGroup()
+//        let moveRef = Database.database().reference()
+//        DispatchQueue.global(qos: .userInitiated).async(group: group) {
+//            print(uid)
+//            moveRef.child(hospital).child("patients").child("handled").child(uid).observe(.childAdded, with: { (snapshot) in
+//                moveRef.child(hospital).child("patients").child("done").child(uid).child(snapshot.key).setValue(snapshot.value)
+//            })
+//           }
+//
+//        group.notify(queue: .main) {
+//            self.deletePatientFromQueue(uid: uid, hospital: hospital)
+//        }
+//    }
 }
