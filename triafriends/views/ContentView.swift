@@ -11,7 +11,10 @@ struct ContentView: View {
     var helper = RealtimeDBController()
     var accountData = AccountData()
     var body: some View {
-       
+        //DUMMY
+        let hospitalID = "SILOAM2122"
+        
+        
         NavigationView{
             
             VStack{
@@ -59,7 +62,7 @@ struct ContentView: View {
                     .fontWeight(.semibold)
             )
         }.onAppear(perform: {
-            helper.query()
+            helper.query(hospitalID: hospitalID)
         })
     }
     

@@ -13,13 +13,13 @@ class RealtimeDBController {
     
     var ref: DatabaseReference!
     
-    
+   
     
     
     
 /////QUERYNYA
-    func query(){
-        ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/patients/SILOAM2122")
+    func query(hospitalID: String){
+        ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/patients/\(hospitalID)")
         //bisa juga with path, bisa juga masukin parameter
         
         ref.child("uid").observe(.value) { (snapshot) in
