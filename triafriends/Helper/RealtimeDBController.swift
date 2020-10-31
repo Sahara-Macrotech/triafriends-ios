@@ -19,16 +19,48 @@ class RealtimeDBController {
     
 /////QUERYNYA
     func query(hospitalID: String){
-        ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/patients/\(hospitalID)")
+        
+        
+        //ini url cuma buat ngetest, untuk json 1 profile
+        ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/patients/\(hospitalID)/")
         //bisa juga with path, bisa juga masukin parameter
         
-        ref.child("uid").observe(.value) { (snapshot) in
-            let postDict = snapshot.value as? NSDictionary
-          
-            let dN = postDict?["denyutNadi"] as? String
-            print(dN)
+        ref.observe(.value) { (snapshot) in
+            
+           
+//            let postDict = snapshot.value as? Data
+            let all = snapshot.value
+            
+            do{
+                let data = try? JSONSerialization.data(withJSONObject: all!, options: .sortedKeys)
+                let decodedTriages = try? JSONDecoder().decode(rootReceivedTriage.self, from: data!)
+                print(snapshot.value)
+                
+                //just a triage, not translated and not an array of triage
+                
+                
+            }
+            
+            
+           
+            
+            
+            
+//            let dN = postDict?["denyutNadi"] as? String
+//            print(dN)
          }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     func updatePatientQueue(name: String, score: String, hospital: String) -> Void {

@@ -19,7 +19,64 @@ struct Filter {
     }
     
     }
-//Public
+//-------------------------------------------------------------------------------------------
+//
+//struct PatientData{
+//    var denyutNadi: String
+//    var distress:  String//dst
+//}
+//
+//struct Patient{
+//    var  patients: [String: PatientData]
+//}
+//
+//struct RecievedTriage{
+//
+//    var  hospitals: [String: [Patient]]
+//
+//    func transformToTriageObject()->[Triage]{
+//        let triages: [Triage] = []
+//
+//        for hospital in hospitals{
+//            let  patients = hospital.value
+//            for patient in patients{
+//                let patients = patient.patients
+//
+//                for patient in patients {
+//                    let patientData = patient.value
+//                    var distress: Triage.Distress
+//
+//                    switch patientData.distress {
+//                    case "tidak ada" :
+//                        distress = Triage.Distress.tidakAda
+//                    default:
+//                        distress = Triage.Distress.tidakAda
+//                    }
+//
+//                    //                let newTriage  = Triage()
+//                    let denyutNadi = patientData.denyutNadi
+//
+//
+//
+//
+//            }
+//        }
+//
+//        return triages
+//
+//    }
+//}
+//
+//
+//
+
+
+
+
+
+
+//------------------------------------------------------------------------------------------------
+
 struct Triage: Identifiable {
     
     //DATA DIRI NYA-----------------------------
@@ -137,7 +194,25 @@ struct Triage: Identifiable {
     
   
 }
-
+struct rootReceivedTriage: Codable {
+    let uid: ReceivedTriage
+}
+struct ReceivedTriage: Codable {
+    let denyutNadi: String
+    let distress: String
+    let gcs: Int
+    let hemodinamik: String
+    let hipoventilasi: String
+    let jalanNafas: String
+    let nadi: String
+    let name: String
+    let patientState: String
+    let psikologis: String
+    let respiratoryRate: String
+    let status: Int
+    let warnaKulit: String
+    
+}
 //Dummy datas--------------------------------------------------------
 var triages = [
     
