@@ -193,9 +193,17 @@ struct Triage: Identifiable {
     
     
   
+    
+    
+    
+    
+    
 }
+
+
+
 struct rootReceivedTriage: Codable {
-    let uid: ReceivedTriage
+    let triage: ReceivedTriage
 }
 struct ReceivedTriage: Codable {
     let denyutNadi: String
@@ -213,6 +221,18 @@ struct ReceivedTriage: Codable {
     let warnaKulit: String
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
 //Dummy datas--------------------------------------------------------
 var triages = [
     
