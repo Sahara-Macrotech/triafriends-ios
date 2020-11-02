@@ -29,6 +29,7 @@
 		C08AAADD2543E57F0001AFEA /* NameCensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AAADC2543E57E0001AFEA /* NameCensor.swift */; };
 		C09BABA82542844A00C985AA /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BABA72542844A00C985AA /* DataModel.swift */; };
 		C09BABAC2542893900C985AA /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BABAB2542893900C985AA /* Algorithm.swift */; };
+		C0DF559325502ACB00F5A761 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF559225502ACB00F5A761 /* Profile.swift */; };
 		C0E147B02545828000189E2E /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E147AF2545828000189E2E /* Interface.swift */; };
 		C0E147C5254588F900189E2E /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0E147B6254588F800189E2E /* NunitoSans-ExtraBold.ttf */; };
 		C0E147C7254588F900189E2E /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0E147B8254588F800189E2E /* NunitoSans-Regular.ttf */; };
@@ -65,6 +66,7 @@
 		C08AAADC2543E57E0001AFEA /* NameCensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCensor.swift; sourceTree = "<group>"; };
 		C09BABA72542844A00C985AA /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		C09BABAB2542893900C985AA /* Algorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
+		C0DF559225502ACB00F5A761 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		C0E147AF2545828000189E2E /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
 		C0E147B6254588F800189E2E /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		C0E147B8254588F800189E2E /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				C0792B3B2542DDAE00A40B69 /* MainView.swift */,
 				C0792B282542DB9800A40B69 /* TriageListView.swift */,
 				C0236FAD2548FCED004A1635 /* ListAllView.swift */,
+				C0DF559225502ACB00F5A761 /* Profile.swift */,
 				C0792B302542DC1200A40B69 /* ReportView.swift */,
 				C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */,
 				C0792B382542DD9C00A40B69 /* AccountView.swift */,
@@ -340,6 +343,7 @@
 				C0236FAE2548FCED004A1635 /* ListAllView.swift in Sources */,
 				8D71830E2548D4D00004E139 /* RealtimeDBController.swift in Sources */,
 				C0792B312542DC1200A40B69 /* ReportView.swift in Sources */,
+				C0DF559325502ACB00F5A761 /* Profile.swift in Sources */,
 				C08AAADD2543E57F0001AFEA /* NameCensor.swift in Sources */,
 				8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */,
 			);

@@ -16,11 +16,26 @@ class RealtimeDBController {
    
     
     
+    func queryProfile(uid: String){
+        ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/users/\(uid)/")
+        
+        ref.observe(.value) { (snapshot) in
+            
+            let dict = snapshot.value as! [String : Any]
+           
+            
+        
+            //return
+            let userRole = dict["role"]
+            let userName = dict["name"]
+            let userHospital = dict["hospital"]
+            let userPhoneNumber = dict["phoneNumber"]
+            let userEmail = dict["email"]
+            
+        }
+    }
     
-/////QUERYNYA
 
-    
-    
     
     
     

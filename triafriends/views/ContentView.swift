@@ -11,6 +11,7 @@ struct ContentView: View {
     @ObservedObject var tvm = TriageListViewModel()
     var helper = RealtimeDBController()
     var accountData = AccountData()
+    var dummyUID = "t7SQhXlozrMnWOghRaXHh4HWuUC3"
     var body: some View {
         //DUMMY
         let hospitalID = "SILOAM2122"
@@ -63,8 +64,7 @@ struct ContentView: View {
                     .fontWeight(.semibold)
             )
         }.onAppear(perform: {
-            
-           
+            helper.queryProfile(uid: dummyUID)
         })
         .navigationViewStyle(StackNavigationViewStyle())
     }
