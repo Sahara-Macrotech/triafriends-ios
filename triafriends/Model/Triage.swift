@@ -217,8 +217,16 @@ var arr = ["ab","cc","dd","ae"]
 
 
 class TriageListViewModel: ObservableObject{
+    
+    static let sharedInstance = TriageListViewModel()
+    
     @Published var arrOfTriages: [Triage] = []
     @Published var text: String = ""
+    
+    func test(handler: @escaping (([Triage]) -> Void)) -> Void {
+        handler(arrOfTriages)
+    }
+    
     func query(hospitalID: String){
         var ref: DatabaseReference!
         
@@ -226,7 +234,7 @@ class TriageListViewModel: ObservableObject{
         //bisa juga with path, bisa juga masukin parameter
         ref.observe(.value) { (snapshot) in
             var arrOfReceivedTriage = [rootReceivedTriage]()
-
+            
             for child in snapshot.children
             {
                 if let childSnapshot = child as? DataSnapshot,
@@ -235,223 +243,236 @@ class TriageListViewModel: ObservableObject{
                     
                     do{
                         let data = try? JSONSerialization.data(withJSONObject: dict, options: .sortedKeys)
-                       
+                        
                         let decode = try? JSONDecoder().decode(rootReceivedTriage.self, from: data!)
                         
-                      //  print(decode)
+                        //  print(decode)
                         arrOfReceivedTriage.append(decode!)
-                    
+                        
                         //print(arrOfReceivedTriage)
                         
                     } catch {
                         print("error decoding")
                     }
                 }
-           
-            
-            //print(all)
-           
+                
+                
+                //print(all)
+                
             }
             self.convertToTriage(receivedTriage: arrOfReceivedTriage)
             
             
-         }
+        }
         
     }
     
     func convertToTriage(receivedTriage: [rootReceivedTriage]){
         //Append to this later
-        arrOfTriages = []
+        //        arrOfTriages = []
+        var tempArray: [Triage] = []
+        let group = DispatchGroup()
         
-        for i in receivedTriage{
-            
-            //ID
-            var id = i.triage.id
-            var name = i.triage.name
-            var status = i.triage.status
-            
-            
-            var ps: Triage.PatientState
-            switch i.triage.patientState {
-            case "handled":
-                ps = .handled
-            case "done":
-                ps = .done
-            default:
-                ps = .queue
-            }
-            //Transform to enum
-            
-            //JALAN NAFAS
-            var jN: Triage.JalanNafas
-            switch i.triage.jalanNafas {
-            case "p":
-                jN = Triage.JalanNafas.paten
-            case "ss":
-                jN = Triage.JalanNafas.sumbatanSebagian
-            case "st":
-                jN = Triage.JalanNafas.sumbatanTotal
-            default:
-                jN = Triage.JalanNafas.paten
-            }
-            
-            
-            //DISTRESS
-            var d: Triage.Distress
-            switch i.triage.distress {
-            case "rrn":
-                d = Triage.Distress.RRnormal
-            case "ta":
-                d = Triage.Distress.tidakAda
-            case "r":
-                d = Triage.Distress.ringan
-            case "s":
-                d = Triage.Distress.sedang
-            case "b":
-                d = Triage.Distress.berat
-            default:
-                d = Triage.Distress.tidakAda
-            }
-            
-            
-            //RESPIRATORY RATE
-            
-            var rR: Triage.RespiratoryRate
-            switch i.triage.respiratoryRate {
-            case "kb":
-                rR = Triage.RespiratoryRate.komunikasiBaik
-            case "rrn":
-                rR = Triage.RespiratoryRate.RRnormal
-            case "rrl30":
-                rR = Triage.RespiratoryRate.RRlessthan30
-            case "rrm30":
-                rR = Triage.RespiratoryRate.RRmorethan30
-            case "tmb":
-                rR = Triage.RespiratoryRate.tidakMampuBicara
-            default:
-                rR = Triage.RespiratoryRate.komunikasiBaik
-            }
-            
-            
-            
-            //HENTI NAFAS
-            var hN: Triage.HentiNafas
-            switch i.triage.hentiNafas {
-            case "b":
-                hN = Triage.HentiNafas.berhenti
-            case "pob":
-                hN = Triage.HentiNafas.pengunaanOtotBantu
-            default:
-                //PUT NORMAL CONDITION HERE
-                hN = .normal
+        DispatchQueue.global().async(group: group) {
+            group.enter()
+            for i in receivedTriage{
                 
-            }
-            
-            
-            //HIPOVENTILASI
-            var hv: Bool
-            switch i.triage.hipoventilasi {
-            case "true":
-                hv = true
-            case "false":
-                hv = false
-            default:
-                hv = false
-            }
-            //--------------------------------------
-            
-            //HEMODINAMIK
-            var hd: Triage.Hemodinamik
-            switch i.triage.hemodinamik {
-            case "ta":
-                hd = .tidakAda
-            case "r":
-                hd = .ringan
-            case "s":
-                hd = .sedang
-            case "b":
-                hd = .berat
-            default:
-                hd = .tidakAda
-            }
-            
-            //NADI
-            var n: Triage.Nadi
-            switch i.triage.nadi {
-            case "n":
-                n = .normal
-            case "t":
-                n = .teraba
-            case "lk":
-                n = .lemahKuat
-            case "sh":
-                n = .sangatHalus
-            case "tt":
-                n = .tidakTeraba
-            default:
-                n = .normal
-            }
-            
-            //DENYUT NADI
-            var dN: Triage.DenyutNadi
-            switch i.triage.denyutNadi {
-            case "t":
-                dN = .teraba
-            case "kl2":
-                dN = .kapilerLessthan2
-            case "km2":
-                dN = .kapilerMorethan2
-            case "pa":
-                dN = .perdarahanAktif
-            default:
-                dN = .teraba
-            }
-            
-            //WARNA KULIT
-            var wK: Triage.WarnaKulit
-            switch i.triage.warnaKulit {
-            case "mh":
-                wK = .merahHangat
-            case "pmh":
-                wK = .pucatMerahHangat
-            default:
-                wK = .merahHangat
-            }
-            
-            
-            //Glassgow Comma Scale
-            var gcs = i.triage.gcs
-            
-            
-            
-            
-            var p: Triage.Psikologis
-            switch i.triage.psikologis {
-            case "k":
-                p = .kooperatif
-            case "a":
-                p = .agitasi
-            case "tk":
-                p = .tidakKooperatif
-            default:
-                p = .kooperatif
+                //ID
+                var id = i.triage.id
+                var name = i.triage.name
+                var status = i.triage.status
+                
+                
+                var ps: Triage.PatientState
+                switch i.triage.patientState {
+                case "handled":
+                    ps = .handled
+                case "done":
+                    ps = .done
+                default:
+                    ps = .queue
+                }
+                //Transform to enum
+                
+                //JALAN NAFAS
+                var jN: Triage.JalanNafas
+                switch i.triage.jalanNafas {
+                case "p":
+                    jN = Triage.JalanNafas.paten
+                case "ss":
+                    jN = Triage.JalanNafas.sumbatanSebagian
+                case "st":
+                    jN = Triage.JalanNafas.sumbatanTotal
+                default:
+                    jN = Triage.JalanNafas.paten
+                }
+                
+                
+                //DISTRESS
+                var d: Triage.Distress
+                switch i.triage.distress {
+                case "rrn":
+                    d = Triage.Distress.RRnormal
+                case "ta":
+                    d = Triage.Distress.tidakAda
+                case "r":
+                    d = Triage.Distress.ringan
+                case "s":
+                    d = Triage.Distress.sedang
+                case "b":
+                    d = Triage.Distress.berat
+                default:
+                    d = Triage.Distress.tidakAda
+                }
+                
+                
+                //RESPIRATORY RATE
+                
+                var rR: Triage.RespiratoryRate
+                switch i.triage.respiratoryRate {
+                case "kb":
+                    rR = Triage.RespiratoryRate.komunikasiBaik
+                case "rrn":
+                    rR = Triage.RespiratoryRate.RRnormal
+                case "rrl30":
+                    rR = Triage.RespiratoryRate.RRlessthan30
+                case "rrm30":
+                    rR = Triage.RespiratoryRate.RRmorethan30
+                case "tmb":
+                    rR = Triage.RespiratoryRate.tidakMampuBicara
+                default:
+                    rR = Triage.RespiratoryRate.komunikasiBaik
+                }
+                
+                
+                
+                //HENTI NAFAS
+                var hN: Triage.HentiNafas
+                switch i.triage.hentiNafas {
+                case "b":
+                    hN = Triage.HentiNafas.berhenti
+                case "pob":
+                    hN = Triage.HentiNafas.pengunaanOtotBantu
+                default:
+                    //PUT NORMAL CONDITION HERE
+                    hN = .normal
+                    
+                }
+                
+                
+                //HIPOVENTILASI
+                var hv: Bool
+                switch i.triage.hipoventilasi {
+                case "true":
+                    hv = true
+                case "false":
+                    hv = false
+                default:
+                    hv = false
+                }
+                //--------------------------------------
+                
+                //HEMODINAMIK
+                var hd: Triage.Hemodinamik
+                switch i.triage.hemodinamik {
+                case "ta":
+                    hd = .tidakAda
+                case "r":
+                    hd = .ringan
+                case "s":
+                    hd = .sedang
+                case "b":
+                    hd = .berat
+                default:
+                    hd = .tidakAda
+                }
+                
+                //NADI
+                var n: Triage.Nadi
+                switch i.triage.nadi {
+                case "n":
+                    n = .normal
+                case "t":
+                    n = .teraba
+                case "lk":
+                    n = .lemahKuat
+                case "sh":
+                    n = .sangatHalus
+                case "tt":
+                    n = .tidakTeraba
+                default:
+                    n = .normal
+                }
+                
+                //DENYUT NADI
+                var dN: Triage.DenyutNadi
+                switch i.triage.denyutNadi {
+                case "t":
+                    dN = .teraba
+                case "kl2":
+                    dN = .kapilerLessthan2
+                case "km2":
+                    dN = .kapilerMorethan2
+                case "pa":
+                    dN = .perdarahanAktif
+                default:
+                    dN = .teraba
+                }
+                
+                //WARNA KULIT
+                var wK: Triage.WarnaKulit
+                switch i.triage.warnaKulit {
+                case "mh":
+                    wK = .merahHangat
+                case "pmh":
+                    wK = .pucatMerahHangat
+                default:
+                    wK = .merahHangat
+                }
+                
+                
+                //Glassgow Comma Scale
+                var gcs = i.triage.gcs
+                
+                
+                
+                
+                var p: Triage.Psikologis
+                switch i.triage.psikologis {
+                case "k":
+                    p = .kooperatif
+                case "a":
+                    p = .agitasi
+                case "tk":
+                    p = .tidakKooperatif
+                default:
+                    p = .kooperatif
+                }
+                
+                
+                tempArray.append(Triage(id: id, status: status, name: name, patientState: ps, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p))
+                print(tempArray.count)
             }
             
             
             var sT = i.triage.startTime
             var eT = i.triage.endTime
                 
+            group.leave()
             
             self.arrOfTriages.append(Triage(id: id, status: status, name: name, patientState: ps, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p, startTime: sT, endTime: eT))
                // print(self.arrOfTriages)
             
         }
-       
-        // return arrOfTriage
         
-        
-       
+        group.notify(queue: .main, execute: {
+            print("gila")
+            self.arrOfTriages = tempArray
+        })
     }
+    
+    
+    // return arrOfTriage
     
 }
 
