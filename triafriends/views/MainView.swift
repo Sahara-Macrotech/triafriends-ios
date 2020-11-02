@@ -55,7 +55,10 @@ struct MainView: App {
                         Image("add")
                             .scaleEffect(0.35)
                         }.onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-                            realtimeDb.changePatientState(uid: "uid", hospital: "SILOAM2122", state: "handled")
+//                            realtimeDb.changePatientState(uid: "uid", hospital: "SILOAM2122", state: "handled")
+                            realtimeDb.getAllPatients(hospital: "SILOAM2122") { result in
+                                print(result)
+                            }
 //                            isPopUpEnabled = true
                         })
                     })
