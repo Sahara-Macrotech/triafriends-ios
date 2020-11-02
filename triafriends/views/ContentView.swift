@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var tvm = TriageListViewModel()
     var helper = RealtimeDBController()
     var accountData = AccountData()
     var body: some View {
@@ -62,7 +63,8 @@ struct ContentView: View {
                     .fontWeight(.semibold)
             )
         }.onAppear(perform: {
-            helper.query(hospitalID: hospitalID)
+            
+           
         })
     }
     
@@ -93,7 +95,7 @@ struct ContentView: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: ListAllView(selectedColoumn: .queue),
+                    destination: ListAllView(selectedColoumn: .all),
                     label: {
                         Text("Lihat semua")
                             

@@ -18,39 +18,7 @@ class RealtimeDBController {
     
     
 /////QUERYNYA
-    func query(hospitalID: String){
 
-        
-        ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/patients/\(hospitalID)/")
-        //bisa juga with path, bisa juga masukin parameter
-        ref.observe(.value) { (snapshot) in
-            for child in snapshot.children
-            {
-                if let childSnapshot = child as? DataSnapshot,
-                   let dict = childSnapshot.value as? [String:Any] {
-                    
-                    
-                    do{
-                        var a = [rootReceivedTriage]()
-                        let data = try? JSONSerialization.data(withJSONObject: dict, options: .sortedKeys)
-                       
-                        let decode = try? JSONDecoder().decode(rootReceivedTriage.self, from: data!)
-                        
-                      //  print(decode)
-                        a.append(decode!)
-                        print(a)
-                        
-                    } catch {
-                        print("error decoding")
-                    }
-                }
-           
-            
-            //print(all)
-           
-            }
-         }
-    }
     
     
     

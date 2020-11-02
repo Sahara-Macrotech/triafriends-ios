@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import Combine
 
 
 struct TriageListView: View {
     
-   
+    @ObservedObject var triageListViewModel = TriageListViewModel()
     
     var filteredQueue: Filter.Filters = .all
 //    var triageData = triages
@@ -18,52 +19,42 @@ struct TriageListView: View {
     var filteredTriages: [Triage] {
         switch filteredQueue {
         case .done:
-            return triages.filter { (item) -> Bool in
+            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
                 return item.patientState == .done
             }
         case .handled:
-            return triages.filter { (item) -> Bool in
+            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
                 return item.patientState == .handled
             }
         case .queue:
-            return triages.filter { (item) -> Bool in
+            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
                 return item.patientState == .queue
             }
 
         case .all:
-            return triages
+            return triageListViewModel.arrOfTriages
         }
     }
     
+ 
+    
     var body: some View {
-//    var filteredPatientState = triages.filter { (item) -> Bool in
-//            return item.patientState == filteredQueue
-//        }
-        
-        //
-        //arr.filter { (str) -> Bool in
-        //    return str.contains("a")
-        
-        
-        
+
         
         ZStack{
             
-            
-            
-            
+
             
             VStack(alignment: .center, spacing: nil) {
                 
-                
-                
+
                 ScrollView{
                     
                     ForEach(filteredTriages) { triages in
                         VStack{
-                            
                             //example--------------
                             ZStack{
+                                
                                 
                                 //Rectangle()
                                 NavigationLink(
@@ -71,52 +62,35 @@ struct TriageListView: View {
                                     label: {
                                         colorLightGray
                                             .cornerRadius(6)
-                                        
-                                        
                                     })
-                                
-                                
-                                
-                                
+
                                 HStack{
-                                    Text(triages.name)
+                                    Text(triages.name!)
                                         .font(Font.custom(nameBold, size: 16))
                                     
                                     Spacer()
                                     //TODO : ganti image jadi color yang sudah diset interface
-                                    Image("\(triages.status)")
+                                    Image("\(triages.status ?? 0)")
                                         .resizable()
                                         .frame(width: 26, height: 25, alignment: .top)
                                         .cornerRadius(6)
                                     
                                 }.padding()
                             }
-                            
-                            
-                            
+                           
                         }
-                        
-                        
                     }.padding()
-                    
-                    
-                    
+                   
                 }
-                
-                
-                
-                //-----------
-                
-                
-                
+ 
             }
-            
-            
-            
         }.onAppear(perform: {
-         
+        let hospitalID = "SILOAM2122"
+            triageListViewModel.query(hospitalID: hospitalID)
+        
             
-            
+            //outputnya [] []
+          
             
         })
         

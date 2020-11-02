@@ -23,7 +23,7 @@ struct PatientDetailView: View {
                         VStack{
                             Spacer(minLength: 15)
                             HStack{
-                                Text("triages!.name")
+                                Text(triages!.name!)
                                     .multilineTextAlignment(.leading)
                                     .font(Font.custom(nameBold, size: 24 ))
                                 
