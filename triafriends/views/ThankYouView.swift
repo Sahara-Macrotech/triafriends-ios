@@ -29,6 +29,7 @@ struct Card: View {
     
     @State private var selectedStrength = 0
     @State private var backgroundColor = Color.red
+    @State var showingDetail = false
     var body: some View {
         ZStack (alignment: .bottom) {
             Rectangle()
@@ -42,7 +43,9 @@ struct Card: View {
                 Text("Your data have been recorded. The hospital will review your data first before you can use the app.").font(.system(size: 20)).bold().fixedSize(horizontal: false, vertical: true).frame(maxWidth: .infinity, alignment: .center).opacity(0.5).multilineTextAlignment(.center).padding()
                 
                 Button(action: {
+                    self.showingDetail.toggle()
                     print("")
+                    
                 }) {
                     HStack {
                         
@@ -51,6 +54,8 @@ struct Card: View {
                         Text("OK").font(.title3)
                             .foregroundColor(.white).bold()
                         Spacer()
+                    }.sheet(isPresented: $showingDetail) {
+                        CongratulationView()
                     }
                     
                     //                            .clipShape(Circle())

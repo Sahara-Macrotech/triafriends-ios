@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
-import Foundation 
+import Foundation
+import Firebase
+import FirebaseFirestore
 
+import CryptoKit
+import FirebaseAuth
+import AuthenticationServices
 let screen1 = UIScreen.main.bounds
 
-struct SignMeUpView: View {
+struct SignMeUpView:  View {
     var body: some View {
         ZStack {
             VStack {
@@ -36,7 +41,9 @@ struct SignMeUpCard: View {
     
     @State private var selectedStrength = 0
     @State private var backgroundColor = Color.red
+    @State var showingDetail = false
     var body: some View {
+        NavigationView {
         ZStack (alignment: .bottom) {
             Rectangle()
                 .frame(width: screen.width, height: screen.height * 0.9, alignment: .center)
@@ -68,6 +75,7 @@ struct SignMeUpCard: View {
                     TextField("Enter your phone", text: $phone)
                         .font(.title2).opacity(0.5)
                         .padding(.leading,15)
+                        .keyboardType(.phonePad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     Text("Job")
                         
@@ -87,22 +95,54 @@ struct SignMeUpCard: View {
                         .padding(.leading,15)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
-                
+                let uuidd =   Auth.auth().currentUser?.uid
                 Button(action: {
-                         print("")
+                    self.showingDetail.toggle()
+                    let ratingDictionary = [
+                        "uuid":uuidd,
+                        "name":self.name,
+                        "email":self.email,
+                        "phone":self.phone,
+                        "job":self.job,
+                        "hospital":self.hospital
+                        
+                    ]
+                    
+                    let docRef = Firestore.firestore().document("user/\(UUID().uuidString)")
+                    print("setting data")
+                    docRef.setData(ratingDictionary, merge: true){ (error) in
+                        if let error = error {
+                            print("error = \(error)")
+                        } else {
+                            
+                            print("data updated successfully")
+//                            self.showSheet = false
+                            self.name = ""
+                            self.email = ""
+                            self.phone = ""
+                            self.job = ""
+                            self.hospital = ""
+                        }
+                    }
+                    
+                    print("")
                 }) {
                     HStack {
-                                    
-//                                       .accessibility(label: Text("Sign in with Google"))
-                                   Spacer()
+                        
+                        //                                       .accessibility(label: Text("Sign in with Google"))
+                        Spacer()
                         Text("Sign me up").font(.title3)
-                                       .foregroundColor(.white).bold()
-                                   Spacer()
-                               }
-                                
-    //                            .clipShape(Circle())
-                }  .padding()
-               
+                            .foregroundColor(.white).bold()
+                        Spacer()
+                    }
+                    
+                    //                            .clipShape(Circle())
+                }
+                .sheet(isPresented: $showingDetail) {
+                    ThankYouView()
+                }
+                .padding()
+                
                 .background(Color.init(red: 75/255, green: 39/255, blue: 102/255, opacity: 1))
                 .cornerRadius(20)
                 .shadow(color: Color.init(red: 0.0, green: 0.0, blue: 0.0, opacity: 0.06), radius: 8, x: 0, y: 4)
@@ -116,7 +156,7 @@ struct SignMeUpCard: View {
             
             
         }
-        
+        }
     }
 }
 

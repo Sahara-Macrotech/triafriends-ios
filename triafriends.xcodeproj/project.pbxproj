@@ -10,7 +10,12 @@
 		7F2A48032546746200413941 /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A48022546746200413941 /* ThankYouView.swift */; };
 		7F2A48062546786600413941 /* CongratulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A48052546786600413941 /* CongratulationView.swift */; };
 		7F2A4809254679ED00413941 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A4808254679ED00413941 /* SignUpView.swift */; };
+		7F5642EB25471A7A0012A026 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5642EA25471A7A0012A026 /* HistoryView.swift */; };
+		7F81F60A25481F86005CF298 /* SignInWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81F60925481F86005CF298 /* SignInWithAppleCoordinator.swift */; };
+		7FA2D5F8254742F5009735AB /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA2D5F7254742F5009735AB /* Report.swift */; };
 		7FB2F7A42546580F00FC046E /* SignMeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2F7A32546580F00FC046E /* SignMeUpView.swift */; };
+		7FF74043254B9C13000A260A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FF74042254B9C13000A260A /* GoogleService-Info.plist */; };
+		7FF7406E254BAC88000A260A /* FaceBookLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7406D254BAC88000A260A /* FaceBookLoginView.swift */; };
 		8D6B4A5A25441F4400B2C380 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4A5925441F4400B2C380 /* LoginView.swift */; };
 		8D6B4A5E254422D900B2C380 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B4A5D254422D900B2C380 /* SignInWithApple.swift */; };
 		8D99A43625416E67006FF45A /* triafriendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43525416E67006FF45A /* triafriendsApp.swift */; };
@@ -28,8 +33,13 @@
 		7F2A48022546746200413941 /* ThankYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouView.swift; sourceTree = "<group>"; };
 		7F2A48052546786600413941 /* CongratulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationView.swift; sourceTree = "<group>"; };
 		7F2A4808254679ED00413941 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		7F5642EA25471A7A0012A026 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		7F81F60925481F86005CF298 /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
+		7FA2D5F7254742F5009735AB /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Report.swift; path = triafriends/views/Report.swift; sourceTree = SOURCE_ROOT; };
 		7FB2F7842546462200FC046E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB2F7A32546580F00FC046E /* SignMeUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignMeUpView.swift; sourceTree = "<group>"; };
+		7FF74042254B9C13000A260A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7FF7406D254BAC88000A260A /* FaceBookLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceBookLoginView.swift; sourceTree = "<group>"; };
 		8D6B4A5925441F4400B2C380 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8D6B4A5D254422D900B2C380 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		8D99A43225416E67006FF45A /* triafriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = triafriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,8 +81,17 @@
 		7F2A47F72546622500413941 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				7FA2D5F7254742F5009735AB /* Report.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		7F81F60825481F5E005CF298 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7F81F60925481F86005CF298 /* SignInWithAppleCoordinator.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		8D6B4A5C254422CE00B2C380 /* helpers */ = {
@@ -104,6 +123,8 @@
 		8D99A43425416E67006FF45A /* triafriends */ = {
 			isa = PBXGroup;
 			children = (
+				7FF74042254B9C13000A260A /* GoogleService-Info.plist */,
+				7F81F60825481F5E005CF298 /* Services */,
 				7F2A47F72546622500413941 /* models */,
 				8D6B4A5C254422CE00B2C380 /* helpers */,
 				8D99A44F254181FC006FF45A /* views */,
@@ -139,12 +160,14 @@
 		8D99A44F254181FC006FF45A /* views */ = {
 			isa = PBXGroup;
 			children = (
+				7FF7406D254BAC88000A260A /* FaceBookLoginView.swift */,
 				7FB2F7A32546580F00FC046E /* SignMeUpView.swift */,
 				8D99A43725416E67006FF45A /* ContentView.swift */,
 				8D6B4A5925441F4400B2C380 /* LoginView.swift */,
 				7F2A48022546746200413941 /* ThankYouView.swift */,
 				7F2A48052546786600413941 /* CongratulationView.swift */,
 				7F2A4808254679ED00413941 /* SignUpView.swift */,
+				7F5642EA25471A7A0012A026 /* HistoryView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -161,6 +184,7 @@
 				8D99A42F25416E67006FF45A /* Frameworks */,
 				8D99A43025416E67006FF45A /* Resources */,
 				8CA1F80D6EA84CBB171AE81E /* [CP] Embed Pods Frameworks */,
+				E1898ECBF9AB1E2416326AD7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D99A43D25416E6A006FF45A /* Preview Assets.xcassets in Resources */,
+				7FF74043254B9C13000A260A /* GoogleService-Info.plist in Resources */,
 				8D99A43A25416E6A006FF45A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +280,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E1898ECBF9AB1E2416326AD7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-triafriends/Pods-triafriends-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-triafriends/Pods-triafriends-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-triafriends/Pods-triafriends-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -270,8 +312,12 @@
 				8D99A43625416E67006FF45A /* triafriendsApp.swift in Sources */,
 				7F2A4809254679ED00413941 /* SignUpView.swift in Sources */,
 				8D6B4A5A25441F4400B2C380 /* LoginView.swift in Sources */,
+				7F81F60A25481F86005CF298 /* SignInWithAppleCoordinator.swift in Sources */,
 				8D6B4A5E254422D900B2C380 /* SignInWithApple.swift in Sources */,
+				7F5642EB25471A7A0012A026 /* HistoryView.swift in Sources */,
 				8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */,
+				7FF7406E254BAC88000A260A /* FaceBookLoginView.swift in Sources */,
+				7FA2D5F8254742F5009735AB /* Report.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -384,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -401,9 +447,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = triafriends/triafriends.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 3YDM8NJ6PU;
+				DEVELOPMENT_TEAM = Z5A6SFMQ64;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -411,8 +458,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.inatechno.triafriends;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inatechno2020.triafriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -425,9 +473,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = triafriends/triafriends.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 3YDM8NJ6PU;
+				DEVELOPMENT_TEAM = Z5A6SFMQ64;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -435,8 +484,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.inatechno.triafriends;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inatechno2020.triafriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

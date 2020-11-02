@@ -11,26 +11,15 @@ import CoreData
 struct ContentView: View {
     
     var body: some View {
-
-            Button(action: {
-                NavigationLink(destination:LoginView() ) {
-                }
-            }) {
-                HStack {
-                    Spacer()
-                    Text("Login").foregroundColor(Color.white).bold()
-                    Spacer()
-                }
-            }
-            .accentColor(Color.black)
-            .padding()
-            .background(Color(UIColor.darkGray))
-            .cornerRadius(4.0)
-            .padding(Edge.Set.vertical, 20)
+        Code()
         }
     
     
 }
+
+// adding app to firebase
+
+//installing firebase SDK
 
 
 
