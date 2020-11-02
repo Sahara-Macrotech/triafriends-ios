@@ -54,7 +54,7 @@ struct MainView: App {
 
                         Image("add")
                             .scaleEffect(0.35)
-                        }.onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                        }.onTapGesture(count: 1, perform: {
                             isPopUpEnabled = true
                         })
                     })

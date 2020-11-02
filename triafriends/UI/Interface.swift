@@ -20,6 +20,8 @@ var radius: CGFloat = 6
     var colorLightPurple = Color(red: 0.88, green: 0.78, blue: 0.95)
     var colorLightGray = Color(red: 0.97, green: 0.97, blue: 0.97)
     var colorTextGray = Color(red: 0.40, green: 0.40, blue: 0.40)
+    var colorTeal = Color(red: 0.17, green: 0.69, blue: 0.81)
+    var colorLightGreen = Color(red: 0.17, green: 0.81, blue: 0.43)
     
 
 

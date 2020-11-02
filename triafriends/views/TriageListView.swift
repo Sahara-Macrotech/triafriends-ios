@@ -13,13 +13,15 @@ struct TriageListView: View {
     
     @ObservedObject var triageListViewModel = TriageListViewModel()
     
-    var filteredQueue: Filter.Filters = .all
-//    var triageData = triages
+    var filteredQueue: Filter.Filters = .queue
+    
+
+    
     
     var filteredTriages: [Triage] {
         switch filteredQueue {
         case .done:
-            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+            return triageListViewModel.arrOfTriages.filter { (item) in
                 return item.patientState == .done
             }
         case .handled:
@@ -37,6 +39,10 @@ struct TriageListView: View {
     }
     
  
+    
+    
+    
+    
     
     var body: some View {
 
@@ -74,34 +80,19 @@ struct TriageListView: View {
                                         .resizable()
                                         .frame(width: 26, height: 25, alignment: .top)
                                         .cornerRadius(6)
-                                    
                                 }.padding()
                             }
-                           
                         }
                     }.padding()
-                   
+                    .onAppear(perform: {
+                        let hospitalID = "SILOAM2122"
+                            triageListViewModel.query(hospitalID: hospitalID)
+                          
+                        })
                 }
- 
             }
-        }.onAppear(perform: {
-        let hospitalID = "SILOAM2122"
-            triageListViewModel.query(hospitalID: hospitalID)
-        
-            
-            //outputnya [] []
-          
-            
-        })
-        
+        }
     }
-    
-    mutating func setFilter() {
-        
-    }
-    
-    
-    
 }
 
 struct triageList_Previews: PreviewProvider {

@@ -21,16 +21,14 @@ struct PatientDetailView: View {
                     
                     HStack{
                         VStack{
-                            Spacer(minLength: 15)
+                           
                             HStack{
                                 Text(triages!.name!)
                                     .multilineTextAlignment(.leading)
-                                    .font(Font.custom(nameBold, size: 24 ))
+                                    .font(Font.custom(nameBold, size: 20 ))
                                 
                                 Spacer()
                             }
-                            
-                            
                             
                             HStack{
                                 ZStack{
@@ -47,7 +45,31 @@ struct PatientDetailView: View {
                                 }
                                 Spacer()
                             }
-                            Spacer(minLength: 20)
+                            
+                            HStack{
+                                Text("Start:")
+                                    .font(Font.custom(nameBold, size: 12))
+                                ZStack{
+                                    colorTeal
+                                        .cornerRadius(10)
+                                    Text("\(triages!.startTime)")
+                                        .font(Font.custom(nameBold, size: 12))
+                                        .foregroundColor(.white)
+                                    
+                                }
+                                Text("End:")
+                                    .font(Font.custom(nameBold, size: 12))
+                                ZStack{
+                                    colorLightGreen
+                                        .cornerRadius(10)
+                                    Text("\(triages!.endTime)")
+                                        .foregroundColor(.white)
+                                        .font(Font.custom(nameBold, size: 12))
+                                    
+                                    
+                                }
+                            }
+                            
                             
                         }.frame(width: 200, height: 100, alignment: .leading)
                         
@@ -61,6 +83,7 @@ struct PatientDetailView: View {
                     
                 }
                 .frame(width: 330, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .scaleEffect(/*@START_MENU_TOKEN@*/CGSize(width: 1.0, height: 1.0)/*@END_MENU_TOKEN@*/)
                 
             }
             .frame(width: 360, height: 100, alignment: .center)
@@ -79,29 +102,29 @@ struct PatientDetailView: View {
                 // DATA DIBAWAH ADALAH DUMMY
                 
                 VStack{
-                HStack{
-                    Text("jalan nafas : ")
-                        .font(Font.custom(nameBold, size: 18))
-                        .foregroundColor(colorPurple)
-                    
-                    Spacer()
-                    Text(triages?.jalanNafas?.rawValue ?? " ")
+                    HStack{
+                        Text("jalan nafas : ")
+                            .font(Font.custom(nameBold, size: 18))
+                            .foregroundColor(colorPurple)
                         
-                }
-                
-                
-                
-                HStack{
-                    Text("distrses : ")
-                        .font(Font.custom(nameBold, size: 18))
-                        .foregroundColor(colorPurple)
-                    
-                    Spacer()
-                    Text(triages?.distress?.rawValue ?? " ")
+                        Spacer()
+                        Text(triages?.jalanNafas?.rawValue ?? " ")
                         
-                }
+                    }
                     
-                
+                    
+                    
+                    HStack{
+                        Text("distrses : ")
+                            .font(Font.custom(nameBold, size: 18))
+                            .foregroundColor(colorPurple)
+                        
+                        Spacer()
+                        Text(triages?.distress?.rawValue ?? " ")
+                        
+                    }
+                    
+                    
                     HStack{
                         Text("laju pernafasan : ")
                             .font(Font.custom(nameBold, size: 18))
@@ -109,7 +132,7 @@ struct PatientDetailView: View {
                         
                         Spacer()
                         Text(triages?.respiratoryRate?.rawValue ?? " ")
-                            
+                        
                     }
                     
                     HStack{
@@ -119,7 +142,7 @@ struct PatientDetailView: View {
                         
                         Spacer()
                         Text(triages?.hentiNafas?.rawValue ?? " ")
-                            
+                        
                     }
                     
                     HStack{
@@ -129,7 +152,7 @@ struct PatientDetailView: View {
                         
                         Spacer()
                         Text(triages?.hipoventilasi?.description ?? " ")
-                            
+                        
                     }
                     
                     HStack{
@@ -139,7 +162,7 @@ struct PatientDetailView: View {
                         
                         Spacer()
                         Text(triages?.hemodinamik?.rawValue ?? " ")
-                            
+                        
                     }
                     
                     HStack{
@@ -149,7 +172,7 @@ struct PatientDetailView: View {
                         
                         Spacer()
                         Text(triages?.nadi?.rawValue ?? " ")
-                            
+                        
                     }
                     
                     HStack{
@@ -159,7 +182,7 @@ struct PatientDetailView: View {
                         
                         Spacer()
                         Text(triages?.denyutNadi?.rawValue ?? " ")
-                            
+                        
                     }
                     
                     HStack{
@@ -169,7 +192,7 @@ struct PatientDetailView: View {
                         
                         Spacer()
                         Text(triages?.warnaKulit?.rawValue ?? " ")
-                            
+                        
                     }
                     
                     HStack{
@@ -179,11 +202,11 @@ struct PatientDetailView: View {
                         
                         Spacer()
                         Text("\(triages?.gcs ?? 0)")
-                            
+                        
                     }
                     
-                   //VSTACK MAXIMUM IS 10==================
-                   
+                    //VSTACK MAXIMUM IS 10==================
+                    
                     
                 }.padding(.horizontal, 30)
                 
@@ -200,20 +223,20 @@ struct PatientDetailView: View {
                 
                 
             }.position(x: UIScreen.main.bounds.midX)
-          
+            
             
             
             
             
             Button(action: {}, label: {
                 ZStack{
-                colorPurple
-                    .frame(width: 350, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .cornerRadius(24)
-                Text("Handle")
-                    .font(Font.custom(nameBold, size: 16))
-                    .foregroundColor(.white)
-            }
+                    colorPurple
+                        .frame(width: 350, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .cornerRadius(24)
+                    Text("Handle")
+                        .font(Font.custom(nameBold, size: 16))
+                        .foregroundColor(.white)
+                }
             })
             
         }

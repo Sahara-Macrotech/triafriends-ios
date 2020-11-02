@@ -144,8 +144,13 @@ struct Triage: Identifiable {
         case kooperatif = "Kooperatif"
         case agitasi = "Agitasi"
         case tidakKooperatif = "Tidak kooperatif"
+        
+        
+        
     }
     
+    var startTime: Int
+    var endTime: Int
     
     
     
@@ -177,6 +182,10 @@ struct ReceivedTriage: Codable {
     let warnaKulit: String
     let hentiNafas: String
     
+    //Next pake time formatter
+    let startTime: Int
+    let endTime: Int
+    
 }
 
 
@@ -191,30 +200,16 @@ struct ReceivedTriage: Codable {
 
 
 //Dummy datas--------------------------------------------------------
-var dummyTriages = [
-    
-    Triage(id: "1", status: 2, name: "arie may wibowo", patientState: .queue, jalanNafas: .paten, distress: .RRnormal, respiratoryRate: .RRlessthan30, hentiNafas: .berhenti, hipoventilasi: true, hemodinamik: .berat, nadi: .lemahKuat, denyutNadi: .kapilerLessthan2, warnaKulit: .merahHangat, gcs: 3, psikologis: .agitasi),
-    
-    Triage(id: "2", status: 0, name: "iswandi sahputra", patientState: .queue, jalanNafas: .paten, distress: .berat, respiratoryRate: .RRnormal, hentiNafas: .berhenti, hipoventilasi: true, hemodinamik: .berat, nadi: .normal, denyutNadi: .kapilerLessthan2, warnaKulit: .merahHangat, gcs: 2, psikologis: .agitasi),
-    
-    Triage(id: "3", status: 1, name: "samuel christian", patientState: .done, jalanNafas: .none, distress: .RRnormal, respiratoryRate: .RRlessthan30, hentiNafas: .berhenti, hipoventilasi: true, hemodinamik: .berat, nadi: .lemahKuat, denyutNadi: .kapilerLessthan2, warnaKulit: .merahHangat, gcs: 3, psikologis: .agitasi),
-    
-    Triage(id: "4", status: 0, name: "I*** S***", patientState: .queue),
-    Triage(id: "5", status: 1, name: "I*** S***", patientState: .queue),
-    Triage(id: "6", status: 1, name: "I*** S***", patientState: .queue),
-    Triage(id: "7", status: 1, name: "I*** S***", patientState: .queue),
-    Triage(id: "8", status: 1, name: "I*** S***", patientState: .queue),
-    Triage(id: "9", status: 1, name: "I*** S***", patientState: .handled),
-    Triage(id: "10", status: 1, name: "H*** H***", patientState: .handled),
-    Triage(id: "11", status: 1, name: "H*** H***", patientState: .handled),
-    Triage(id: "12", status: 1, name: "I*** S***", patientState: .queue),
-    Triage(id: "13", status: 1, name: "I*** S***", patientState: .queue),
-    Triage(id: "14", status: 1, name: "I*** S***", patientState: .queue),
-    Triage(id: "15", status: 1, name: "D*** D***", patientState: .done),
-    Triage(id: "16", status: 1, name: "D*** D***", patientState: .done),
-    
-    
-]
+//var dummyTriages = [
+//    
+//    Triage(id: "1", status: 2, name: "arie may wibowo", patientState: .queue, jalanNafas: .paten, distress: .RRnormal, respiratoryRate: .RRlessthan30, hentiNafas: .berhenti, hipoventilasi: true, hemodinamik: .berat, nadi: .lemahKuat, denyutNadi: .kapilerLessthan2, warnaKulit: .merahHangat, gcs: 3, psikologis: .agitasi),
+//    
+//    Triage(id: "2", status: 0, name: "iswandi sahputra", patientState: .queue, jalanNafas: .paten, distress: .berat, respiratoryRate: .RRnormal, hentiNafas: .berhenti, hipoventilasi: true, hemodinamik: .berat, nadi: .normal, denyutNadi: .kapilerLessthan2, warnaKulit: .merahHangat, gcs: 2, psikologis: .agitasi),
+//    
+//    Triage(id: "3", status: 1, name: "samuel christian", patientState: .done, jalanNafas: .none, distress: .RRnormal, respiratoryRate: .RRlessthan30, hentiNafas: .berhenti, hipoventilasi: true, hemodinamik: .berat, nadi: .lemahKuat, denyutNadi: .kapilerLessthan2, warnaKulit: .merahHangat, gcs: 3, psikologis: .agitasi),
+//    
+//    
+//]
 
 var arr = ["ab","cc","dd","ae"]
 
@@ -443,12 +438,13 @@ class TriageListViewModel: ObservableObject{
             }
             
             
-            DispatchQueue.main.async {
+            var sT = i.triage.startTime
+            var eT = i.triage.endTime
                 
             
-            self.arrOfTriages.append(Triage(id: id, status: status, name: name, patientState: ps, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p))
+            self.arrOfTriages.append(Triage(id: id, status: status, name: name, patientState: ps, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p, startTime: sT, endTime: eT))
                // print(self.arrOfTriages)
-            }
+            
         }
        
         // return arrOfTriage

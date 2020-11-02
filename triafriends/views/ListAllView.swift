@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 
 struct ListAllView: View {
@@ -58,6 +59,7 @@ struct ListAllView: View {
 
                 Button(action: {
                     selectedColoumn = .done
+                    print(selectedColoumn)
                 }, label: {
                     Text("Done")
                         .font(.custom(selectedColoumn == .done ? nameBold : nameSemiBold, size: selectedColoumn == .done ? 24 : 18))
