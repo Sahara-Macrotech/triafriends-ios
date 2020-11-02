@@ -11,10 +11,10 @@ import Combine
 
 struct TriageListView: View {
     
-    @ObservedObject var triageListViewModel = TriageListViewModel()
+    @ObservedObject var triageListViewModel: TriageListViewModel = TriageListViewModel.sharedInstance
     
     var filteredQueue: Filter.Filters = .all
-//    var triageData = triages
+    
     
     var filteredTriages: [Triage] {
         switch filteredQueue {
@@ -27,6 +27,7 @@ struct TriageListView: View {
                 return item.patientState == .handled
             }
         case .queue:
+            print(triageListViewModel.arrOfTriages)
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
                 return item.patientState == .queue
             }
