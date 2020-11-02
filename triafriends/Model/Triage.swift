@@ -38,10 +38,10 @@ struct Triage: Identifiable {
     var status: Int?
     var name: String?
     var patientState: PatientState?
-    enum PatientState {
-        case queue
-        case handled
-        case done
+    enum PatientState: String {
+        case queue = "Queue"
+        case handled = "Handled"
+        case done = "Done"
         
     }
     
@@ -285,9 +285,9 @@ class TriageListViewModel: ObservableObject{
                 
                 var ps: Triage.PatientState
                 switch i.triage.patientState {
-                case "handled":
+                case Triage.PatientState.handled.rawValue:
                     ps = .handled
-                case "done":
+                case Triage.PatientState.done.rawValue:
                     ps = .done
                 default:
                     ps = .queue
@@ -297,11 +297,11 @@ class TriageListViewModel: ObservableObject{
                 //JALAN NAFAS
                 var jN: Triage.JalanNafas
                 switch i.triage.jalanNafas {
-                case "p":
+                case Triage.JalanNafas.paten.rawValue:
                     jN = Triage.JalanNafas.paten
-                case "ss":
+                case Triage.JalanNafas.sumbatanSebagian.rawValue:
                     jN = Triage.JalanNafas.sumbatanSebagian
-                case "st":
+                case Triage.JalanNafas.sumbatanTotal.rawValue:
                     jN = Triage.JalanNafas.sumbatanTotal
                 default:
                     jN = Triage.JalanNafas.paten
@@ -311,15 +311,15 @@ class TriageListViewModel: ObservableObject{
                 //DISTRESS
                 var d: Triage.Distress
                 switch i.triage.distress {
-                case "rrn":
+                case Triage.Distress.RRnormal.rawValue:
                     d = Triage.Distress.RRnormal
-                case "ta":
+                case Triage.Distress.tidakAda.rawValue:
                     d = Triage.Distress.tidakAda
-                case "r":
+                case Triage.Distress.ringan.rawValue:
                     d = Triage.Distress.ringan
-                case "s":
+                case Triage.Distress.sedang.rawValue:
                     d = Triage.Distress.sedang
-                case "b":
+                case Triage.Distress.berat.rawValue:
                     d = Triage.Distress.berat
                 default:
                     d = Triage.Distress.tidakAda
@@ -330,15 +330,15 @@ class TriageListViewModel: ObservableObject{
                 
                 var rR: Triage.RespiratoryRate
                 switch i.triage.respiratoryRate {
-                case "kb":
+                case Triage.RespiratoryRate.komunikasiBaik.rawValue:
                     rR = Triage.RespiratoryRate.komunikasiBaik
-                case "rrn":
+                case Triage.RespiratoryRate.RRnormal.rawValue:
                     rR = Triage.RespiratoryRate.RRnormal
-                case "rrl30":
+                case Triage.RespiratoryRate.RRlessthan30.rawValue:
                     rR = Triage.RespiratoryRate.RRlessthan30
-                case "rrm30":
+                case Triage.RespiratoryRate.RRmorethan30.rawValue:
                     rR = Triage.RespiratoryRate.RRmorethan30
-                case "tmb":
+                case Triage.RespiratoryRate.tidakMampuBicara.rawValue:
                     rR = Triage.RespiratoryRate.tidakMampuBicara
                 default:
                     rR = Triage.RespiratoryRate.komunikasiBaik
@@ -349,9 +349,9 @@ class TriageListViewModel: ObservableObject{
                 //HENTI NAFAS
                 var hN: Triage.HentiNafas
                 switch i.triage.hentiNafas {
-                case "b":
+                case Triage.HentiNafas.berhenti.rawValue:
                     hN = Triage.HentiNafas.berhenti
-                case "pob":
+                case Triage.HentiNafas.pengunaanOtotBantu.rawValue:
                     hN = Triage.HentiNafas.pengunaanOtotBantu
                 default:
                     //PUT NORMAL CONDITION HERE
@@ -359,7 +359,7 @@ class TriageListViewModel: ObservableObject{
                     
                 }
                 
-                
+               
                 //HIPOVENTILASI
                 var hv: Bool
                 switch i.triage.hipoventilasi {
@@ -375,13 +375,13 @@ class TriageListViewModel: ObservableObject{
                 //HEMODINAMIK
                 var hd: Triage.Hemodinamik
                 switch i.triage.hemodinamik {
-                case "ta":
+                case Triage.Hemodinamik.tidakAda.rawValue:
                     hd = .tidakAda
-                case "r":
+                case Triage.Hemodinamik.ringan.rawValue:
                     hd = .ringan
-                case "s":
+                case Triage.Hemodinamik.sedang.rawValue:
                     hd = .sedang
-                case "b":
+                case Triage.Hemodinamik.berat.rawValue:
                     hd = .berat
                 default:
                     hd = .tidakAda
@@ -390,15 +390,15 @@ class TriageListViewModel: ObservableObject{
                 //NADI
                 var n: Triage.Nadi
                 switch i.triage.nadi {
-                case "n":
+                case Triage.Nadi.normal.rawValue:
                     n = .normal
-                case "t":
+                case Triage.Nadi.teraba.rawValue:
                     n = .teraba
-                case "lk":
+                case Triage.Nadi.lemahKuat.rawValue:
                     n = .lemahKuat
-                case "sh":
+                case Triage.Nadi.sangatHalus.rawValue:
                     n = .sangatHalus
-                case "tt":
+                case Triage.Nadi.tidakTeraba.rawValue:
                     n = .tidakTeraba
                 default:
                     n = .normal
@@ -407,13 +407,13 @@ class TriageListViewModel: ObservableObject{
                 //DENYUT NADI
                 var dN: Triage.DenyutNadi
                 switch i.triage.denyutNadi {
-                case "t":
+                case Triage.DenyutNadi.teraba.rawValue:
                     dN = .teraba
-                case "kl2":
+                case Triage.DenyutNadi.kapilerLessthan2.rawValue:
                     dN = .kapilerLessthan2
-                case "km2":
+                case Triage.DenyutNadi.kapilerMorethan2.rawValue:
                     dN = .kapilerMorethan2
-                case "pa":
+                case Triage.DenyutNadi.perdarahanAktif.rawValue:
                     dN = .perdarahanAktif
                 default:
                     dN = .teraba
@@ -422,9 +422,9 @@ class TriageListViewModel: ObservableObject{
                 //WARNA KULIT
                 var wK: Triage.WarnaKulit
                 switch i.triage.warnaKulit {
-                case "mh":
+                case Triage.WarnaKulit.merahHangat.rawValue:
                     wK = .merahHangat
-                case "pmh":
+                case Triage.WarnaKulit.pucatMerahHangat.rawValue:
                     wK = .pucatMerahHangat
                 default:
                     wK = .merahHangat
@@ -439,11 +439,11 @@ class TriageListViewModel: ObservableObject{
                 
                 var p: Triage.Psikologis
                 switch i.triage.psikologis {
-                case "k":
+                case Triage.Psikologis.kooperatif.rawValue:
                     p = .kooperatif
-                case "a":
+                case Triage.Psikologis.agitasi.rawValue:
                     p = .agitasi
-                case "tk":
+                case Triage.Psikologis.tidakKooperatif.rawValue:
                     p = .tidakKooperatif
                 default:
                     p = .kooperatif
