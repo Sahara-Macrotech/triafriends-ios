@@ -41,9 +41,11 @@ struct ContentView: View {
                             destination: Profile(),
                             label: {
                                 Image("1")
-                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/, style: /*@START_MENU_TOKEN@*/FillStyle()/*@END_MENU_TOKEN@*/)
+                                    .clipShape(Circle(), style: FillStyle())
+                                    
                         })
                     }.padding(.horizontal)
+                   
                     
                     Spacer()
                    

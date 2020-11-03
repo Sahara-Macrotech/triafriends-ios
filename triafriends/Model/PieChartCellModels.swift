@@ -52,20 +52,20 @@ struct ChartViewModels {
         
         var x = triageListViewModel.arrOfTriages.filter { (item) in
             print(item)
-            return item.status == 0
+            return item.status == 5
            
         }
         var y = triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-            return item.status == 2
+            return item.status == 1 || item.status == 2
            
         }
         var z = triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-            return item.status == 1
+            return item.status == 3 || item.status == 4
            
         }
         
         var b = triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-            return item.status == 3
+            return item.status == 6
         }
         
         var yellow = z.count // 

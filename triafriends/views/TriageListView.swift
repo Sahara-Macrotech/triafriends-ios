@@ -32,15 +32,15 @@ struct TriageListView: View {
             }
         case .red:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 2
+                return item.status == 1 || item.status == 2
             }
         case .yellow:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 1
+                return item.status == 3 || item.status == 4
             }
         case .green:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 0
+                return item.status == 5
             }
         case .date:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
@@ -53,7 +53,7 @@ struct TriageListView: View {
        
         case .black:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 3
+                return item.status == 6
             }
         }
     }
@@ -96,7 +96,7 @@ struct TriageListView: View {
                                     
                                     Text(triages.name!)
                                         .font(Font.custom(nameBold, size: 16))
-                                        Text("Category 5 (dummy)")
+                                        Text("Category \(triages.status!)")
                                             .font(.custom(nameSemiBold, size: 10))
                                             .foregroundColor(colorTextGray)
                                     }
@@ -124,12 +124,14 @@ struct TriageListView: View {
     func statToColor(stat: Int) -> Color {
         var color: Color = .white
         
-        if stat == 0 {
+        if stat == 5 {
             color = colorGreen
-        } else if stat == 1 {
+        } else if stat == 3 || stat == 4 {
             color = colorYellow
-        } else if stat == 2 {
+        } else if stat == 1 || stat == 2 {
             color = colorRed
+        } else {
+            color = .black
         }
         return color
     }
