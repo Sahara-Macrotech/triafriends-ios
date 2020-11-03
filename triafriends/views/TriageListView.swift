@@ -91,8 +91,15 @@ struct TriageListView: View {
                                     })
 
                                 HStack{
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        
+                                    
                                     Text(triages.name!)
                                         .font(Font.custom(nameBold, size: 16))
+                                        Text("Category 5 (dummy)")
+                                            .font(.custom(nameSemiBold, size: 10))
+                                            .foregroundColor(colorTextGray)
+                                    }
                                     
                                     Spacer()
                                     //TODO : ganti image jadi color yang sudah diset interface
@@ -100,7 +107,8 @@ struct TriageListView: View {
                                         .frame(width: 26, height: 25, alignment: .top)
                                         .cornerRadius(radius)
                                     
-                                }.padding()
+                                }.padding(.horizontal)
+                                .padding(.vertical, 7)
                             }
                         }
                     }.padding()
