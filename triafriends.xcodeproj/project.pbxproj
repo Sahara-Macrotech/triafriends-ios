@@ -11,6 +11,10 @@
 		7F2A48062546786600413941 /* CongratulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A48052546786600413941 /* CongratulationView.swift */; };
 		7F2A4809254679ED00413941 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2A4808254679ED00413941 /* SignUpView.swift */; };
 		7F5642EB25471A7A0012A026 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5642EA25471A7A0012A026 /* HistoryView.swift */; };
+		7F6A5EB32550521D0010CF73 /* NewHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EB22550521C0010CF73 /* NewHistoryView.swift */; };
+		7F6A5EB7255054770010CF73 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EB6255054770010CF73 /* PieChartCell.swift */; };
+		7F6A5EBB255054B60010CF73 /* PieChartCellModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EBA255054B60010CF73 /* PieChartCellModels.swift */; };
+		7F6A5EBF255055590010CF73 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EBE255055590010CF73 /* PieChart.swift */; };
 		7F81F60A25481F86005CF298 /* SignInWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81F60925481F86005CF298 /* SignInWithAppleCoordinator.swift */; };
 		7FA2D5F8254742F5009735AB /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA2D5F7254742F5009735AB /* Report.swift */; };
 		7FB2F7A42546580F00FC046E /* SignMeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2F7A32546580F00FC046E /* SignMeUpView.swift */; };
@@ -34,6 +38,10 @@
 		7F2A48052546786600413941 /* CongratulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationView.swift; sourceTree = "<group>"; };
 		7F2A4808254679ED00413941 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		7F5642EA25471A7A0012A026 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		7F6A5EB22550521C0010CF73 /* NewHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHistoryView.swift; sourceTree = "<group>"; };
+		7F6A5EB6255054770010CF73 /* PieChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
+		7F6A5EBA255054B60010CF73 /* PieChartCellModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PieChartCellModels.swift; path = triafriends/utils/PieChartCellModels.swift; sourceTree = SOURCE_ROOT; };
+		7F6A5EBE255055590010CF73 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		7F81F60925481F86005CF298 /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
 		7FA2D5F7254742F5009735AB /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Report.swift; path = triafriends/views/Report.swift; sourceTree = SOURCE_ROOT; };
 		7FB2F7842546462200FC046E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,8 +90,17 @@
 			isa = PBXGroup;
 			children = (
 				7FA2D5F7254742F5009735AB /* Report.swift */,
+				7F6A5EBA255054B60010CF73 /* PieChartCellModels.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		7F6A5EB5255054590010CF73 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				7F6A5EB6255054770010CF73 /* PieChartCell.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		7F81F60825481F5E005CF298 /* Services */ = {
@@ -124,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				7FF74042254B9C13000A260A /* GoogleService-Info.plist */,
+				7F6A5EB5255054590010CF73 /* utils */,
 				7F81F60825481F5E005CF298 /* Services */,
 				7F2A47F72546622500413941 /* models */,
 				8D6B4A5C254422CE00B2C380 /* helpers */,
@@ -168,6 +186,8 @@
 				7F2A48052546786600413941 /* CongratulationView.swift */,
 				7F2A4808254679ED00413941 /* SignUpView.swift */,
 				7F5642EA25471A7A0012A026 /* HistoryView.swift */,
+				7F6A5EB22550521C0010CF73 /* NewHistoryView.swift */,
+				7F6A5EBE255055590010CF73 /* PieChart.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -305,17 +325,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */,
+				7F6A5EB32550521D0010CF73 /* NewHistoryView.swift in Sources */,
 				7F2A48062546786600413941 /* CongratulationView.swift in Sources */,
 				7FB2F7A42546580F00FC046E /* SignMeUpView.swift in Sources */,
 				8D99A43825416E67006FF45A /* ContentView.swift in Sources */,
 				7F2A48032546746200413941 /* ThankYouView.swift in Sources */,
+				7F6A5EBB255054B60010CF73 /* PieChartCellModels.swift in Sources */,
 				8D99A43625416E67006FF45A /* triafriendsApp.swift in Sources */,
 				7F2A4809254679ED00413941 /* SignUpView.swift in Sources */,
+				7F6A5EBF255055590010CF73 /* PieChart.swift in Sources */,
 				8D6B4A5A25441F4400B2C380 /* LoginView.swift in Sources */,
 				7F81F60A25481F86005CF298 /* SignInWithAppleCoordinator.swift in Sources */,
 				8D6B4A5E254422D900B2C380 /* SignInWithApple.swift in Sources */,
 				7F5642EB25471A7A0012A026 /* HistoryView.swift in Sources */,
 				8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */,
+				7F6A5EB7255054770010CF73 /* PieChartCell.swift in Sources */,
 				7FF7406E254BAC88000A260A /* FaceBookLoginView.swift in Sources */,
 				7FA2D5F8254742F5009735AB /* Report.swift in Sources */,
 			);

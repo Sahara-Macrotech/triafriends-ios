@@ -11,12 +11,13 @@ import FBSDKLoginKit
 import Firebase
 
 struct FaceBookLoginView: UIViewRepresentable {
-    
+   
     func makeCoordinator() -> FaceBookLoginView.Coordinator {
         return FaceBookLoginView.Coordinator()
     }
     
     class Coordinator: NSObject, LoginButtonDelegate {
+        let loginView = LoginCard()
         func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
             if let error = error {
                 print(error.localizedDescription)
@@ -48,9 +49,12 @@ struct FaceBookLoginView: UIViewRepresentable {
                     print("User signs up successfully")
                     let newUserInfo = Auth.auth().currentUser
                     let email = newUserInfo?.email
+                    let name = newUserInfo?.displayName
+                    let id = newUserInfo?.uid
+                    self.loginView.isAuthorized = true
                     
-                    print("Facebook Sign In")
-                   SignMeUpView()
+                    print("Facebook Sign In \(email) \(name) \(id)")
+                   
                 }
                 
             }

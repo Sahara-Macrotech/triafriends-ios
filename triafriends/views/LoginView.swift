@@ -13,7 +13,7 @@ import FBSDKLoginKit
 
 let screen = UIScreen.main.bounds
 struct Code: View {
-    
+   
     var body: some View {
         ZStack {
             VStack {
@@ -25,80 +25,11 @@ struct Code: View {
         .background(Color.init(red: 75/255, green: 39/255, blue: 102/255, opacity: 1))
         .ignoresSafeArea()
         
-//        VStack {
-//
-//            //Print current userID from Firebase
-//            Button(action:{print("Current UserID: \(String(describing: Auth.auth().currentUser?.uid))")}){
-//                Text("Print Current User")
-//            }.frame(width: UIScreen.main.bounds.width/1.5, height: 50, alignment: .center)
-//
-//            //Sign out of Firebase Button
-//            Button(action:{print("Signed Out"); do{try Auth.auth().signOut()}catch{ print("Err")}}){
-//                Text("Sign Out")
-//            }.frame(width: UIScreen.main.bounds.width/1.5, height: 50, alignment: .center)
-//
-//            //Sign in with Apple button
-//            SignInWithAppleButton(
-//
-//                //Request
-//                onRequest: { request in
-//                    let nonce = randomNonceString()
-//                    currentNonce = nonce
-//                    request.requestedScopes = [.fullName, .email]
-//                    request.nonce = sha256(nonce)
-//                },
-//
-//                //Completion
-//                onCompletion: { result in
-//                    switch result {
-//                        case .success(let authResults):
-//                            switch authResults.credential {
-//                                case let appleIDCredential as ASAuthorizationAppleIDCredential:
-//
-//                                        guard let nonce = currentNonce else {
-//                                          fatalError("Invalid state: A login callback was received, but no login request was sent.")
-//                                        }
-//                                        guard let appleIDToken = appleIDCredential.identityToken else {
-//                                            fatalError("Invalid state: A login callback was received, but no login request was sent.")
-//                                        }
-//                                        guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
-//                                          print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
-//                                          return
-//                                        }
-//
-//                                        //Creating a request for firebase
-//                                        let credential = OAuthProvider.credential(withProviderID: "apple.com",idToken: idTokenString,rawNonce: nonce)
-//
-//                                        //Sending Request to Firebase
-//                                        Auth.auth().signIn(with: credential) { (authResult, error) in
-//                                            if (error != nil) {
-//                                                // Error. If error.code == .MissingOrInvalidNonce, make sure
-//                                                // you're sending the SHA256-hashed nonce as a hex string with
-//                                                // your request to Apple.
-//                                                print(error?.localizedDescription as Any)
-//                                                return
-//                                            }
-//                                            // User is signed in to Firebase with Apple.
-//                                            print("you're in")
-//                                        }
-//
-//                                    //Prints the current userID for firebase
-//                                    print("\(String(describing: Auth.auth().currentUser?.uid))")
-//                            default:
-//                                break
-//
-//                                    }
-//                           default:
-//                                break
-//                        }
-//
-//                }
-//            ).frame(width: UIScreen.main.bounds.width/1.5, height: 50, alignment: .center)
-//        }
     }
 }
 
 struct LoginCard: View {
+    @State var isAuthorized = false
     @ObservedObject var fbmanager = UserLoginManager()
     @Environment(\.presentationMode) var presentationMode
     @State var coordinator : SignInWithAppleCoordinator?
@@ -106,7 +37,7 @@ struct LoginCard: View {
     @AppStorage("logged") var logged = false
     @AppStorage("email") var email = ""
     @State var manager = LoginManager()
-    
+   static let instance = LoginCard()
     
     //Variable to keep track of nonce
     @State var currentNonce:String?
@@ -156,6 +87,9 @@ struct LoginCard: View {
     }
     //testting
     var body: some View {
+        if isAuthorized == true {
+            SignMeUpView()
+        }else{
         ZStack (alignment: .bottom) {
             Rectangle()
                 .frame(width: screen.width, height: screen.height * 0.5, alignment: .center)
@@ -228,8 +162,11 @@ struct LoginCard: View {
                                                     print(error?.localizedDescription as Any)
                                                     return
                                                 }
+                                                 
                                                 // User is signed in to Firebase with Apple.
                                                 print("you're in")
+                                                isAuthorized = true
+                                             
                                             
                                             }
                                     
@@ -288,7 +225,8 @@ struct LoginCard: View {
             
           
             
-        }
+        }}
+       
         
     }
 }
