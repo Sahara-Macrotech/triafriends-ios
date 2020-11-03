@@ -19,54 +19,74 @@ struct ContentView: View {
         
         NavigationView{
             
-            VStack{
+            ZStack{
                 
-                
-                ExtractedView()
-                
-                TriageListView()
-                    .cornerRadius(0)
-                    .scaleEffect(CGSize(width: 0.9, height: 0.9))
-                
-                //Title Laporan Harian and button
-                HStack{
-                    Text("Laporan Harian")
-                        .font(.title2)
-                        .bold()
-                    
+                VStack{
                     Spacer()
-                    
-                    //Dummy button
-                    NavigationLink(
-                        destination: ListAllView(selectedColoumn: .queue),
-                        label: {
-                            Text("Lihat semua")
-                        })
-                    
-                }
-                .padding()
-                Spacer()
-                    
-                //Horizontal View Stack  laporan harian
-                HStack{
-                    ReportView()
-                        .scaleEffect(0.8)
-                    Spacer()
-                    ReportView()
-                        .scaleEffect(0.8)
-                }
-                .padding()
-                
-            }
-            .navigationTitle(
+                    HStack{
+                        
                     Text(accountData.username)
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-            )
+                        .font(.custom(nameExtraBold, size: 36))
+                        Spacer()
+                        NavigationLink(
+                            destination: Profile(),
+                            label: {
+                                Image("1")
+                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/, style: /*@START_MENU_TOKEN@*/FillStyle()/*@END_MENU_TOKEN@*/)
+                        })
+                    }.padding(.horizontal)
+                    
+                    Spacer()
+                   
+                    ExtractedView()
+                    
+                    TriageListView()
+                        .cornerRadius(0)
+                        .scaleEffect(CGSize(width: 1, height: 1))
+                    
+                    //Title Laporan Harian and button
+                    HStack{
+                        Text("Laporan Harian")
+                            .font(.title2)
+                            .bold()
+                        
+                        Spacer()
+                        
+                        //Dummy button
+                        NavigationLink(
+                            destination: ListAllView(selectedColoumn: .queue),
+                            label: {
+                                Text("Lihat semua")
+                            })
+                        
+                    }
+                    .padding(.horizontal)
+                    Spacer()
+                    
+                    //Horizontal View Stack  laporan harian
+                    HStack{
+                        ReportView()
+                            .scaleEffect(0.8)
+                        Spacer()
+                        ReportView()
+                            .scaleEffect(0.8)
+                    }
+                    
+                    
+                }
+               
+                
+                
+              
+            }.padding(.bottom, 20)
+            
+           
         }.onAppear(perform: {
             helper.queryProfile(uid: dummyUID)
         })
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationBarHidden(true)
+        
+        
     }
     
     
@@ -87,6 +107,7 @@ struct ContentView: View {
     
     struct ExtractedView: View {
         var body: some View {
+            
             HStack{
                 Text("Prioritas Triase")
                     .font(.title2)
@@ -99,10 +120,10 @@ struct ContentView: View {
                     destination: ListAllView(selectedColoumn: .all),
                     label: {
                         Text("Lihat semua")
-                            
+                        
                     })
             }
-            .padding()
+            .padding(.horizontal)
         }
     }
 }

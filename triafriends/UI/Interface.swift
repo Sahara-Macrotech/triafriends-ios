@@ -24,7 +24,7 @@ var radius: CGFloat = 6
     var colorLightGreen = Color(red: 0.17, green: 0.81, blue: 0.43)
     
 
-
+                //hi abil, change imagestatus to color, and add selamatpagi
 
     var nameBlack = "NunitoSans-Black"
     var nameExtraBold = "NunitoSans-ExtraBold"

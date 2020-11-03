@@ -283,6 +283,7 @@ class TriageListViewModel: ObservableObject{
                 var status = i.triage.status
                 
                 
+                
                 var ps: Triage.PatientState
                 switch i.triage.patientState {
                 case Triage.PatientState.handled.rawValue:

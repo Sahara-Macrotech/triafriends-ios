@@ -32,6 +32,14 @@ class RealtimeDBController {
             let userPhoneNumber = dict["phoneNumber"]
             let userEmail = dict["email"]
             
+            
+            //SAVE TO USERDEFAULT
+            UserDefaults.standard.set(userName, forKey: "name")
+            UserDefaults.standard.set(userRole, forKey: "role")
+            UserDefaults.standard.set(userHospital, forKey: "hospital")
+            UserDefaults.standard.set(userEmail, forKey: "email")
+            UserDefaults.standard.set(userPhoneNumber, forKey: "phone")
+            
         }
     }
     

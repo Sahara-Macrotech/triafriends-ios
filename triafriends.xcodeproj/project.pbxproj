@@ -478,7 +478,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 7QAVKC3WGP;
+				DEVELOPMENT_TEAM = 3QN5S48CNC;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -504,7 +504,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 7QAVKC3WGP;
+				DEVELOPMENT_TEAM = 3QN5S48CNC;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

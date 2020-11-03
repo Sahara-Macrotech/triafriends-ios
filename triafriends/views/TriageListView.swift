@@ -75,10 +75,10 @@ struct TriageListView: View {
                                     
                                     Spacer()
                                     //TODO : ganti image jadi color yang sudah diset interface
-                                    Image("\(triages.status ?? 0)")
-                                        .resizable()
+                                    statToColor(stat: triages.status ?? 0)
                                         .frame(width: 26, height: 25, alignment: .top)
-                                        .cornerRadius(6)
+                                        .cornerRadius(radius)
+                                    
                                 }.padding()
                             }
                         }
@@ -91,6 +91,18 @@ struct TriageListView: View {
                 }
             }
         }
+    }
+    func statToColor(stat: Int) -> Color {
+        var color: Color = .white
+        
+        if stat == 0 {
+            color = colorGreen
+        } else if stat == 1 {
+            color = colorYellow
+        } else if stat == 2 {
+            color = colorRed
+        }
+        return color
     }
 }
 

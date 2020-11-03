@@ -34,11 +34,11 @@ struct PatientDetailView: View {
                                 ZStack{
                                     
                                     colorLightPurple
-                                        .frame(width: 60, height: 30, alignment: .leading)
+                                        .frame(width: 50, height: 25, alignment: .leading)
                                         .cornerRadius(radius)
                                     
-                                    Text("test")
-                                        .font(Font.custom(nameRegular, size: 20))
+                                    Text("TST")
+                                        .font(Font.custom(nameExtraBold, size: 10))
                                         .foregroundColor(colorPurple)
                                     
                                     
@@ -52,8 +52,9 @@ struct PatientDetailView: View {
                                 ZStack{
                                     colorTeal
                                         .cornerRadius(10)
+                                        .frame(width: 46, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                     Text("\(triages!.startTime)")
-                                        .font(Font.custom(nameBold, size: 12))
+                                        .font(Font.custom(nameBold, size: 10))
                                         .foregroundColor(.white)
                                     
                                 }
@@ -62,16 +63,20 @@ struct PatientDetailView: View {
                                 ZStack{
                                     colorLightGreen
                                         .cornerRadius(10)
+                                        .frame(width: 46, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                     Text("\(triages!.endTime)")
                                         .foregroundColor(.white)
-                                        .font(Font.custom(nameBold, size: 12))
+                                        .font(Font.custom(nameBold, size: 10))
                                     
                                     
                                 }
+                                Spacer()
                             }
                             
                             
-                        }.frame(width: 200, height: 100, alignment: .leading)
+                        }
+                        //.frame(width: 200, height: 100, alignment: .leading)
+                        
                         
                         Spacer()
                         colorRed
@@ -104,11 +109,13 @@ struct PatientDetailView: View {
                 VStack{
                     HStack{
                         Text("jalan nafas : ")
-                            .font(Font.custom(nameBold, size: 18))
-                            .foregroundColor(colorPurple)
+                            .font(Font.custom(nameSemiBold, size: 16))
+                            .foregroundColor(.black)
                         
                         Spacer()
                         Text(triages?.jalanNafas?.rawValue ?? " ")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(colorPurple)
                         
                     }
                     
@@ -116,92 +123,110 @@ struct PatientDetailView: View {
                     
                     HStack{
                         Text("distrses : ")
-                            .font(Font.custom(nameBold, size: 18))
-                            .foregroundColor(colorPurple)
+                            .font(Font.custom(nameSemiBold, size: 16))
+                            .foregroundColor(.black)
                         
                         Spacer()
                         Text(triages?.distress?.rawValue ?? " ")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(colorPurple)
                         
                     }
                     
                     
                     HStack{
                         Text("laju pernafasan : ")
-                            .font(Font.custom(nameBold, size: 18))
-                            .foregroundColor(colorPurple)
+                            .font(Font.custom(nameSemiBold, size: 16))
+                            .foregroundColor(.black)
                         
                         Spacer()
                         Text(triages?.respiratoryRate?.rawValue ?? " ")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(colorPurple)
                         
                     }
                     
                     HStack{
                         Text("henti pernafasan : ")
-                            .font(Font.custom(nameBold, size: 18))
-                            .foregroundColor(colorPurple)
+                            .font(Font.custom(nameSemiBold, size: 16))
+                            .foregroundColor(.black)
                         
                         Spacer()
                         Text(triages?.hentiNafas?.rawValue ?? " ")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(colorPurple)
                         
                     }
                     
                     HStack{
                         Text("hipoventilasi : ")
-                            .font(Font.custom(nameBold, size: 18))
-                            .foregroundColor(colorPurple)
+                            .font(Font.custom(nameSemiBold, size: 16))
+                            .foregroundColor(.black)
                         
                         Spacer()
                         Text(triages?.hipoventilasi?.description ?? " ")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(colorPurple)
                         
                     }
                     
                     HStack{
                         Text("hemodinamik : ")
-                            .font(Font.custom(nameBold, size: 18))
-                            .foregroundColor(colorPurple)
+                            .font(Font.custom(nameSemiBold, size: 16))
+                            .foregroundColor(.black)
                         
                         Spacer()
                         Text(triages?.hemodinamik?.rawValue ?? " ")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(colorPurple)
                         
                     }
                     
                     HStack{
                         Text("nadi : ")
-                            .font(Font.custom(nameBold, size: 18))
-                            .foregroundColor(colorPurple)
+                            .font(Font.custom(nameSemiBold, size: 16))
+                            .foregroundColor(.black)
                         
                         Spacer()
                         Text(triages?.nadi?.rawValue ?? " ")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(colorPurple)
                         
                     }
                     
                     HStack{
                         Text("denyut nadi : ")
-                            .font(Font.custom(nameBold, size: 18))
-                            .foregroundColor(colorPurple)
+                            .font(Font.custom(nameSemiBold, size: 16))
+                            .foregroundColor(.black)
                         
                         Spacer()
                         Text(triages?.denyutNadi?.rawValue ?? " ")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(colorPurple)
                         
                     }
                     
                     HStack{
                         Text("warna kulit : ")
-                            .font(Font.custom(nameBold, size: 18))
-                            .foregroundColor(colorPurple)
+                            .font(Font.custom(nameSemiBold, size: 16))
+                            .foregroundColor(.black)
                         
                         Spacer()
                         Text(triages?.warnaKulit?.rawValue ?? " ")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(colorPurple)
                         
                     }
                     
                     HStack{
                         Text("GCS : ")
-                            .font(Font.custom(nameBold, size: 18))
-                            .foregroundColor(colorPurple)
+                            .font(Font.custom(nameSemiBold, size: 16))
+                            .foregroundColor(.black)
                         
                         Spacer()
                         Text("\(triages?.gcs ?? 0)")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(colorPurple)
                         
                     }
                     
@@ -212,10 +237,12 @@ struct PatientDetailView: View {
                 
                 HStack{
                     Text("psikologis : ")
-                        .font(Font.custom(nameBold, size: 18))
-                        .foregroundColor(colorPurple)
+                        .font(Font.custom(nameSemiBold, size: 16))
+                        .foregroundColor(.black)
                     Spacer()
                     Text(triages?.psikologis?.rawValue ?? " ")
+                        .font(Font.custom(nameBold, size: 16))
+                        .foregroundColor(colorPurple)
                 }.padding(.horizontal, 30)
                 
                 
