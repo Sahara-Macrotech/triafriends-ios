@@ -51,6 +51,10 @@ struct TriageListView: View {
         case .all:
             return triageListViewModel.arrOfTriages
        
+        case .black:
+            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+                return item.status == 3
+            }
         }
     }
     

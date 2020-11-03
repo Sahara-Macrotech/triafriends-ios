@@ -23,6 +23,7 @@ struct Filter {
         case yellow
         case green
         case date
+        case black
     }
     
 }

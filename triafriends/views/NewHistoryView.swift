@@ -11,6 +11,15 @@ struct NewHistoryView: View {
     @State var selectedPie: String = ""
     @State var selectedDonut: String = ""
     @State var colorFilter: Filter.Filters?
+    let cvm = ChartViewModels()
+    
+    @State var sample = [ ChartCellModel(color: colorRed, value: 120, name: "Gawat Darurat"),
+               ChartCellModel(color: colorYellow, value: 143, name: "Gawat Tidak Darurat"),
+               
+               ChartCellModel(color: colorGreen, value: 120, name: "Darurat Tidak Gawat"),
+               ChartCellModel(color: Color.black, value: 47, name: "Tidak Gawat Tidak Darurat") ]
+    
+    
     
     
     var body: some View {
@@ -57,6 +66,7 @@ struct NewHistoryView: View {
                     Spacer()
                   
                     HStack {
+                        
                         ForEach(sample) { dataSet in
 //                            let moreCount = dataSet.value.count
                             let formattedFloat = String(format: "%.0f", dataSet.value)
@@ -73,7 +83,12 @@ struct NewHistoryView: View {
                   
                 })
             }.navigationBarTitle("History Report")
-        }
+        }.onAppear(perform: {
+            sample[2].value = CGFloat(cvm.getNumbersForChart().g)
+            sample[1].value = CGFloat(cvm.getNumbersForChart().y)
+            sample[0].value = CGFloat(cvm.getNumbersForChart().r)
+            sample[3].value = CGFloat(cvm.getNumbersForChart().b)
+        })
     }
     func colorNameToFilter(color: Color) {
      
@@ -83,9 +98,10 @@ struct NewHistoryView: View {
             colorFilter = .green
         } else if color == colorYellow {
             colorFilter = .yellow
-        } else {
-            colorFilter = .all
+        } else if color == .black {
+            colorFilter = .black
         }
+        //ALL BELUM ADA PILIHANNYA YG RETURN SEMUA
         
     }
 }

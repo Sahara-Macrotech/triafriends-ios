@@ -24,9 +24,18 @@ struct ContentView: View {
                 VStack{
                     Spacer()
                     HStack{
+                        Text("Selamat Pagi,")
+                            .font(.custom(nameRegular, size: 16))
+                            .foregroundColor(colorTextGray)
                         
+                        Spacer()
+                    }.padding(.horizontal)
+                    HStack{
+                   
+    
                     Text(accountData.username)
                         .font(.custom(nameExtraBold, size: 36))
+                        
                         Spacer()
                         NavigationLink(
                             destination: Profile(),
