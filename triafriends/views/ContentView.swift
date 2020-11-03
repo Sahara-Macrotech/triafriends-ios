@@ -24,7 +24,7 @@ struct ContentView: View {
                 VStack{
                     Spacer()
                     HStack{
-                        Text("Selamat Pagi,")
+                        Text("Good morning,")
                             .font(.custom(nameRegular, size: 16))
                             .foregroundColor(colorTextGray)
                         
@@ -57,7 +57,7 @@ struct ContentView: View {
                     
                     //Title Laporan Harian and button
                     HStack{
-                        Text("Laporan Harian")
+                        Text("Daily report")
                             .font(.title2)
                             .bold()
                         
@@ -67,7 +67,7 @@ struct ContentView: View {
                         NavigationLink(
                             destination: ListAllView(selectedColoumn: .queue),
                             label: {
-                                Text("Lihat semua")
+                                Text("See all")
                             })
                         
                     }
@@ -120,7 +120,7 @@ struct ContentView: View {
         var body: some View {
             
             HStack{
-                Text("Prioritas Triase")
+                Text("Triage Priority")
                     .font(.title2)
                     .bold()
                 
@@ -130,7 +130,7 @@ struct ContentView: View {
                 NavigationLink(
                     destination: ListAllView(selectedColoumn: .all),
                     label: {
-                        Text("Lihat semua")
+                        Text("See all")
                         
                     })
             }

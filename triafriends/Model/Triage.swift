@@ -55,29 +55,29 @@ struct Triage: Identifiable {
     //TRIASENYA----------------------------------------
     var jalanNafas: JalanNafas?
     enum JalanNafas: String {
-        case paten = "Paten"
-        case sumbatanSebagian = "Sumbatan Sebagian"
-        case sumbatanTotal = "Sumbatan Total"
+        case paten = "Patent"
+        case sumbatanSebagian = "Partial Blockage"
+        case sumbatanTotal = "Total Blockage"
     }
     
     
     var distress: Distress?
     
     enum Distress: String {
-        case RRnormal = "RR Normal"
-        case tidakAda = "Tidak ada"
-        case ringan = "Ringan"
-        case sedang = "Sedang"
-        case berat = "Berat"
+        case RRnormal = "RR is normal"
+        case tidakAda = "No distress exhalation"
+        case ringan = "Light respiratory distress"
+        case sedang = "Moderate respiratory distress"
+        case berat = "Severe respiratory distress"
     }
     
     var respiratoryRate: RespiratoryRate?
     enum RespiratoryRate: String {
-        case komunikasiBaik = "Komunikasi Baik"
-        case RRnormal = "RR Normal"
-        case RRlessthan30 = "RR < 30"
-        case RRmorethan30 = "RR > 30"
-        case tidakMampuBicara = "Tidak mampu bicara"
+        case komunikasiBaik = "Can communicate well"
+        case RRnormal = "RR is normal"
+        case RRlessthan30 = "RR < 30 x/minute"
+        case RRmorethan30 = "RR > 30 x/minute"
+        case tidakMampuBicara = "Unable to speak"
     }
     
     
@@ -85,8 +85,8 @@ struct Triage: Identifiable {
     //THERES NO NORMAL CONDITION HUH?
     var hentiNafas: HentiNafas?
     enum HentiNafas: String {
-        case berhenti = "Berhenti"
-        case pengunaanOtotBantu = "Penggunaan Otot Bantu"
+        case berhenti = "Stop breathing"
+        case pengunaanOtotBantu = "Use of auxiliary muscles breath"
         case normal = "Normal"
     }
     //make it enum?
@@ -100,39 +100,39 @@ struct Triage: Identifiable {
     
     var hemodinamik: Hemodinamik?
     enum Hemodinamik: String {
-        case tidakAda = "Tidak ada"
+        case tidakAda = "No hemodynamic disturbances"
         //tidakada
-        case ringan = "Ringan"
-        case sedang = "Sedang"
-        case berat = "Berat"
+        case ringan = "Mild hemodynamic disturbances"
+        case sedang = "Moderate hemodynamic disturbances"
+        case berat = "Severe hemodynamic disturbances"
         
     }
     
     
     var nadi: Nadi?
     enum Nadi: String{
-        case normal = "Normal"
-        case teraba = "Teraba"
-        case lemahKuat = "Lemah Kuat"
-        case sangatHalus = "Sangat Halus"
-        case tidakTeraba = "Tidak Teraba"
+        case normal = "Normal pulse"
+        case teraba = "Pulse palpable"
+        case lemahKuat = "Weak-strong"
+        case sangatHalus = "Pulse is not palpable / very smooth"
+        case tidakTeraba = "Pulse is not palpable / cardiac arrest"
     }
     
     
     var denyutNadi: DenyutNadi?
     enum DenyutNadi: String {
-        case teraba = "Teraba"
-        case kapilerLessthan2 = "Kapiler < 2detik"
-        case kapilerMorethan2 = "Kapiler > 2detik"
-        case perdarahanAktif = "Perdarahan aktif"
+        case teraba = "Peripheral pulse is palpable"
+        case kapilerLessthan2 = "Capillary refill < 2 seconds"
+        case kapilerMorethan2 = "Capillary refill > 2 seconds"
+        case perdarahanAktif = "Uncontrolled / active bleeding"
     }
     
     
     
     var warnaKulit: WarnaKulit?
     enum WarnaKulit: String {
-        case merahHangat = "Merah Hangat"
-        case pucatMerahHangat = "Pucat Merah Hangat"
+        case merahHangat = "Reddish skin with warm acral"
+        case pucatMerahHangat = "Pale skin reddish warm acral"
     }
     
     //GCS  MASIH INTEGER
@@ -146,9 +146,9 @@ struct Triage: Identifiable {
     
     var psikologis :Psikologis?
     enum Psikologis: String {
-        case kooperatif = "Kooperatif"
-        case agitasi = "Agitasi"
-        case tidakKooperatif = "Tidak kooperatif"
+        case kooperatif = "Cooperative"
+        case agitasi = "Agitation"
+        case tidakKooperatif = "Not cooperative"
         
         
         

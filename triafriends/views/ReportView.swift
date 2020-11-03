@@ -25,7 +25,7 @@ struct ReportView: View {
         
                
                 
-                Text("Hari Ini")
+                Text("Today")
                     .font(.title2)
                     .bold()
                 
@@ -33,7 +33,7 @@ struct ReportView: View {
         	
         Spacer()
             
-        Text("12 pasien")
+        Text("12 patient")
         
         }
         .padding()

@@ -108,7 +108,7 @@ struct PatientDetailView: View {
                 
                 VStack{
                     HStack{
-                        Text("jalan nafas : ")
+                        Text("Airway : ")
                             .font(Font.custom(nameSemiBold, size: 16))
                             .foregroundColor(.black)
                         
@@ -122,7 +122,7 @@ struct PatientDetailView: View {
                     
                     
                     HStack{
-                        Text("distrses : ")
+                        Text("Distress : ")
                             .font(Font.custom(nameSemiBold, size: 16))
                             .foregroundColor(.black)
                         
@@ -135,7 +135,7 @@ struct PatientDetailView: View {
                     
                     
                     HStack{
-                        Text("laju pernafasan : ")
+                        Text("Respiratory rate : ")
                             .font(Font.custom(nameSemiBold, size: 16))
                             .foregroundColor(.black)
                         
@@ -147,7 +147,7 @@ struct PatientDetailView: View {
                     }
                     
                     HStack{
-                        Text("henti pernafasan : ")
+                        Text("Breathing : ")
                             .font(Font.custom(nameSemiBold, size: 16))
                             .foregroundColor(.black)
                         
@@ -159,7 +159,7 @@ struct PatientDetailView: View {
                     }
                     
                     HStack{
-                        Text("hipoventilasi : ")
+                        Text("Hipoventilation : ")
                             .font(Font.custom(nameSemiBold, size: 16))
                             .foregroundColor(.black)
                         
@@ -171,7 +171,7 @@ struct PatientDetailView: View {
                     }
                     
                     HStack{
-                        Text("hemodinamik : ")
+                        Text("Hemodynamic : ")
                             .font(Font.custom(nameSemiBold, size: 16))
                             .foregroundColor(.black)
                         
@@ -183,7 +183,7 @@ struct PatientDetailView: View {
                     }
                     
                     HStack{
-                        Text("nadi : ")
+                        Text("Pulse : ")
                             .font(Font.custom(nameSemiBold, size: 16))
                             .foregroundColor(.black)
                         
@@ -195,7 +195,7 @@ struct PatientDetailView: View {
                     }
                     
                     HStack{
-                        Text("denyut nadi : ")
+                        Text("Palpitation : ")
                             .font(Font.custom(nameSemiBold, size: 16))
                             .foregroundColor(.black)
                         
@@ -207,7 +207,7 @@ struct PatientDetailView: View {
                     }
                     
                     HStack{
-                        Text("warna kulit : ")
+                        Text("Skin condition : ")
                             .font(Font.custom(nameSemiBold, size: 16))
                             .foregroundColor(.black)
                         
@@ -236,7 +236,7 @@ struct PatientDetailView: View {
                 }.padding(.horizontal, 30)
                 
                 HStack{
-                    Text("psikologis : ")
+                    Text("Psychological : ")
                         .font(Font.custom(nameSemiBold, size: 16))
                         .foregroundColor(.black)
                     Spacer()
