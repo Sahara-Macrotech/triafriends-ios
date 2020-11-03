@@ -41,10 +41,13 @@ struct ContentView: View {
                             destination: Profile(),
                             label: {
                                 Image("1")
-                                    .clipShape(Circle(), style: FillStyle())
+                                    .clipShape(Circle())
                                     
-                        })
+                                    
+                        }).scaleEffect(1.5)
+                            .padding()
                     }.padding(.horizontal)
+                    
                     
                      
                     Spacer()
@@ -96,7 +99,9 @@ struct ContentView: View {
         }.onAppear(perform: {
             helper.queryProfile(uid: dummyUID)
         })
+        .navigationTitle(Text(""))
         .navigationBarHidden(true)
+        
         
         
     }

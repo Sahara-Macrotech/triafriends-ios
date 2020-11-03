@@ -82,7 +82,7 @@ struct ListAllView: View {
             //Filter done view <- viewmodel
                 
                 
-                .scaleEffect(CGSize(width: 0.9, height: 0.9))
+                .scaleEffect(CGSize(width: 1, height: 1))
         
         }
     }
