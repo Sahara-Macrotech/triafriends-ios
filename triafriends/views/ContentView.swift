@@ -22,7 +22,7 @@ struct ContentView: View {
             ZStack{
                 
                 VStack{
-                    Spacer()
+                    
                     HStack{
                         Text("Good morning,")
                             .font(.custom(nameRegular, size: 16))
@@ -45,15 +45,16 @@ struct ContentView: View {
                                     
                         })
                     }.padding(.horizontal)
-                   
                     
+                     
                     Spacer()
                    
                     ExtractedView()
                     
+                    
                     TriageListView()
                         .cornerRadius(0)
-                        .scaleEffect(CGSize(width: 1, height: 1))
+                        .frame(width: UIScreen.main.bounds.maxX , height: 400)
                     
                     //Title Laporan Harian and button
                     HStack{
@@ -72,7 +73,7 @@ struct ContentView: View {
                         
                     }
                     .padding(.horizontal)
-                    Spacer()
+                    
                     
                     //Horizontal View Stack  laporan harian
                     HStack{
