@@ -30,6 +30,10 @@
 		C09BABA82542844A00C985AA /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BABA72542844A00C985AA /* DataModel.swift */; };
 		C09BABAC2542893900C985AA /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BABAB2542893900C985AA /* Algorithm.swift */; };
 		C0DF559325502ACB00F5A761 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF559225502ACB00F5A761 /* Profile.swift */; };
+		C0DF56252551202600F5A761 /* NewHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF56222551202600F5A761 /* NewHistoryView.swift */; };
+		C0DF56262551202600F5A761 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF56232551202600F5A761 /* PieChart.swift */; };
+		C0DF56272551202600F5A761 /* PieChartCellModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF56242551202600F5A761 /* PieChartCellModels.swift */; };
+		C0DF563E255121B600F5A761 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF563D255121B600F5A761 /* PieChartCell.swift */; };
 		C0E147B02545828000189E2E /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E147AF2545828000189E2E /* Interface.swift */; };
 		C0E147C5254588F900189E2E /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0E147B6254588F800189E2E /* NunitoSans-ExtraBold.ttf */; };
 		C0E147C7254588F900189E2E /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0E147B8254588F800189E2E /* NunitoSans-Regular.ttf */; };
@@ -67,6 +71,10 @@
 		C09BABA72542844A00C985AA /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		C09BABAB2542893900C985AA /* Algorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
 		C0DF559225502ACB00F5A761 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		C0DF56222551202600F5A761 /* NewHistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewHistoryView.swift; sourceTree = "<group>"; };
+		C0DF56232551202600F5A761 /* PieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
+		C0DF56242551202600F5A761 /* PieChartCellModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartCellModels.swift; sourceTree = "<group>"; };
+		C0DF563D255121B600F5A761 /* PieChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
 		C0E147AF2545828000189E2E /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
 		C0E147B6254588F800189E2E /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		C0E147B8254588F800189E2E /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -145,6 +153,9 @@
 			isa = PBXGroup;
 			children = (
 				C0792B352542DD9300A40B69 /* AddView.swift */,
+				C0DF563D255121B600F5A761 /* PieChartCell.swift */,
+				C0DF56222551202600F5A761 /* NewHistoryView.swift */,
+				C0DF56232551202600F5A761 /* PieChart.swift */,
 				C0792B3B2542DDAE00A40B69 /* MainView.swift */,
 				C0792B282542DB9800A40B69 /* TriageListView.swift */,
 				C0236FAD2548FCED004A1635 /* ListAllView.swift */,
@@ -181,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				C09BABA72542844A00C985AA /* DataModel.swift */,
+				C0DF56242551202600F5A761 /* PieChartCellModels.swift */,
 				C0792B2C2542DBDD00A40B69 /* Triage.swift */,
 				C0792B2B2542DBDD00A40B69 /* AccountData.swift */,
 			);
@@ -328,11 +340,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0792B392542DD9C00A40B69 /* AccountView.swift in Sources */,
+				C0DF56272551202600F5A761 /* PieChartCellModels.swift in Sources */,
 				C0792B3C2542DDAE00A40B69 /* MainView.swift in Sources */,
 				C09BABA82542844A00C985AA /* DataModel.swift in Sources */,
+				C0DF563E255121B600F5A761 /* PieChartCell.swift in Sources */,
+				C0DF56262551202600F5A761 /* PieChart.swift in Sources */,
 				C0792B292542DB9800A40B69 /* TriageListView.swift in Sources */,
 				C09BABAC2542893900C985AA /* Algorithm.swift in Sources */,
 				C0792B2D2542DBDD00A40B69 /* AccountData.swift in Sources */,
+				C0DF56252551202600F5A761 /* NewHistoryView.swift in Sources */,
 				C0792B2E2542DBDD00A40B69 /* Triage.swift in Sources */,
 				C08AAAD92543C7B40001AFEA /* PatientDetailView.swift in Sources */,
 				8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */,

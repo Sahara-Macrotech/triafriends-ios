@@ -29,7 +29,7 @@ struct MainView: App {
                     }
                     
                     
-                    AccountView().tabItem {
+                    NewHistoryView().tabItem {
                         Image(systemName: "list.dash")
                         Text("Account")
                         
