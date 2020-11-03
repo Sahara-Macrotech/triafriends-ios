@@ -19,6 +19,10 @@ struct Filter {
         case queue
         case handled
         case done
+        case red
+        case yellow
+        case green
+        case date
     }
     
 }

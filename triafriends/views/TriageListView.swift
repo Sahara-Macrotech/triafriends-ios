@@ -14,7 +14,7 @@ struct TriageListView: View {
     @ObservedObject var triageListViewModel: TriageListViewModel = TriageListViewModel.sharedInstance
     
     var filteredQueue: Filter.Filters = .all
-    
+    var creationDate: Date?
     
     var filteredTriages: [Triage] {
         switch filteredQueue {
@@ -27,13 +27,30 @@ struct TriageListView: View {
                 return item.patientState == .handled
             }
         case .queue:
-            print(triageListViewModel.arrOfTriages)
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
                 return item.patientState == .queue
+            }
+        case .red:
+            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+                return item.status == 2
+            }
+        case .yellow:
+            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+                return item.status == 1
+            }
+        case .green:
+            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+                return item.status == 0
+            }
+        case .date:
+            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+                return item.status == 0
+                //NOTCONFIGURED
             }
 
         case .all:
             return triageListViewModel.arrOfTriages
+       
         }
     }
     
