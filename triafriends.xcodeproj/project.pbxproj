@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		118813709087B0387AE5BBD2 /* Pods_triafriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CEB9BD7686CFA6CF69CE94 /* Pods_triafriends.framework */; };
+		7F25BEF22551EF98006932BC /* RKPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEEF2551EF98006932BC /* RKPage.swift */; };
+		7F25BEF32551EF98006932BC /* RKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEF02551EF98006932BC /* RKPageView.swift */; };
+		7F25BEF42551EF98006932BC /* RKWeeklyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEF12551EF98006932BC /* RKWeeklyPage.swift */; };
+		7F25BF022551EFC5006932BC /* RKMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEF72551EFC4006932BC /* RKMonth.swift */; };
+		7F25BF032551EFC5006932BC /* RKWeekdayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEF82551EFC4006932BC /* RKWeekdayHeader.swift */; };
+		7F25BF042551EFC5006932BC /* RKCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEF92551EFC5006932BC /* RKCell.swift */; };
+		7F25BF052551EFC5006932BC /* RKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEFA2551EFC5006932BC /* RKManager.swift */; };
+		7F25BF062551EFC5006932BC /* RKColorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEFB2551EFC5006932BC /* RKColorSettings.swift */; };
+		7F25BF072551EFC5006932BC /* RKHoursMinutesPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEFC2551EFC5006932BC /* RKHoursMinutesPicker.swift */; };
+		7F25BF082551EFC5006932BC /* RKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEFD2551EFC5006932BC /* RKViewController.swift */; };
+		7F25BF092551EFC5006932BC /* RKMonthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEFE2551EFC5006932BC /* RKMonthHeader.swift */; };
+		7F25BF0A2551EFC5006932BC /* RKDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEFF2551EFC5006932BC /* RKDate.swift */; };
+		7F25BF0B2551EFC5006932BC /* RKSelectionMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BF002551EFC5006932BC /* RKSelectionMode.swift */; };
+		7F25BF0C2551EFC5006932BC /* RKTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BF012551EFC5006932BC /* RKTimeView.swift */; };
 		8D4A70A02548166E004035A0 /* FirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A709F2548166E004035A0 /* FirestoreController.swift */; };
 		8D71830E2548D4D00004E139 /* RealtimeDBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D71830D2548D4D00004E139 /* RealtimeDBController.swift */; };
 		8D99A43825416E67006FF45A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43725416E67006FF45A /* ContentView.swift */; };
@@ -46,6 +60,20 @@
 		062E80ABC5839FF5E3B82C40 /* Pods-triafriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-triafriends.release.xcconfig"; path = "Target Support Files/Pods-triafriends/Pods-triafriends.release.xcconfig"; sourceTree = "<group>"; };
 		25CEB9BD7686CFA6CF69CE94 /* Pods_triafriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_triafriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6127170F74B0721A47E023 /* Pods-triafriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-triafriends.debug.xcconfig"; path = "Target Support Files/Pods-triafriends/Pods-triafriends.debug.xcconfig"; sourceTree = "<group>"; };
+		7F25BEEF2551EF98006932BC /* RKPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKPage.swift; sourceTree = "<group>"; };
+		7F25BEF02551EF98006932BC /* RKPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKPageView.swift; sourceTree = "<group>"; };
+		7F25BEF12551EF98006932BC /* RKWeeklyPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKWeeklyPage.swift; sourceTree = "<group>"; };
+		7F25BEF72551EFC4006932BC /* RKMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKMonth.swift; sourceTree = "<group>"; };
+		7F25BEF82551EFC4006932BC /* RKWeekdayHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKWeekdayHeader.swift; sourceTree = "<group>"; };
+		7F25BEF92551EFC5006932BC /* RKCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKCell.swift; sourceTree = "<group>"; };
+		7F25BEFA2551EFC5006932BC /* RKManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKManager.swift; sourceTree = "<group>"; };
+		7F25BEFB2551EFC5006932BC /* RKColorSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKColorSettings.swift; sourceTree = "<group>"; };
+		7F25BEFC2551EFC5006932BC /* RKHoursMinutesPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKHoursMinutesPicker.swift; sourceTree = "<group>"; };
+		7F25BEFD2551EFC5006932BC /* RKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKViewController.swift; sourceTree = "<group>"; };
+		7F25BEFE2551EFC5006932BC /* RKMonthHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKMonthHeader.swift; sourceTree = "<group>"; };
+		7F25BEFF2551EFC5006932BC /* RKDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKDate.swift; sourceTree = "<group>"; };
+		7F25BF002551EFC5006932BC /* RKSelectionMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKSelectionMode.swift; sourceTree = "<group>"; };
+		7F25BF012551EFC5006932BC /* RKTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKTimeView.swift; sourceTree = "<group>"; };
 		8D4A709F2548166E004035A0 /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
 		8D71830D2548D4D00004E139 /* RealtimeDBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDBController.swift; sourceTree = "<group>"; };
 		8D99A43225416E67006FF45A /* triafriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = triafriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +124,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F25BED72551E4BD006932BC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7F25BEF92551EFC5006932BC /* RKCell.swift */,
+				7F25BEFB2551EFC5006932BC /* RKColorSettings.swift */,
+				7F25BEFF2551EFC5006932BC /* RKDate.swift */,
+				7F25BEFC2551EFC5006932BC /* RKHoursMinutesPicker.swift */,
+				7F25BEFA2551EFC5006932BC /* RKManager.swift */,
+				7F25BEF72551EFC4006932BC /* RKMonth.swift */,
+				7F25BEFE2551EFC5006932BC /* RKMonthHeader.swift */,
+				7F25BF002551EFC5006932BC /* RKSelectionMode.swift */,
+				7F25BF012551EFC5006932BC /* RKTimeView.swift */,
+				7F25BEFD2551EFC5006932BC /* RKViewController.swift */,
+				7F25BEF82551EFC4006932BC /* RKWeekdayHeader.swift */,
+				7F25BEEE2551EF98006932BC /* RKScroll */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		7F25BEEE2551EF98006932BC /* RKScroll */ = {
+			isa = PBXGroup;
+			children = (
+				7F25BEEF2551EF98006932BC /* RKPage.swift */,
+				7F25BEF02551EF98006932BC /* RKPageView.swift */,
+				7F25BEF12551EF98006932BC /* RKWeeklyPage.swift */,
+			);
+			path = RKScroll;
+			sourceTree = "<group>";
+		};
 		8D99A42925416E67006FF45A = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +179,7 @@
 				8D99A43E25416E6A006FF45A /* Persistence.swift */,
 				C04A0AB02546BA8300C5EC19 /* GoogleService-Info.plist */,
 				8D99A44325416E6A006FF45A /* Info.plist */,
+				7F25BED72551E4BD006932BC /* Manager */,
 				C0E147B3254588BF00189E2E /* UI */,
 				C08AAAE02543E5B10001AFEA /* Helper */,
 				8D99A44F254181FC006FF45A /* views */,
@@ -339,29 +397,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F25BEF32551EF98006932BC /* RKPageView.swift in Sources */,
+				7F25BEF22551EF98006932BC /* RKPage.swift in Sources */,
 				C0792B392542DD9C00A40B69 /* AccountView.swift in Sources */,
 				C0DF56272551202600F5A761 /* PieChartCellModels.swift in Sources */,
 				C0792B3C2542DDAE00A40B69 /* MainView.swift in Sources */,
 				C09BABA82542844A00C985AA /* DataModel.swift in Sources */,
+				7F25BF072551EFC5006932BC /* RKHoursMinutesPicker.swift in Sources */,
 				C0DF563E255121B600F5A761 /* PieChartCell.swift in Sources */,
+				7F25BEF42551EF98006932BC /* RKWeeklyPage.swift in Sources */,
 				C0DF56262551202600F5A761 /* PieChart.swift in Sources */,
 				C0792B292542DB9800A40B69 /* TriageListView.swift in Sources */,
 				C09BABAC2542893900C985AA /* Algorithm.swift in Sources */,
 				C0792B2D2542DBDD00A40B69 /* AccountData.swift in Sources */,
+				7F25BF052551EFC5006932BC /* RKManager.swift in Sources */,
 				C0DF56252551202600F5A761 /* NewHistoryView.swift in Sources */,
 				C0792B2E2542DBDD00A40B69 /* Triage.swift in Sources */,
+				7F25BF0B2551EFC5006932BC /* RKSelectionMode.swift in Sources */,
 				C08AAAD92543C7B40001AFEA /* PatientDetailView.swift in Sources */,
 				8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */,
 				C0792B362542DD9300A40B69 /* AddView.swift in Sources */,
+				7F25BF0C2551EFC5006932BC /* RKTimeView.swift in Sources */,
+				7F25BF082551EFC5006932BC /* RKViewController.swift in Sources */,
 				8D99A43825416E67006FF45A /* ContentView.swift in Sources */,
 				8D4A70A02548166E004035A0 /* FirestoreController.swift in Sources */,
 				C0E147B02545828000189E2E /* Interface.swift in Sources */,
+				7F25BF062551EFC5006932BC /* RKColorSettings.swift in Sources */,
 				C0236FAE2548FCED004A1635 /* ListAllView.swift in Sources */,
 				8D71830E2548D4D00004E139 /* RealtimeDBController.swift in Sources */,
 				C0792B312542DC1200A40B69 /* ReportView.swift in Sources */,
+				7F25BF022551EFC5006932BC /* RKMonth.swift in Sources */,
+				7F25BF032551EFC5006932BC /* RKWeekdayHeader.swift in Sources */,
 				C0DF559325502ACB00F5A761 /* Profile.swift in Sources */,
+				7F25BF092551EFC5006932BC /* RKMonthHeader.swift in Sources */,
 				C08AAADD2543E57F0001AFEA /* NameCensor.swift in Sources */,
 				8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */,
+				7F25BF0A2551EFC5006932BC /* RKDate.swift in Sources */,
+				7F25BF042551EFC5006932BC /* RKCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +566,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 3QN5S48CNC;
+				DEVELOPMENT_TEAM = Z5A6SFMQ64;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -520,7 +592,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 3QN5S48CNC;
+				DEVELOPMENT_TEAM = Z5A6SFMQ64;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
