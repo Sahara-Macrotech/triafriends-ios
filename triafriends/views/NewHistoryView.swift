@@ -10,7 +10,7 @@ import SwiftUI
 struct NewHistoryView: View {
     @State var selectedPie: String = ""
     @State var selectedDonut: String = ""
-    @State var colorFilter: Filter.Filters
+    @State var colorFilter: Filter.Filters?
     
     
     var body: some View {
@@ -39,6 +39,9 @@ struct NewHistoryView: View {
                             dataModel in
                             if let dataModel = dataModel {
                                 self.selectedDonut = "Subject: \(dataModel.name)\nPointes: \(dataModel.color)"
+                                print(dataModel.color)
+                                colorNameToFilter(color: dataModel.color)
+                                
                             } else {
                                 self.selectedDonut = ""
                                 
@@ -64,11 +67,26 @@ struct NewHistoryView: View {
                         }
                     }
                     
-                    TriageListView(filteredQueue: colorFilter)
+                    TriageListView(filteredQueue: colorFilter ?? .all)
                         .frame(width: 400, height: 300, alignment: .center)
-                }
+                }.onAppear(perform: {
+                  
+                })
             }.navigationBarTitle("History Report")
         }
+    }
+    func colorNameToFilter(color: Color) {
+     
+        if color == colorRed {
+            colorFilter = .red
+        } else if color == colorGreen {
+            colorFilter = .green
+        } else if color == colorYellow {
+            colorFilter = .yellow
+        } else {
+            colorFilter = .all
+        }
+        
     }
 }
 //

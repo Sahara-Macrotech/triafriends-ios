@@ -12,7 +12,7 @@ var radius: CGFloat = 6
 
 
     
-    var colorGreen = Color(red: 0.94, green: 0.31, blue: 0.17)
+    var colorGreen = Color(red: 0.33, green: 0.67, blue: 0.37)
     var colorYellow = Color(red: 1.00, green: 0.75, blue: 0.06)
     var colorRed = Color(red: 0.94, green: 0.31, blue: 0.17)
     var colorBlue = Color(red: 0.28, green: 0.73, blue: 0.93)
