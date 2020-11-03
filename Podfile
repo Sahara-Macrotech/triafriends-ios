@@ -12,5 +12,6 @@ target 'triafriends' do
  pod 'Firebase/Auth'
  pod 'Firebase/Firestore'
  pod 'GoogleSignIn'
+ pod 'DatePicker'
 
 end

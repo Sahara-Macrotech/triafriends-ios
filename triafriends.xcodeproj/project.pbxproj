@@ -15,6 +15,14 @@
 		7F6A5EB7255054770010CF73 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EB6255054770010CF73 /* PieChartCell.swift */; };
 		7F6A5EBB255054B60010CF73 /* PieChartCellModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EBA255054B60010CF73 /* PieChartCellModels.swift */; };
 		7F6A5EBF255055590010CF73 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EBE255055590010CF73 /* PieChart.swift */; };
+		7F6A5EC92550FC3A0010CF73 /* RKCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EC22550FC3A0010CF73 /* RKCell.swift */; };
+		7F6A5ECA2550FC3A0010CF73 /* RKColorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EC32550FC3A0010CF73 /* RKColorSettings.swift */; };
+		7F6A5ECB2550FC3A0010CF73 /* RKDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EC42550FC3A0010CF73 /* RKDate.swift */; };
+		7F6A5ECC2550FC3A0010CF73 /* RKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EC52550FC3A0010CF73 /* RKManager.swift */; };
+		7F6A5ECD2550FC3A0010CF73 /* RKMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EC62550FC3A0010CF73 /* RKMonth.swift */; };
+		7F6A5ECE2550FC3A0010CF73 /* RKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EC72550FC3A0010CF73 /* RKViewController.swift */; };
+		7F6A5ECF2550FC3A0010CF73 /* RKWeekdayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5EC82550FC3A0010CF73 /* RKWeekdayHeader.swift */; };
+		7F6A5ED42550FDF00010CF73 /* CalenderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A5ED32550FDF00010CF73 /* CalenderUIView.swift */; };
 		7F81F60A25481F86005CF298 /* SignInWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81F60925481F86005CF298 /* SignInWithAppleCoordinator.swift */; };
 		7FA2D5F8254742F5009735AB /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA2D5F7254742F5009735AB /* Report.swift */; };
 		7FB2F7A42546580F00FC046E /* SignMeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2F7A32546580F00FC046E /* SignMeUpView.swift */; };
@@ -42,6 +50,14 @@
 		7F6A5EB6255054770010CF73 /* PieChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
 		7F6A5EBA255054B60010CF73 /* PieChartCellModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PieChartCellModels.swift; path = triafriends/utils/PieChartCellModels.swift; sourceTree = SOURCE_ROOT; };
 		7F6A5EBE255055590010CF73 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
+		7F6A5EC22550FC3A0010CF73 /* RKCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKCell.swift; sourceTree = "<group>"; };
+		7F6A5EC32550FC3A0010CF73 /* RKColorSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKColorSettings.swift; sourceTree = "<group>"; };
+		7F6A5EC42550FC3A0010CF73 /* RKDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKDate.swift; sourceTree = "<group>"; };
+		7F6A5EC52550FC3A0010CF73 /* RKManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKManager.swift; sourceTree = "<group>"; };
+		7F6A5EC62550FC3A0010CF73 /* RKMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKMonth.swift; sourceTree = "<group>"; };
+		7F6A5EC72550FC3A0010CF73 /* RKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKViewController.swift; sourceTree = "<group>"; };
+		7F6A5EC82550FC3A0010CF73 /* RKWeekdayHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKWeekdayHeader.swift; sourceTree = "<group>"; };
+		7F6A5ED32550FDF00010CF73 /* CalenderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderUIView.swift; sourceTree = "<group>"; };
 		7F81F60925481F86005CF298 /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
 		7FA2D5F7254742F5009735AB /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Report.swift; path = triafriends/views/Report.swift; sourceTree = SOURCE_ROOT; };
 		7FB2F7842546462200FC046E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +119,20 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		7F6A5EC12550FC3A0010CF73 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7F6A5EC22550FC3A0010CF73 /* RKCell.swift */,
+				7F6A5EC32550FC3A0010CF73 /* RKColorSettings.swift */,
+				7F6A5EC42550FC3A0010CF73 /* RKDate.swift */,
+				7F6A5EC52550FC3A0010CF73 /* RKManager.swift */,
+				7F6A5EC62550FC3A0010CF73 /* RKMonth.swift */,
+				7F6A5EC72550FC3A0010CF73 /* RKViewController.swift */,
+				7F6A5EC82550FC3A0010CF73 /* RKWeekdayHeader.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		7F81F60825481F5E005CF298 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,8 +176,9 @@
 				7F2A47F72546622500413941 /* models */,
 				8D6B4A5C254422CE00B2C380 /* helpers */,
 				8D99A44F254181FC006FF45A /* views */,
-				8D99A44A25416E7A006FF45A /* triafriends.entitlements */,
+				7F6A5EC12550FC3A0010CF73 /* Manager */,
 				8D99A43525416E67006FF45A /* triafriendsApp.swift */,
+				8D99A44A25416E7A006FF45A /* triafriends.entitlements */,
 				8D99A43925416E6A006FF45A /* Assets.xcassets */,
 				8D99A43E25416E6A006FF45A /* Persistence.swift */,
 				8D99A44325416E6A006FF45A /* Info.plist */,
@@ -188,6 +219,7 @@
 				7F5642EA25471A7A0012A026 /* HistoryView.swift */,
 				7F6A5EB22550521C0010CF73 /* NewHistoryView.swift */,
 				7F6A5EBE255055590010CF73 /* PieChart.swift */,
+				7F6A5ED32550FDF00010CF73 /* CalenderUIView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -324,6 +356,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F6A5ED42550FDF00010CF73 /* CalenderUIView.swift in Sources */,
+				7F6A5ECF2550FC3A0010CF73 /* RKWeekdayHeader.swift in Sources */,
 				8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */,
 				7F6A5EB32550521D0010CF73 /* NewHistoryView.swift in Sources */,
 				7F2A48062546786600413941 /* CongratulationView.swift in Sources */,
@@ -335,12 +369,18 @@
 				7F2A4809254679ED00413941 /* SignUpView.swift in Sources */,
 				7F6A5EBF255055590010CF73 /* PieChart.swift in Sources */,
 				8D6B4A5A25441F4400B2C380 /* LoginView.swift in Sources */,
+				7F6A5ECD2550FC3A0010CF73 /* RKMonth.swift in Sources */,
 				7F81F60A25481F86005CF298 /* SignInWithAppleCoordinator.swift in Sources */,
+				7F6A5ECE2550FC3A0010CF73 /* RKViewController.swift in Sources */,
 				8D6B4A5E254422D900B2C380 /* SignInWithApple.swift in Sources */,
+				7F6A5ECA2550FC3A0010CF73 /* RKColorSettings.swift in Sources */,
 				7F5642EB25471A7A0012A026 /* HistoryView.swift in Sources */,
 				8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */,
+				7F6A5EC92550FC3A0010CF73 /* RKCell.swift in Sources */,
 				7F6A5EB7255054770010CF73 /* PieChartCell.swift in Sources */,
 				7FF7406E254BAC88000A260A /* FaceBookLoginView.swift in Sources */,
+				7F6A5ECB2550FC3A0010CF73 /* RKDate.swift in Sources */,
+				7F6A5ECC2550FC3A0010CF73 /* RKManager.swift in Sources */,
 				7FA2D5F8254742F5009735AB /* Report.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
