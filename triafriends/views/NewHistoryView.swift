@@ -17,7 +17,7 @@ struct NewHistoryView: View {
                ChartCellModel(color: colorYellow, value: 143, name: "Gawat Tidak Darurat"),
                
                ChartCellModel(color: colorGreen, value: 120, name: "Darurat Tidak Gawat"),
-               ChartCellModel(color: Color.black, value: 47, name: "Tidak Gawat Tidak Darurat") ]
+               ChartCellModel(color: Color.black, value: 47, name: "Mati") ]
     
     
     
@@ -47,7 +47,7 @@ struct NewHistoryView: View {
                         DonutChart(dataModel: ChartDataModel.init(dataModel: sample), onTap: {
                             dataModel in
                             if let dataModel = dataModel {
-                                self.selectedDonut = "Subject: \(dataModel.name)\nPointes: \(dataModel.color)"
+                                self.selectedDonut = "Subject: \(dataModel.name)\nAmount: \(Int(dataModel.value)) people(s)"
                                 print(dataModel.color)
                                 colorNameToFilter(color: dataModel.color)
                                 
