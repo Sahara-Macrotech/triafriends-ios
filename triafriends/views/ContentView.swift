@@ -98,6 +98,8 @@ struct ContentView: View {
            
         }.onAppear(perform: {
             helper.queryProfile(uid: dummyUID)
+            helper.writeToDB(hospitalID: hospitalID)
+            
         })
         .navigationTitle(Text(""))
         .navigationBarHidden(true)

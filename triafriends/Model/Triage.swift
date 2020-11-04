@@ -271,6 +271,7 @@ class TriageListViewModel: ObservableObject{
         }
         
     }
+ 
     
     func convertToTriage(receivedTriage: [rootReceivedTriage]){
         //Append to this later
@@ -454,6 +455,7 @@ class TriageListViewModel: ObservableObject{
                 default:
                     p = .kooperatif
                 }
+                
                 
                 
                 var sT = i.triage.startTime

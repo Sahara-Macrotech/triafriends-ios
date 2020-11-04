@@ -15,7 +15,41 @@ class RealtimeDBController {
     var ref: DatabaseReference!
     
     
-    
+    func writeToDB(hospitalID: String){
+        //HospitalID:uidx:"triage": denyutNadi:dn.rawvalue
+        //add triage parameter in production
+      
+        var ref: DatabaseReference!
+        
+        ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/patients/\(hospitalID)/")
+        
+        
+        //replace value with value from parameter
+        var dict = ["id" : "1",
+                    "status" : 5,
+                    "patientState" : "Done",
+                    "name" : "sumarno",
+                    "jalanNafas" : "Patent",
+                    "distress" : "RR is normal",
+                    "respiratoryRate" : "Can communicate well",
+                    "hentiNafas" : "Stop breathing",
+                    "hipoventilasi" : "true",
+                    "hemodinamik" : "No hemodynamic disturbances",
+                    "nadi" : "Pulse palpable",
+                    "denyutNadi" : "Peripheral pulse is palpable",
+                    "warnaKulit" : "Pale skin reddish warm acral",
+                    "gcs" : 3,
+                    "psikologis" : "Cooperative",
+                    "startTime" : 1900,
+                    "endTime" : 1920
+                    
+                    
+        ] as [String : Any]
+        
+        ref.childByAutoId().child("triage").setValue(dict)
+
+        
+    }
     
     func queryProfile(uid: String){
         
