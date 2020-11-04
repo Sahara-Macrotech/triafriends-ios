@@ -10,58 +10,53 @@ import SwiftUI
 
 struct OptionsCell: View {
     
-    var option = ""
+    @Binding var option: String
     var fontSize = 20
     var frameWidth = 350
-    var frameHeight = 30
+    var frameHeight = 56
     var alignment = Alignment.topLeading
-    var borderColor = Color.black
-    var backgroundColor = Color.gray
     var cornerRadius = 10
     
-    @State var triageValue: String = ""
+    var lightPurple = Color.init(hex: "#E0C8F1")
+    var deepPurple = Color.init(hex: "#4B2766")
+    var lightGray = Color.init(hex: "#F7F7F7")
+    
+    @State var cellPressed = false
+    @State var index: Int
+    @Binding var selectedIndex: Int
+    @Binding var selectedOption: String
     
     var group = DispatchGroup()
     
     var body: some View {
-        Text("")
-    }
-    
-    mutating func setOption(option: String) {
-        self.option = option
-    }
-    
-    mutating func setFontSize(fontSize: Int) {
-        self.fontSize = 20
-    }
-    
-    mutating func setFrameWidth(frameWidth: Int) {
-        self.frameWidth = frameWidth
-    }
-    
-    mutating func setFrameheight(frameHeight: Int) {
-        self.frameHeight = frameHeight
-    }
-    
-    mutating func setAlignment(alignment: Alignment) {
-        self.alignment = alignment
-    }
-    
-    mutating func setBorderColor(borderColor: Color) {
-        self.borderColor = borderColor
-    }
-    
-    mutating func setBackgroundColor(backgroundColor: Color) {
-        self.backgroundColor = backgroundColor
-    }
-    
-    mutating func setCornerRadius(cornerRadius: Int) {
-        self.cornerRadius = cornerRadius
+        Button(action: {
+            //self.cellPressed.toggle()
+            self.selectedIndex = self.index
+            self.selectedOption = self.option
+        }) {
+            HStack {
+                Text(option)
+                    .font(Font.system(size: CGFloat(fontSize), weight: .medium))
+                    .offset(x:10, y:12)
+                    .foregroundColor((self.selectedIndex == self.index) ? deepPurple : Color.black)
+                    .frame(width: CGFloat(300), height: CGFloat(56), alignment: .topLeading)
+                if self.selectedIndex == self.index {
+                    Image(systemName: "checkmark.circle")
+                    .font(.system(size: 30))
+                    .foregroundColor(deepPurple)
+                }
+                    
+            }
+            .frame(width: CGFloat(350), height: CGFloat(56), alignment: alignment)
+            .overlay(RoundedRectangle(cornerRadius: CGFloat(cornerRadius)).stroke((self.selectedIndex == self.index) ? deepPurple : lightGray, lineWidth: 4))
+            .background((self.selectedIndex == self.index) ? lightPurple : lightGray)
+            .cornerRadius(CGFloat(cornerRadius))
+        }
     }
 }
 
-struct OptionsCell_Previews: PreviewProvider {
-    static var previews: some View {
-        OptionsCell()
-    }
-}
+//struct OptionsCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OptionsCell()
+//    }
+//}
