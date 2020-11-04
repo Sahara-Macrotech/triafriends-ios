@@ -69,7 +69,9 @@ struct MainView: App {
                         .ignoresSafeArea()
                         .animation(.easeIn)
                     //Initiate AddView here
-                  AddView()
+                  
+                    PatientNameInput()
+                    
                     
                     
 

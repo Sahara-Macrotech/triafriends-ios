@@ -272,7 +272,204 @@ class TriageListViewModel: ObservableObject{
         
     }
  
-    
+    func stringToTriage(receivedTriage: TempTriageResult) -> Triage{
+        //Append to this later
+        //        arrOfTriages = []
+       
+        let group = DispatchGroup()
+        var triase: Triage
+       
+           
+                
+                //ID
+           //     var id = "id"
+            var name = receivedTriage.getName()
+             //   var status = recei
+                
+//
+//                var ps: Triage.PatientState
+//                switch i.triage.patientState {
+//                case Triage.PatientState.handled.rawValue:
+//                    ps = .handled
+//                case Triage.PatientState.done.rawValue:
+//                    ps = .done
+//                default:
+//                    ps = .queue
+//                }
+                //Transform to enum
+                
+                //JALAN NAFAS
+                var jN: Triage.JalanNafas
+            switch receivedTriage.getAirway() {
+                case Triage.JalanNafas.paten.rawValue:
+                    jN = Triage.JalanNafas.paten
+                case Triage.JalanNafas.sumbatanSebagian.rawValue:
+                    jN = Triage.JalanNafas.sumbatanSebagian
+                case Triage.JalanNafas.sumbatanTotal.rawValue:
+                    jN = Triage.JalanNafas.sumbatanTotal
+                default:
+                    jN = Triage.JalanNafas.paten
+                }
+                
+                
+                //DISTRESS
+                var d: Triage.Distress
+            switch receivedTriage.getRespitoryDistress() {
+                case Triage.Distress.RRnormal.rawValue:
+                    d = Triage.Distress.RRnormal
+                case Triage.Distress.tidakAda.rawValue:
+                    d = Triage.Distress.tidakAda
+                case Triage.Distress.ringan.rawValue:
+                    d = Triage.Distress.ringan
+                case Triage.Distress.sedang.rawValue:
+                    d = Triage.Distress.sedang
+                case Triage.Distress.berat.rawValue:
+                    d = Triage.Distress.berat
+                default:
+                    d = Triage.Distress.tidakAda
+                }
+                
+                
+                //RESPIRATORY RATE
+                
+                var rR: Triage.RespiratoryRate
+            switch receivedTriage.getSpeak() {
+                case Triage.RespiratoryRate.komunikasiBaik.rawValue:
+                    rR = Triage.RespiratoryRate.komunikasiBaik
+                case Triage.RespiratoryRate.RRnormal.rawValue:
+                    rR = Triage.RespiratoryRate.RRnormal
+                case Triage.RespiratoryRate.RRlessthan30.rawValue:
+                    rR = Triage.RespiratoryRate.RRlessthan30
+                case Triage.RespiratoryRate.RRmorethan30.rawValue:
+                    rR = Triage.RespiratoryRate.RRmorethan30
+                case Triage.RespiratoryRate.tidakMampuBicara.rawValue:
+                    rR = Triage.RespiratoryRate.tidakMampuBicara
+                default:
+                    rR = Triage.RespiratoryRate.komunikasiBaik
+                }
+                
+                
+                
+                //HENTI NAFAS
+                var hN: Triage.HentiNafas
+            switch receivedTriage.getBreath() {
+                case Triage.HentiNafas.berhenti.rawValue:
+                    hN = Triage.HentiNafas.berhenti
+                case Triage.HentiNafas.pengunaanOtotBantu.rawValue:
+                    hN = Triage.HentiNafas.pengunaanOtotBantu
+                default:
+                    //PUT NORMAL CONDITION HERE
+                    hN = .normal
+                    
+                }
+                
+               
+                //HIPOVENTILASI
+                var hv: Bool
+            switch receivedTriage.getHipoventilasi() {
+                case "Yes":
+                    hv = true
+                case "No":
+                    hv = false
+                default:
+                    hv = false
+                }
+                //--------------------------------------
+                
+                //HEMODINAMIK
+                var hd: Triage.Hemodinamik
+            switch receivedTriage.getEmodynamicDisturbance() {
+                case Triage.Hemodinamik.tidakAda.rawValue:
+                    hd = .tidakAda
+                case Triage.Hemodinamik.ringan.rawValue:
+                    hd = .ringan
+                case Triage.Hemodinamik.sedang.rawValue:
+                    hd = .sedang
+                case Triage.Hemodinamik.berat.rawValue:
+                    hd = .berat
+                default:
+                    hd = .tidakAda
+                }
+                
+                //NADI
+                var n: Triage.Nadi
+            switch receivedTriage.getPulse() {
+                case Triage.Nadi.normal.rawValue:
+                    n = .normal
+                case Triage.Nadi.teraba.rawValue:
+                    n = .teraba
+                case Triage.Nadi.lemahKuat.rawValue:
+                    n = .lemahKuat
+                case Triage.Nadi.sangatHalus.rawValue:
+                    n = .sangatHalus
+                case Triage.Nadi.tidakTeraba.rawValue:
+                    n = .tidakTeraba
+                default:
+                    n = .normal
+                }
+                
+                //DENYUT NADI
+                var dN: Triage.DenyutNadi
+            switch receivedTriage.getBleeding() {
+                case Triage.DenyutNadi.teraba.rawValue:
+                    dN = .teraba
+                case Triage.DenyutNadi.kapilerLessthan2.rawValue:
+                    dN = .kapilerLessthan2
+                case Triage.DenyutNadi.kapilerMorethan2.rawValue:
+                    dN = .kapilerMorethan2
+                case Triage.DenyutNadi.perdarahanAktif.rawValue:
+                    dN = .perdarahanAktif
+                default:
+                    dN = .teraba
+                }
+                
+                //WARNA KULIT
+                var wK: Triage.WarnaKulit
+            switch receivedTriage.getSkinCondition() {
+                case Triage.WarnaKulit.merahHangat.rawValue:
+                    wK = .merahHangat
+                case Triage.WarnaKulit.pucatMerahHangat.rawValue:
+                    wK = .pucatMerahHangat
+                default:
+                    wK = .merahHangat
+                }
+                
+                
+                //Glassgow Comma Scale
+            var gcs = receivedTriage.getGCS()
+            //VALUE DIFFRENT, ALGORITHM USE INT
+                
+                
+                
+                
+                var p: Triage.Psikologis
+            switch receivedTriage.getMentalState() {
+                case Triage.Psikologis.kooperatif.rawValue:
+                    p = .kooperatif
+                case Triage.Psikologis.agitasi.rawValue:
+                    p = .agitasi
+                case Triage.Psikologis.tidakKooperatif.rawValue:
+                    p = .tidakKooperatif
+                default:
+                    p = .kooperatif
+                }
+                
+                
+                
+               // var sT = i.triage.startTime
+               // var eT = i.triage.endTime
+        triase = Triage(name: name, patientState: .queue, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: 0, psikologis: p, startTime: 100, endTime: 100)
+              
+            
+            
+            
+                
+          
+        
+        
+        
+        return triase
+    }
     func convertToTriage(receivedTriage: [rootReceivedTriage]){
         //Append to this later
         //        arrOfTriages = []

@@ -15,7 +15,7 @@ class RealtimeDBController {
     var ref: DatabaseReference!
     
     
-    func writeToDB(hospitalID: String){
+    func writeToDB(triages: Triage, hospitalID: String){
         //HospitalID:uidx:"triage": denyutNadi:dn.rawvalue
         //add triage parameter in production
       
@@ -26,20 +26,23 @@ class RealtimeDBController {
         
         //replace value with value from parameter
         var dict = ["id" : UUID().uuidString, //this cause the problem? if yes create UUID instead!
+                    
+                    //status belum berdasarkan hasil triase
+                    
                     "status" : 2,
-                    "patientState" : "Done",
-                    "name" : "DF pake 3",
-                    "jalanNafas" : "Patent",
-                    "distress" : "RR is normal",
-                    "respiratoryRate" : "Can communicate well",
-                    "hentiNafas" : "Stop breathing",
-                    "hipoventilasi" : "true",
-                    "hemodinamik" : "No hemodynamic disturbances",
-                    "nadi" : "Pulse palpable",
-                    "denyutNadi" : "Peripheral pulse is palpable",
-                    "warnaKulit" : "Pale skin reddish warm acral",
-                    "gcs" : 3,
-                    "psikologis" : "Cooperative",
+                    "patientState" : triages.patientState?.rawValue,
+                    "name" : triages.name,
+                    "jalanNafas" : triages.jalanNafas?.rawValue,
+                    "distress" : triages.distress?.rawValue,
+                    "respiratoryRate" : triages.respiratoryRate?.rawValue,
+                    "hentiNafas" : triages.hentiNafas?.rawValue,
+                    "hipoventilasi" : triages.hipoventilasi?.description,
+                    "hemodinamik" : triages.hemodinamik?.rawValue,
+                    "nadi" : triages.nadi?.rawValue,
+                    "denyutNadi" : triages.denyutNadi?.rawValue,
+                    "warnaKulit" : triages.warnaKulit?.rawValue,
+                    "gcs" : triages.gcs,
+                    "psikologis" : triages.psikologis?.rawValue,
                     "startTime" : 1900,
                     "endTime" : 1920
                     
