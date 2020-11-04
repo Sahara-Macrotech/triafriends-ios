@@ -55,7 +55,7 @@ struct ContentView: View {
                     ExtractedView()
                     
                     
-                    TriageListView()
+                    TriageListView(filteredQueue: Filter.Filters.all)
                         .cornerRadius(0)
                         .frame(width: UIScreen.main.bounds.maxX , height: 400)
                     
@@ -98,7 +98,6 @@ struct ContentView: View {
            
         }.onAppear(perform: {
             helper.queryProfile(uid: dummyUID)
-            helper.writeToDB(hospitalID: hospitalID)
             
         })
         .navigationTitle(Text(""))
