@@ -63,6 +63,7 @@ struct PatientNumberInput: View {
         }.frame(width: 350, height: 750, alignment: .topLeading)
         .navigationBarHidden(true)
         .navigationBarTitle("")
+        
     }
 }
 
