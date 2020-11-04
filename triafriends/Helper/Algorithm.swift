@@ -19,25 +19,25 @@ class Algo {
     
     
     var result: ColorScale?
-    enum ColorScale {
+    enum ColorScale: Int {
         
-        case category5
+        case category5 = 5
         //response time 120mnt
         //Hijau
         
-        case category4
+        case category4 = 4
         //response time 60mnt
         //Kuning
         
-        case category3
+        case category3 = 3
         //response time 30mnt
         //Kuning
         
-        case category2
+        case category2 = 2
         //response time 10
         //Merah
         
-        case category1
+        case category1 = 1
         //response time SEGERA
         //Merah
         

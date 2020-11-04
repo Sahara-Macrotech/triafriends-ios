@@ -46,6 +46,7 @@ struct TempView: View {
             print(converted)
             var calculated = helper.calc(triage: converted)
            print(calculated)
+            converted.status = calculated.rawValue
             
             //------------CODE JOROK UNTUK DEMO
             if calculated == .category5 {

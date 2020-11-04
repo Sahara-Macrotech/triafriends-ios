@@ -29,7 +29,7 @@ class RealtimeDBController {
                     
                     //status belum berdasarkan hasil triase
                     
-                    "status" : 2,
+                    "status" : triages.status,
                     "patientState" : triages.patientState?.rawValue,
                     "name" : triages.name,
                     "jalanNafas" : triages.jalanNafas?.rawValue,
