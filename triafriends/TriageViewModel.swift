@@ -12,17 +12,19 @@ class TriageViewModel: Identifiable {
     var questions = [Questions]()
     
     init() {
-        questions.append(Questions.init(question: "How's the airway ?", options: ["Total Blockage", "Partial Blockage", "Patent"]))
-        questions.append(Questions.init(question: "How's the respiratory distress ?", options: ["Severe respiratory distress", "Moderate respiratory distress", "Light respitory distress", "No distress exhalation", "RR is normal"]))
-        questions.append(Questions.init(question: "Can he speak ?", options: ["Unable to speak","RR>30 x/minute", "RR<30 x/Minute","RR is normal","Can communicate well"]))
-        questions.append(Questions.init(question: "How is the breath ?", options: ["Stop Breathing","Use of auxilliary muscles breath"]))
+        questions.append(Questions.init(question: "How's the airway ?", options: [Triage.JalanNafas.sumbatanTotal.rawValue, Triage.JalanNafas.sumbatanSebagian.rawValue, Triage.JalanNafas.paten.rawValue]))
+        questions.append(Questions.init(question: "How's the respiratory distress ?", options: [Triage.Distress.berat.rawValue, Triage.Distress.sedang.rawValue, Triage.Distress.ringan.rawValue, Triage.Distress.tidakAda.rawValue, Triage.Distress.RRnormal.rawValue]))
+        questions.append(Questions.init(question: "Can he speak ?", options: [Triage.RespiratoryRate.tidakMampuBicara.rawValue,Triage.RespiratoryRate.RRmorethan30.rawValue, Triage.RespiratoryRate.RRlessthan30.rawValue,Triage.RespiratoryRate.RRnormal.rawValue,Triage.RespiratoryRate.komunikasiBaik.rawValue]))
+        questions.append(Questions.init(question: "How is the breath ?", options: [Triage.HentiNafas.berhenti.rawValue,Triage.HentiNafas.pengunaanOtotBantu.rawValue]))
         questions.append(Questions.init(question: "Hipoventilasi ?", options: ["Yes","No"]))
-        questions.append(Questions.init(question: "Have emodynamic distrubance ?", options: ["Severe hemodynamic distrubances","Moderate hemodynamic distrubances", "Mild hemodynamic distrubances","No hemodynamic distrubances"]))
-        questions.append(Questions.init(question: "How is the condition of the pulse ?", options: ["Pulse is not palpable / cardiac arrest","Pulse is not palpable / very smooth", "Pulse palpable", "Normal Pulse"]))
-        questions.append(Questions.init(question: "Is there any bleeding ?", options: ["Uncontrolled bleeding / active bleeding","Capilarry refill > 2 seconds", "Capilarry refill < 2 seconds", "Peripheral pulse is palpable"]))
-        questions.append(Questions.init(question: "How is the skin condition ?", options: ["Pale skin reddish warm acral","Reddish skin warm acral"]))
+        questions.append(Questions.init(question: "Have emodynamic distrubance ?", options: [Triage.Hemodinamik.berat.rawValue,Triage.Hemodinamik.sedang.rawValue, Triage.Hemodinamik.ringan.rawValue,Triage.Hemodinamik.tidakAda.rawValue]))
+        questions.append(Questions.init(question: "How is the condition of the pulse ?", options: [Triage.Nadi.tidakTeraba.rawValue,Triage.Nadi.lemahKuat.rawValue, Triage.Nadi.teraba.rawValue, Triage.Nadi.normal.rawValue]))
+        questions.append(Questions.init(question: "Is there any bleeding ?", options: [Triage.DenyutNadi.perdarahanAktif.rawValue,Triage.DenyutNadi.kapilerMorethan2.rawValue, Triage.DenyutNadi.kapilerLessthan2.rawValue, Triage.DenyutNadi.teraba.rawValue]))
+        questions.append(Questions.init(question: "How is the skin condition ?", options: [Triage.WarnaKulit.pucatMerahHangat.rawValue,Triage.WarnaKulit.merahHangat.rawValue]))
+        //NOT CALCULATED YET
         questions.append(Questions.init(question: "Glasgow coma scale ?", options: ["Below 8","9-12", "Above 13", "15"]))
-        questions.append(Questions.init(question: "How is his mental state ?", options: ["Not cooperative","Cooperative"]))
+        
+        questions.append(Questions.init(question: "How is his mental state ?", options: [Triage.Psikologis.tidakKooperatif.rawValue,Triage.Psikologis.kooperatif.rawValue]))
     }
     
     func getCount(index: Int) -> Int {
