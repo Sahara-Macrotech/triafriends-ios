@@ -41,7 +41,7 @@ class RealtimeDBController {
                     "nadi" : triages.nadi?.rawValue,
                     "denyutNadi" : triages.denyutNadi?.rawValue,
                     "warnaKulit" : triages.warnaKulit?.rawValue,
-                    "gcs" : triages.gcs,
+                    "gcs" : triages.gcs.rawValue,
                     "psikologis" : triages.psikologis?.rawValue,
                     "startTime" : 1900,
                     "endTime" : 1920

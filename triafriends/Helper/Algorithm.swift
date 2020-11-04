@@ -179,11 +179,11 @@ class Algo {
     
             //****cara bikin range number gitu gak sih****
     func comaScaleCalc(data: Triage) {
-        if data.gcs! <= 8 {
+        if data.gcs == .belowEight {
             cat1! += 1
-        } else if data.gcs! >= 9 && data.gcs! <= 12 {
+        } else if data.gcs == .nineToTwelve {
             cat2! += 1
-        } else if data.gcs! >= 13 && data.gcs! <= 14 {
+        } else if data.gcs == .aboveThirteen {
             cat3! += 1
         } else {
             cat5! += 1
@@ -242,7 +242,7 @@ class Algo {
         nadiTerabaCalc(data: triage)
         pendarahanCalc(data: triage)
         warnaKulitCalc(data: triage)
-       // comaScaleCalc(data: triage)
+       comaScaleCalc(data: triage)
         psikologisCalc(data: triage)
         
        // calculateAll()

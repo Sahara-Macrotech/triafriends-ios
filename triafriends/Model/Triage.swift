@@ -137,7 +137,13 @@ struct Triage: Identifiable {
     
     //GCS  MASIH INTEGER
     var gcs:
-        Int?
+        GCS
+    enum GCS: String{
+        case belowEight = "Below 8"
+        case nineToTwelve = "9-12"
+        case aboveThirteen = "Above 13"
+        case fifteen = "15"
+    }
     //15
     //15
     //13<
@@ -174,7 +180,7 @@ struct ReceivedTriage: Codable {
     let id: String
     let denyutNadi: String
     let distress: String
-    let gcs: Int
+    let gcs: String
     let hemodinamik: String
     let hipoventilasi: String
     let jalanNafas: String
@@ -435,11 +441,6 @@ class TriageListViewModel: ObservableObject{
                 }
                 
                 
-                //Glassgow Comma Scale
-            var gcs = receivedTriage.getGCS()
-            //VALUE DIFFRENT, ALGORITHM USE INT
-                
-                
                 
                 
                 var p: Triage.Psikologis
@@ -453,12 +454,26 @@ class TriageListViewModel: ObservableObject{
                 default:
                     p = .kooperatif
                 }
+        
+        var gcs: Triage.GCS
+        switch receivedTriage.getGCS() {
+        case Triage.GCS.belowEight.rawValue:
+            gcs = .belowEight
+        case Triage.GCS.nineToTwelve.rawValue:
+            gcs = .nineToTwelve
+        case Triage.GCS.aboveThirteen.rawValue:
+            gcs = .aboveThirteen
+        case Triage.GCS.fifteen.rawValue:
+            gcs = .fifteen
+        default:
+            gcs = .fifteen
+        }
                 
                 
                 
                // var sT = i.triage.startTime
                // var eT = i.triage.endTime
-        triase = Triage(name: name, patientState: .queue, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: 0, psikologis: p, startTime: 100, endTime: 100)
+        triase = Triage(name: name, patientState: .queue, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p, startTime: 100, endTime: 100)
               
             
             
@@ -636,7 +651,7 @@ class TriageListViewModel: ObservableObject{
                 
                 
                 //Glassgow Comma Scale
-                var gcs = i.triage.gcs
+                
                 
                 
                 
@@ -653,6 +668,19 @@ class TriageListViewModel: ObservableObject{
                     p = .kooperatif
                 }
                 
+                var gcs: Triage.GCS
+                switch i.triage.gcs {
+                case Triage.GCS.belowEight.rawValue:
+                    gcs = .belowEight
+                case Triage.GCS.nineToTwelve.rawValue:
+                    gcs = .nineToTwelve
+                case Triage.GCS.aboveThirteen.rawValue:
+                    gcs = .aboveThirteen
+                case Triage.GCS.fifteen.rawValue:
+                    gcs = .fifteen
+                default:
+                    gcs = .fifteen
+                }
                 
                 
                 var sT = i.triage.startTime
