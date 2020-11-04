@@ -38,6 +38,7 @@ struct TempView: View {
                 print(self.tempData.getSpeak())
             }){
                 Text("Test")
+                
             }
         }.onAppear {
             
