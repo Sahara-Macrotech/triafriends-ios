@@ -89,6 +89,12 @@ struct ContentView: View {
                     
                     
                 }
+                Button(action: {
+                    helper.writeToDB(hospitalID: hospitalID)
+                }, label: {
+                    Text("write")
+                })
+
                
                 
                 

@@ -25,10 +25,10 @@ class RealtimeDBController {
         
         
         //replace value with value from parameter
-        var dict = ["id" : "1",
+        var dict = ["id" : "1", //this cause the problem? if yes create UUID instead!
                     "status" : 5,
                     "patientState" : "Done",
-                    "name" : "sumarno",
+                    "name" : "DARI FUNCTION",
                     "jalanNafas" : "Patent",
                     "distress" : "RR is normal",
                     "respiratoryRate" : "Can communicate well",
