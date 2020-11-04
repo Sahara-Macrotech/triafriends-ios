@@ -474,7 +474,7 @@ class TriageListViewModel: ObservableObject{
         }
         
         group.notify(queue: .main, execute: {
-            print("gila")
+            print("Sahara Pasti Bisa")
             self.arrOfTriages = tempArray
         })
     }

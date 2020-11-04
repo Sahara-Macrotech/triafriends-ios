@@ -217,6 +217,18 @@ struct PatientDetailView: View {
                             .foregroundColor(colorPurple)
                         
                     }
+                    Group{
+                    HStack{
+                        Text("tanggal create : ")
+                            .font(Font.custom(nameSemiBold, size: 16))
+                            .foregroundColor(.black)
+                        
+                        Spacer()
+                        Text(triages?.warnaKulit?.rawValue ?? " ")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(colorPurple)
+                        
+                    }
                     
                     HStack{
                         Text("GCS : ")
@@ -228,6 +240,7 @@ struct PatientDetailView: View {
                             .font(Font.custom(nameBold, size: 16))
                             .foregroundColor(colorPurple)
                         
+                    }
                     }
                     
                     //VSTACK MAXIMUM IS 10==================
