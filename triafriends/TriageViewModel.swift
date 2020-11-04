@@ -25,6 +25,7 @@ class TriageViewModel: Identifiable {
         questions.append(Questions.init(question: "Glasgow coma scale ?", options: ["Below 8","9-12", "Above 13", "15"]))
         
         questions.append(Questions.init(question: "How is his mental state ?", options: [Triage.Psikologis.tidakKooperatif.rawValue,Triage.Psikologis.kooperatif.rawValue]))
+        
     }
     
     func getCount(index: Int) -> Int {
