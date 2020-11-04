@@ -133,7 +133,7 @@ class Algo {
         } else if data.hemodinamik == .ringan {
             cat3! += 1
         } else if data.hemodinamik == .tidakAda {
-            cat4! += 1
+            cat5! += 1
         } else {
             cat5! += 1
         }
