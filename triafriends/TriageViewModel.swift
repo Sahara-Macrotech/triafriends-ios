@@ -33,14 +33,6 @@ class TriageViewModel: Identifiable {
         return questions[index].options.count
     }
     
-//    func setQuestionList() {
-//        for question in questions {
-//            for option in question.options {
-//                var tempOption = OptionsCell()
-//                tempOption.setOption(option: option.option)
-//                optionList.append(tempOption)
-//            }
-//        }
-//    }
+
 }
 
