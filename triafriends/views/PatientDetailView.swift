@@ -236,7 +236,7 @@ struct PatientDetailView: View {
                             .foregroundColor(.black)
                         
                         Spacer()
-                        Text("\(triages?.gcs ?? 0)")
+                        Text("\((triages?.gcs.rawValue)!)")
                             .font(Font.custom(nameBold, size: 16))
                             .foregroundColor(colorPurple)
                         
