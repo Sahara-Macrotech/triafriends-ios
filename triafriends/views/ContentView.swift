@@ -100,7 +100,6 @@ struct ContentView: View {
            
         }.onAppear(perform: {
             helper.queryProfile(uid: dummyUID)
-            
         })
         .navigationTitle(Text(""))
         .navigationBarHidden(true)

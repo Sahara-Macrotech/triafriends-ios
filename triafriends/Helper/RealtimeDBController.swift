@@ -54,6 +54,14 @@ class RealtimeDBController {
 
     }
     
+    func changePatientState(hospitalID: String, id: String, state: String) -> Void {
+        var ref: DatabaseReference!
+        
+        ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/patients/\(hospitalID)/\(id)/triage")
+        ref.updateChildValues(["patientState": state])
+        }
+    }
+    
     func queryProfile(uid: String){
         
         let db = Firestore.firestore()
