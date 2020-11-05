@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 
 struct ListAllView: View {
@@ -58,6 +59,7 @@ struct ListAllView: View {
 
                 Button(action: {
                     selectedColoumn = .done
+                    print(selectedColoumn)
                 }, label: {
                     Text("Done")
                         .font(.custom(selectedColoumn == .done ? nameBold : nameSemiBold, size: selectedColoumn == .done ? 24 : 18))
@@ -80,7 +82,7 @@ struct ListAllView: View {
             //Filter done view <- viewmodel
                 
                 
-                .scaleEffect(CGSize(width: 0.9, height: 0.9))
+                .scaleEffect(CGSize(width: 1, height: 1))
         
         }
     }

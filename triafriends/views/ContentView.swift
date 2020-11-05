@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var tvm = TriageListViewModel()
     var helper = RealtimeDBController()
     var accountData = AccountData()
+    var dummyUID = "t7SQhXlozrMnWOghRaXHh4HWuUC3"
     var body: some View {
         //DUMMY
         let hospitalID = "SILOAM2122"
@@ -17,53 +19,94 @@ struct ContentView: View {
         
         NavigationView{
             
-            VStack{
+            ZStack{
                 
-                
-                ExtractedView()
-                
-                TriageListView()
-                    .cornerRadius(0)
-                    .scaleEffect(CGSize(width: 0.9, height: 0.9))
-                
-                //Title Laporan Harian and button
-                HStack{
-                    Text("Laporan Harian")
-                        .font(.title2)
-                        .bold()
+                VStack{
                     
-                    Spacer()
-                    
-                    //Dummy button
-                    NavigationLink(
-                        destination: ListAllView(selectedColoumn: .queue),
-                        label: {
-                            Text("Lihat semua")
-                        })
-                    
-                }
-                .padding()
-                Spacer()
-                    
-                //Horizontal View Stack  laporan harian
-                HStack{
-                    ReportView()
-                        .scaleEffect(0.8)
-                    Spacer()
-                    ReportView()
-                        .scaleEffect(0.8)
-                }
-                .padding()
-                
-            }
-            .navigationTitle(
+                    HStack{
+                        Text("Good morning,")
+                            .font(.custom(nameRegular, size: 16))
+                            .foregroundColor(colorTextGray)
+                        
+                        Spacer()
+                    }.padding(.horizontal)
+                    HStack{
+                   
+    
                     Text(accountData.username)
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-            )
+                        .font(.custom(nameExtraBold, size: 36))
+                        
+                        Spacer()
+                        NavigationLink(
+                            destination: Profile(),
+                            label: {
+                                Image("1")
+                                    .clipShape(Circle())
+                                    
+                                    
+                        }).scaleEffect(1.5)
+                            .padding()
+                    }.padding(.horizontal)
+                    
+                    
+                     
+                    Spacer()
+                   
+                    ExtractedView()
+                    
+                    
+                    TriageListView(filteredQueue: Filter.Filters.all)
+                        .cornerRadius(0)
+                        .frame(width: UIScreen.main.bounds.maxX , height: 400)
+                    
+                    //Title Laporan Harian and button
+                    HStack{
+                        Text("Daily report")
+                            .font(.title2)
+                            .bold()
+                        
+                        Spacer()
+                        
+                        //Dummy button
+                        NavigationLink(
+                            destination: ListAllView(selectedColoumn: .queue),
+                            label: {
+                                Text("See all")
+                            })
+                        
+                    }
+                    .padding(.horizontal)
+                    
+                    
+                    //Horizontal View Stack  laporan harian
+                    HStack{
+                        ReportView()
+                            .scaleEffect(0.8)
+                        Spacer()
+                        ReportView()
+                            .scaleEffect(0.8)
+                    }
+                    
+                    
+                }
+              
+
+               
+                
+                
+              
+            }.padding(.bottom, 20)
+            
+           
         }.onAppear(perform: {
-            helper.query(hospitalID: hospitalID)
+            helper.queryProfile(uid: dummyUID)
+            
         })
+        .navigationTitle(Text(""))
+        .navigationBarHidden(true)
+        
+        
+        
     }
     
     
@@ -84,8 +127,9 @@ struct ContentView: View {
     
     struct ExtractedView: View {
         var body: some View {
+            
             HStack{
-                Text("Prioritas Triase")
+                Text("Triage Priority")
                     .font(.title2)
                     .bold()
                 
@@ -93,13 +137,13 @@ struct ContentView: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: ListAllView(selectedColoumn: .queue),
+                    destination: ListAllView(selectedColoumn: .all),
                     label: {
-                        Text("Lihat semua")
-                            
+                        Text("See all")
+                        
                     })
             }
-            .padding()
+            .padding(.horizontal)
         }
     }
 }

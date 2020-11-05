@@ -29,7 +29,7 @@ struct MainView: App {
                     }
                     
                     
-                    AccountView().tabItem {
+                    NewHistoryView().tabItem {
                         Image(systemName: "list.dash")
                         Text("Account")
                         
@@ -54,12 +54,8 @@ struct MainView: App {
 
                         Image("add")
                             .scaleEffect(0.35)
-                        }.onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-//                            realtimeDb.changePatientState(uid: "uid", hospital: "SILOAM2122", state: "handled")
-                            realtimeDb.getAllPatients(hospital: "SILOAM2122") { result in
-                                print(result)
-                            }
-//                            isPopUpEnabled = true
+                        }.onTapGesture(count: 1, perform: {
+                            isPopUpEnabled = true
                         })
                     })
                     Spacer()
@@ -73,7 +69,9 @@ struct MainView: App {
                         .ignoresSafeArea()
                         .animation(.easeIn)
                     //Initiate AddView here
-                  AddView()
+                  
+                    PatientNameInput()
+                    
                     
                     
 
