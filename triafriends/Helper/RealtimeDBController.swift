@@ -23,9 +23,10 @@ class RealtimeDBController {
         
         ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/patients/\(hospitalID)/")
         
+        let id = UUID().uuidString
         
         //replace value with value from parameter
-        var dict = ["id" : UUID().uuidString, //this cause the problem? if yes create UUID instead!
+        var dict = ["id" : id, //this cause the problem? if yes create UUID instead!
                     
                     //status belum berdasarkan hasil triase
                     
@@ -49,9 +50,8 @@ class RealtimeDBController {
                     
         ] as [String : Any]
         
-        ref.childByAutoId().child("triage").setValue(dict)
+        ref.child(id).child("triage").setValue(dict)
 
-        
     }
     
     func queryProfile(uid: String){
