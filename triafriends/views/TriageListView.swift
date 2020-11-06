@@ -45,7 +45,7 @@ struct TriageListView: View {
             }
         case .date:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 0
+                return item.date == startDate
                 //NOTCONFIGURED
             }
 
@@ -96,7 +96,7 @@ struct TriageListView: View {
                                     VStack(alignment: .leading, spacing: 2) {
                                         
                                     
-                                    Text(getTextFromDate(startDate))
+                                        Text(triages.name!)
                                         .font(Font.custom(nameBold, size: 16))
                                         Text("Category \(triages.status!)")
                                             .font(.custom(nameSemiBold, size: 10))
