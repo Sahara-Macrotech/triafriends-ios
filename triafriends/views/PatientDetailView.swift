@@ -266,7 +266,7 @@ struct PatientDetailView: View {
                 
                 
                 
-                
+                //add
             }.position(x: UIScreen.main.bounds.midX)
             
             
