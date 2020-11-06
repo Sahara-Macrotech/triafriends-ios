@@ -4,7 +4,6 @@
 //
 //  Created by Arie May Wibowo on 28/10/20.
 //
-
 import SwiftUI
 import Firebase
 import FirebaseDatabase
@@ -60,7 +59,7 @@ class RealtimeDBController {
         ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/patients/\(hospitalID)/\(id)/triage")
         ref.updateChildValues(["patientState": state])
         }
-    }
+    
     
     func queryProfile(uid: String){
         
@@ -98,18 +97,6 @@ class RealtimeDBController {
             
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     func updatePatientQueue(name: String, score: String, hospital: String) -> Void {
         
@@ -166,3 +153,4 @@ class RealtimeDBController {
         }
     }
 }
+
