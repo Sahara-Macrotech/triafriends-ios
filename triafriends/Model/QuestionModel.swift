@@ -35,7 +35,7 @@ class TempTriageResult {
     private var skinCondition: String = ""
     private var GCS: String = ""
     private var mentalState: String = ""
-    private var createdTime: Timestamp = Timestamp()
+    private var createdTime: Double = 0.0
     
     func setName(name: String) {
         self.name = name
@@ -43,10 +43,10 @@ class TempTriageResult {
     func getName() -> String {
         return self.name
     }
-    func setCreatedTime(createdTime: Timestamp) {
+    func setCreatedTime(createdTime: Double) {
         self.createdTime = createdTime
     }
-    func getCreatedTime() -> Timestamp {
+    func getCreatedTime() -> Double {
         return self.createdTime
     }
     

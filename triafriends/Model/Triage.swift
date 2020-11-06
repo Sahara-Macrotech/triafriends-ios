@@ -42,7 +42,8 @@ struct Triage: Identifiable {
     var id: String?
     var status: Int?
     var name: String?
-    var createdTime: Timestamp?
+    var createdTime: Double?
+    var date: Date?
     var patientState: PatientState?
     enum PatientState: String {
         case queue = "Queue"
@@ -187,7 +188,7 @@ struct ReceivedTriage: Codable {
     let jalanNafas: String
     let nadi: String
     let name: String
-    let createdTime: Timestamp?
+    let createAt: Double
     let patientState: String
     let psikologis: String
     let respiratoryRate: String
@@ -258,7 +259,7 @@ class TriageListViewModel: ObservableObject{
                         let data = try? JSONSerialization.data(withJSONObject: dict, options: .sortedKeys)
                         
                         let decode = try? JSONDecoder().decode(rootReceivedTriage.self, from: data!)
-                        
+                       
                         //  print(decode)
                         arrOfReceivedTriage.append(decode!)
                         
@@ -501,7 +502,14 @@ class TriageListViewModel: ObservableObject{
                 //ID
                 var id = i.triage.id
                 var name = i.triage.name
-                var createdTime = i.triage.createdTime
+                var createdTime = i.triage.createAt
+                
+                
+                //DATE
+                let timestamp = Date(timeIntervalSince1970: createdTime)
+                
+                
+                
                 var status = i.triage.status
                 
                 
@@ -689,7 +697,7 @@ class TriageListViewModel: ObservableObject{
                 
                 var sT = i.triage.startTime
                 var eT = i.triage.endTime
-                tempArray.append(Triage(id: id, status: status, name: name,  createdTime: createdTime, patientState: ps, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p, startTime: sT, endTime: eT))
+                tempArray.append(Triage(id: id, status: status, name: name,  createdTime: createdTime,date: timestamp, patientState: ps, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p, startTime: sT, endTime: eT))
                 print(tempArray.count)
             }
             
