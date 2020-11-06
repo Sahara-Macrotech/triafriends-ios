@@ -15,6 +15,7 @@ struct TriageListView: View {
     
     var filteredQueue: Filter.Filters = .all
     var creationDate: Date?
+    var startDate: Date?
     
     var filteredTriages: [Triage] {
         switch filteredQueue {
@@ -78,6 +79,7 @@ struct TriageListView: View {
                     
                     ForEach(filteredTriages) { triages in
                         VStack{
+                            
                             //example--------------
                             ZStack{
                                 
@@ -94,7 +96,7 @@ struct TriageListView: View {
                                     VStack(alignment: .leading, spacing: 2) {
                                         
                                     
-                                    Text(triages.name!)
+                                    Text(getTextFromDate(startDate))
                                         .font(Font.custom(nameBold, size: 16))
                                         Text("Category \(triages.status!)")
                                             .font(.custom(nameSemiBold, size: 10))
@@ -136,6 +138,15 @@ struct TriageListView: View {
         return color
     }
 }
+func getTextFromDate(_ date: Date?) -> String {
+    if date == nil { return "" }
+    let formatter = DateFormatter()
+    formatter.timeZone = TimeZone.current
+    formatter.locale = Locale.current
+    formatter.dateFormat = "EEEE, MMMM d, yyyy"
+    return formatter.string(from: date!)
+}
+
 
 struct triageList_Previews: PreviewProvider {
     static var previews: some View {
