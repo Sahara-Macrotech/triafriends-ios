@@ -59,10 +59,10 @@ struct NewHistoryView: View {
                                             .foregroundColor(Color.white)
                                             .multilineTextAlignment(.leading)
                                             .padding(.leading,5)
-                                        Text("green is higher than any color")
-                                            .font(.footnote)
-                                            .foregroundColor(Color.white)
-                                            .multilineTextAlignment(.leading)
+//                                        //Text("green is higher than any color")
+//                                            .font(.footnote)
+//                                            .foregroundColor(Color.white)
+//                                            .multilineTextAlignment(.leading)
                                         
                                     }
                                            }
