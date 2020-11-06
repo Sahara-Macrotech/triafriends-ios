@@ -29,9 +29,12 @@ struct PatientNumberInput: View {
             
             TextField("Enter Patient Number", text: $number)
                 .multilineTextAlignment(.leading)
+                .keyboardType(.phonePad)
+                .textContentType(.oneTimeCode)
                 .font(Font.system(size:32, weight: .regular))
                 .foregroundColor(Color.init(hex: "#858585"))
                 .padding(.bottom, 30)
+           
 
             Rectangle()
                 .frame(width: 350, height:2)

@@ -98,15 +98,14 @@ class RealtimeDBController {
         }
     }
     
-    func updatePatientQueue(name: String, score: String, hospital: String) -> Void {
+    func updatePatientQueue(name: String, hospital: String) -> Void {
         
         ref = Database.database().reference()
         let uuid = UUID().uuidString
         
         let post = ["uid": uuid,
-                    "name": name,
-                    "score": score]
-        let childUpdates = ["\(hospital)/patients/queue/\(uuid)": post]
+                    "patientState": name]
+        let childUpdates = ["patients/\(hospital)/\(uuid)/triage": post]
         ref.updateChildValues(childUpdates)
         
     }

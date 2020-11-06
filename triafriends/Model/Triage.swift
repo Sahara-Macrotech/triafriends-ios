@@ -293,7 +293,6 @@ class TriageListViewModel: ObservableObject{
                 //ID
            //     var id = "id"
             var name = receivedTriage.getName()
-        var createdTime = receivedTriage.getCreatedTime()
              //   var status = recei
                 
 //
@@ -477,7 +476,7 @@ class TriageListViewModel: ObservableObject{
                 
                // var sT = i.triage.startTime
                // var eT = i.triage.endTime
-        triase = Triage(name: name,createdTime: createdTime, patientState: .queue, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p, startTime: 100, endTime: 100)
+        triase = Triage(name: name, patientState: .queue, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p, startTime: 100, endTime: 100)
               
             
             
