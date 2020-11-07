@@ -22,27 +22,42 @@ struct TriageListView: View {
         switch filteredQueue {
         case .done:
             return triageListViewModel.arrOfTriages.filter { (item) in
+                
                 return item.patientState == .done
             }
         case .handled:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+                
                 return item.patientState == .handled
             }
         case .queue:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+                
                 return item.patientState == .queue
             }
         case .red:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 1 || item.status == 2
+                var start = startDate ?? Date(timeIntervalSince1970: 5000)
+                var end = endDate ?? Date(timeIntervalSince1970: 5000000000)
+                var now = item.date
+                var range = start...end
+                return item.status == 1 && range.contains(now!) || item.status == 2 && range.contains(now!)
             }
         case .yellow:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 3 || item.status == 4
+                var start = startDate ?? Date(timeIntervalSince1970: 5000)
+                var end = endDate ?? Date(timeIntervalSince1970: 5000000000)
+                var now = item.date
+                var range = start...end
+                return item.status == 3 && range.contains(now!) || item.status == 4 && range.contains(now!)
             }
         case .green:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 5
+                var start = startDate ?? Date(timeIntervalSince1970: 5000)
+                var end = endDate ?? Date(timeIntervalSince1970: 5000000000)
+                var now = item.date
+                var range = start...end
+                return item.status == 5 && range.contains(now!)
             }
         case .date:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
@@ -62,7 +77,11 @@ struct TriageListView: View {
        
         case .black:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 6
+                var start = startDate ?? Date(timeIntervalSince1970: 5000)
+                var end = endDate ?? Date(timeIntervalSince1970: 5000000000)
+                var now = item.date
+                var range = start...end
+                return item.status == 6 && range.contains(now!)
             }
         }
     }

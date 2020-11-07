@@ -130,7 +130,7 @@ struct NewHistoryView: View {
                         }
                     }
                     
-                    TriageListView(filteredQueue: colorFilter ?? .date,startDate: rkManager2.startDate, endDate: rkManager2.endDate)
+                    TriageListView(filteredQueue: colorFilter ?? .all,startDate: rkManager2.startDate, endDate: rkManager2.endDate)
                         .frame(width: 400, height: 300, alignment: .center)
                 }
                 .onAppear(perform: {
