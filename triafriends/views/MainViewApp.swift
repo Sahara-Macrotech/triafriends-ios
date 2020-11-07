@@ -31,6 +31,7 @@ struct MainViewApp: View {
                         .tabItem {
                         Image(systemName: "list.dash")
                         Text("History")
+                            .font(.custom(nameBold, size: 12))
                         
                     }
             
