@@ -98,7 +98,11 @@ struct NewHistoryView: View {
                     //
                     //                    }
                     HStack(spacing: 20) {
-                        DonutChart(dataModel: ChartDataModel.init(dataModel: sample), onTap: {
+                        DonutChart(dataModel: ChartDataModel.init(dataModel: [ ChartCellModel(color: colorRed, value: CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).r), name: "Gawat Darurat"),
+                                                                               ChartCellModel(color: colorYellow, value: CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).y), name: "Gawat Tidak Darurat"),
+                                                                               
+                                                                               ChartCellModel(color: colorGreen, value: CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).g), name: "Darurat Tidak Gawat"),
+                                                                               ChartCellModel(color: Color.black, value: CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).b), name: "Mati") ]), onTap: {
                             dataModel in
                             if let dataModel = dataModel {
                                 self.selectedDonut = "Subject: \(dataModel.name)\nAmount: \(Int(dataModel.value)) people(s)"
