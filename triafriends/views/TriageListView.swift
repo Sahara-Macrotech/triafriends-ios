@@ -79,6 +79,14 @@ struct TriageListView: View {
                 var range = start...end
                 return item.status == 6 && range.contains(now!)
             }
+        case .dateOnly:
+            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+                var start = startDate ?? Date(timeIntervalSince1970: 5000)
+                var end = endDate ?? Date(timeIntervalSince1970: 5000000000)
+                var now = item.date
+                var range = start...end
+                return range.contains(now!)
+            }
         }
     }
     

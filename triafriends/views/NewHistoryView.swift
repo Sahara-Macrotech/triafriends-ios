@@ -67,7 +67,10 @@ struct NewHistoryView: View {
                                         
                                     }
                                            }
-                                .sheet(isPresented: $isPresented2) { RKViewController().environmentObject(rkManager2) }
+                                .sheet(isPresented: $isPresented2) { RKViewController().environmentObject(rkManager2) }.onDisappear {
+                                    colorFilter = .dateOnly
+                                
+                                }
                                 VStack {
                                     Text(getTextFromDate(rkManager2.startDate)).font(.footnote)
                                     Text(getTextFromDate(rkManager2.endDate)).font(.footnote)
