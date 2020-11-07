@@ -28,7 +28,7 @@ struct PieChart: View {
                                 self.onTap(dataSet)
                             }
                         }
-                    }.scaleEffect((self.selectedCell == dataSet.id) ? 1.05 : 1.0)
+                    }
                 }
                 
             }
