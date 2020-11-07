@@ -101,6 +101,11 @@ struct NewHistoryView: View {
                     //
                     //                    }
                     HStack(spacing: 20) {
+                        ZStack{
+                            Circle()
+                                .frame(width: 150, height: 150, alignment: .center)
+                                .foregroundColor(.gray)
+                            
                         DonutChart(dataModel: ChartDataModel.init(dataModel: [ ChartCellModel(color: colorRed, value: CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).r), name: "Gawat Darurat"),
                                                                                ChartCellModel(color: colorYellow, value: CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).y), name: "Gawat Tidak Darurat"),
                                                                                
@@ -117,8 +122,12 @@ struct NewHistoryView: View {
                                 
                             }
                         })
+                            
                         .frame(width: 150, height: 150, alignment: .center)
                         .padding()
+                            
+                       
+                        }
                         Text(selectedDonut)
                             .font(.footnote)
                             .multilineTextAlignment(.leading)
@@ -168,13 +177,13 @@ struct NewHistoryView: View {
             }
             .edgesIgnoringSafeArea([.top, .bottom])
         }.onAppear(perform: {
-            sample[2].value = CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).g)
-
-            sample[1].value = CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).y)
-
-            sample[0].value = CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).r)
-
-            sample[3].value = CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).b)
+//            sample[2].value = CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).g)
+//
+//            sample[1].value = CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).y)
+//
+//            sample[0].value = CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).r)
+//
+//            sample[3].value = CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).b)
         })
       
     }

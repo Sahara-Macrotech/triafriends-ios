@@ -18,6 +18,7 @@ struct PieChart: View {
                     PieChartCell(startAngle: self.dataModel.angle(for: dataSet.value), endAngle: self.dataModel.startingAngle)
                         .foregroundColor(dataSet.color)
                        .onTapGesture {
+                        
                          withAnimation {
                             if self.selectedCell == dataSet.id {
                                 self.onTap(nil)
@@ -62,7 +63,7 @@ struct DonutChart: View {
             ZStack {
                 PieChart(dataModel: dataModel, onTap: onTap)
              
-                InnerCircle(ratio: 1/4).foregroundColor(.white)
+                InnerCircle(ratio: 1/4).foregroundColor(colorLightGray)
             }
     }
 }
