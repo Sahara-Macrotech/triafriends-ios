@@ -59,18 +59,14 @@ struct TriageListView: View {
                 var range = start...end
                 return item.status == 5 && range.contains(now!)
             }
-        case .date:
-            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                print(startDate as Any)
-                print(endDate as Any)
-                var start = startDate ?? Date(timeIntervalSince1970: 5000)
-                var end = endDate ?? Date(timeIntervalSince1970: 5000000000)
-                var now = item.date
-                var range = start...end
-               // var range = startDate...en
-                return range.contains(now!)
-                //NOTCONFIGURED
-            }
+        case .limitToFive:
+           //Limit result to 5 only
+          
+            //index out of range
+            return Array(triageListViewModel.arrOfTriages.prefix(5))
+            
+             
+            
 
         case .all:
             return triageListViewModel.arrOfTriages
@@ -141,6 +137,7 @@ struct TriageListView: View {
                             }
                         }
                     }.padding()
+                    
                     .onAppear(perform: {
                         let hospitalID = "SILOAM2122"
                             triageListViewModel.query(hospitalID: hospitalID)

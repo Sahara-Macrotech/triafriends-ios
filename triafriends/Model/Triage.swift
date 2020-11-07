@@ -22,7 +22,7 @@ struct Filter {
         case red
         case yellow
         case green
-        case date
+        case limitToFive
         case black
     }
     

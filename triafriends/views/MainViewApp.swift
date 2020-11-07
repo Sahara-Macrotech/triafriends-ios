@@ -19,8 +19,10 @@ struct MainViewApp: View {
                 TabView {
                     
                     ContentView().tabItem {
-                        Image(systemName: "list.dash")
+                        Image(systemName: "house")
+                           
                         Text("Dashboard")
+                            .font(.custom(nameBold, size: 12))
                         
                     }
                     
@@ -28,7 +30,7 @@ struct MainViewApp: View {
                     NewHistoryView()
                         .tabItem {
                         Image(systemName: "list.dash")
-                        Text("Account")
+                        Text("History")
                         
                     }
             
@@ -45,7 +47,8 @@ struct MainViewApp: View {
                     Button(action: {}, label: {
                         ZStack{
                         Image(systemName: "circle.fill")
-                            .scaleEffect(CGSize(width: 4, height: 4))
+                            .resizable()
+                            .frame(width: 72, height: 72, alignment: .center)
                             .accentColor(.white)
                             .shadow(radius: 3)
 
