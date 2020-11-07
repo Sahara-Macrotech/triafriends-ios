@@ -4,7 +4,6 @@
 //
 //  Created by Arie May Wibowo on 28/10/20.
 //
-
 import SwiftUI
 import Firebase
 import FirebaseDatabase
@@ -23,9 +22,10 @@ class RealtimeDBController {
         
         ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/patients/\(hospitalID)/")
         
+        let id = UUID().uuidString
         
         //replace value with value from parameter
-        var dict = ["id" : UUID().uuidString, //this cause the problem? if yes create UUID instead!
+        var dict = ["id" : id, //this cause the problem? if yes create UUID instead!
                     
                     //status belum berdasarkan hasil triase
                     
@@ -49,10 +49,17 @@ class RealtimeDBController {
                     
         ] as [String : Any]
         
-        ref.childByAutoId().child("triage").setValue(dict)
+        ref.child(id).child("triage").setValue(dict)
 
-        
     }
+    
+    func changePatientState(hospitalID: String, id: String, state: String) -> Void {
+        var ref: DatabaseReference!
+        
+        ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/patients/\(hospitalID)/\(id)/triage")
+        ref.updateChildValues(["patientState": state])
+        }
+    
     
     func queryProfile(uid: String){
         
@@ -91,27 +98,14 @@ class RealtimeDBController {
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    func updatePatientQueue(name: String, score: String, hospital: String) -> Void {
+    func updatePatientQueue(name: String, hospital: String) -> Void {
         
         ref = Database.database().reference()
         let uuid = UUID().uuidString
         
         let post = ["uid": uuid,
-                    "name": name,
-                    "score": score]
-        let childUpdates = ["\(hospital)/patients/queue/\(uuid)": post]
+                    "patientState": name]
+        let childUpdates = ["patients/\(hospital)/\(uuid)/triage": post]
         ref.updateChildValues(childUpdates)
         
     }
@@ -158,3 +152,4 @@ class RealtimeDBController {
         }
     }
 }
+

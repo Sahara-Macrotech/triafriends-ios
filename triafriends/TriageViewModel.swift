@@ -11,6 +11,7 @@ import Foundation
 class TriageViewModel: Identifiable {
     var questions = [Questions]()
     
+    
     init() {
         questions.append(Questions.init(question: "How's the airway ?", options: [Triage.JalanNafas.sumbatanTotal.rawValue, Triage.JalanNafas.sumbatanSebagian.rawValue, Triage.JalanNafas.paten.rawValue]))
         questions.append(Questions.init(question: "How's the respiratory distress ?", options: [Triage.Distress.berat.rawValue, Triage.Distress.sedang.rawValue, Triage.Distress.ringan.rawValue, Triage.Distress.tidakAda.rawValue, Triage.Distress.RRnormal.rawValue]))

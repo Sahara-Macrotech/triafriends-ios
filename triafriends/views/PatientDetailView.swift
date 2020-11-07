@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
-
+import FirebaseDatabase
 struct PatientDetailView: View {
     var triages: Triage?
     //var triageData: TriageData?
     
+    var helper = RealtimeDBController()
+   
+
+  
     var body: some View {
+        
         VStack{
             ZStack{
                 colorLightGray
@@ -21,7 +26,7 @@ struct PatientDetailView: View {
                     
                     HStack{
                         VStack{
-                           
+                            
                             HStack{
                                 Text(triages!.name!)
                                     .multilineTextAlignment(.leading)
@@ -218,29 +223,29 @@ struct PatientDetailView: View {
                         
                     }
                     Group{
-                    HStack{
-                        Text("tanggal create : ")
-                            .font(Font.custom(nameSemiBold, size: 16))
-                            .foregroundColor(.black)
+                        HStack{
+                            Text("tanggal create : ")
+                                .font(Font.custom(nameSemiBold, size: 16))
+                                .foregroundColor(.black)
+                            
+                            Spacer()
+                            Text(triages?.warnaKulit?.rawValue ?? " ")
+                                .font(Font.custom(nameBold, size: 16))
+                                .foregroundColor(colorPurple)
+                            
+                        }
                         
-                        Spacer()
-                        Text(triages?.warnaKulit?.rawValue ?? " ")
-                            .font(Font.custom(nameBold, size: 16))
-                            .foregroundColor(colorPurple)
-                        
-                    }
-                    
-                    HStack{
-                        Text("GCS : ")
-                            .font(Font.custom(nameSemiBold, size: 16))
-                            .foregroundColor(.black)
-                        
-                        Spacer()
-                        Text("\((triages?.gcs.rawValue)!)")
-                            .font(Font.custom(nameBold, size: 16))
-                            .foregroundColor(colorPurple)
-                        
-                    }
+                        HStack{
+                            Text("GCS : ")
+                                .font(Font.custom(nameSemiBold, size: 16))
+                                .foregroundColor(.black)
+                            
+                            Spacer()
+                            Text("\((triages?.gcs.rawValue)!)")
+                                .font(Font.custom(nameBold, size: 16))
+                                .foregroundColor(colorPurple)
+                            
+                        }
                     }
                     
                     //VSTACK MAXIMUM IS 10==================
@@ -261,28 +266,44 @@ struct PatientDetailView: View {
                 
                 
                 
-                
+                //add
             }.position(x: UIScreen.main.bounds.midX)
             
             
             
-            
-            
-            Button(action: {}, label: {
-                ZStack{
-                    colorPurple
-                        .frame(width: 350, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(24)
-                    Text("Handle")
-                        .font(Font.custom(nameBold, size: 16))
-                        .foregroundColor(.white)
-                }
-            })
-            
+            if  triages?.patientState?.rawValue ==  "Queue" {
+                Button(action: {
+//                    helper.updatePatientQueue(name: "Done", hospital: "SILOAM2122")
+                }, label: {
+                    ZStack{
+                        colorPurple
+                            .frame(width: 350, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(24)
+                        Text("Handle")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(.white)
+                    }
+                })
+            }
+            if   triages?.patientState?.rawValue ==  "Handled"{
+                Button(action: {
+                  
+                }, label: {
+                    ZStack{
+                        colorPurple
+                            .frame(width: 350, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(24)
+                        Text("Done")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(.white)
+                    }
+                })
+            }
         }
         
     }
 }
+
 
 struct PatientDetailView_Previews: PreviewProvider {
     static var previews: some View {

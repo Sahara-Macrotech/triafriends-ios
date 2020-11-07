@@ -15,45 +15,77 @@ struct TriageListView: View {
     
     var filteredQueue: Filter.Filters = .all
     var creationDate: Date?
+    var startDate: Date?
+    var endDate: Date?
     
     var filteredTriages: [Triage] {
         switch filteredQueue {
         case .done:
             return triageListViewModel.arrOfTriages.filter { (item) in
+                
                 return item.patientState == .done
             }
         case .handled:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+                
                 return item.patientState == .handled
             }
         case .queue:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+                
                 return item.patientState == .queue
             }
         case .red:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 1 || item.status == 2
+                var start = startDate ?? Date(timeIntervalSince1970: 5000)
+                var end = endDate ?? Date(timeIntervalSince1970: 5000000000)
+                var now = item.date
+                var range = start...end
+                return item.status == 1 && range.contains(now!) || item.status == 2 && range.contains(now!)
             }
         case .yellow:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 3 || item.status == 4
+                var start = startDate ?? Date(timeIntervalSince1970: 5000)
+                var end = endDate ?? Date(timeIntervalSince1970: 5000000000)
+                var now = item.date
+                var range = start...end
+                return item.status == 3 && range.contains(now!) || item.status == 4 && range.contains(now!)
             }
         case .green:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 5
+                var start = startDate ?? Date(timeIntervalSince1970: 5000)
+                var end = endDate ?? Date(timeIntervalSince1970: 5000000000)
+                var now = item.date
+                var range = start...end
+                return item.status == 5 && range.contains(now!)
             }
-        case .date:
-            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 0
-                //NOTCONFIGURED
-            }
+        case .limitToFive:
+           //Limit result to 5 only
+          
+            //index out of range
+            return Array(triageListViewModel.arrOfTriages.prefix(5))
+            
+             
+            
 
         case .all:
             return triageListViewModel.arrOfTriages
        
         case .black:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.status == 6
+                var start = startDate ?? Date(timeIntervalSince1970: 5000)
+                var end = endDate ?? Date(timeIntervalSince1970: 5000000000)
+                var now = item.date
+                var range = start...end
+                return item.status == 6 && range.contains(now!)
+            }
+        case .dateOnly:
+            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+                var start = startDate ?? Date(timeIntervalSince1970: 5000)
+                var end = endDate ?? Date(timeIntervalSince1970: 5000000000)
+                var now = item.date
+                var range = start...end
+                return range.contains(now!)
             }
         }
     }
@@ -78,6 +110,7 @@ struct TriageListView: View {
                     
                     ForEach(filteredTriages) { triages in
                         VStack{
+                            
                             //example--------------
                             ZStack{
                                 
@@ -94,7 +127,7 @@ struct TriageListView: View {
                                     VStack(alignment: .leading, spacing: 2) {
                                         
                                     
-                                    Text(triages.name!)
+                                        Text(triages.name!)
                                         .font(Font.custom(nameBold, size: 16))
                                         Text("Category \(triages.status!)")
                                             .font(.custom(nameSemiBold, size: 10))
@@ -112,6 +145,7 @@ struct TriageListView: View {
                             }
                         }
                     }.padding()
+                    
                     .onAppear(perform: {
                         let hospitalID = "SILOAM2122"
                             triageListViewModel.query(hospitalID: hospitalID)
@@ -136,6 +170,15 @@ struct TriageListView: View {
         return color
     }
 }
+func getTextFromDate(_ date: Date?) -> String {
+    if date == nil { return "" }
+    let formatter = DateFormatter()
+    formatter.timeZone = TimeZone.current
+    formatter.locale = Locale.current
+    formatter.dateFormat = "EEEE, MMMM d, yyyy"
+    return formatter.string(from: date!)
+}
+
 
 struct triageList_Previews: PreviewProvider {
     static var previews: some View {

@@ -55,10 +55,12 @@ struct ContentView: View {
                     ExtractedView()
                     
                     
-                    TriageListView(filteredQueue: Filter.Filters.all)
+                    TriageListView(filteredQueue: .limitToFive)
                         .cornerRadius(0)
                         .frame(width: UIScreen.main.bounds.maxX , height: 400)
-                    
+                        //this will disable the scrolling but disable the button also
+                        .moveDisabled(true)
+                      
                     //Title Laporan Harian and button
                     HStack{
                         Text("Daily report")
@@ -100,7 +102,6 @@ struct ContentView: View {
            
         }.onAppear(perform: {
             helper.queryProfile(uid: dummyUID)
-            
         })
         .navigationTitle(Text(""))
         .navigationBarHidden(true)

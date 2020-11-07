@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class Questions {
     var question: String
@@ -34,12 +35,19 @@ class TempTriageResult {
     private var skinCondition: String = ""
     private var GCS: String = ""
     private var mentalState: String = ""
+    private var createdTime: Double = 0.0
     
     func setName(name: String) {
         self.name = name
     }
     func getName() -> String {
         return self.name
+    }
+    func setCreatedTime(createdTime: Double) {
+        self.createdTime = createdTime
+    }
+    func getCreatedTime() -> Double {
+        return self.createdTime
     }
     
     func setPhoneNumber(phoneNumber: String) {

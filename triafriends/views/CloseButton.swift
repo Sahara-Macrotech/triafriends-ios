@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CloseButton: View {
     var body: some View {
-        NavigationLink(destination: ContentView()) {
+        NavigationLink(destination: MainViewApp()) {
             Image(systemName: "xmark")
             .font(.system(size: 20, weight: .bold))
                 .foregroundColor(.black)
