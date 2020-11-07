@@ -11,8 +11,8 @@ struct PatientDetailView: View {
     var triages: Triage?
     //var triageData: TriageData?
     
-    var helper = RealtimeDBController()
-   
+    //var helper = RealtimeDBController()
+   // var color: Color?
 
   
     var body: some View {
@@ -84,7 +84,7 @@ struct PatientDetailView: View {
                         
                         
                         Spacer()
-                        colorRed
+                        getColor(triage: triages!)
                             .frame(width: 40, height: 40, alignment: .center)
                             .cornerRadius(radius)
                         
@@ -93,7 +93,7 @@ struct PatientDetailView: View {
                     
                 }
                 .frame(width: 330, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .scaleEffect(/*@START_MENU_TOKEN@*/CGSize(width: 1.0, height: 1.0)/*@END_MENU_TOKEN@*/)
+                .scaleEffect(CGSize(width: 1.0, height: 1.0))
                 
             }
             .frame(width: 360, height: 100, alignment: .center)
@@ -301,6 +301,20 @@ struct PatientDetailView: View {
             }
         }
         
+    }
+    func getColor(triage: Triage) -> Color{
+        var color: Color
+        
+        if triage.status == 5 {
+            color = colorGreen
+        } else if triage.status == 3 || triage.status == 4 {
+            color = colorYellow
+        } else if triage.status == 1 || triage.status == 2 {
+            color = colorRed
+        } else {
+            color = .black
+        }
+        return color
     }
 }
 

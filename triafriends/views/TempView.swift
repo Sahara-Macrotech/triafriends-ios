@@ -14,58 +14,78 @@ struct TempView: View {
     var db = RealtimeDBController()
     @ObservedObject var model = TriageListViewModel()
     @State var color: Color?
+    @State var calculated: Algo.ColorScale?
+    @State var converted: Triage?
     //dummyhospitalID
     let hospitalID = "SILOAM2122"
     
     var body: some View {
-        VStack {
-            Text(tempData.getName())
-            Text(tempData.getPhoneNumber())
-            Text(tempData.getAirway())
-            Text(tempData.getRespitoryDistress())
-            Text(tempData.getSpeak())
+        ZStack{
             
             color
-          
-            
-            Button(action: {
-               
-            }){
-                Text("upload result")
-            }
-            
-            Button(action: {
-                print(self.tempData.getSpeak())
-            }){
-                Text("Test")
+                .ignoresSafeArea()
+            VStack {
+                Text(tempData.getName())
+                
+                Text(getText(result: calculated ?? Algo.ColorScale.category5).alert)
+                
+                
+                
+                NavigationLink(
+                    destination: PatientDetailView(triages: converted),
+                    label: {
+                        Text("See detail")
+                    })
+                
+            }.onAppear {
+                
+                converted = model.stringToTriage(receivedTriage: tempData)
+              //    print(converted)
+                calculated = helper.calc(triage: converted!)
+              //  print(calculated)
+                
+                converted?.status = calculated?.rawValue
+                
+                //------------CODE JOROK UNTUK DEMO
+                if calculated == .category5 {
+                    color = colorGreen
+                } else if calculated == .category4 || calculated == .category3 {
+                    color = colorYellow
+                } else if calculated == .category1 || calculated == .category2 {
+                    color = colorRed
+                } else { color = .white }
+                
+                //-------------------
+                
+                //staatus didalam converted triage belum di ubah berdasarkan calculation
+                db.writeToDB(triages: converted!, hospitalID: hospitalID)
+                
+                
+                
                 
             }
-        }.onAppear {
-            
-            var converted = model.stringToTriage(receivedTriage: tempData)
-            print(converted)
-            var calculated = helper.calc(triage: converted)
-           print(calculated)
-            converted.status = calculated.rawValue
-            
-            //------------CODE JOROK UNTUK DEMO
-            if calculated == .category5 {
-                color = colorGreen
-            } else if calculated == .category4 || calculated == .category3 {
-                color = colorYellow
-            } else if calculated == .category1 || calculated == .category2 {
-                color = colorRed
-            }
-            
-            //-------------------
-            
-            //staatus didalam converted triage belum di ubah berdasarkan calculation
-            db.writeToDB(triages: converted, hospitalID: hospitalID)
-            
-            
-            
-            
         }
+    }
+    func getText(result: Algo.ColorScale) -> (alert: String, desc: String){
+        var alert: String = ""
+        var desc: String = ""
+        switch result {
+        case .category1:
+            alert = "RESUSCITATION"
+            desc = "Maximum response time : Immediately"
+        case .category2:
+            alert = "EMERGENCY"
+            desc = "Maximum resopnse time : 10 Minutes"
+        case .category3:
+            alert = "URGENT"
+            desc = "Maximum response time : 30 Minutes"
+        case .category4:
+            alert = "SEMI URGENT"
+            desc = "Maximum response time : 60 Minutes"
+        default:
+            alert = "Maximum response time : 120 Minutes"
+        }
+        return (alert, desc)
     }
 }
 

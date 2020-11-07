@@ -222,7 +222,7 @@ class Algo {
         } else if cat5! > 0 {
             results = .category5
         }
-        cat2! += 1
+       // cat2! += 1
         print(cat5)
         print(cat4)
         print(cat3)
