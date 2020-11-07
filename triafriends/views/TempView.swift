@@ -25,17 +25,32 @@ struct TempView: View {
             color
                 .ignoresSafeArea()
             VStack {
-                Text(tempData.getName())
+                Spacer()
+               
                 
                 Text(getText(result: calculated ?? Algo.ColorScale.category5).alert)
+                    .font(.custom(nameBlack, size: 24))
+                    .foregroundColor(.white)
+                    .padding()
+                Text(getText(result: calculated ?? Algo.ColorScale.category5).desc)
+                    .font(.custom(nameSemiBold, size: 20))
+                    .foregroundColor(.white)
+                    .padding()
                 
                 
-                
+                Spacer()
                 NavigationLink(
                     destination: PatientDetailView(triages: converted),
                     label: {
+                        ZStack{
+                        Rectangle()
+                            .frame(width: 336, height: 57, alignment: .center)
+                            .cornerRadius(100)
+                            .foregroundColor(.white)
                         Text("See detail")
-                    })
+                            .font(.custom(nameBold, size: 15))
+                        }
+                    }).padding()
                 
             }.onAppear {
                 
