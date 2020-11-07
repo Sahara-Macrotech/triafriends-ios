@@ -501,11 +501,22 @@ class TriageListViewModel: ObservableObject{
                 //ID
                 var id = i.triage.id
                 var name = i.triage.name
-                var createdTime = i.triage.createAt
                 
                 
-                //DATE
-                let timestamp = Date(timeIntervalSince1970: createdTime)
+                //JSONDecoder mendecode timestamp dari firebase tipe data Double
+                
+                
+                
+                var createdTime = i.triage.createAt // createAt diquery dari firebase dengan format Double. Valuenya adalah jumlah detik setelah tahun 1970
+                //VALUE: 1604628329
+                
+        
+                let timestamp = Date(timeIntervalSince1970: createdTime) // Ini mengubah jumlah detik setelah 1970 menjadi tanggal
+                //VALUE: 2020-11-06 17:00:00 +0000
+                
+                
+                
+                
                 
                 
                 

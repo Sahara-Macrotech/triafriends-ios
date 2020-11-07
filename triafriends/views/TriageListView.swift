@@ -16,6 +16,7 @@ struct TriageListView: View {
     var filteredQueue: Filter.Filters = .all
     var creationDate: Date?
     var startDate: Date?
+    var endDate: Date?
     
     var filteredTriages: [Triage] {
         switch filteredQueue {
@@ -45,7 +46,14 @@ struct TriageListView: View {
             }
         case .date:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-                return item.date == startDate
+                print(startDate as Any)
+                print(endDate as Any)
+                var start = startDate ?? Date(timeIntervalSince1970: 5000)
+                var end = endDate ?? Date(timeIntervalSince1970: 5000000000)
+                var now = item.date
+                var range = start...end
+               // var range = startDate...en
+                return range.contains(now!)
                 //NOTCONFIGURED
             }
 
