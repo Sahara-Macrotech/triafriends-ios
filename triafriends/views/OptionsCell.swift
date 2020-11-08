@@ -21,7 +21,7 @@ struct OptionsCell: View {
     var deepPurple = Color.init(hex: "#4B2766")
     var lightGray = Color.init(hex: "#F7F7F7")
     
-    @State var cellPressed = false
+    @Binding var cellPressed: Bool
     @State var index: Int
     @Binding var selectedIndex: Int
     @Binding var selectedOption: String
@@ -30,17 +30,17 @@ struct OptionsCell: View {
     
     var body: some View {
         Button(action: {
-            //self.cellPressed.toggle()
+            self.cellPressed = true
             self.selectedIndex = self.index
             self.selectedOption = self.option
         }) {
             HStack {
                 Text(option)
-                    .font(Font.system(size: CGFloat(fontSize), weight: .medium))
-                    .offset(x:10, y:12)
-                    .foregroundColor((self.selectedIndex == self.index) ? deepPurple : Color.black)
+                    .font(Font.system(size: CGFloat(14), weight: .bold))
+                    .offset(x:10, y:20)
+                    .foregroundColor((self.selectedIndex == self.index && cellPressed == true) ? deepPurple : Color.black)
                     .frame(width: CGFloat(300), height: CGFloat(56), alignment: .topLeading)
-                if self.selectedIndex == self.index {
+                if self.selectedIndex == self.index && cellPressed == true {
                     Image(systemName: "checkmark.circle")
                     .font(.system(size: 30))
                     .foregroundColor(deepPurple)
@@ -48,8 +48,8 @@ struct OptionsCell: View {
                     
             }
             .frame(width: CGFloat(350), height: CGFloat(56), alignment: alignment)
-            .overlay(RoundedRectangle(cornerRadius: CGFloat(cornerRadius)).stroke((self.selectedIndex == self.index) ? deepPurple : lightGray, lineWidth: 4))
-            .background((self.selectedIndex == self.index) ? lightPurple : lightGray)
+            .overlay(RoundedRectangle(cornerRadius: CGFloat(cornerRadius)).stroke((self.selectedIndex == self.index && cellPressed == true) ? deepPurple : lightGray, lineWidth: 4))
+            .background((self.selectedIndex == self.index && cellPressed == true) ? lightPurple : lightGray)
             .cornerRadius(CGFloat(cornerRadius))
         }
     }

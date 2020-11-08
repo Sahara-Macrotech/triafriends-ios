@@ -11,6 +11,7 @@ import SwiftUI
 struct PatientNumberInput: View {
     @State var number: String = ""
     var triageProcess: TempTriageResult = TempTriageResult()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     func setTriageProcess() {
         triageProcess.setPhoneNumber(phoneNumber: number)
@@ -29,12 +30,10 @@ struct PatientNumberInput: View {
             
             TextField("Enter Patient Number", text: $number)
                 .multilineTextAlignment(.leading)
-                .keyboardType(.phonePad)
-                .textContentType(.oneTimeCode)
                 .font(Font.system(size:32, weight: .regular))
                 .foregroundColor(Color.init(hex: "#858585"))
                 .padding(.bottom, 30)
-           
+                .keyboardType(.numberPad)
 
             Rectangle()
                 .frame(width: 350, height:2)
@@ -43,7 +42,9 @@ struct PatientNumberInput: View {
             Spacer()
             
             HStack {
-                NavigationLink(destination: PatientNameInput(name: triageProcess.getName(), triageProcess: triageProcess).onAppear(perform: setTriageProcess)){
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }){
                     Text("Previous")
                         .font(Font.system(size: 15, weight: .bold))
                         .foregroundColor(Color.init(hex: "#4B2766"))
@@ -66,7 +67,6 @@ struct PatientNumberInput: View {
         }.frame(width: 350, height: 750, alignment: .topLeading)
         .navigationBarHidden(true)
         .navigationBarTitle("")
-        
     }
 }
 

@@ -26,7 +26,7 @@ struct TempView: View {
                 .ignoresSafeArea()
             VStack {
                 Spacer()
-               
+                
                 
                 Text(getText(result: calculated ?? Algo.ColorScale.category5).alert)
                     .font(.custom(nameBlack, size: 24))
@@ -49,6 +49,7 @@ struct TempView: View {
                             .foregroundColor(.white)
                         Text("See detail")
                             .font(.custom(nameBold, size: 15))
+                            .accentColor(.black)
                         }
                     }).padding()
                 
