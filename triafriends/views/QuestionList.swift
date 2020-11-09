@@ -12,10 +12,11 @@ struct QuestionList: View {
     @State var arrOfQuestion = TriageViewModel.init()
     @State var currQuestion = 0
     @State var nextPressed = false
-    @State var isShown = true
+    @State var isPressed = false
     @State var selectedIndex = 0
     @State var selectedOption = ""
     @State var triageProcess = TempTriageResult()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         VStack {
@@ -24,12 +25,12 @@ struct QuestionList: View {
                 .padding(.bottom, 25)
             
             Text(arrOfQuestion.questions[self.currQuestion].question)
-                .frame(width: 350, height: 40, alignment: .topLeading)
+                .frame(width: 350, height: 60, alignment: .topLeading)
                 .font(Font.system(size: 24, weight: .bold))
-                .padding(.bottom, 40)
+                .padding(.bottom, 30)
                 
             ForEach(arrOfQuestion.questions[self.currQuestion].options.indices, id: \.self) { i in
-                OptionsCell(option: self.$arrOfQuestion.questions[self.currQuestion].options[i], index: i, selectedIndex: self.$selectedIndex, selectedOption: self.$selectedOption).padding(.bottom, 10)
+                OptionsCell(option: self.$arrOfQuestion.questions[self.currQuestion].options[i], cellPressed: self.$isPressed, index: i, selectedIndex: self.$selectedIndex, selectedOption: self.$selectedOption).padding(.bottom, 10)
             }
                 
             Spacer()
@@ -37,13 +38,17 @@ struct QuestionList: View {
             HStack {
                 
                 if self.currQuestion == 0 {
-                    NavigationLink(destination: PatientNumberInput(triageProcess: triageProcess)){
+                    Button(action: {
+                        self.nextPressed.toggle()
+                        presentationMode.wrappedValue.dismiss()
+                    
+                    }) {
                         Text("Previous")
-                            .font(Font.system(size: 15, weight: .bold))
-                            .foregroundColor(Color.init(hex: "#4B2766"))
-                            .frame(width: CGFloat(172), height: CGFloat(57), alignment: .center)
-                            .background(Color.init(hex: "#E0C8F1"))
-                            .cornerRadius(CGFloat(28.5))
+                        .font(Font.system(size: 15, weight: .bold))
+                        .foregroundColor(Color.init(hex: "#4B2766"))
+                        .frame(width: CGFloat(172), height: CGFloat(57), alignment: .center)
+                        .background(Color.init(hex: "#E0C8F1"))
+                        .cornerRadius(CGFloat(28.5))
                     }
                 }
                 else {
@@ -82,10 +87,6 @@ struct QuestionList: View {
                         self.setTriageProcessList()
                         self.currQuestion += 1
                     }
-                    if self.currQuestion == (self.arrOfQuestion.questions.count-1) {
-                        self.isShown = false
-                    }
-                    
                     }) {
                         Text("Next")
                         .font(Font.system(size: 15, weight: .bold))
@@ -110,6 +111,7 @@ struct QuestionList: View {
     }
     
     func setTriageProcessList() {
+        self.isPressed = false
         if self.currQuestion == 0 {
             triageProcess.setAirway(airway: selectedOption)
         }
@@ -148,6 +150,10 @@ struct QuestionList: View {
 
 struct QuestionList_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionList()
+        Group {
+            QuestionList()
+            QuestionList()
+            QuestionList()
+        }
     }
 }

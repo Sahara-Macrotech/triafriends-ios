@@ -22,8 +22,9 @@ struct Filter {
         case red
         case yellow
         case green
-        case date
+        case limitToFive
         case black
+        case dateOnly
     }
     
 }
@@ -42,6 +43,8 @@ struct Triage: Identifiable {
     var id: String?
     var status: Int?
     var name: String?
+    var createdTime: Double?
+    var date: Date?
     var patientState: PatientState?
     enum PatientState: String {
         case queue = "Queue"
@@ -186,6 +189,7 @@ struct ReceivedTriage: Codable {
     let jalanNafas: String
     let nadi: String
     let name: String
+    let createAt: Double
     let patientState: String
     let psikologis: String
     let respiratoryRate: String
@@ -256,7 +260,7 @@ class TriageListViewModel: ObservableObject{
                         let data = try? JSONSerialization.data(withJSONObject: dict, options: .sortedKeys)
                         
                         let decode = try? JSONDecoder().decode(rootReceivedTriage.self, from: data!)
-                        
+                       
                         //  print(decode)
                         arrOfReceivedTriage.append(decode!)
                         
@@ -498,6 +502,25 @@ class TriageListViewModel: ObservableObject{
                 //ID
                 var id = i.triage.id
                 var name = i.triage.name
+                
+                
+                //JSONDecoder mendecode timestamp dari firebase tipe data Double
+                
+                
+                
+                var createdTime = i.triage.createAt // createAt diquery dari firebase dengan format Double. Valuenya adalah jumlah detik setelah tahun 1970
+                //VALUE: 1604628329
+                
+        
+                let timestamp = Date(timeIntervalSince1970: createdTime) // Ini mengubah jumlah detik setelah 1970 menjadi tanggal
+                //VALUE: 2020-11-06 17:00:00 +0000
+                
+                
+                
+                
+                
+                
+                
                 var status = i.triage.status
                 
                 
@@ -685,7 +708,7 @@ class TriageListViewModel: ObservableObject{
                 
                 var sT = i.triage.startTime
                 var eT = i.triage.endTime
-                tempArray.append(Triage(id: id, status: status, name: name, patientState: ps, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p, startTime: sT, endTime: eT))
+                tempArray.append(Triage(id: id, status: status, name: name,  createdTime: createdTime,date: timestamp, patientState: ps, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p, startTime: sT, endTime: eT))
                 print(tempArray.count)
             }
             

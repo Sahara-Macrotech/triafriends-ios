@@ -15,71 +15,24 @@ struct MainView: App {
     
     var body: some Scene {
         WindowGroup {
-            ZStack{
-                
-             
-                //Tab Bar
-                
-                TabView {
-                    
-                    ContentView().tabItem {
-                        Image(systemName: "list.dash")
-                        Text("Dashboard")
-                        
-                    }
-                    
-                    
-                    NewHistoryView().tabItem {
-                        Image(systemName: "list.dash")
-                        Text("Account")
-                        
-                    }
-            
-                }.accentColor(colorPurple)
-                
-                
-                
-                // Add Button overlay
-                VStack{
-                    Spacer(minLength: 730)
-                    //Ganti minlength jadi UIScreen.main.bound / x
-                    
-                
-                    Button(action: {}, label: {
-                        ZStack{
-                        Image(systemName: "circle.fill")
-                            .scaleEffect(CGSize(width: 4, height: 4))
-                            .accentColor(.white)
-                            .shadow(radius: 3)
-
-                        Image("add")
-                            .scaleEffect(0.35)
-                        }.onTapGesture(count: 1, perform: {
-                            isPopUpEnabled = true
-                        })
-                    })
-                    Spacer()
-                    
-                    
-                }
-                
-                //If AddButton is Pressed
-                if isPopUpEnabled == true {
-                    Color.black.opacity(0.5)
-                        .ignoresSafeArea()
-                        .animation(.easeIn)
-                    //Initiate AddView here
-                  
-                    PatientNameInput()
-                    
-                    
-                    
-
-                }
-            }
-            
-            
+            MainViewApp()
         }
+    }
+}
+extension UIApplication {
+    func addTapGestureRecognizer() {
+        guard let window = windows.first else { return }
+        let tapGesture = UITapGestureRecognizer(target: window, action: #selector(UIView.endEditing))
+        tapGesture.requiresExclusiveTouchType = false
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self
+        window.addGestureRecognizer(tapGesture)
+    }
+}
+
+extension UIApplication: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true // set to `false` if you don't want to detect tap during other gestures
     }
 }
 

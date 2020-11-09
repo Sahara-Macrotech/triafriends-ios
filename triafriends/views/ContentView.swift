@@ -20,84 +20,91 @@ struct ContentView: View {
         NavigationView{
             
             ZStack{
-                
                 VStack{
                     
-                    HStack{
-                        Text("Good morning,")
-                            .font(.custom(nameRegular, size: 16))
-                            .foregroundColor(colorTextGray)
+                    VStack(spacing: 5){
                         
-                        Spacer()
-                    }.padding(.horizontal)
-                    HStack{
-                   
-    
-                    Text(accountData.username)
-                        .font(.custom(nameExtraBold, size: 36))
+                        HStack{
+                            Text("Good morning,")
+                                .font(.custom(nameRegular, size: 16))
+                                .foregroundColor(colorTextGray)
+                            
+                            Spacer()
+                        }.padding(.horizontal)
+                        HStack{
+                            
+                            
+                            Text(accountData.username)
+                                .font(.custom(nameExtraBold, size: 36))
+                            
+                            Spacer()
+                            NavigationLink(
+                                destination: Profile(),
+                                label: {
+                                    Image("1")
+                                        .resizable()
+                                        .frame(width: 72, height: 72, alignment: .center)
+                                        .clipShape(Circle())
+                                })
+                            
+                        }.padding(.horizontal)
+                    }.position(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.minY)
+                    
+                    VStack{
                         
-                        Spacer()
-                        NavigationLink(
-                            destination: Profile(),
-                            label: {
-                                Image("1")
-                                    .clipShape(Circle())
-                                    
-                                    
-                        }).scaleEffect(1.5)
-                            .padding()
-                    }.padding(.horizontal)
-                    
-                    
-                     
-                    Spacer()
-                   
-                    ExtractedView()
-                    
-                    
-                    TriageListView(filteredQueue: Filter.Filters.all)
-                        .cornerRadius(0)
-                        .frame(width: UIScreen.main.bounds.maxX , height: 400)
-                    
-                    //Title Laporan Harian and button
-                    HStack{
-                        Text("Daily report")
-                            .font(.title2)
-                            .bold()
+                        
+                        
                         
                         Spacer()
                         
-                        //Dummy button
-                        NavigationLink(
-                            destination: ListAllView(selectedColoumn: .queue),
-                            label: {
-                                Text("See all")
-                            })
+                        ExtractedView()
+                        
+                        
+                        TriageListView(filteredQueue: .limitToFive)
+                            .cornerRadius(0)
+                            .frame(width: UIScreen.main.bounds.maxX , height: 340)
+                            //this will disable the scrolling but disable the button also
+                            .moveDisabled(true)
+                        
+                        //Title Laporan Harian and button
+                        HStack{
+                            Text("Daily report")
+                                .font(.title2)
+                                .bold()
+                            
+                            Spacer()
+                            
+                            //Dummy button
+                            NavigationLink(
+                                destination: ListAllView(selectedColoumn: .queue),
+                                label: {
+                                    Text("See all")
+                                })
+                            
+                        }
+                        .padding(.horizontal)
+                        
+                        
+                        //Horizontal View Stack  laporan harian
+                        HStack{
+                            ReportView()
+                                .scaleEffect(0.8)
+                            Spacer()
+                            ReportView()
+                                .scaleEffect(0.8)
+                        }
+                        
                         
                     }
-                    .padding(.horizontal)
-                    
-                    
-                    //Horizontal View Stack  laporan harian
-                    HStack{
-                        ReportView()
-                            .scaleEffect(0.8)
-                        Spacer()
-                        ReportView()
-                            .scaleEffect(0.8)
-                    }
-                    
                     
                 }
-              
-
-               
                 
                 
-              
+                
+                
             }.padding(.bottom, 20)
             
-           
+            
         }.onAppear(perform: {
             helper.queryProfile(uid: dummyUID)
         })

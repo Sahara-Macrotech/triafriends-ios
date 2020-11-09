@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		118813709087B0387AE5BBD2 /* Pods_triafriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25CEB9BD7686CFA6CF69CE94 /* Pods_triafriends.framework */; };
+		7F09E5E2255505F4004E47CD /* MainViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09E5E1255505F4004E47CD /* MainViewApp.swift */; };
 		7F25BEF22551EF98006932BC /* RKPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEEF2551EF98006932BC /* RKPage.swift */; };
 		7F25BEF32551EF98006932BC /* RKPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEF02551EF98006932BC /* RKPageView.swift */; };
 		7F25BEF42551EF98006932BC /* RKWeeklyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEF12551EF98006932BC /* RKWeeklyPage.swift */; };
@@ -69,6 +70,7 @@
 		062E80ABC5839FF5E3B82C40 /* Pods-triafriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-triafriends.release.xcconfig"; path = "Target Support Files/Pods-triafriends/Pods-triafriends.release.xcconfig"; sourceTree = "<group>"; };
 		25CEB9BD7686CFA6CF69CE94 /* Pods_triafriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_triafriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6127170F74B0721A47E023 /* Pods-triafriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-triafriends.debug.xcconfig"; path = "Target Support Files/Pods-triafriends/Pods-triafriends.debug.xcconfig"; sourceTree = "<group>"; };
+		7F09E5E1255505F4004E47CD /* MainViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewApp.swift; sourceTree = "<group>"; };
 		7F25BEEF2551EF98006932BC /* RKPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKPage.swift; sourceTree = "<group>"; };
 		7F25BEF02551EF98006932BC /* RKPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKPageView.swift; sourceTree = "<group>"; };
 		7F25BEF12551EF98006932BC /* RKWeeklyPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKWeeklyPage.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */,
 				C0792B382542DD9C00A40B69 /* AccountView.swift */,
 				8D99A43725416E67006FF45A /* ContentView.swift */,
+				7F09E5E1255505F4004E47CD /* MainViewApp.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				C0AA0D9B25529F1500D9FD1D /* TriageViewModel.swift in Sources */,
 				7F25BEF32551EF98006932BC /* RKPageView.swift in Sources */,
 				7F25BEF22551EF98006932BC /* RKPage.swift in Sources */,
+				7F09E5E2255505F4004E47CD /* MainViewApp.swift in Sources */,
 				C0792B392542DD9C00A40B69 /* AccountView.swift in Sources */,
 				C0DF56272551202600F5A761 /* PieChartCellModels.swift in Sources */,
 				C0792B3C2542DDAE00A40B69 /* MainView.swift in Sources */,
@@ -602,7 +606,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 7QAVKC3WGP;
+				DEVELOPMENT_TEAM = 3QN5S48CNC;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -628,7 +632,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 7QAVKC3WGP;
+				DEVELOPMENT_TEAM = 3QN5S48CNC;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

@@ -4,7 +4,6 @@
 //
 //  Created by Arie May Wibowo on 28/10/20.
 //
-
 import SwiftUI
 import Firebase
 import FirebaseDatabase
@@ -29,8 +28,8 @@ class RealtimeDBController {
         var dict = ["id" : id, //this cause the problem? if yes create UUID instead!
                     
                     //status belum berdasarkan hasil triase
-                    
-                    "status" : 2,
+                    "createAt" : 1604628129,
+                    "status" : triages.status,
                     "patientState" : triages.patientState?.rawValue,
                     "name" : triages.name,
                     "jalanNafas" : triages.jalanNafas?.rawValue,
@@ -98,3 +97,4 @@ class RealtimeDBController {
         }
     }
 }
+

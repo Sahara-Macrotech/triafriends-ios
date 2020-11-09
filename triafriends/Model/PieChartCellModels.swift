@@ -46,26 +46,42 @@ struct ChartViewModels {
 
 @ObservedObject var triageListViewModel: TriageListViewModel = TriageListViewModel.sharedInstance
     
-    func getNumbersForChart () -> (g: Int, r: Int, y: Int, b: Int){
+    func getNumbersForChart (startDate: Date, endDate: Date) -> (g: Int, r: Int, y: Int, b: Int){
     
             
         
         var x = triageListViewModel.arrOfTriages.filter { (item) in
             print(item)
-            return item.status == 5
+            var start = startDate
+            var end = endDate
+            var now = item.date
+            var range = start...end
+            return item.status == 5 && range.contains(now!)
            
         }
         var y = triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-            return item.status == 1 || item.status == 2
+            var start = startDate
+            var end = endDate
+            var now = item.date
+            var range = start...end
+            return item.status == 1 && range.contains(now!) || item.status == 2 && range.contains(now!)
            
         }
         var z = triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-            return item.status == 3 || item.status == 4
+            var start = startDate
+            var end = endDate
+            var now = item.date
+            var range = start...end
+            return item.status == 3 && range.contains(now!) || item.status == 4 && range.contains(now!)
            
         }
         
         var b = triageListViewModel.arrOfTriages.filter { (item) -> Bool in
-            return item.status == 6
+            var start = startDate
+            var end = endDate
+            var now = item.date
+            var range = start...end
+            return item.status == 6 && range.contains(now!)
         }
         
         var yellow = z.count // 

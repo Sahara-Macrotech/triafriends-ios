@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
-
+import FirebaseDatabase
 struct PatientDetailView: View {
     var triages: Triage?
     //var triageData: TriageData?
     
+    //var helper = RealtimeDBController()
+   // var color: Color?
+
+  
     var body: some View {
+        
         VStack{
             ZStack{
                 colorLightGray
@@ -21,7 +26,7 @@ struct PatientDetailView: View {
                     
                     HStack{
                         VStack{
-                           
+                            
                             HStack{
                                 Text(triages!.name!)
                                     .multilineTextAlignment(.leading)
@@ -79,7 +84,7 @@ struct PatientDetailView: View {
                         
                         
                         Spacer()
-                        colorRed
+                        getColor(triage: triages!)
                             .frame(width: 40, height: 40, alignment: .center)
                             .cornerRadius(radius)
                         
@@ -88,7 +93,7 @@ struct PatientDetailView: View {
                     
                 }
                 .frame(width: 330, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .scaleEffect(/*@START_MENU_TOKEN@*/CGSize(width: 1.0, height: 1.0)/*@END_MENU_TOKEN@*/)
+                .scaleEffect(CGSize(width: 1.0, height: 1.0))
                 
             }
             .frame(width: 360, height: 100, alignment: .center)
@@ -218,29 +223,29 @@ struct PatientDetailView: View {
                         
                     }
                     Group{
-                    HStack{
-                        Text("tanggal create : ")
-                            .font(Font.custom(nameSemiBold, size: 16))
-                            .foregroundColor(.black)
+                        HStack{
+                            Text("tanggal create : ")
+                                .font(Font.custom(nameSemiBold, size: 16))
+                                .foregroundColor(.black)
+                            
+                            Spacer()
+                            Text(triages?.warnaKulit?.rawValue ?? " ")
+                                .font(Font.custom(nameBold, size: 16))
+                                .foregroundColor(colorPurple)
+                            
+                        }
                         
-                        Spacer()
-                        Text(triages?.warnaKulit?.rawValue ?? " ")
-                            .font(Font.custom(nameBold, size: 16))
-                            .foregroundColor(colorPurple)
-                        
-                    }
-                    
-                    HStack{
-                        Text("GCS : ")
-                            .font(Font.custom(nameSemiBold, size: 16))
-                            .foregroundColor(.black)
-                        
-                        Spacer()
-                        Text("\((triages?.gcs.rawValue)!)")
-                            .font(Font.custom(nameBold, size: 16))
-                            .foregroundColor(colorPurple)
-                        
-                    }
+                        HStack{
+                            Text("GCS : ")
+                                .font(Font.custom(nameSemiBold, size: 16))
+                                .foregroundColor(.black)
+                            
+                            Spacer()
+                            Text("\((triages?.gcs.rawValue)!)")
+                                .font(Font.custom(nameBold, size: 16))
+                                .foregroundColor(colorPurple)
+                            
+                        }
                     }
                     
                     //VSTACK MAXIMUM IS 10==================
@@ -261,28 +266,58 @@ struct PatientDetailView: View {
                 
                 
                 
-                
+                //add
             }.position(x: UIScreen.main.bounds.midX)
             
             
             
-            
-            
-            Button(action: {}, label: {
-                ZStack{
-                    colorPurple
-                        .frame(width: 350, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(24)
-                    Text("Handle")
-                        .font(Font.custom(nameBold, size: 16))
-                        .foregroundColor(.white)
-                }
-            })
-            
+            if  triages?.patientState?.rawValue ==  "Queue" {
+                Button(action: {
+//                    helper.updatePatientQueue(name: "Done", hospital: "SILOAM2122")
+                }, label: {
+                    ZStack{
+                        colorPurple
+                            .frame(width: 350, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(24)
+                        Text("Handle")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(.white)
+                    }
+                })
+            }
+            if   triages?.patientState?.rawValue ==  "Handled"{
+                Button(action: {
+                  
+                }, label: {
+                    ZStack{
+                        colorPurple
+                            .frame(width: 350, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(24)
+                        Text("Done")
+                            .font(Font.custom(nameBold, size: 16))
+                            .foregroundColor(.white)
+                    }
+                })
+            }
         }
         
     }
+    func getColor(triage: Triage) -> Color{
+        var color: Color
+        
+        if triage.status == 5 {
+            color = colorGreen
+        } else if triage.status == 3 || triage.status == 4 {
+            color = colorYellow
+        } else if triage.status == 1 || triage.status == 2 {
+            color = colorRed
+        } else {
+            color = .black
+        }
+        return color
+    }
 }
+
 
 struct PatientDetailView_Previews: PreviewProvider {
     static var previews: some View {
