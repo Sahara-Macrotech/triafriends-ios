@@ -11,7 +11,7 @@ struct PatientDetailView: View {
     var triages: Triage?
     //var triageData: TriageData?
     
-    //var helper = RealtimeDBController()
+    var helper = RealtimeDBController()
    // var color: Color?
 
   
@@ -273,7 +273,7 @@ struct PatientDetailView: View {
             
             if  triages?.patientState?.rawValue ==  "Queue" {
                 Button(action: {
-//                    helper.updatePatientQueue(name: "Done", hospital: "SILOAM2122")
+                    helper.changePatientState(hospitalID: "SILOAM2122", id: (triages?.id)!, state: "Handled")
                 }, label: {
                     ZStack{
                         colorPurple
@@ -287,7 +287,7 @@ struct PatientDetailView: View {
             }
             if   triages?.patientState?.rawValue ==  "Handled"{
                 Button(action: {
-                  
+                    helper.changePatientState(hospitalID: "SILOAM2122", id: (triages?.id)!, state: "Done")
                 }, label: {
                     ZStack{
                         colorPurple
