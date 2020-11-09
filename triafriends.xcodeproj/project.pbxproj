@@ -514,7 +514,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = Z5A6SFMQ64;
+				DEVELOPMENT_TEAM = 7QAVKC3WGP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -522,7 +522,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.inatechno2020.triafriends;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -540,7 +540,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = Z5A6SFMQ64;
+				DEVELOPMENT_TEAM = 7QAVKC3WGP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -548,7 +548,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.inatechno2020.triafriends;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
