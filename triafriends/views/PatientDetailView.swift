@@ -299,7 +299,19 @@ struct PatientDetailView: View {
                     }
                 })
             }
-        }
+            Spacer(minLength: 50)
+        }.navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+                                
+                                NavigationLink(destination: MainViewApp(), label: {
+                                    HStack{
+                                        Image(systemName: "chevron.left")
+                                        Text("Patient details")
+                                    }
+                                })
+                                
+        )
+        
         
     }
     func getColor(triage: Triage) -> Color{

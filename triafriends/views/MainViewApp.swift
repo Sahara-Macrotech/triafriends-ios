@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainViewApp: View {
     @State var isPopUpEnabled = false
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         
             ZStack{
