@@ -277,7 +277,7 @@ struct PatientDetailView: View {
                 }, label: {
                     ZStack{
                         colorPurple
-                            .frame(width: 350, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(width: 336, height: 57, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .cornerRadius(24)
                         Text("Handle")
                             .font(Font.custom(nameBold, size: 16))
@@ -291,7 +291,7 @@ struct PatientDetailView: View {
                 }, label: {
                     ZStack{
                         colorPurple
-                            .frame(width: 350, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(width: 336, height: 57, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .cornerRadius(24)
                         Text("Done")
                             .font(Font.custom(nameBold, size: 16))

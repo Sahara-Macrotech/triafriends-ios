@@ -84,7 +84,17 @@ struct ListAllView: View {
                 
                 .scaleEffect(CGSize(width: 1, height: 1))
         
-        }
+        }.navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+                                
+                                NavigationLink(destination: MainViewApp(), label: {
+                                    HStack{
+                                        Image(systemName: "chevron.left")
+                                        Text("All patients")
+                                    }
+                                })
+                                
+        )
     }
 }
 
