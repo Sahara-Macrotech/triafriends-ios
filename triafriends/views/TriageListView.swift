@@ -60,10 +60,24 @@ struct TriageListView: View {
                 return item.status == 5 && range.contains(now!)
             }
         case .limitToFive:
+            var x = triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+               
+             
+                var now = item.date
+                var today = Date().timeIntervalSince1970
+                let twentyFourHoursAgo = Date().timeIntervalSince1970 - 86400
+                let range = twentyFourHoursAgo...today
+                
+                
+                return range.contains(item.date!.timeIntervalSince1970)
+            }
            //Limit result to 5 only
-          
+            x.sort {
+                $0.status! < $1.status!
+            }
+            
             //index out of range
-            return Array(triageListViewModel.arrOfTriages.prefix(5))
+            return Array(x.prefix(5))
             
              
             
