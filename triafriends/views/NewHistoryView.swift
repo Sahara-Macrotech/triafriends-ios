@@ -186,6 +186,8 @@ struct NewHistoryView: View {
 //
 //            sample[3].value = CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).b)
         })
+        .navigationTitle("")
+        .navigationBarHidden(true)
       
     }
     
