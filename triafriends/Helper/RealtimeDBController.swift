@@ -14,18 +14,17 @@ class RealtimeDBController {
     var ref: DatabaseReference!
     
     
-    func writeToDB(triages: Triage, hospitalID: String){
+    func writeToDB(triages: Triage, hospitalID: String, completionId: @escaping ((String) -> Void)){
         //HospitalID:uidx:"triage": denyutNadi:dn.rawvalue
         //add triage parameter in production
       
         var ref: DatabaseReference!
+        let id = UUID().uuidString
         
         ref = Database.database().reference(fromURL: "https://triafriends-1.firebaseio.com/patients/\(hospitalID)/")
         
-        let id = UUID().uuidString
-        
         //replace value with value from parameter
-        var dict = ["id" : id, //this cause the problem? if yes create UUID instead!
+        let dict = ["id" : id, //this cause the problem? if yes create UUID instead!
                     
                     //status belum berdasarkan hasil triase
                     "createAt" : 1604628129,
@@ -50,6 +49,7 @@ class RealtimeDBController {
         ] as [String : Any]
         
         ref.child(id).child("triage").setValue(dict)
+        completionId(id)
 
     }
     

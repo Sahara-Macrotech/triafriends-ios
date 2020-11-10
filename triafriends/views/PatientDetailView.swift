@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseDatabase
 struct PatientDetailView: View {
     var triages: Triage?
+    var patientId: String
     //var triageData: TriageData?
     
     var helper = RealtimeDBController()
@@ -271,9 +272,9 @@ struct PatientDetailView: View {
             
             
             
-            if  triages?.patientState?.rawValue ==  "Queue" {
+            if  (triages?.patientState?.rawValue ==  "Queue") {
                 Button(action: {
-                    helper.changePatientState(hospitalID: "SILOAM2122", id: (triages?.id)!, state: "Handled")
+                    helper.changePatientState(hospitalID: "SILOAM2122", id: (triages?.id ?? patientId)!, state: "Handled")
                 }, label: {
                     ZStack{
                         colorPurple
@@ -285,9 +286,10 @@ struct PatientDetailView: View {
                     }
                 })
             }
+            
             if   triages?.patientState?.rawValue ==  "Handled"{
                 Button(action: {
-                    helper.changePatientState(hospitalID: "SILOAM2122", id: (triages?.id)!, state: "Done")
+                    helper.changePatientState(hospitalID: "SILOAM2122", id: (triages?.id ?? patientId)!, state: "Done")
                 }, label: {
                     ZStack{
                         colorPurple
@@ -321,7 +323,7 @@ struct PatientDetailView: View {
 
 struct PatientDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PatientDetailView()
+        PatientDetailView(patientId: "")
             .previewDevice("iPhone 11 Pro")
     }
 }

@@ -16,6 +16,7 @@ struct TempView: View {
     @State var color: Color?
     @State var calculated: Algo.ColorScale?
     @State var converted: Triage?
+    @State var patientId: String
     //dummyhospitalID
     let hospitalID = "SILOAM2122"
     
@@ -40,7 +41,7 @@ struct TempView: View {
                 
                 Spacer()
                 NavigationLink(
-                    destination: PatientDetailView(triages: converted),
+                    destination: PatientDetailView(triages: converted, patientId: patientId),
                     label: {
                         ZStack{
                         Rectangle()
@@ -56,7 +57,7 @@ struct TempView: View {
             }.onAppear {
                 
                 converted = model.stringToTriage(receivedTriage: tempData)
-              //    print(converted)
+//                print(converted!)
                 calculated = helper.calc(triage: converted!)
               //  print(calculated)
                 
@@ -74,10 +75,7 @@ struct TempView: View {
                 //-------------------
                 
                 //staatus didalam converted triage belum di ubah berdasarkan calculation
-                db.writeToDB(triages: converted!, hospitalID: hospitalID)
-                
-                
-                
+                db.writeToDB(triages: converted!, hospitalID: hospitalID, completionId: { id in patientId = id})
                 
             }
         }
@@ -107,6 +105,6 @@ struct TempView: View {
 
 struct TempView_Previews: PreviewProvider {
     static var previews: some View {
-        TempView()
+        TempView(patientId: "")
     }
 }

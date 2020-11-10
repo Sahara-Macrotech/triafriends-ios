@@ -70,7 +70,7 @@ struct QuestionList: View {
                 }
                 
                 if self.currQuestion == (self.arrOfQuestion.questions.count-1) {
-                    NavigationLink(destination: TempView(tempData: triageProcess).onAppear(perform: setTriageProcessList)){
+                    NavigationLink(destination: TempView(tempData: triageProcess, patientId: "").onAppear(perform: setTriageProcessList)){
                         Text("See Result")
                             .font(Font.system(size: 15, weight: .bold))
                             .foregroundColor(.white)

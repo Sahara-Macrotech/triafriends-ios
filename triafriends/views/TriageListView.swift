@@ -117,7 +117,7 @@ struct TriageListView: View {
                                 
                                 //Rectangle()
                                 NavigationLink(
-                                    destination: PatientDetailView(triages: triages),
+                                    destination: PatientDetailView(triages: triages, patientId: ""),
                                     label: {
                                         colorLightGray
                                             .cornerRadius(6)
