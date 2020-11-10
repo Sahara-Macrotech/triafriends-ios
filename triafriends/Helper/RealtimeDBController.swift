@@ -27,7 +27,7 @@ class RealtimeDBController {
         let dict = ["id" : id, //this cause the problem? if yes create UUID instead!
                     
                     //status belum berdasarkan hasil triase
-                    "createAt" : 1604628129,
+                    "createAt" : ServerValue.timestamp(),
                     "status" : triages.status,
                     "patientState" : triages.patientState?.rawValue,
                     "name" : triages.name,
@@ -74,7 +74,7 @@ class RealtimeDBController {
                 for document in snapshot!.documents {
                     //                          print("\(document.documentID) => \(document.data())")
                     let dict = document.data() as [String:Any]
-                    print(dict)
+                    //print(dict)
                     let userRole = dict["job"]
                     let userName = dict["name"]
                     let userHospital = dict["hospital"]

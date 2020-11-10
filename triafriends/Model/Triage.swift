@@ -512,7 +512,7 @@ class TriageListViewModel: ObservableObject{
                 //VALUE: 1604628329
                 
         
-                let timestamp = Date(timeIntervalSince1970: createdTime) // Ini mengubah jumlah detik setelah 1970 menjadi tanggal
+                let timestamp = Date(timeIntervalSince1970: createdTime / 1000) // Ini mengubah jumlah detik setelah 1970 menjadi tanggal
                 //VALUE: 2020-11-06 17:00:00 +0000
                 
                 
@@ -709,7 +709,7 @@ class TriageListViewModel: ObservableObject{
                 var sT = i.triage.startTime
                 var eT = i.triage.endTime
                 tempArray.append(Triage(id: id, status: status, name: name,  createdTime: createdTime,date: timestamp, patientState: ps, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p, startTime: sT, endTime: eT))
-                print(tempArray.count)
+                //print(tempArray.count)
             }
             
             

@@ -37,7 +37,7 @@ final class ChartDataModel: ObservableObject {
             startingAngle = lastBarEndAngle
         }
         lastBarEndAngle += Angle(degrees: Double(value / totalValue) * 360 )
-        print(lastBarEndAngle.degrees)
+        //print(lastBarEndAngle.degrees)
         return lastBarEndAngle
     }
 }
@@ -51,7 +51,7 @@ struct ChartViewModels {
             
         
         var x = triageListViewModel.arrOfTriages.filter { (item) in
-            print(item)
+           // print(item)
             var start = startDate
             var end = endDate
             var now = item.date

@@ -128,7 +128,7 @@ public struct RKMonth: View {
                     rkManager.calendar.isDate(rkManager.startDate, inSameDayAs: date) {
                     rkManager.startDate = nil
                 } else {
-                    rkManager.startDate = date
+                    rkManager.startDate = date.addingTimeInterval(25200)
                     rkManager.endDate = nil
                     rkManager.mode = .dateRange2
                 }
@@ -137,7 +137,7 @@ public struct RKMonth: View {
                     rkManager.calendar.isDate(rkManager.endDate, inSameDayAs: date) {
                     rkManager.endDate = nil
                 } else {
-                    rkManager.endDate = date
+                    rkManager.endDate = date.addingTimeInterval(25200)
                     if rkManager.isStartDateAfterEndDate() {
                         rkManager.endDate = nil
                         rkManager.startDate = nil
