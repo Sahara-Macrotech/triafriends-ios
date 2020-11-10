@@ -23,7 +23,7 @@ struct CongratulationView: View {
     }
 }
 struct CardCongratulation: View {
-    @State var GoToView2:Bool = false
+//    @State var GoToView2:Bool = false
     
     
     @State private var selectedStrength = 0
@@ -45,7 +45,7 @@ struct CardCongratulation: View {
                 Text("Congratulation").font(.system(size: 25)).bold()
                     .padding(.bottom,25).frame(maxWidth: .infinity, alignment: .center).padding(.top,30)
                 Text("Your data have been accepted by the hospital, now you can use the app.").font(.system(size: 20)).bold().fixedSize(horizontal: false, vertical: true).frame(maxWidth: .infinity, alignment: .center).opacity(0.5).multilineTextAlignment(.center).padding()
-                NavigationLink(destination: MainViewApp(GoToView1: self.$GoToView2)){
+                NavigationLink(destination: MainViewApp()){
                     ButtonView()
                 }
                 .background(Color.init(red: 75/255, green: 39/255, blue: 102/255, opacity: 1))

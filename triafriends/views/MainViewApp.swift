@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainViewApp: View {
     @State var isPopUpEnabled = false
-    @Binding var GoToView1: Bool
+    
     var body: some View {
         
             ZStack{
