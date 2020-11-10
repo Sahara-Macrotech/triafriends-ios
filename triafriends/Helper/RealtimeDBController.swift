@@ -74,7 +74,7 @@ class RealtimeDBController {
                 for document in snapshot!.documents {
                     //                          print("\(document.documentID) => \(document.data())")
                     let dict = document.data() as [String:Any]
-                    print(dict)
+                    //print(dict)
                     let userRole = dict["job"]
                     let userName = dict["name"]
                     let userHospital = dict["hospital"]

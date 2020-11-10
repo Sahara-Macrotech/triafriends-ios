@@ -114,7 +114,7 @@ struct NewHistoryView: View {
                             dataModel in
                             if let dataModel = dataModel {
                                 self.selectedDonut = "Subject: \(dataModel.name)\nAmount: \(Int(dataModel.value)) people(s)"
-                                print(dataModel.color)
+                                //print(dataModel.color)
                                 colorNameToFilter(color: dataModel.color)
                                 
                             } else {
@@ -177,6 +177,7 @@ struct NewHistoryView: View {
             }
             .edgesIgnoringSafeArea([.top, .bottom])
         }.onAppear(perform: {
+           
 //            sample[2].value = CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).g)
 //
 //            sample[1].value = CGFloat(cvm.getNumbersForChart(startDate: rkManager2.startDate ?? Date(timeIntervalSince1970: 500), endDate: rkManager2.endDate ?? Date(timeIntervalSince1970: 500000000000)).y)
@@ -201,25 +202,27 @@ struct NewHistoryView: View {
         if date == nil { return "" }
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd-HH-mm"
-        format.timeZone = TimeZone.current
-        format.locale = Locale.current
+        //format.timeZone = TimeZone.current
+       // format.locale = Locale.current
         return format.string(from: date!)
     }
     
     func getTextFromDate(_ date: Date?) -> String {
+        print(date)
         if date == nil { return "" }
+        
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current
         formatter.locale = Locale.current
-        formatter.dateFormat = "EEEE, MMMM d, yyyy"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         return formatter.string(from: date!)
     }
     
     func getTextFromDateTime(_ date: Date?) -> String {
         if date == nil { return "" }
         let formatter = DateFormatter()
-        formatter.timeZone = TimeZone.current
-        formatter.locale = Locale.current
+       // formatter.timeZone = TimeZone.current
+       // formatter.locale = Locale.current
         formatter.dateFormat = "EEEE, MMMM d HH:mm, yyyy"
         return formatter.string(from: date!)
     }
