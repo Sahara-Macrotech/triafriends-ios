@@ -512,7 +512,7 @@ class TriageListViewModel: ObservableObject{
                 //VALUE: 1604628329
                 
         
-                let timestamp = Date(timeIntervalSince1970: createdTime) // Ini mengubah jumlah detik setelah 1970 menjadi tanggal
+                let timestamp = Date(timeIntervalSince1970: createdTime / 1000) // Ini mengubah jumlah detik setelah 1970 menjadi tanggal
                 //VALUE: 2020-11-06 17:00:00 +0000
                 
                 

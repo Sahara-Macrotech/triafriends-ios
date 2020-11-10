@@ -223,11 +223,11 @@ class Algo {
             results = .category5
         }
        // cat2! += 1
-        print(cat5)
-        print(cat4)
-        print(cat3)
-        print(cat2)
-        print(cat1)
+//        print(cat5)
+//        print(cat4)
+//        print(cat3)
+//        print(cat2)
+//        print(cat1)
         
         //return
         return results
