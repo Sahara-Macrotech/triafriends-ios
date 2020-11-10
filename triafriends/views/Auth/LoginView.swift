@@ -187,8 +187,8 @@ struct LoginCard: View {
                                     break
                             }
                         
-                    }).frame(width: UIScreen.main.bounds.width/1.5, height: 50, alignment: .center).clipShape(Capsule())
-                FaceBookLoginView().frame(width: 180, height: 50,alignment: .center).padding(10)
+                    }).frame(width: UIScreen.main.bounds.width/1.5, height: 50, alignment: .center) .clipShape(RoundedRectangle(cornerRadius: 25))
+//                FaceBookLoginView().frame(width: 180, height: 50,alignment: .center).padding(10)
                 Button(action: {
                     if logged{
                         manager.logOut()
@@ -230,7 +230,7 @@ struct LoginCard: View {
                         .padding(.vertical,13)
                         .padding(.horizontal,45)
                         .background(Color.blue)
-                        .clipShape(Capsule())
+                        .clipShape(RoundedRectangle(cornerRadius: 25))
                         .frame(width: UIScreen.main.bounds.width/1.5, height: 50, alignment: .center)
                 })
                 

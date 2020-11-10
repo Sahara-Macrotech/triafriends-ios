@@ -43,7 +43,9 @@ struct SignMeUpCard: View {
     @State private var selectedStrength = 0
     @State private var backgroundColor = Color.red
     @State var showingDetail = false
+    @State private var current: Int? = 0
     var body: some View {
+        if current == 0 {
         NavigationView {
         ZStack (alignment: .bottom) {
             Rectangle()
@@ -97,8 +99,9 @@ struct SignMeUpCard: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 let uuidd =   Auth.auth().currentUser?.uid
+              
                 Button(action: {
-                    self.showingDetail.toggle()
+                    self.current = 1
                     let ratingDictionary = [
                         "uuid":uuidd,
                         "name":self.name,
@@ -157,8 +160,11 @@ struct SignMeUpCard: View {
             
             
         }
+        
+        }}else{
+            ThankYouView()
         }
-    }
+}
 }
 
 

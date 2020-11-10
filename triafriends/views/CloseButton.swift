@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct CloseButton: View {
+    @State var GoToView2:Bool = false
     var body: some View {
-        NavigationLink(destination: MainViewApp()) {
+        NavigationLink(destination: MainViewApp(GoToView1: self.$GoToView2)) {
             Image(systemName: "xmark")
             .font(.system(size: 20, weight: .bold))
                 .foregroundColor(.black)
