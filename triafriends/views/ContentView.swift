@@ -41,10 +41,14 @@ struct ContentView: View {
                             NavigationLink(
                                 destination: Profile(),
                                 label: {
-                                    Image("1")
+                                    Image("doctor")
+                                        
                                         .resizable()
-                                        .frame(width: 72, height: 72, alignment: .center)
                                         .clipShape(Circle())
+                                        .scaledToFit()
+                                        .frame(width: 72, height: 72, alignment: .center)
+                                        
+                                        
                                 })
                             
                         }.padding(.horizontal)

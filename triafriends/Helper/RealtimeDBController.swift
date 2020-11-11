@@ -14,7 +14,7 @@ class RealtimeDBController {
     var ref: DatabaseReference!
     
     
-    func writeToDB(triages: Triage, hospitalID: String){
+    func writeToDB(triages: Triage, hospitalID: String, completion: @escaping ((String) -> Void)){
         //HospitalID:uidx:"triage": denyutNadi:dn.rawvalue
         //add triage parameter in production
       
@@ -28,7 +28,7 @@ class RealtimeDBController {
         var dict = ["id" : id, //this cause the problem? if yes create UUID instead!
                     
                     //status belum berdasarkan hasil triase
-                    "createAt" : 1604628129,
+                    "createAt" : ServerValue.timestamp(),
                     "status" : triages.status,
                     "patientState" : triages.patientState?.rawValue,
                     "name" : triages.name,
@@ -50,6 +50,7 @@ class RealtimeDBController {
         ] as [String : Any]
         
         ref.child(id).child("triage").setValue(dict)
+        completion(id)
 
     }
     
@@ -74,7 +75,7 @@ class RealtimeDBController {
                 for document in snapshot!.documents {
                     //                          print("\(document.documentID) => \(document.data())")
                     let dict = document.data() as [String:Any]
-                    print(dict)
+                    //print(dict)
                     let userRole = dict["job"]
                     let userName = dict["name"]
                     let userHospital = dict["hospital"]

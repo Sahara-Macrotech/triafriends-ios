@@ -22,18 +22,46 @@ struct TriageListView: View {
         switch filteredQueue {
         case .done:
             return triageListViewModel.arrOfTriages.filter { (item) in
+                var now = item.date
+                var today = Date()
                 
-                return item.patientState == .done
+            
+                let startOfDay = Date().startOfDay.addingTimeInterval(25200)
+                print(startOfDay)
+                
+                
+                let range = startOfDay...today
+                
+                return item.patientState == .done && range.contains(now!)
             }
         case .handled:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
                 
-                return item.patientState == .handled
+                var now = item.date
+                var today = Date()
+                
+            
+                let startOfDay = Date().startOfDay.addingTimeInterval(25200)
+                print(startOfDay)
+                
+                
+                let range = startOfDay...today
+                
+                return item.patientState == .handled && range.contains(now!)
             }
         case .queue:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+                var now = item.date
+                var today = Date()
                 
-                return item.patientState == .queue
+            
+                let startOfDay = Date().startOfDay.addingTimeInterval(25200)
+                print(startOfDay)
+                
+                
+                let range = startOfDay...today
+                
+                return item.patientState == .queue && range.contains(now!)
             }
         case .red:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
@@ -60,17 +88,46 @@ struct TriageListView: View {
                 return item.status == 5 && range.contains(now!)
             }
         case .limitToFive:
+            var x = triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+               
+             
+                var now = item.date
+                var today = Date()
+                
+            
+                let startOfDay = Date().startOfDay.addingTimeInterval(25200)
+                print(startOfDay)
+                
+                
+                let range = startOfDay...today
+                return range.contains(item.date!)
+            }
            //Limit result to 5 only
-          
+            x.sort {
+                $0.status! < $1.status!
+            }
+            
             //index out of range
-            return Array(triageListViewModel.arrOfTriages.prefix(5))
+            return Array(x.prefix(5))
             
              
             
 
         case .all:
-            return triageListViewModel.arrOfTriages
-       
+            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+               
+             
+                var now = item.date
+                var today = Date()
+                
+            
+                let startOfDay = Date().startOfDay.addingTimeInterval(25200)
+                print(startOfDay)
+                
+                
+                let range = startOfDay...today
+                return range.contains(item.date!)
+            }
         case .black:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
                 var start = startDate ?? Date(timeIntervalSince1970: 5000)
@@ -186,3 +243,15 @@ struct triageList_Previews: PreviewProvider {
     }
 }
 
+extension Date {
+    var startOfDay: Date {
+        return Calendar.current.startOfDay(for: self)
+    }
+
+    var endOfDay: Date {
+        var components = DateComponents()
+        components.day = 1
+        components.second = -1
+        return Calendar.current.date(byAdding: components, to: startOfDay)!
+    }
+}

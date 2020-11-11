@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseDatabase
 struct PatientDetailView: View {
     var triages: Triage?
+    var patientID: String?
     //var triageData: TriageData?
     
     var helper = RealtimeDBController()
@@ -273,11 +274,11 @@ struct PatientDetailView: View {
             
             if  triages?.patientState?.rawValue ==  "Queue" {
                 Button(action: {
-                    helper.changePatientState(hospitalID: "SILOAM2122", id: (triages?.id)!, state: "Handled")
+                    helper.changePatientState(hospitalID: "SILOAM2122", id: (patientID ?? triages?.id)!, state: "Handled")
                 }, label: {
                     ZStack{
                         colorPurple
-                            .frame(width: 350, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(width: 336, height: 57, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .cornerRadius(24)
                         Text("Handle")
                             .font(Font.custom(nameBold, size: 16))
@@ -287,11 +288,11 @@ struct PatientDetailView: View {
             }
             if   triages?.patientState?.rawValue ==  "Handled"{
                 Button(action: {
-                    helper.changePatientState(hospitalID: "SILOAM2122", id: (triages?.id)!, state: "Done")
+                    helper.changePatientState(hospitalID: "SILOAM2122", id: (patientID ?? triages?.id)!, state: "Done")
                 }, label: {
                     ZStack{
                         colorPurple
-                            .frame(width: 350, height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(width: 336, height: 57, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .cornerRadius(24)
                         Text("Done")
                             .font(Font.custom(nameBold, size: 16))
@@ -299,7 +300,9 @@ struct PatientDetailView: View {
                     }
                 })
             }
+            Spacer(minLength: 50)
         }
+        
         
     }
     func getColor(triage: Triage) -> Color{
