@@ -29,7 +29,7 @@ struct LoginView: View {
 }
 
 struct LoginCard: View {
-    @State var isAuthorized = false
+//    @State var isAuthorized = false
     @ObservedObject var fbmanager = UserLoginManager()
     @Environment(\.presentationMode) var presentationMode
 //    @State var coordinator : SignInWithAppleCoordinator?
@@ -87,7 +87,7 @@ struct LoginCard: View {
     }
     //testting
     var body: some View {
-        if isAuthorized == true {
+        if UserDefaults.standard.bool(forKey: "isAuth") {
             SignMeUpView()
         }else{
         ZStack (alignment: .bottom) {
@@ -166,15 +166,19 @@ struct LoginCard: View {
                                                  
                                                 // User is signed in to Firebase with Apple.
                                                 print("you're in")
-                                                isAuthorized = true
+//                                                isAuthorized = true
                                                 let newUserInfo = Auth.auth().currentUser
                                                 let emailaa = newUserInfo?.email
-                                                let name = newUserInfo?.displayName
+//                                                let name = newUserInfo?.displayName
                                                 let id = newUserInfo?.uid
 //                                                self.loginView.isAuthorized = true
-                                                email = emailaa  as! String
-                                                print("Apple Sign In \(emailaa) \(name) \(id)")
-                                            
+                                                email = emailaa as! String
+//                                                print("Apple Sign In \(emailaa) \(name) \(id)")
+                                                var userData: [String: String] = [:]
+                                                userData["id"] = id
+                                                userData["email"] = emailaa
+                                                UserDefaults.standard.setValue(true, forKey: "isAuth")
+                                                UserDefaults.standard.setValue(userData, forKey: "userEmail")
                                             }
                                     
                                         //Prints the current userID for firebase
