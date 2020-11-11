@@ -12,10 +12,15 @@ struct MainView: App {
     @State var isPopUpEnabled = false
     let firestore = FirestoreController()
     let realtimeDb = RealtimeDBController()
-    
+    @AppStorage("email") var email = ""
     var body: some Scene {
         WindowGroup {
-            MainViewApp()
+            if email==""{
+               
+                LoginView()
+            }else{
+                LoginView()
+            }
         }
     }
 }

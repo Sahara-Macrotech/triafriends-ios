@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>347656028515-co37ch9m493ndnd80os8mm35tcatftt9.apps.googleusercontent.com</string>
+	<string>347656028515-3apme88mhcerqep7bfbs0uqaj6ice4ho.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.347656028515-co37ch9m493ndnd80os8mm35tcatftt9</string>
+	<string>com.googleusercontent.apps.347656028515-3apme88mhcerqep7bfbs0uqaj6ice4ho</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCtAwV4cdB0OrpT2Dnx3mEmGhA7QBl5HnA</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.sahara.triafriends</string>
+	<string>com.inatechno202020.triafriends1</string>
 	<key>PROJECT_ID</key>
 	<string>triafriends-1</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:347656028515:ios:c7390382be456b7c4d1356</string>
+	<string>1:347656028515:ios:ab6abe4a4c2287b34d1356</string>
 	<key>DATABASE_URL</key>
 	<string>https://triafriends-1.firebaseio.com</string>
 </dict>

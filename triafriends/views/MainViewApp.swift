@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainViewApp: View {
     @State var isPopUpEnabled = false
+    
     var body: some View {
         
             ZStack{
@@ -84,8 +85,8 @@ struct MainViewApp: View {
     }
 }
 
-struct MainViewApp_Previews: PreviewProvider {
-    static var previews: some View {
-        MainViewApp()
-    }
-}
+//struct MainViewApp_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainViewApp()
+//    }
+//}
