@@ -14,7 +14,7 @@ class RealtimeDBController {
     var ref: DatabaseReference!
     
     
-    func writeToDB(triages: Triage, hospitalID: String){
+    func writeToDB(triages: Triage, hospitalID: String, completion: @escaping ((String) -> Void)){
         //HospitalID:uidx:"triage": denyutNadi:dn.rawvalue
         //add triage parameter in production
       
@@ -50,6 +50,7 @@ class RealtimeDBController {
         ] as [String : Any]
         
         ref.child(id).child("triage").setValue(dict)
+        completion(id)
 
     }
     
