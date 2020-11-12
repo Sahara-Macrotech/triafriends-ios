@@ -16,6 +16,7 @@ import AuthenticationServices
 let screen1 = UIScreen.main.bounds
 
 struct SignMeUpView:  View {
+    @AppStorage("email") var email = ""
   
     var body: some View {
         ZStack {
@@ -44,6 +45,12 @@ struct SignMeUpCard: View {
     @State private var backgroundColor = Color.red
     @State var showingDetail = false
     @State private var current: Int? = 0
+    
+    init() {
+        print(emailValid)
+        print(UserDefaults.standard.array(forKey: "credentials"))
+    }
+    
     var body: some View {
         if current == 0 {
         NavigationView {
@@ -112,14 +119,15 @@ struct SignMeUpCard: View {
                         
                     ]
                     
+                    
                     let docRef = Firestore.firestore().document("user/\(UUID().uuidString)")
                     print("setting data")
                     docRef.setData(ratingDictionary, merge: true){ (error) in
                         if let error = error {
                             print("error = \(error)")
                         } else {
-                            
                             print("data updated successfully")
+                            UserDefaults.standard.setValue(ratingDictionary, forKey: "credentials")
 //                            self.showSheet = false
                             self.name = ""
                             self.email = ""
@@ -128,6 +136,8 @@ struct SignMeUpCard: View {
                             self.hospital = ""
                         }
                     }
+                    
+                    print(UserDefaults.standard.dictionary(forKey: "credentials"))
                     
                     print("")
                 }) {

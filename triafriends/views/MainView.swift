@@ -15,11 +15,12 @@ struct MainView: App {
     @AppStorage("email") var email = ""
     var body: some Scene {
         WindowGroup {
-            if email==""{
-               
+            if email == "" {
                 LoginView()
-            }else{
-                LoginView()
+            } else if ((email != "") && (UserDefaults.standard.dictionary(forKey: "credentials") == nil)) {
+                SignMeUpCard()
+            } else {
+                MainViewApp()
             }
         }
     }

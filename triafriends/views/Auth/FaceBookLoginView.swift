@@ -51,7 +51,8 @@ struct FaceBookLoginView: UIViewRepresentable {
                     let email = newUserInfo?.email
                     let name = newUserInfo?.displayName
                     let id = newUserInfo?.uid
-                    self.loginView.isAuthorized = true
+//                    self.loginView.isAuthorized = true
+                    UserDefaults.standard.setValue(true, forKey: "isAuth")
                     
                     print("Facebook Sign In \(email) \(name) \(id)")
                    
