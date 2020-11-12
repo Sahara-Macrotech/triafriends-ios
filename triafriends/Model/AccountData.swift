@@ -10,6 +10,8 @@ import Foundation
 struct AccountData {
     var username = "dr. Abil Makarim"
     var hospital = "RS Siloam"
+    var email = ""
+    var phone = ""
     let data = UserDefaults.standard.dictionary(forKey: "credentials")
     
     init() {
@@ -19,5 +21,11 @@ struct AccountData {
         } else {
             username = "dr. \(name)"
         }
+        
+        let userEmail = data!["email"] as! String
+        email = userEmail
+        
+        let userPhone = data!["phone"] as! String
+        phone = userPhone
     }
 }
