@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct MainView: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     @State var isPopUpEnabled = false
     let firestore = FirestoreController()
     let realtimeDb = RealtimeDBController()
