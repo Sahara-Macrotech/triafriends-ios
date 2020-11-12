@@ -23,6 +23,14 @@
 		7F25BF0A2551EFC5006932BC /* RKDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BEFF2551EFC5006932BC /* RKDate.swift */; };
 		7F25BF0B2551EFC5006932BC /* RKSelectionMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BF002551EFC5006932BC /* RKSelectionMode.swift */; };
 		7F25BF0C2551EFC5006932BC /* RKTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F25BF012551EFC5006932BC /* RKTimeView.swift */; };
+		7F9C2FF62559539A00DBD27C /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C2FF52559539A00DBD27C /* SignInWithApple.swift */; };
+		7F9C2FFA255953E100DBD27C /* FaceBookLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C2FF8255953E000DBD27C /* FaceBookLoginView.swift */; };
+		7F9C2FFB255953E100DBD27C /* SignMeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C2FF9255953E100DBD27C /* SignMeUpView.swift */; };
+		7F9C2FFE255957FD00DBD27C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F9C2FFD255957FD00DBD27C /* GoogleService-Info.plist */; };
+		7FF5820D25594CAB00B3255C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5820C25594CAB00B3255C /* LoginView.swift */; };
+		7FF5821225594CB800B3255C /* CongratulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5820F25594CB800B3255C /* CongratulationView.swift */; };
+		7FF5821325594CB800B3255C /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5821025594CB800B3255C /* ThankYouView.swift */; };
+		7FF5821425594CB800B3255C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5821125594CB800B3255C /* SignUpView.swift */; };
 		8D4A70A02548166E004035A0 /* FirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A709F2548166E004035A0 /* FirestoreController.swift */; };
 		8D71830E2548D4D00004E139 /* RealtimeDBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D71830D2548D4D00004E139 /* RealtimeDBController.swift */; };
 		8D99A43825416E67006FF45A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43725416E67006FF45A /* ContentView.swift */; };
@@ -32,7 +40,6 @@
 		8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A44025416E6A006FF45A /* triafriends.xcdatamodeld */; };
 		8D99A44D25416E85006FF45A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D99A44C25416E85006FF45A /* CloudKit.framework */; };
 		C0236FAE2548FCED004A1635 /* ListAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0236FAD2548FCED004A1635 /* ListAllView.swift */; };
-		C04A0AB12546BA8400C5EC19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C04A0AB02546BA8300C5EC19 /* GoogleService-Info.plist */; };
 		C0792B292542DB9800A40B69 /* TriageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B282542DB9800A40B69 /* TriageListView.swift */; };
 		C0792B2D2542DBDD00A40B69 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B2B2542DBDD00A40B69 /* AccountData.swift */; };
 		C0792B2E2542DBDD00A40B69 /* Triage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B2C2542DBDD00A40B69 /* Triage.swift */; };
@@ -85,6 +92,14 @@
 		7F25BEFF2551EFC5006932BC /* RKDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKDate.swift; sourceTree = "<group>"; };
 		7F25BF002551EFC5006932BC /* RKSelectionMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKSelectionMode.swift; sourceTree = "<group>"; };
 		7F25BF012551EFC5006932BC /* RKTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKTimeView.swift; sourceTree = "<group>"; };
+		7F9C2FF52559539A00DBD27C /* SignInWithApple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
+		7F9C2FF8255953E000DBD27C /* FaceBookLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceBookLoginView.swift; sourceTree = "<group>"; };
+		7F9C2FF9255953E100DBD27C /* SignMeUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignMeUpView.swift; sourceTree = "<group>"; };
+		7F9C2FFD255957FD00DBD27C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7FF5820C25594CAB00B3255C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		7FF5820F25594CB800B3255C /* CongratulationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratulationView.swift; sourceTree = "<group>"; };
+		7FF5821025594CB800B3255C /* ThankYouView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouView.swift; sourceTree = "<group>"; };
+		7FF5821125594CB800B3255C /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		8D4A709F2548166E004035A0 /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
 		8D71830D2548D4D00004E139 /* RealtimeDBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDBController.swift; sourceTree = "<group>"; };
 		8D99A43225416E67006FF45A /* triafriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = triafriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +112,6 @@
 		8D99A44A25416E7A006FF45A /* triafriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = triafriends.entitlements; sourceTree = "<group>"; };
 		8D99A44C25416E85006FF45A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C0236FAD2548FCED004A1635 /* ListAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllView.swift; sourceTree = "<group>"; };
-		C04A0AB02546BA8300C5EC19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0792B282542DB9800A40B69 /* TriageListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriageListView.swift; sourceTree = "<group>"; };
 		C0792B2B2542DBDD00A40B69 /* AccountData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
 		C0792B2C2542DBDD00A40B69 /* Triage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triage.swift; sourceTree = "<group>"; };
@@ -173,6 +187,19 @@
 			path = RKScroll;
 			sourceTree = "<group>";
 		};
+		7FF5820B25594C9E00B3255C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7F9C2FF8255953E000DBD27C /* FaceBookLoginView.swift */,
+				7F9C2FF9255953E100DBD27C /* SignMeUpView.swift */,
+				7FF5820C25594CAB00B3255C /* LoginView.swift */,
+				7FF5820F25594CB800B3255C /* CongratulationView.swift */,
+				7FF5821125594CB800B3255C /* SignUpView.swift */,
+				7FF5821025594CB800B3255C /* ThankYouView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		8D99A42925416E67006FF45A = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +225,7 @@
 				8D99A43925416E6A006FF45A /* Assets.xcassets */,
 				8D99A43E25416E6A006FF45A /* Persistence.swift */,
 				C0AA0D9A25529F1500D9FD1D /* TriageViewModel.swift */,
-				C04A0AB02546BA8300C5EC19 /* GoogleService-Info.plist */,
+				7F9C2FFD255957FD00DBD27C /* GoogleService-Info.plist */,
 				8D99A44325416E6A006FF45A /* Info.plist */,
 				7F25BED72551E4BD006932BC /* Manager */,
 				C0E147B3254588BF00189E2E /* UI */,
@@ -231,6 +258,7 @@
 		8D99A44F254181FC006FF45A /* views */ = {
 			isa = PBXGroup;
 			children = (
+				7FF5820B25594C9E00B3255C /* Auth */,
 				C0792B352542DD9300A40B69 /* AddView.swift */,
 				C0DF563D255121B600F5A761 /* PieChartCell.swift */,
 				C0AA0D9025529EE100D9FD1D /* CloseButton.swift */,
@@ -266,6 +294,7 @@
 		C08AAAE02543E5B10001AFEA /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				7F9C2FF52559539A00DBD27C /* SignInWithApple.swift */,
 				C09BABAB2542893900C985AA /* Algorithm.swift */,
 				C08AAADC2543E57E0001AFEA /* NameCensor.swift */,
 				8D4A709F2548166E004035A0 /* FirestoreController.swift */,
@@ -367,12 +396,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F9C2FFE255957FD00DBD27C /* GoogleService-Info.plist in Resources */,
 				C0E147C5254588F900189E2E /* NunitoSans-ExtraBold.ttf in Resources */,
 				C0E147C9254588F900189E2E /* NunitoSans-SemiBold.ttf in Resources */,
 				C0E147C7254588F900189E2E /* NunitoSans-Regular.ttf in Resources */,
 				C0E147CB254588F900189E2E /* NunitoSans-Black.ttf in Resources */,
 				8D99A43D25416E6A006FF45A /* Preview Assets.xcassets in Resources */,
-				C04A0AB12546BA8400C5EC19 /* GoogleService-Info.plist in Resources */,
 				C0E147CC254588F900189E2E /* NunitoSans-Bold.ttf in Resources */,
 				8D99A43A25416E6A006FF45A /* Assets.xcassets in Resources */,
 			);
@@ -435,7 +464,9 @@
 				C0DF56272551202600F5A761 /* PieChartCellModels.swift in Sources */,
 				C0792B3C2542DDAE00A40B69 /* MainView.swift in Sources */,
 				C09BABA82542844A00C985AA /* DataModel.swift in Sources */,
+				7FF5821225594CB800B3255C /* CongratulationView.swift in Sources */,
 				7F25BF072551EFC5006932BC /* RKHoursMinutesPicker.swift in Sources */,
+				7F9C2FF62559539A00DBD27C /* SignInWithApple.swift in Sources */,
 				C0DF563E255121B600F5A761 /* PieChartCell.swift in Sources */,
 				7F25BEF42551EF98006932BC /* RKWeeklyPage.swift in Sources */,
 				C0DF56262551202600F5A761 /* PieChart.swift in Sources */,
@@ -447,6 +478,7 @@
 				C0792B2E2542DBDD00A40B69 /* Triage.swift in Sources */,
 				7F25BF0B2551EFC5006932BC /* RKSelectionMode.swift in Sources */,
 				C0AA0D9225529EE100D9FD1D /* QuestionList.swift in Sources */,
+				7F9C2FFA255953E100DBD27C /* FaceBookLoginView.swift in Sources */,
 				C0AA0D9425529EE100D9FD1D /* CloseButton.swift in Sources */,
 				C08AAAD92543C7B40001AFEA /* PatientDetailView.swift in Sources */,
 				8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */,
@@ -457,6 +489,7 @@
 				C0AA0D9625529EE100D9FD1D /* PatientNumberInput.swift in Sources */,
 				C0AA0D9525529EE100D9FD1D /* OptionsCell.swift in Sources */,
 				8D99A43825416E67006FF45A /* ContentView.swift in Sources */,
+				7FF5820D25594CAB00B3255C /* LoginView.swift in Sources */,
 				8D4A70A02548166E004035A0 /* FirestoreController.swift in Sources */,
 				C0E147B02545828000189E2E /* Interface.swift in Sources */,
 				7F25BF062551EFC5006932BC /* RKColorSettings.swift in Sources */,
@@ -464,12 +497,15 @@
 				8D71830E2548D4D00004E139 /* RealtimeDBController.swift in Sources */,
 				C0792B312542DC1200A40B69 /* ReportView.swift in Sources */,
 				7F25BF022551EFC5006932BC /* RKMonth.swift in Sources */,
+				7FF5821325594CB800B3255C /* ThankYouView.swift in Sources */,
 				7F25BF032551EFC5006932BC /* RKWeekdayHeader.swift in Sources */,
 				C0AA0D5925529D1500D9FD1D /* HexToColor.swift in Sources */,
 				C0DF559325502ACB00F5A761 /* Profile.swift in Sources */,
 				C0AA0D9325529EE100D9FD1D /* PatientNameInput.swift in Sources */,
+				7F9C2FFB255953E100DBD27C /* SignMeUpView.swift in Sources */,
 				7F25BF092551EFC5006932BC /* RKMonthHeader.swift in Sources */,
 				C08AAADD2543E57F0001AFEA /* NameCensor.swift in Sources */,
+				7FF5821425594CB800B3255C /* SignUpView.swift in Sources */,
 				8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */,
 				C0AA0D9725529EE100D9FD1D /* TempView.swift in Sources */,
 				7F25BF0A2551EFC5006932BC /* RKDate.swift in Sources */,

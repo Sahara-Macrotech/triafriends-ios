@@ -10,4 +10,14 @@ import Foundation
 struct AccountData {
     var username = "dr. Abil Makarim"
     var hospital = "RS Siloam"
+    let data = UserDefaults.standard.dictionary(forKey: "credentials")
+    
+    init() {
+        let name = data!["name"] as! String
+        if name.contains("dr.")  {
+            username = name
+        } else {
+            username = "dr. \(name)"
+        }
+    }
 }
