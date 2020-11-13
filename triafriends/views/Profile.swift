@@ -91,7 +91,7 @@ struct Profile: View {
                     
                     
                     Rectangle()
-                        .foregroundColor(colorLightGray)
+                        .foregroundColor(colorTextGray)
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
@@ -111,7 +111,7 @@ struct Profile: View {
                     
                     
                     Rectangle()
-                        .foregroundColor(colorLightGray)
+                        .foregroundColor(colorTextGray)
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
@@ -142,7 +142,7 @@ struct Profile: View {
                     
                     
                     Rectangle()
-                        .foregroundColor(colorLightGray)
+                        .foregroundColor(colorTextGray)
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
@@ -161,7 +161,7 @@ struct Profile: View {
                     
                     
                     Rectangle()
-                        .foregroundColor(colorLightGray)
+                        .foregroundColor(colorTextGray)
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
