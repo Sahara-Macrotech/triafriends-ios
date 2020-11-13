@@ -80,7 +80,7 @@ struct Profile: View {
                                 .padding()
                                 .font(.custom(nameSemiBold, size: 14))
                             Spacer()
-                            Image("chevronRight")
+                            Image("lock")
                                 .scaleEffect(0.4)
                                 .padding(.horizontal, 7)
                         }
@@ -99,7 +99,7 @@ struct Profile: View {
                                 .font(.custom(nameSemiBold, size: 14))
                                 .padding()
                             Spacer()
-                            Image("chevronRight")
+                            Image("lock")
                                 .scaleEffect(0.4)
                                 .padding(.horizontal, 7)
                             
@@ -119,7 +119,7 @@ struct Profile: View {
                                 .font(.custom(nameSemiBold, size: 14))
                                 .padding()
                             Spacer()
-                            Image("chevronRight")
+                            Image("lock")
                                 .scaleEffect(0.4)
                                 .padding(.horizontal, 7)
                             
@@ -150,7 +150,7 @@ struct Profile: View {
                                 .padding()
                                 .font(.custom(nameSemiBold, size: 14))
                             Spacer()
-                            Image("chevronRight")
+                            Image("lock")
                                 .scaleEffect(0.4)
                                 .padding(.horizontal, 7)
                         }
@@ -169,7 +169,7 @@ struct Profile: View {
                                 .font(.custom(nameSemiBold, size: 14))
                                 .padding()
                             Spacer()
-                            Image("chevronRight")
+                            Image("lock")
                                 .scaleEffect(0.4)
                                 .padding(.horizontal, 7)
                             
