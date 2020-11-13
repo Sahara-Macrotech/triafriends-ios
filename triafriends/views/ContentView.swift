@@ -66,7 +66,7 @@ struct ContentView: View {
                         
                         TriageListView(filteredQueue: .limitToFive)
                             .cornerRadius(0)
-                            .frame(width: UIScreen.main.bounds.maxX , height: 340)
+                            .frame(width: UIScreen.main.bounds.maxX , height: 535)
                             //this will disable the scrolling but disable the button also
                             .moveDisabled(true)
                         
