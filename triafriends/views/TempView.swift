@@ -42,7 +42,7 @@ struct TempView: View {
                 Spacer()
                 HStack {
                     NavigationLink(
-                        destination: PatientDetailView(triages: converted, patientID: patientID, afterInputDataPatient: true),
+                        destination: MainViewApp(),
                         label: {
                             ZStack{
                                 Rectangle()
