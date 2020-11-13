@@ -71,23 +71,7 @@ struct ContentView: View {
                             .moveDisabled(true)
                         
                         //Title Laporan Harian and button
-                        HStack{
-                            Text("Daily report")
-                                .font(.title2)
-                                .bold()
-                            
-                            Spacer()
-                            
-                            //Dummy button
-                            NavigationLink(
-                                destination: ListAllView(selectedColoumn: .queue),
-                                label: {
-                                    Text("See all")
-                                })
-                            
-                        }
-                        .padding(.horizontal)
-                        
+                       
                         
                         //Horizontal View Stack  laporan harian
 //                        HStack{
