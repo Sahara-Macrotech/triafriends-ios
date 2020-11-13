@@ -647,11 +647,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-<<<<<<< HEAD
-				DEVELOPMENT_TEAM = 3QN5S48CNC;
-=======
 				DEVELOPMENT_TEAM = 3KS73FV5NW;
->>>>>>> development
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -678,11 +674,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-<<<<<<< HEAD
-				DEVELOPMENT_TEAM = 3QN5S48CNC;
-=======
 				DEVELOPMENT_TEAM = 3KS73FV5NW;
->>>>>>> development
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
