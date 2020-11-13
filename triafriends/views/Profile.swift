@@ -102,9 +102,13 @@ struct Profile: View {
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
+                            VStack{
                             Text("Privacy Policy")
                                 .font(.custom(nameSemiBold, size: 14))
                                 .padding()
+                            Text("Under development")
+                                .font(.custom(nameRegular, size: 10))
+                            }
                             Spacer()
                             Image("lock")
                                 .scaleEffect(0.4)
