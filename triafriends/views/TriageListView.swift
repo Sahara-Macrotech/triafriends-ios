@@ -100,7 +100,7 @@ struct TriageListView: View {
                 
                 
                 let range = startOfDay...today
-                return range.contains(item.date!)
+                return range.contains(item.date!) && item.patientState == .queue
             }
            //Limit result to 5 only
             x.sort {
