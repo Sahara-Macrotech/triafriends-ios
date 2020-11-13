@@ -41,18 +41,18 @@ struct Profile: View {
                     //Mask it round
                 VStack{
                     HStack{
-                        Text(accountData.username ?? "Name not registered")
+                        Text(accountData.username)
                         .font(Font.custom(nameExtraBold, size: 18))
                     Spacer()
                     }
                     HStack{
-                        Text(accountData.email ?? "Email not registered")
+                        Text(accountData.email )
                         .font(.custom(nameRegular, size: 12))
                         .foregroundColor(colorTextGray)
                     Spacer()
                     }
                     HStack{
-                        Text(accountData.phone ?? "Phone not registered")
+                        Text(accountData.phone )
                         .font(.custom(nameRegular, size: 12))
                         .foregroundColor(colorTextGray)
                         Spacer()
