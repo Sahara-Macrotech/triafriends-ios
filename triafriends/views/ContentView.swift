@@ -90,13 +90,13 @@ struct ContentView: View {
                         
                         
                         //Horizontal View Stack  laporan harian
-                        HStack{
-                            ReportView()
-                                .scaleEffect(0.8)
-                            Spacer()
-                            ReportView()
-                                .scaleEffect(0.8)
-                        }
+//                        HStack{
+//                            ReportView()
+//                                .scaleEffect(0.8)
+//                            Spacer()
+//                            ReportView()
+//                                .scaleEffect(0.8)
+//                        }
                         
                         
                     }
