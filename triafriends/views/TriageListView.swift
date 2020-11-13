@@ -23,7 +23,7 @@ struct TriageListView: View {
         case .done:
             return triageListViewModel.arrOfTriages.filter { (item) in
                 var now = item.date
-                var today = Date()
+                var today = Date().addingTimeInterval(25200)
                 
             
                 let startOfDay = Date().startOfDay.addingTimeInterval(25200)
@@ -38,7 +38,7 @@ struct TriageListView: View {
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
                 
                 var now = item.date
-                var today = Date()
+                var today = Date().addingTimeInterval(25200)
                 
             
                 let startOfDay = Date().startOfDay.addingTimeInterval(25200)
@@ -52,7 +52,7 @@ struct TriageListView: View {
         case .queue:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
                 var now = item.date
-                var today = Date()
+                var today = Date().addingTimeInterval(25200)
                 
             
                 let startOfDay = Date().startOfDay.addingTimeInterval(25200)
@@ -92,7 +92,7 @@ struct TriageListView: View {
                
              
                 var now = item.date
-                var today = Date()
+                var today = Date().addingTimeInterval(25200)
                 
             
                 let startOfDay = Date().startOfDay.addingTimeInterval(25200)
@@ -118,7 +118,7 @@ struct TriageListView: View {
                
              
                 var now = item.date
-                var today = Date()
+                var today = Date().addingTimeInterval(25200)
                 
             
                 let startOfDay = Date().startOfDay.addingTimeInterval(25200)
