@@ -63,8 +63,21 @@ struct ContentView: View {
                         
                         
                         Spacer()
-                        VStack{
-                            ExtractedView()
+                        
+                        ExtractedView()
+                        
+                        
+                        TriageListView(filteredQueue: .limitToFive)
+                            .cornerRadius(0)
+                            .frame(width: UIScreen.main.bounds.maxX , height: 535)
+                            //this will disable the scrolling but disable the button also
+                            .moveDisabled(true)
+                        
+                        //Title Laporan Harian and button
+                        HStack{
+                            Text("Daily report")
+                                .font(.title2)
+                                .bold()
                             
                             
                             TriageListView(filteredQueue: .limitToFive)
@@ -80,13 +93,13 @@ struct ContentView: View {
                         
                         
                         //Horizontal View Stack  laporan harian
-                        HStack{
-                            ReportView()
-                                .scaleEffect(0.8)
-                            Spacer()
-                            ReportView()
-                                .scaleEffect(0.8)
-                        }
+//                        HStack{
+//                            ReportView()
+//                                .scaleEffect(0.8)
+//                            Spacer()
+//                            ReportView()
+//                                .scaleEffect(0.8)
+//                        }
                         
                         
                     }

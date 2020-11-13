@@ -14,9 +14,12 @@ struct Profile: View {
     //TODO : UNSAFE. ADD GUARD
     let userID = Auth.auth().currentUser?.uid
     var dummyUID = "t7SQhXlozrMnWOghRaXHh4HWuUC3"
-    var name = UserDefaults.standard.object(forKey: "name") as? String ?? "Name not registered"
-    var email = UserDefaults.standard.object(forKey: "email") as? String ?? "Email not registered"
-    var phone = UserDefaults.standard.object(forKey: "phone") as? String ?? "Phone not registered"
+    var accountData = AccountData()
+    
+//    var name = UserDefaults.standard.object(forKey: "name") as? String ?? "Name not registered"
+//    var email = UserDefaults.standard.object(forKey: "email") as? String ?? "Email not registered"
+//    var phone = UserDefaults.standard.object(forKey: "phone") as? String ?? "Phone not registered"
+    
     var body: some View {
         
         VStack{
@@ -38,18 +41,18 @@ struct Profile: View {
                     //Mask it round
                 VStack{
                     HStack{
-                        Text(name)
+                        Text(accountData.username)
                         .font(Font.custom(nameExtraBold, size: 18))
                     Spacer()
                     }
                     HStack{
-                    Text(email)
+                        Text(accountData.email )
                         .font(.custom(nameRegular, size: 12))
                         .foregroundColor(colorTextGray)
                     Spacer()
                     }
                     HStack{
-                    Text(phone)
+                        Text(accountData.phone )
                         .font(.custom(nameRegular, size: 12))
                         .foregroundColor(colorTextGray)
                         Spacer()
@@ -76,11 +79,15 @@ struct Profile: View {
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
+                            VStack{
                             Text("Terms & Conditions")
                                 .padding()
                                 .font(.custom(nameSemiBold, size: 14))
+                            Text("Under development")
+                                .font(.custom(nameRegular, size: 10))
+                            }
                             Spacer()
-                            Image("chevronRight")
+                            Image("lock")
                                 .scaleEffect(0.4)
                                 .padding(.horizontal, 7)
                         }
@@ -91,15 +98,19 @@ struct Profile: View {
                     
                     
                     Rectangle()
-                        .foregroundColor(colorLightGray)
+                        .foregroundColor(colorTextGray)
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
+                            VStack{
                             Text("Privacy Policy")
                                 .font(.custom(nameSemiBold, size: 14))
                                 .padding()
+                            Text("Under development")
+                                .font(.custom(nameRegular, size: 10))
+                            }
                             Spacer()
-                            Image("chevronRight")
+                            Image("lock")
                                 .scaleEffect(0.4)
                                 .padding(.horizontal, 7)
                             
@@ -111,15 +122,21 @@ struct Profile: View {
                     
                     
                     Rectangle()
-                        .foregroundColor(colorLightGray)
+                        .foregroundColor(colorTextGray)
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
+                            VStack{
                             Text("Rate Our App")
                                 .font(.custom(nameSemiBold, size: 14))
                                 .padding()
+                            
+                            Text("Under development")
+                                .font(.custom(nameRegular, size: 10))
+                                
+                            }
                             Spacer()
-                            Image("chevronRight")
+                            Image("lock")
                                 .scaleEffect(0.4)
                                 .padding(.horizontal, 7)
                             
@@ -142,15 +159,20 @@ struct Profile: View {
                     
                     
                     Rectangle()
-                        .foregroundColor(colorLightGray)
+                        .foregroundColor(colorTextGray)
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
+                            
+                            VStack{
                             Text("Notification")
                                 .padding()
                                 .font(.custom(nameSemiBold, size: 14))
+                            Text("Under development")
+                                .font(.custom(nameRegular, size: 10))
+                            }
                             Spacer()
-                            Image("chevronRight")
+                            Image("lock")
                                 .scaleEffect(0.4)
                                 .padding(.horizontal, 7)
                         }
@@ -161,15 +183,20 @@ struct Profile: View {
                     
                     
                     Rectangle()
-                        .foregroundColor(colorLightGray)
+                        .foregroundColor(colorTextGray)
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
+                            VStack{
                             Text("Account Privacy")
                                 .font(.custom(nameSemiBold, size: 14))
                                 .padding()
+                                
+                            Text("Under development")
+                                .font(.custom(nameRegular, size: 10))
+                            }
                             Spacer()
-                            Image("chevronRight")
+                            Image("lock")
                                 .scaleEffect(0.4)
                                 .padding(.horizontal, 7)
                             

@@ -10,10 +10,6 @@ import Firebase
 
 class FirestoreController {
     
-    init() {
-        FirebaseApp.configure()
-    }
-    
     func storeDoctor(name: String, hospital: String, status: Int) {
         let db = Firestore.firestore()
         // Add a new document with a generated ID
@@ -29,7 +25,7 @@ class FirestoreController {
         }
     }
     
-    func getDoctors(hospital: String, completion: @escaping (([Any]) -> Any)) {
+    func getDoctors(hospital: String, completion: @escaping (([Any]) -> Void)) {
         let db = Firestore.firestore()
         let group = DispatchGroup()
         var result:[Any] = []
@@ -53,20 +49,28 @@ class FirestoreController {
         }
     }
     
-    func getHospital() -> [String: Any] {
+    func getHospital(completion: @escaping (([String]) -> Void)) {
         let db = Firestore.firestore()
-        var result: [String: Any] = [:]
-        db.collection("hospital").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                    result = document.data()
+        var result: [String] = []
+        let group = DispatchGroup()
+        
+        group.enter()
+        DispatchQueue.global(qos: .userInteractive).async(group: group) {
+            db.collection("hospital").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID)")
+                        result.append(document.documentID)
+                    }
                 }
+                group.leave()
             }
         }
-        return result
+        group.notify(queue: .main) {
+            completion(result)
+        }
     }
 }
 
