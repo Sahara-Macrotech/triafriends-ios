@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 import Firebase
 import FirebaseFirestore
-
+import Combine
 import CryptoKit
 import FirebaseAuth
 import AuthenticationServices
@@ -33,14 +33,18 @@ struct SignMeUpView:  View {
 }
 
 struct SignMeUpCard: View {
+    @ObservedObject var emailObj = EmailValidationObj()
+       @ObservedObject var passObj = PasswordValidationObj()
     @AppStorage("email") var emailValid = ""
-    @State private var name: String = "Genki Wijoyo"
-    @State private var email: String = "genkiwijoyo@gmail.com"
-    @State private var phone: String = "082114260502"
+    @ObservedObject private var name = TextValidationObj()
+    @State private var email: String = ""
+    @ObservedObject private var id = TextValidationObj()
     @State private var job: String = "Doctor"
     @State private var hospital: String = "RS Wijaya Kusuma"
     var strengths = ["Mild", "Medium", "Mature"]
-    
+    @ObservedObject var hospitalData = getHospitalData()
+    @State private var selectedHospital: String = UserDefaults.standard.string(forKey: "selectedHospital") ?? "Unknown Hospital"
+
     @State private var selectedStrength = 0
     @State private var backgroundColor = Color.red
     @State var showingDetail = false
@@ -51,71 +55,108 @@ struct SignMeUpCard: View {
         print(UserDefaults.standard.array(forKey: "credentials"))
     }
     
+    
+     
     var body: some View {
         if current == 0 {
         NavigationView {
+//            VStack(spacing: 20) {
+//                        VStack(alignment: .leading, spacing: 4) {
+//                             TextField("Enter your Email", text: $emailObj.email).foregroundColor(.white)
+//                             Text(emailObj.error).foregroundColor(.red).font(.caption)
+//                        }
+//
+//                        VStack(alignment: .leading, spacing: 4) {
+//                            TextField("Password", text: $passObj.pass).foregroundColor(.white)
+//                            Text(passObj.error).foregroundColor(.red).font(.caption)
+//                        }
+//                    }
         ZStack (alignment: .bottom) {
-            Rectangle()
-                .frame(width: screen.width, height: screen.height * 0.9, alignment: .center)
-                .padding(.bottom, 0)
-                .cornerRadius(25)
-                .foregroundColor(Color.init(white: 1, opacity: 1))
+//            Rectangle()
+//                .frame(width: screen.width, height: screen.height * 0.9, alignment: .center)
+//                .padding(.bottom, 0)
+//                .cornerRadius(25)
+//                .foregroundColor(Color.init(white: 1, opacity: 1))
             VStack (alignment: .leading){
                 Text("Complete Your Data").font(.system(size: 25)).bold()
                     .padding(.bottom,35).frame(maxWidth: .infinity, alignment: .center)
                 Group{
                     Text("Name").font(.system(size: 25)).bold()
                         .padding(.leading,15)
-                    TextField("Enter your name", text: $name)
+                    TextField("Enter your name", text: $name.email)
                         .font(.title2).opacity(0.5)
                         .padding(.leading,15)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                    Text(name.error).foregroundColor(.red).font(.caption)
                     Text("Email")
                         
                         .font(.system(size: 25)).bold()
                         .padding(.leading,15)
-                    TextField("Enter your Email", text:$emailValid)
-                        .font(.title2).opacity(0.5)
-                        .padding(.leading,15)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    Text("Phone")
+                    VStack(alignment: .leading, spacing: 4) {
+                         TextField("Enter your Email", text: $emailValid)  .font(.title2).opacity(0.5)
+                            .padding(.leading,15)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                         Text(emailObj.error).foregroundColor(.red).font(.caption)
+                    }
+//                    TextField("Enter your Email", text:$emailValid)
+                      
+                
+                    VStack(alignment: .leading) {
+                        Text("ID")
+                            
+                            .font(.system(size: 25)).bold()
+                            .padding(.leading,15)
+                        TextField("Input ID number from hospital", text: $id.email)
+                            .font(.title2).opacity(0.5)
+                            .padding(.leading,15)
+    //                        .keyboardType(.phonePad)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        Text(id.error).foregroundColor(.red).font(.caption)
+                        Text("Job")
+                            
+                            .font(.system(size: 25)).bold()
+                            .padding(.leading,15)
                         
-                        .font(.system(size: 25)).bold()
-                        .padding(.leading,15)
-                    TextField("Enter your phone", text: $phone)
-                        .font(.title2).opacity(0.5)
-                        .padding(.leading,15)
-                        .keyboardType(.phonePad)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    Text("Job")
-                        
-                        .font(.system(size: 25)).bold()
-                        .padding(.leading,15)
+                        TextField("Enter your job", text: $job)
+                            .font(.title2).opacity(0.5)
+                            .padding(.leading,15)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                               Form {
+                                   Section {
+                                       Picker(selection: $selectedHospital, label: Text("Hospital Name")) {
+                                           ForEach(hospitalData.datas, id: \.id) {
+                                               Text($0.name)
+                                           }
+                                       }
+                                       .onReceive(Just(selectedHospital)) {
+                                           UserDefaults.standard.set($0, forKey: "selectedHospital")
+                                       }
+                                    Text("Selected Hospital: \(selectedHospital)")
+                                   }
+                               }
+                           }
                     
-                    TextField("Enter your job", text: $job)
-                        .font(.title2).opacity(0.5)
-                        .padding(.leading,15)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
-                    Text("Hospital").font(.system(size: 25)).bold()
-                        .padding(.leading,15)
-                    
-                    TextField("Enter your Hospital", text: $hospital)
-                        .font(.title2).opacity(0.5)
-                        .padding(.leading,15)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                    Text("Hospital").font(.system(size: 25)).bold()
+//                        .padding(.leading,15)
+//
+//                    TextField("Enter your Hospital", text: $hospital)
+//                        .font(.title2).opacity(0.5)
+//                        .padding(.leading,15)
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 let uuidd =   Auth.auth().currentUser?.uid
-              
+               
                 Button(action: {
+                        Print("test:"+selectedHospital)
+                        if id.email != "" && name.email != "" && selectedHospital != "Unknown Hospital"{
                     self.current = 1
                     let ratingDictionary = [
                         "uuid":uuidd,
-                        "name":self.name,
+                        "name":self.name.email,
                         "email":self.emailValid,
-                        "phone":self.phone,
+                        "phone":self.id.email,
                         "job":self.job,
-                        "hospital":self.hospital
+                        "hospital":self.selectedHospital
                         
                     ]
                     
@@ -129,9 +170,9 @@ struct SignMeUpCard: View {
                             print("data updated successfully")
                             UserDefaults.standard.setValue(ratingDictionary, forKey: "credentials")
 //                            self.showSheet = false
-                            self.name = ""
+                            self.name.email = ""
                             self.email = ""
-                            self.phone = ""
+                            self.id.email = ""
                             self.job = ""
                             self.hospital = ""
                         }
@@ -139,8 +180,11 @@ struct SignMeUpCard: View {
                     
                     print(UserDefaults.standard.dictionary(forKey: "credentials"))
                     
-                    print("")
-                }) {
+                    print("prit")
+                    }else{
+                        
+                    }}
+                    ) {
                     HStack {
                         
                         //                                       .accessibility(label: Text("Sign in with Google"))
@@ -183,3 +227,5 @@ struct SignMeUpView_Previews: PreviewProvider {
         SignMeUpView()
     }
 }
+
+

@@ -27,6 +27,7 @@
 		7F9C2FFA255953E100DBD27C /* FaceBookLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C2FF8255953E000DBD27C /* FaceBookLoginView.swift */; };
 		7F9C2FFB255953E100DBD27C /* SignMeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C2FF9255953E100DBD27C /* SignMeUpView.swift */; };
 		7F9C2FFE255957FD00DBD27C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F9C2FFD255957FD00DBD27C /* GoogleService-Info.plist */; };
+		7FE75CDC255D360C00BE5ABA /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE75CDB255D360C00BE5ABA /* ValidationTextField.swift */; };
 		7FF5820D25594CAB00B3255C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5820C25594CAB00B3255C /* LoginView.swift */; };
 		7FF5821225594CB800B3255C /* CongratulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5820F25594CB800B3255C /* CongratulationView.swift */; };
 		7FF5821325594CB800B3255C /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5821025594CB800B3255C /* ThankYouView.swift */; };
@@ -96,6 +97,7 @@
 		7F9C2FF8255953E000DBD27C /* FaceBookLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceBookLoginView.swift; sourceTree = "<group>"; };
 		7F9C2FF9255953E100DBD27C /* SignMeUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignMeUpView.swift; sourceTree = "<group>"; };
 		7F9C2FFD255957FD00DBD27C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7FE75CDB255D360C00BE5ABA /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
 		7FF5820C25594CAB00B3255C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7FF5820F25594CB800B3255C /* CongratulationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratulationView.swift; sourceTree = "<group>"; };
 		7FF5821025594CB800B3255C /* ThankYouView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouView.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				C08AAADC2543E57E0001AFEA /* NameCensor.swift */,
 				8D4A709F2548166E004035A0 /* FirestoreController.swift */,
 				8D71830D2548D4D00004E139 /* RealtimeDBController.swift */,
+				7FE75CDB255D360C00BE5ABA /* ValidationTextField.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				7F25BF082551EFC5006932BC /* RKViewController.swift in Sources */,
 				C0AA0D9625529EE100D9FD1D /* PatientNumberInput.swift in Sources */,
 				C0AA0D9525529EE100D9FD1D /* OptionsCell.swift in Sources */,
+				7FE75CDC255D360C00BE5ABA /* ValidationTextField.swift in Sources */,
 				8D99A43825416E67006FF45A /* ContentView.swift in Sources */,
 				7FF5820D25594CAB00B3255C /* LoginView.swift in Sources */,
 				8D4A70A02548166E004035A0 /* FirestoreController.swift in Sources */,
@@ -643,7 +647,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 3QN5S48CNC;
+=======
+				DEVELOPMENT_TEAM = 3KS73FV5NW;
+>>>>>>> development
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -670,7 +678,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = 3QN5S48CNC;
+=======
+				DEVELOPMENT_TEAM = 3KS73FV5NW;
+>>>>>>> development
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

@@ -12,7 +12,10 @@ struct ContentView: View {
     var helper = RealtimeDBController()
     var accountData = AccountData()
     var dummyUID = "t7SQhXlozrMnWOghRaXHh4HWuUC3"
+    @State private var greeting = ""
+    @State private var name: String = ""
     var body: some View {
+      
         //DUMMY
         let hospitalID = "SILOAM2122"
         
@@ -25,7 +28,7 @@ struct ContentView: View {
                     VStack(spacing: 5){
                         
                         HStack{
-                            Text("Good morning,")
+                            Text(name.capitalized + ",")
                                 .font(.custom(nameRegular, size: 16))
                                 .foregroundColor(colorTextGray)
                             
@@ -76,17 +79,17 @@ struct ContentView: View {
                                 .font(.title2)
                                 .bold()
                             
-                            Spacer()
                             
-                            //Dummy button
-                            NavigationLink(
-                                destination: ListAllView(selectedColoumn: .queue),
-                                label: {
-                                    Text("See all")
-                                })
+                            TriageListView(filteredQueue: .limitToFive)
+                                .cornerRadius(0)
+                                .frame(width: UIScreen.main.bounds.maxX , height: 340)
+                                //this will disable the scrolling but disable the button also
+                                .moveDisabled(true)
+                            
+                            //Title Laporan Harian and button
+                            ExtractedView2()
                             
                         }
-                        .padding(.horizontal)
                         
                         
                         //Horizontal View Stack  laporan harian
@@ -111,6 +114,7 @@ struct ContentView: View {
             
         }.onAppear(perform: {
             helper.queryProfile(uid: dummyUID)
+            greetingLogic()
         })
         .navigationTitle(Text(""))
         .navigationBarHidden(true)
@@ -121,7 +125,31 @@ struct ContentView: View {
     
     
     
-    
+     func greetingLogic() {
+           let date = NSDate()
+           let calendar = NSCalendar.current
+           let currentHour = calendar.component(.hour, from: date as Date)
+           let hourInt = Int(currentHour.description)!
+
+           if hourInt >= 12 && hourInt <= 16 {
+               greeting = "Good Afternoon"
+           }
+           else if hourInt >= 7 && hourInt <= 12 {
+               greeting = "Good Morning"
+           }
+           else if hourInt >= 16 && hourInt <= 20 {
+               greeting = "Good Evening"
+           }
+           else if hourInt >= 20 && hourInt <= 24 {
+               greeting = "Good Night"
+           }
+           else if hourInt >= 0 && hourInt <= 7 {
+               greeting = "You should be sleeping right now"
+           }
+        name = greeting
+//           helloLbl.text = greeting
+       }
+
     
     
     
@@ -152,6 +180,28 @@ struct ContentView: View {
                         Text("See all")
                         
                     })
+            }
+            .padding(.horizontal)
+        }
+    }
+    
+    struct ExtractedView2: View {
+        var body: some View {
+            
+            HStack{
+                Text("Daily report")
+                    .font(.title2)
+                    .bold()
+                
+                Spacer()
+                
+                //Dummy button
+                NavigationLink(
+                    destination: ListAllView(selectedColoumn: .queue),
+                    label: {
+                        Text("See all")
+                    })
+                
             }
             .padding(.horizontal)
         }
