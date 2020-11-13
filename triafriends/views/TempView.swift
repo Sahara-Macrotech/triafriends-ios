@@ -40,26 +40,48 @@ struct TempView: View {
                 
                 
                 Spacer()
-                NavigationLink(
-                    destination: PatientDetailView(triages: converted, patientID: patientID, afterInputDataPatient: true),
-                    label: {
-                        ZStack{
-                        Rectangle()
-                            .frame(width: 336, height: 57, alignment: .center)
-                            .cornerRadius(100)
-                            .foregroundColor(.white)
-                        Text("See detail")
-                            .font(.custom(nameBold, size: 15))
-                            .accentColor(.black)
-                        }
-                    }).padding()
+                HStack {
+                    NavigationLink(
+                        destination: PatientDetailView(triages: converted, patientID: patientID, afterInputDataPatient: true),
+                        label: {
+                            ZStack{
+                                Rectangle()
+                                    .frame(width: screen.width * 0.45, height: 57, alignment: .center)
+                                    .cornerRadius(100)
+                                    .foregroundColor(.white)
+                                Text("Back to Home")
+                                    .font(.custom(nameBold, size: 15))
+                                    .accentColor(.black)
+                            }
+                        }).padding(.leading, 20)
+                    NavigationLink(
+                        destination: PatientDetailView(triages: converted, patientID: patientID, afterInputDataPatient: true),
+                        label: {
+                            ZStack{
+                                Rectangle()
+                                    .frame(width: screen.width * 0.45, height: 57, alignment: .center)
+                                    .foregroundColor(Color.white)
+                                    .buttonStyle(PlainButtonStyle())
+                                    .cornerRadius(100)
+                                Rectangle()
+                                    .frame(width: screen.width * 0.44, height: 55, alignment: .center)
+                                    .foregroundColor(color)
+                                    .buttonStyle(PlainButtonStyle())
+                                    .cornerRadius(100)
+                                Text("See detail")
+                                    .font(.custom(nameBold, size: 15))
+                                    .accentColor(.white)
+                            }
+                        }).padding(.trailing, 20)
+                }
+                
                 
             }.onAppear {
                 
                 converted = model.stringToTriage(receivedTriage: tempData)
-              //    print(converted)
+                //    print(converted)
                 calculated = helper.calc(triage: converted!)
-              //  print(calculated)
+                //  print(calculated)
                 
                 converted?.status = calculated?.rawValue
                 
