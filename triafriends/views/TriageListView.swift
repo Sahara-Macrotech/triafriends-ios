@@ -108,7 +108,7 @@ struct TriageListView: View {
             }
             
            
-            return Array(x.prefix(5))
+            return Array(x.prefix(10))
             
              
             
