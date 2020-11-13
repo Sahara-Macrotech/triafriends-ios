@@ -102,19 +102,19 @@ struct TriageListView: View {
                 let range = startOfDay...today
                 return range.contains(item.date!) && item.patientState == .queue
             }
-           //Limit result to 5 only
+          
             x.sort {
                 $0.status! < $1.status!
             }
             
-            //index out of range
+           
             return Array(x.prefix(5))
             
              
             
-
+            //TODO, sort this like .limitToFive
         case .all:
-            return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
+            var x = triageListViewModel.arrOfTriages.filter { (item) -> Bool in
                
              
                 var now = item.date
@@ -128,6 +128,12 @@ struct TriageListView: View {
                 let range = startOfDay...today
                 return range.contains(item.date!)
             }
+            x.sort {
+                $0.status! < $1.status!
+            }
+            
+            return x
+            
         case .black:
             return triageListViewModel.arrOfTriages.filter { (item) -> Bool in
                 var start = startDate ?? Date(timeIntervalSince1970: 5000)
