@@ -14,9 +14,12 @@ struct Profile: View {
     //TODO : UNSAFE. ADD GUARD
     let userID = Auth.auth().currentUser?.uid
     var dummyUID = "t7SQhXlozrMnWOghRaXHh4HWuUC3"
-    var name = UserDefaults.standard.object(forKey: "name") as? String ?? "Name not registered"
-    var email = UserDefaults.standard.object(forKey: "email") as? String ?? "Email not registered"
-    var phone = UserDefaults.standard.object(forKey: "phone") as? String ?? "Phone not registered"
+    var accountData = AccountData()
+    
+//    var name = UserDefaults.standard.object(forKey: "name") as? String ?? "Name not registered"
+//    var email = UserDefaults.standard.object(forKey: "email") as? String ?? "Email not registered"
+//    var phone = UserDefaults.standard.object(forKey: "phone") as? String ?? "Phone not registered"
+    
     var body: some View {
         
         VStack{
@@ -38,18 +41,18 @@ struct Profile: View {
                     //Mask it round
                 VStack{
                     HStack{
-                        Text(name)
+                        Text(accountData.username ?? "Name not registered")
                         .font(Font.custom(nameExtraBold, size: 18))
                     Spacer()
                     }
                     HStack{
-                    Text(email)
+                        Text(accountData.email ?? "Email not registered")
                         .font(.custom(nameRegular, size: 12))
                         .foregroundColor(colorTextGray)
                     Spacer()
                     }
                     HStack{
-                    Text(phone)
+                        Text(accountData.phone ?? "Phone not registered")
                         .font(.custom(nameRegular, size: 12))
                         .foregroundColor(colorTextGray)
                         Spacer()
