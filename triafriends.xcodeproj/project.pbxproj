@@ -34,6 +34,7 @@
 		7FF5821425594CB800B3255C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5821125594CB800B3255C /* SignUpView.swift */; };
 		8D4A70A02548166E004035A0 /* FirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A709F2548166E004035A0 /* FirestoreController.swift */; };
 		8D71830E2548D4D00004E139 /* RealtimeDBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D71830D2548D4D00004E139 /* RealtimeDBController.swift */; };
+		8D982AFC255EEADA006FD92E /* PatientDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D982AFB255EEADA006FD92E /* PatientDetailViewModel.swift */; };
 		8D99A43825416E67006FF45A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43725416E67006FF45A /* ContentView.swift */; };
 		8D99A43A25416E6A006FF45A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D99A43925416E6A006FF45A /* Assets.xcassets */; };
 		8D99A43D25416E6A006FF45A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D99A43C25416E6A006FF45A /* Preview Assets.xcassets */; };
@@ -104,6 +105,7 @@
 		7FF5821125594CB800B3255C /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		8D4A709F2548166E004035A0 /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
 		8D71830D2548D4D00004E139 /* RealtimeDBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDBController.swift; sourceTree = "<group>"; };
+		8D982AFB255EEADA006FD92E /* PatientDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDetailViewModel.swift; sourceTree = "<group>"; };
 		8D99A43225416E67006FF45A /* triafriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = triafriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D99A43725416E67006FF45A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8D99A43925416E6A006FF45A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				C0DF559225502ACB00F5A761 /* Profile.swift */,
 				C0792B302542DC1200A40B69 /* ReportView.swift */,
 				C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */,
+				8D982AFB255EEADA006FD92E /* PatientDetailViewModel.swift */,
 				C0792B382542DD9C00A40B69 /* AccountView.swift */,
 				8D99A43725416E67006FF45A /* ContentView.swift */,
 				7F09E5E1255505F4004E47CD /* MainViewApp.swift */,
@@ -502,6 +505,7 @@
 				C0792B312542DC1200A40B69 /* ReportView.swift in Sources */,
 				7F25BF022551EFC5006932BC /* RKMonth.swift in Sources */,
 				7FF5821325594CB800B3255C /* ThankYouView.swift in Sources */,
+				8D982AFC255EEADA006FD92E /* PatientDetailViewModel.swift in Sources */,
 				7F25BF032551EFC5006932BC /* RKWeekdayHeader.swift in Sources */,
 				C0AA0D5925529D1500D9FD1D /* HexToColor.swift in Sources */,
 				C0DF559325502ACB00F5A761 /* Profile.swift in Sources */,
@@ -645,9 +649,9 @@
 				CODE_SIGN_ENTITLEMENTS = triafriends/triafriends.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 3KS73FV5NW;
+				DEVELOPMENT_TEAM = 7QAVKC3WGP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -672,9 +676,9 @@
 				CODE_SIGN_ENTITLEMENTS = triafriends/triafriends.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 3KS73FV5NW;
+				DEVELOPMENT_TEAM = 7QAVKC3WGP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
