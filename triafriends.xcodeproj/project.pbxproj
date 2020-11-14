@@ -26,7 +26,6 @@
 		7F9C2FF62559539A00DBD27C /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C2FF52559539A00DBD27C /* SignInWithApple.swift */; };
 		7F9C2FFA255953E100DBD27C /* FaceBookLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C2FF8255953E000DBD27C /* FaceBookLoginView.swift */; };
 		7F9C2FFB255953E100DBD27C /* SignMeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C2FF9255953E100DBD27C /* SignMeUpView.swift */; };
-		7F9C2FFE255957FD00DBD27C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F9C2FFD255957FD00DBD27C /* GoogleService-Info.plist */; };
 		7FF5820D25594CAB00B3255C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5820C25594CAB00B3255C /* LoginView.swift */; };
 		7FF5821225594CB800B3255C /* CongratulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5820F25594CB800B3255C /* CongratulationView.swift */; };
 		7FF5821325594CB800B3255C /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5821025594CB800B3255C /* ThankYouView.swift */; };
@@ -47,6 +46,8 @@
 		C0792B362542DD9300A40B69 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B352542DD9300A40B69 /* AddView.swift */; };
 		C0792B392542DD9C00A40B69 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B382542DD9C00A40B69 /* AccountView.swift */; };
 		C0792B3C2542DDAE00A40B69 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B3B2542DDAE00A40B69 /* MainView.swift */; };
+		C0891E3425606EB900EA75C7 /* PatientDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0891E3325606EB900EA75C7 /* PatientDetailViewModel.swift */; };
+		C0891E3825606EF300EA75C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0891E3725606EF300EA75C7 /* GoogleService-Info.plist */; };
 		C08AAAD92543C7B40001AFEA /* PatientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */; };
 		C08AAADD2543E57F0001AFEA /* NameCensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AAADC2543E57E0001AFEA /* NameCensor.swift */; };
 		C09BABA82542844A00C985AA /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09BABA72542844A00C985AA /* DataModel.swift */; };
@@ -95,7 +96,6 @@
 		7F9C2FF52559539A00DBD27C /* SignInWithApple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		7F9C2FF8255953E000DBD27C /* FaceBookLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceBookLoginView.swift; sourceTree = "<group>"; };
 		7F9C2FF9255953E100DBD27C /* SignMeUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignMeUpView.swift; sourceTree = "<group>"; };
-		7F9C2FFD255957FD00DBD27C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7FF5820C25594CAB00B3255C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7FF5820F25594CB800B3255C /* CongratulationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratulationView.swift; sourceTree = "<group>"; };
 		7FF5821025594CB800B3255C /* ThankYouView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouView.swift; sourceTree = "<group>"; };
@@ -119,6 +119,8 @@
 		C0792B352542DD9300A40B69 /* AddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		C0792B382542DD9C00A40B69 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		C0792B3B2542DDAE00A40B69 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C0891E3325606EB900EA75C7 /* PatientDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientDetailViewModel.swift; path = ../../../../../Desktop/PatientDetailViewModel.swift; sourceTree = "<group>"; };
+		C0891E3725606EF300EA75C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C08AAAD82543C7B40001AFEA /* PatientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailView.swift; sourceTree = "<group>"; };
 		C08AAADC2543E57E0001AFEA /* NameCensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCensor.swift; sourceTree = "<group>"; };
 		C09BABA72542844A00C985AA /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -224,8 +226,8 @@
 				8D99A44A25416E7A006FF45A /* triafriends.entitlements */,
 				8D99A43925416E6A006FF45A /* Assets.xcassets */,
 				8D99A43E25416E6A006FF45A /* Persistence.swift */,
+				C0891E3725606EF300EA75C7 /* GoogleService-Info.plist */,
 				C0AA0D9A25529F1500D9FD1D /* TriageViewModel.swift */,
-				7F9C2FFD255957FD00DBD27C /* GoogleService-Info.plist */,
 				8D99A44325416E6A006FF45A /* Info.plist */,
 				7F25BED72551E4BD006932BC /* Manager */,
 				C0E147B3254588BF00189E2E /* UI */,
@@ -267,6 +269,7 @@
 				C0AA0D8D25529EE000D9FD1D /* PatientNumberInput.swift */,
 				C0AA0D8E25529EE000D9FD1D /* QuestionList.swift */,
 				C0AA0D8C25529EE000D9FD1D /* TempView.swift */,
+				C0891E3325606EB900EA75C7 /* PatientDetailViewModel.swift */,
 				C0DF56222551202600F5A761 /* NewHistoryView.swift */,
 				C0DF56232551202600F5A761 /* PieChart.swift */,
 				C0792B3B2542DDAE00A40B69 /* MainView.swift */,
@@ -396,11 +399,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F9C2FFE255957FD00DBD27C /* GoogleService-Info.plist in Resources */,
 				C0E147C5254588F900189E2E /* NunitoSans-ExtraBold.ttf in Resources */,
 				C0E147C9254588F900189E2E /* NunitoSans-SemiBold.ttf in Resources */,
 				C0E147C7254588F900189E2E /* NunitoSans-Regular.ttf in Resources */,
 				C0E147CB254588F900189E2E /* NunitoSans-Black.ttf in Resources */,
+				C0891E3825606EF300EA75C7 /* GoogleService-Info.plist in Resources */,
 				8D99A43D25416E6A006FF45A /* Preview Assets.xcassets in Resources */,
 				C0E147CC254588F900189E2E /* NunitoSans-Bold.ttf in Resources */,
 				8D99A43A25416E6A006FF45A /* Assets.xcassets in Resources */,
@@ -470,6 +473,7 @@
 				C0DF563E255121B600F5A761 /* PieChartCell.swift in Sources */,
 				7F25BEF42551EF98006932BC /* RKWeeklyPage.swift in Sources */,
 				C0DF56262551202600F5A761 /* PieChart.swift in Sources */,
+				C0891E3425606EB900EA75C7 /* PatientDetailViewModel.swift in Sources */,
 				C0792B292542DB9800A40B69 /* TriageListView.swift in Sources */,
 				C09BABAC2542893900C985AA /* Algorithm.swift in Sources */,
 				C0792B2D2542DBDD00A40B69 /* AccountData.swift in Sources */,
@@ -651,7 +655,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriends;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriendsaaaaa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -678,7 +682,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriends;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriendsaaaaa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
