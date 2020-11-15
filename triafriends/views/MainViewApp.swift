@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MainViewApp: View {
     @State var isPopUpEnabled = false
-    
+    @State var selection = 0
+    //Kalo defaultnya 1, ga error, kalo defaultnya 0 error
     var body: some View {
         
             ZStack{
@@ -17,24 +18,30 @@ struct MainViewApp: View {
              
                 //Tab Bar
                 
-                TabView {
+                TabView(selection: $selection) {
                     
-                    ContentView().tabItem {
-                        Image(systemName: "house")
+                    NavigationView{
+                        ContentView()}
+                        .tabItem {
+                        
+                        selection == 1 ? Image(systemName: "house") : Image(systemName: "house.fill")
                            
                         Text("Dashboard")
                             .font(.custom(nameBold, size: 12))
                         
-                    }
+                    }.tag(0)
                     
-                    
+                    NavigationView{
                     NewHistoryView()
+                    }
                         .tabItem {
-                        Image(systemName: "list.dash")
+                            
+                            selection == 0 ? Image(systemName: "clock") : Image(systemName: "clock.fill")
+                            
                         Text("History")
                             .font(.custom(nameBold, size: 12))
                         
-                    }
+                        }.tag(1)
             
                 }.accentColor(colorPurple)
                 
@@ -56,7 +63,8 @@ struct MainViewApp: View {
 
                         Image("add").onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
                             .scaleEffect(0.35)
-                        }.onTapGesture(count: 1, perform: {
+                        }
+                        .onTapGesture(count: 1, perform: {
                             isPopUpEnabled = true
                         })
                     })
