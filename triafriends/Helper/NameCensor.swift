@@ -31,3 +31,17 @@ func amountOfStar(amount: Int) -> String {
     return star
 }
 
+func initialNameWithoutStars(name: String) -> String {
+    var output: String
+    var separatedName = name.components(separatedBy: " ")
+    var joinedName:[String] = []
+    for word in separatedName {
+        var x = word.prefix(1).uppercased()
+        
+        joinedName.append(x)
+        
+    }
+    
+    output = joinedName.joined(separator: " ")
+    return output
+}

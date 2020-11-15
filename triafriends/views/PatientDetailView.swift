@@ -10,6 +10,7 @@ import FirebaseDatabase
 struct PatientDetailView: View {
     var triages: Triage?
     var patientID: String?
+    
     var afterInputDataPatient: Bool?
     @State var stateChanged: Bool = false
     //var triageData: TriageData?
@@ -46,8 +47,8 @@ struct PatientDetailView: View {
                                         .frame(width: 50, height: 25, alignment: .leading)
                                         .cornerRadius(radius)
                                     
-                                    Text("TST")
-                                        .font(Font.custom(nameExtraBold, size: 10))
+                                    Text(initialNameWithoutStars(name: (triages?.name)!))
+                                        .font(Font.custom(nameExtraBold, size: 12))
                                         .foregroundColor(colorPurple)
                                     
                                     

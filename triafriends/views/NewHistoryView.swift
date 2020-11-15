@@ -34,7 +34,7 @@ struct NewHistoryView: View {
                     
                     ZStack{
                         //                       Color.init(red: 75/255, green: 39/255, blue: 102/255, opacity: 1) .background(Color.init(red: 75/255, green: 39/255, blue: 102/255, opacity: 1))
-                        colorPurple.frame(width: .infinity, height: 248)
+                        colorPurple.frame(width: UIScreen.main.bounds.maxX, height: 248)
                         //                        Color.purple.frame(width: .infinity, height: 130)
                         VStack(alignment: .leading){
                             Text("History Report")
