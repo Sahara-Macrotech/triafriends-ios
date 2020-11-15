@@ -20,7 +20,7 @@ struct PatientNumberInput: View {
     
     var body: some View {
         VStack {
-            CloseButton()
+            CloseButton(rootIsActive: self.$rootIsActive)
                 .frame(width: 350, height:40, alignment: .topLeading)
                 .padding(.bottom, 25)
             

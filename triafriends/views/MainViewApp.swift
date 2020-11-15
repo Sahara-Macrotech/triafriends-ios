@@ -63,8 +63,11 @@ struct MainViewApp: View {
                             .accentColor(.white)
                             .shadow(radius: 3)
                         
-                        Image("add").onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
-                            .scaleEffect(0.35)
+                        Image("add")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
+//                            .scaleEffect(0.35)
                     }
                     .onTapGesture(count: 1, perform: {
                         isPopUpEnabled = true
