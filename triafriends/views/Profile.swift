@@ -79,16 +79,14 @@ struct Profile: View {
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
-                            VStack{
+                           
                             Text("Terms & Conditions")
                                 .padding()
                                 .font(.custom(nameSemiBold, size: 14))
-                            Text("Under development")
-                                .font(.custom(nameRegular, size: 10))
-                            }
+                           
                             Spacer()
-                            Image("lock")
-                                .scaleEffect(0.4)
+                            Image(systemName: "lock")
+                                .font(.custom(nameBold, size: 14))
                                 .padding(.horizontal, 7)
                         }
                     }
@@ -98,20 +96,18 @@ struct Profile: View {
                     
                     
                     Rectangle()
-                        .foregroundColor(colorTextGray)
+                        .foregroundColor(colorLightGray)
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
-                            VStack{
+                           
                             Text("Privacy Policy")
                                 .font(.custom(nameSemiBold, size: 14))
                                 .padding()
-                            Text("Under development")
-                                .font(.custom(nameRegular, size: 10))
-                            }
+                            
                             Spacer()
-                            Image("lock")
-                                .scaleEffect(0.4)
+                            Image(systemName: "lock")
+                                .font(.custom(nameBold, size: 14))
                                 .padding(.horizontal, 7)
                             
                         }
@@ -122,22 +118,19 @@ struct Profile: View {
                     
                     
                     Rectangle()
-                        .foregroundColor(colorTextGray)
+                        .foregroundColor(colorLightGray)
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
-                            VStack{
+                           
                             Text("Rate Our App")
                                 .font(.custom(nameSemiBold, size: 14))
                                 .padding()
                             
-                            Text("Under development")
-                                .font(.custom(nameRegular, size: 10))
-                                
-                            }
+                          
                             Spacer()
-                            Image("lock")
-                                .scaleEffect(0.4)
+                            Image(systemName: "lock")
+                                .font(.custom(nameBold, size: 14))
                                 .padding(.horizontal, 7)
                             
                         }
@@ -159,21 +152,19 @@ struct Profile: View {
                     
                     
                     Rectangle()
-                        .foregroundColor(colorTextGray)
+                        .foregroundColor(colorLightGray)
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
                             
-                            VStack{
+                         
                             Text("Notification")
                                 .padding()
                                 .font(.custom(nameSemiBold, size: 14))
-                            Text("Under development")
-                                .font(.custom(nameRegular, size: 10))
-                            }
+                          
                             Spacer()
-                            Image("lock")
-                                .scaleEffect(0.4)
+                            Image(systemName: "lock")
+                                .font(.custom(nameBold, size: 14))
                                 .padding(.horizontal, 7)
                         }
                     }
@@ -183,21 +174,19 @@ struct Profile: View {
                     
                     
                     Rectangle()
-                        .foregroundColor(colorTextGray)
+                        .foregroundColor(colorLightGray)
                         .cornerRadius(radius)
                     ZStack{
                         HStack{
-                            VStack{
+                            
                             Text("Account Privacy")
                                 .font(.custom(nameSemiBold, size: 14))
                                 .padding()
                                 
-                            Text("Under development")
-                                .font(.custom(nameRegular, size: 10))
-                            }
+                          
                             Spacer()
-                            Image("lock")
-                                .scaleEffect(0.4)
+                            Image(systemName: "lock")
+                                .font(.custom(nameBold, size: 14))
                                 .padding(.horizontal, 7)
                             
                         }
