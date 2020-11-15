@@ -10,6 +10,7 @@ import FirebaseDatabase
 struct PatientDetailView: View {
     var triages: Triage?
     var patientID: String?
+    @Binding var rootIsActive: Bool
     
     var afterInputDataPatient: Bool?
     @State var stateChanged: Bool = false
@@ -108,7 +109,7 @@ struct PatientDetailView: View {
             ViewOne(triages: triages!)
             
             
-            ViewTwo(triages: triages!)
+            ViewTwo(triages: triages!, patientID: patientID, rootIsActive: self.$rootIsActive)
             Spacer(minLength: 50)
         }
         .navigationBarBackButtonHidden(afterInputDataPatient ?? false)
@@ -132,14 +133,14 @@ struct PatientDetailView: View {
      
     
 }
-
-
-struct PatientDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        PatientDetailView()
-            .previewDevice("iPhone 11 Pro")
-    }
-}
+//
+//
+//struct PatientDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PatientDetailView()
+//            .previewDevice("iPhone 11 Pro")
+//    }
+//}
 
 struct ViewOne: View {
     var convertHelper = convert()
@@ -322,6 +323,8 @@ struct ViewTwo: View {
     var helper = RealtimeDBController()
     var patientID: String?
     @State var stateChanged: Bool = false
+    @Binding var rootIsActive: Bool
+    
     var body: some View {
         if  triages.patientState?.rawValue ==  "Queue" && self.stateChanged == false {
             Button(action: {
@@ -338,7 +341,9 @@ struct ViewTwo: View {
                 }
             })
         } else if triages.patientState?.rawValue ==  "Queue" && self.stateChanged == true {
-            NavigationLink(destination: MainViewApp(),
+            Button (action: {
+                self.rootIsActive = false
+            },
                            label: {
                                ZStack{
                                    colorPurple

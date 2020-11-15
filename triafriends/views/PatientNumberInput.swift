@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PatientNumberInput: View {
     @State var number: String = ""
+    @Binding var rootIsActive: Bool
     var triageProcess: TempTriageResult = TempTriageResult()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -53,7 +54,7 @@ struct PatientNumberInput: View {
                         .cornerRadius(CGFloat(28.5))
                 }
                 
-                NavigationLink(destination: QuestionList(triageProcess: triageProcess).onAppear(perform: setTriageProcess)){
+                NavigationLink(destination: QuestionList(triageProcess: triageProcess, rootIsActive: self.$rootIsActive).onAppear(perform: setTriageProcess)){
                     Text("Next")
                         .font(Font.system(size: 15, weight: .bold))
                         .foregroundColor(.white)
@@ -69,9 +70,9 @@ struct PatientNumberInput: View {
         .navigationBarTitle("")
     }
 }
-
-struct PatientNumberInput_Previews: PreviewProvider {
-    static var previews: some View {
-        PatientNumberInput()
-    }
-}
+//
+//struct PatientNumberInput_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PatientNumberInput(rootIsActive: Binding<true>)
+//    }
+//}

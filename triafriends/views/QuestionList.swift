@@ -16,6 +16,7 @@ struct QuestionList: View {
     @State var selectedIndex = 0
     @State var selectedOption = ""
     @State var triageProcess = TempTriageResult()
+    @Binding var rootIsActive: Bool
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
@@ -70,7 +71,7 @@ struct QuestionList: View {
                 }
                 
                 if self.currQuestion == (self.arrOfQuestion.questions.count-1) {
-                    NavigationLink(destination: TempView(tempData: triageProcess).onAppear(perform: setTriageProcessList)){
+                    NavigationLink(destination: TempView(tempData: triageProcess, rootIsActive: self.$rootIsActive).onAppear(perform: setTriageProcessList)){
                         Text("See Result")
                             .font(Font.system(size: 15, weight: .bold))
                             .foregroundColor(.white)
@@ -147,13 +148,13 @@ struct QuestionList: View {
         }
     }
 }
-
-struct QuestionList_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            QuestionList()
-            QuestionList()
-            QuestionList()
-        }
-    }
-}
+//
+//struct QuestionList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            QuestionList()
+//            QuestionList()
+//            QuestionList()
+//        }
+//    }
+//}

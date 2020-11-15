@@ -14,6 +14,7 @@ struct ContentView: View {
     var dummyUID = "t7SQhXlozrMnWOghRaXHh4HWuUC3"
     @State private var greeting = ""
     @State private var name: String = ""
+    @State var rootisActive: Bool
     var body: some View {
       
         //DUMMY
@@ -64,7 +65,7 @@ struct ContentView: View {
                         
                         Spacer()
                         
-                        ExtractedView()
+                        ExtractedView(rootIsActive: self.rootisActive)
                         
                         
                         TriageListView(filteredQueue: .limitToFive)
@@ -138,16 +139,17 @@ struct ContentView: View {
     
     
     
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
-    }
+//    struct ContentView_Previews: PreviewProvider {
+//        static var previews: some View {
+//            ContentView()
+//        }
+//    }
     
     
     
     
     struct ExtractedView: View {
+        @State var rootIsActive: Bool = false
         var body: some View {
             
             HStack{
@@ -159,7 +161,8 @@ struct ContentView: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: ListAllView(selectedColoumn: .all),
+                    destination: ListAllView(selectedColoumn: .all, rootIsActive: self.$rootIsActive),
+                    isActive: self.$rootIsActive,
                     label: {
                         Text("See all")
                         
@@ -170,6 +173,7 @@ struct ContentView: View {
     }
     
     struct ExtractedView2: View {
+        @Binding var rootIsActive: Bool
         var body: some View {
             
             HStack{
@@ -181,7 +185,7 @@ struct ContentView: View {
                 
                 //Dummy button
                 NavigationLink(
-                    destination: ListAllView(selectedColoumn: .queue),
+                    destination: ListAllView(selectedColoumn: .queue, rootIsActive: self.$rootIsActive),
                     label: {
                         Text("See all")
                     })

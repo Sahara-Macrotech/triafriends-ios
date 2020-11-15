@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PatientNameInput: View {
     @State var name: String = ""
+    @Binding var rootIsActive: Bool
     var triageProcess: TempTriageResult = TempTriageResult()
     
     func setTriageProcess() {
@@ -41,7 +42,7 @@ struct PatientNameInput: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: PatientNumberInput(number: "", triageProcess: triageProcess).onAppear(perform: setTriageProcess)){
+                NavigationLink(destination: PatientNumberInput(number: "", rootIsActive: self.$rootIsActive, triageProcess: triageProcess).onAppear(perform: setTriageProcess)){
                     Text("Next")
                         .font(Font.system(size: 15, weight: .bold))
                         .foregroundColor(.white)
@@ -62,8 +63,8 @@ struct PatientNameInput: View {
     }
 }
 
-struct PatientNameInput_Previews: PreviewProvider {
-    static var previews: some View {
-        PatientNameInput()
-    }
-}
+//struct PatientNameInput_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PatientNameInput(rootIsActive: true)
+//    }
+//}

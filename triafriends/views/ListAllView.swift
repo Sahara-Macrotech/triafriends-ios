@@ -11,6 +11,7 @@ import Combine
 
 struct ListAllView: View {
     @State var selectedColoumn: Filter.Filters
+    @Binding var rootIsActive: Bool
 //0 = All
 //1 = Queue
 //2 = Handled
@@ -87,7 +88,7 @@ struct ListAllView: View {
         }.navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
                                 
-                                NavigationLink(destination: MainViewApp(), label: {
+                                Button (action: { self.rootIsActive = false}, label: {
                                     HStack{
                                         Image(systemName: "chevron.left")
                                         Text("All patients")
@@ -98,8 +99,8 @@ struct ListAllView: View {
     }
 }
 
-struct ListAllView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListAllView(selectedColoumn: .done)
-    }
-}
+//struct ListAllView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListAllView(selectedColoumn: .done)
+//    }
+//}
