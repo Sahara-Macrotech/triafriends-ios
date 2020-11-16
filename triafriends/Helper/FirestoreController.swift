@@ -73,3 +73,40 @@ class FirestoreController {
         }
     }
 }
+
+class getHospitalData : ObservableObject{
+    
+    @Published var datas = [hospitalName]()
+    
+    init() {
+        
+        let db = Firestore.firestore()
+        
+        db.collection("hospital").addSnapshotListener { (snap, err) in
+            
+            if err != nil{
+                
+                print((err?.localizedDescription)!)
+                return
+            }
+            
+            for i in snap!.documentChanges{
+                
+                let id = i.document.documentID
+//                let name = i.document.get("Name") as! String
+                
+                self.datas.append(hospitalName(id: id, name: id))
+            }
+        }
+        
+        //batas
+        
+        
+    }
+}
+
+struct hospitalName : Identifiable {
+    
+    var id : String
+    var name : String
+}

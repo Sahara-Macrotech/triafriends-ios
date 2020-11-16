@@ -9,8 +9,11 @@
 import SwiftUI
 
 struct CloseButton: View {
+    @Binding var rootIsActive: Bool
     var body: some View {
-        NavigationLink(destination: MainViewApp()) {
+        Button (action: {
+            self.rootIsActive = false
+        }) {
             Image(systemName: "xmark")
             .font(.system(size: 20, weight: .bold))
                 .foregroundColor(.black)
@@ -19,8 +22,8 @@ struct CloseButton: View {
     }
 }
 
-struct CloseButton_Previews: PreviewProvider {
-    static var previews: some View {
-        CloseButton()
-    }
-}
+//struct CloseButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CloseButton()
+//    }
+//}

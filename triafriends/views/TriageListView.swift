@@ -17,6 +17,7 @@ struct TriageListView: View {
     var creationDate: Date?
     var startDate: Date?
     var endDate: Date?
+    @State var rootIsActive = true
     
     var filteredTriages: [Triage] {
         switch filteredQueue {
@@ -199,7 +200,7 @@ struct TriageListView: View {
                                 
                                 //Rectangle()
                                 NavigationLink(
-                                    destination: PatientDetailView(triages: triages),
+                                    destination: PatientDetailView(triages: triages, rootIsActive: self.$rootIsActive),
                                     label: {
                                         colorLightGray
                                             .cornerRadius(6)

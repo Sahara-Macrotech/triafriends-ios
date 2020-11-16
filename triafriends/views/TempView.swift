@@ -17,6 +17,7 @@ struct TempView: View {
     @State var calculated: Algo.ColorScale?
     @State var converted: Triage?
     @State var patientID: String?
+    @Binding var rootIsActive: Bool
     //dummyhospitalID
     let hospitalID = "SILOAM2122"
     
@@ -41,8 +42,10 @@ struct TempView: View {
                 
                 Spacer()
                 HStack {
-                    NavigationLink(
-                        destination: PatientDetailView(triages: converted, patientID: patientID, afterInputDataPatient: true),
+                    Button (
+                        action: {
+                            self.rootIsActive = false
+                        },
                         label: {
                             ZStack{
                                 Rectangle()
@@ -55,7 +58,7 @@ struct TempView: View {
                             }
                         }).padding(.leading, 20)
                     NavigationLink(
-                        destination: PatientDetailView(triages: converted, patientID: patientID, afterInputDataPatient: true),
+                        destination: PatientDetailView(triages: converted, patientID: patientID, rootIsActive: self.$rootIsActive, afterInputDataPatient: true),
                         label: {
                             ZStack{
                                 Rectangle()
@@ -128,8 +131,8 @@ struct TempView: View {
     }
 }
 
-struct TempView_Previews: PreviewProvider {
-    static var previews: some View {
-        TempView()
-    }
-}
+//struct TempView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TempView()
+//    }
+//}
