@@ -10,9 +10,11 @@ import SwiftUI
 
 struct CloseButton: View {
     @Binding var rootIsActive: Bool
+    @Binding var closeButtonIsPressed: Bool
+    
     var body: some View {
         Button (action: {
-            self.rootIsActive = false
+            closeButtonIsPressed.toggle()
         }) {
             Image(systemName: "xmark")
             .font(.system(size: 20, weight: .bold))

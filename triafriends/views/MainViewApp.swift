@@ -12,6 +12,13 @@ struct MainViewApp: View {
     @State var selection = 0
     @State var rootIsActive = false
     //Kalo defaultnya 1, ga error, kalo defaultnya 0 error
+    
+    var triageProcess: TempTriageResult = TempTriageResult()
+    
+    func onStart() {
+        self.triageProcess.setStartTime()
+    }
+    
     var body: some View {
         
         ZStack{
@@ -55,7 +62,7 @@ struct MainViewApp: View {
                 //Ganti minlength jadi UIScreen.main.bound / x
                 
                 
-                Button(action: {}, label: {
+                Button(action: {onStart()}, label: {
                     ZStack{
                         Image(systemName: "circle.fill")
                             .resizable()
