@@ -29,22 +29,22 @@ class RealtimeDBController {
                     
                     //status belum berdasarkan hasil triase
                     "createAt" : ServerValue.timestamp(),
-                    "status" : triages.status,
-                    "patientState" : triages.patientState?.rawValue,
-                    "name" : triages.name,
-                    "jalanNafas" : triages.jalanNafas?.rawValue,
-                    "distress" : triages.distress?.rawValue,
-                    "respiratoryRate" : triages.respiratoryRate?.rawValue,
-                    "hentiNafas" : triages.hentiNafas?.rawValue,
-                    "hipoventilasi" : triages.hipoventilasi?.description,
-                    "hemodinamik" : triages.hemodinamik?.rawValue,
-                    "nadi" : triages.nadi?.rawValue,
-                    "denyutNadi" : triages.denyutNadi?.rawValue,
-                    "warnaKulit" : triages.warnaKulit?.rawValue,
+                    "status" : triages.status as Any,
+                    "patientState" : triages.patientState?.rawValue as Any,
+                    "name" : triages.name as Any,
+                    "jalanNafas" : triages.jalanNafas?.rawValue as Any,
+                    "distress" : triages.distress?.rawValue as Any,
+                    "respiratoryRate" : triages.respiratoryRate?.rawValue as Any,
+                    "hentiNafas" : triages.hentiNafas?.rawValue as Any,
+                    "hipoventilasi" : triages.hipoventilasi?.description as Any,
+                    "hemodinamik" : triages.hemodinamik?.rawValue as Any,
+                    "nadi" : triages.nadi?.rawValue as Any,
+                    "denyutNadi" : triages.denyutNadi?.rawValue as Any,
+                    "warnaKulit" : triages.warnaKulit?.rawValue as Any,
                     "gcs" : triages.gcs.rawValue,
-                    "psikologis" : triages.psikologis?.rawValue,
-                    "startTime" : 1900,
-                    "endTime" : 1920
+                    "psikologis" : triages.psikologis?.rawValue as Any,
+                    "startTime" : triages.startTime,
+                    "endTime" : triages.endTime
                     
                     
         ] as [String : Any]

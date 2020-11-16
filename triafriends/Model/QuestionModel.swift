@@ -38,6 +38,15 @@ class TempTriageResult {
     private var createdTime: Double = 0.0
     private var startTime: String = ""
     private var finishTime: String = ""
+    private var isAlive: String = ""
+    
+    func setIsAlive(isAlive: String) {
+        self.isAlive = isAlive
+    }
+    
+    func getIsAlive() -> String{
+        return self.isAlive
+    }
     
     func setStartTime() {
         self.startTime = DateHelper().getMinuteSecond()

@@ -164,8 +164,8 @@ struct Triage: Identifiable {
         
     }
     
-    var startTime: Int
-    var endTime: Int
+    var startTime: String
+    var endTime: String
     
     
     
@@ -199,8 +199,8 @@ struct ReceivedTriage: Codable {
     let hentiNafas: String
     
     //Next pake time formatter
-    let startTime: Int
-    let endTime: Int
+    let startTime: String
+    let endTime: String
     
 }
 
@@ -286,7 +286,7 @@ class TriageListViewModel: ObservableObject{
     func stringToTriage(receivedTriage: TempTriageResult) -> Triage{
         //Append to this later
         //        arrOfTriages = []
-       
+       print(receivedTriage)
         let group = DispatchGroup()
         var triase: Triage
        
@@ -473,12 +473,16 @@ class TriageListViewModel: ObservableObject{
         default:
             gcs = .fifteen
         }
+        
+        var startTime = receivedTriage.getStartTime()
+        var endTime = receivedTriage.getFinishTime()
+        
                 
                 
                 
                // var sT = i.triage.startTime
                // var eT = i.triage.endTime
-        triase = Triage(name: name, patientState: .queue, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p, startTime: 100, endTime: 100)
+        triase = Triage(name: name, patientState: .queue, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p, startTime: startTime, endTime: endTime)
               
             
             
@@ -707,8 +711,8 @@ class TriageListViewModel: ObservableObject{
                 }
                 
                 
-                var sT = i.triage.startTime
-                var eT = i.triage.endTime
+                let sT = i.triage.startTime
+                let eT = i.triage.endTime
                 tempArray.append(Triage(id: id, status: status, name: name,  createdTime: createdTime,date: timestamp, patientState: ps, jalanNafas: jN, distress: d, respiratoryRate: rR, hentiNafas: hN, hipoventilasi: hv, hemodinamik: hd, nadi: n, denyutNadi: dN, warnaKulit: wK, gcs: gcs, psikologis: p, startTime: sT, endTime: eT))
                 //print(tempArray.count)
             }

@@ -64,7 +64,7 @@ struct PatientDetailView: View {
                                     colorTeal
                                         .cornerRadius(10)
                                         .frame(width: 46, height: 16, alignment: .center)
-                                    Text("\(triages!.startTime)")
+                                    Text(triages!.startTime)
                                         .font(Font.custom(nameBold, size: 10))
                                         .foregroundColor(.white)
                                     
@@ -75,7 +75,7 @@ struct PatientDetailView: View {
                                     colorLightGreen
                                         .cornerRadius(10)
                                         .frame(width: 46, height: 16, alignment: .center)
-                                    Text("\(triages!.endTime)")
+                                    Text(triages!.endTime)
                                         .foregroundColor(.white)
                                         .font(Font.custom(nameBold, size: 10))
                                     

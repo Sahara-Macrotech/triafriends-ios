@@ -83,6 +83,7 @@ struct TempView: View {
                 
                 converted = model.stringToTriage(receivedTriage: tempData)
                 //    print(converted)
+                print(tempData)
                 calculated = helper.calc(triage: converted!)
                 //  print(calculated)
                 

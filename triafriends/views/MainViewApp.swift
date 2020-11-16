@@ -62,7 +62,7 @@ struct MainViewApp: View {
                 //Ganti minlength jadi UIScreen.main.bound / x
                 
                 
-                Button(action: {onStart()}, label: {
+                Button(action: {}, label: {
                     ZStack{
                         Image(systemName: "circle.fill")
                             .resizable()
@@ -77,7 +77,9 @@ struct MainViewApp: View {
 //                            .scaleEffect(0.35)
                     }
                     .onTapGesture(count: 1, perform: {
+                       
                         isPopUpEnabled = true
+                       
                     })
                 })
                 Spacer()

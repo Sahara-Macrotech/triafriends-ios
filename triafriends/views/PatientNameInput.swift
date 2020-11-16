@@ -101,6 +101,8 @@ struct PatientNameInput: View {
                     self.nextButtonIsPressed.toggle()
                 })
                 .edgesIgnoringSafeArea(.bottom)
+            }.onAppear {
+                self.triageProcess.setStartTime()
             }
             
         }

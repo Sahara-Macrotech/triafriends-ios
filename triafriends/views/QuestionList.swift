@@ -157,83 +157,90 @@ struct QuestionList: View {
     func setTriageProcessList() {
         
         if self.currQuestion == 0 {
-            triageProcess.setAirway(airway: selectedOption)
+            triageProcess.setIsAlive(isAlive: selectedOption)
         }
         if self.currQuestion == 1 {
-            triageProcess.setRespitoryDistress(respitoryDistress: selectedOption)
+            triageProcess.setAirway(airway: selectedOption)
         }
         if self.currQuestion == 2 {
-            triageProcess.setSpeak(speak: selectedOption)
+            triageProcess.setRespitoryDistress(respitoryDistress: selectedOption)
         }
         if self.currQuestion == 3 {
-            triageProcess.setBreath(breath: selectedOption)
+            triageProcess.setSpeak(speak: selectedOption)
         }
         if self.currQuestion == 4 {
-            triageProcess.setHipoventilasi(hipoventilasi: selectedOption)
+            triageProcess.setBreath(breath: selectedOption)
         }
         if self.currQuestion == 5 {
-            triageProcess.setEmodynamicDisturbance(emodynamicDistrubance: selectedOption)
+            triageProcess.setHipoventilasi(hipoventilasi: selectedOption)
         }
         if self.currQuestion == 6 {
-            triageProcess.setPulse(pulse: selectedOption)
+            triageProcess.setEmodynamicDisturbance(emodynamicDistrubance: selectedOption)
         }
         if self.currQuestion == 7 {
-            triageProcess.setBleeding(bleeding: selectedOption)
+            triageProcess.setPulse(pulse: selectedOption)
         }
         if self.currQuestion == 8 {
-            triageProcess.setSkinCondition(skinCondition: selectedOption)
+            triageProcess.setBleeding(bleeding: selectedOption)
         }
         if self.currQuestion == 9 {
-            triageProcess.setGCS(GCS: selectedOption)
+            triageProcess.setSkinCondition(skinCondition: selectedOption)
         }
         if self.currQuestion == 10 {
+            triageProcess.setGCS(GCS: selectedOption)
+        }
+        if self.currQuestion == 11 {
             triageProcess.setMentalSTate(mentalState: selectedOption)
             triageProcess.setFinishTime()
         }
     }
     
     func setPreviousSelectedOption() {
+        
         if self.currQuestion == 0 {
+            selectedOption = triageProcess.getIsAlive()
+        }
+        if self.currQuestion == 1 {
             selectedOption = triageProcess.getAirway()
             checkEmptyString()
         }
-        if self.currQuestion == 1 {
+        if self.currQuestion == 2 {
             selectedOption = triageProcess.getRespitoryDistress()
             checkEmptyString()
         }
-        if self.currQuestion == 2 {
+        if self.currQuestion == 3 {
             selectedOption = triageProcess.getSpeak()
             checkEmptyString()
         }
-        if self.currQuestion == 3 {
+        if self.currQuestion == 4 {
             selectedOption = triageProcess.getBreath()
             checkEmptyString()
         }
-        if self.currQuestion == 4 {
+        if self.currQuestion == 5 {
             selectedOption = triageProcess.getHipoventilasi()
             checkEmptyString()
         }
-        if self.currQuestion == 5 {
+        if self.currQuestion == 6 {
             selectedOption = triageProcess.getEmodynamicDisturbance()
             checkEmptyString()
         }
-        if self.currQuestion == 6 {
+        if self.currQuestion == 7 {
             selectedOption = triageProcess.getPulse()
             checkEmptyString()
         }
-        if self.currQuestion == 7 {
+        if self.currQuestion == 8 {
             selectedOption = triageProcess.getBleeding()
             checkEmptyString()
         }
-        if self.currQuestion == 8 {
+        if self.currQuestion == 9 {
             selectedOption = triageProcess.getSkinCondition()
             checkEmptyString()
         }
-        if self.currQuestion == 9 {
+        if self.currQuestion == 10 {
             selectedOption = triageProcess.getGCS()
             checkEmptyString()
         }
-        if self.currQuestion == 10 {
+        if self.currQuestion == 11 {
             selectedOption = triageProcess.getMentalState()
             checkEmptyString()
         }
