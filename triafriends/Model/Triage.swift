@@ -336,7 +336,7 @@ class TriageListViewModel: ObservableObject{
                 case Triage.Distress.berat.rawValue:
                     d = Triage.Distress.berat
                 default:
-                    d = Triage.Distress.tidakAda
+                    d = Triage.Distress.RRnormal
                 }
                 
                 
