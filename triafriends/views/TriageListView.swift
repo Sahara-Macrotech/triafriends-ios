@@ -145,7 +145,7 @@ struct TriageListView: View {
                 
                 
                 let range = startOfDay...today
-                return range.contains(item.date!)
+                return range.contains(now!)
             }
             x.sort {
                 $0.status! < $1.status!
