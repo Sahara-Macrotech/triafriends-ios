@@ -56,6 +56,7 @@ struct Triage: Identifiable {
     
     
     //TRIASENYA----------------------------------------
+    
     var jalanNafas: JalanNafas?
     enum JalanNafas: String {
         case paten = "Patent"

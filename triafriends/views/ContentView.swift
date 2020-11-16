@@ -101,7 +101,7 @@ struct ContentView: View {
             helper.queryProfile(uid: dummyUID)
             greetingLogic()
         })
-        .navigationTitle(Text(""))
+        .navigationTitle("")
         .navigationBarHidden(true)
         
         

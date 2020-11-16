@@ -36,6 +36,24 @@ class TempTriageResult {
     private var GCS: String = ""
     private var mentalState: String = ""
     private var createdTime: Double = 0.0
+    private var startTime: String = ""
+    private var finishTime: String = ""
+    
+    func setStartTime() {
+        self.startTime = DateHelper().getMinuteSecond()
+    }
+    
+    func setFinishTime() {
+        self.finishTime = DateHelper().getMinuteSecond()
+    }
+    
+    func getStartTime() -> String {
+        return self.startTime
+    }
+    
+    func getFinishTime() -> String {
+        return self.finishTime
+    }
     
     func setName(name: String) {
         self.name = name

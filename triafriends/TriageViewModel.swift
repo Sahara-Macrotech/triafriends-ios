@@ -13,6 +13,7 @@ class TriageViewModel: Identifiable {
     
     
     init() {
+        questions.append(Questions.init(question: "Still Alive ?", options: ["No Live Sign & No Pulse", "Alive"]))
         questions.append(Questions.init(question: "How's the airway ?", options: [Triage.JalanNafas.sumbatanTotal.rawValue, Triage.JalanNafas.sumbatanSebagian.rawValue, Triage.JalanNafas.paten.rawValue]))
         questions.append(Questions.init(question: "How's the respiratory distress ?", options: [Triage.Distress.berat.rawValue, Triage.Distress.sedang.rawValue, Triage.Distress.ringan.rawValue, Triage.Distress.tidakAda.rawValue, Triage.Distress.RRnormal.rawValue]))
         questions.append(Questions.init(question: "Can he speak ?", options: [Triage.RespiratoryRate.tidakMampuBicara.rawValue,Triage.RespiratoryRate.RRmorethan30.rawValue, Triage.RespiratoryRate.RRlessthan30.rawValue,Triage.RespiratoryRate.RRnormal.rawValue,Triage.RespiratoryRate.komunikasiBaik.rawValue]))
