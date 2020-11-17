@@ -30,7 +30,7 @@ class RealtimeDBController {
                     //status belum berdasarkan hasil triase
                     "createAt" : ServerValue.timestamp(),
                     "status" : triages.status as Any,
-                    "patientState" : triages.patientState?.rawValue as Any,
+                    "patientState" : triages.status == 6 ? "Done" :  triages.patientState?.rawValue as Any,
                     "name" : triages.name as Any,
                     "jalanNafas" : triages.jalanNafas?.rawValue as Any,
                     "distress" : triages.distress?.rawValue as Any,

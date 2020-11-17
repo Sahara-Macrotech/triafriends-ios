@@ -84,7 +84,7 @@ struct TempView: View {
                 converted = model.stringToTriage(receivedTriage: tempData)
                 //    print(converted)
                 print(tempData)
-                calculated = helper.calc(triage: converted!)
+                calculated = helper.calc(triage: converted!, alive: tempData.getIsAlive())
                 //  print(calculated)
                 
                 converted?.status = calculated?.rawValue
@@ -96,7 +96,7 @@ struct TempView: View {
                     color = colorYellow
                 } else if calculated == .category1 || calculated == .category2 {
                     color = colorRed
-                } else { color = .white }
+                } else { color = .black }
                 
                 //-------------------
                 
@@ -125,6 +125,10 @@ struct TempView: View {
         case .category4:
             alert = "SEMI URGENT"
             desc = "Maximum response time : 60 Minutes"
+            
+        case .category6:
+            alert = "DEAD"
+            desc = " "
         default:
             alert = "Maximum response time : 120 Minutes"
         }

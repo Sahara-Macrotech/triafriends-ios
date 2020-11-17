@@ -14,7 +14,7 @@ import SwiftUI
 
 class Algo {
     //------------------------------------------------------------
-    
+
    
     
     
@@ -41,6 +41,8 @@ class Algo {
         //response time SEGERA
         //Merah
         
+        case category6 = 6
+        //Death
     }
     
     //----------------------------------------------------------------------
@@ -53,10 +55,16 @@ class Algo {
     var cat3: Int? = 0
     var cat2: Int? = 0
     var cat1: Int? = 0
+    var cat6: Int? = 0
     
     //----------------------------------------------
     
     //FUNCTIONS AHEAD//
+    func isAlive(data: String){
+        if data == "No Live Sign & No Pulse" {
+            cat6! += 1
+        }
+    }
     
     
     //JALAN NAFAS ---------- JALAN NAFAS
@@ -211,7 +219,10 @@ class Algo {
         
         var results: ColorScale = .category5
         
-        if cat1! > 0 {
+        if cat6! > 0 {
+            results = .category6
+        }
+        else if cat1! > 0 {
             results = .category1
         } else if cat2! > 0 {
             results = .category2
@@ -232,7 +243,10 @@ class Algo {
         //return
         return results
     }
-    func calc(triage: Triage) -> ColorScale{
+    func calc(triage: Triage, alive: String) -> ColorScale{
+        
+        isAlive(data: alive)
+        
         jalanNafasCalc(data: triage)
         distressCalc(data: triage)
         respiratoryRateCalc(data: triage)

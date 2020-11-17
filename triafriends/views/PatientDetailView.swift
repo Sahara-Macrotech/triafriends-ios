@@ -165,7 +165,7 @@ struct ViewOne: View {
                         .foregroundColor(.black)
                     
                     Spacer()
-                    Text(triages.jalanNafas?.rawValue ?? " ")
+                    Text(triages.status == 6 ? " " : triages.jalanNafas?.rawValue ?? " ")
                         .font(Font.custom(nameBold, size: 16))
                         .foregroundColor(convertHelper.airToColor(input: triages.jalanNafas!))
                     
@@ -179,7 +179,7 @@ struct ViewOne: View {
                         .foregroundColor(.black)
                     
                     Spacer()
-                    Text(triages.distress?.rawValue ?? " ")
+                    Text(triages.status == 6 ? " " : triages.distress?.rawValue ?? " ")
                         .font(Font.custom(nameBold, size: 16))
                         .foregroundColor(convertHelper.disToColor(input: triages.distress!))
                     
@@ -192,7 +192,7 @@ struct ViewOne: View {
                         .foregroundColor(.black)
                     
                     Spacer()
-                    Text(triages.respiratoryRate?.rawValue ?? " ")
+                    Text(triages.status == 6 ? " " : triages.respiratoryRate?.rawValue ?? " ")
                         .font(Font.custom(nameBold, size: 16))
                         .foregroundColor(convertHelper.rrToColor(input: triages.respiratoryRate!))
                     
@@ -204,7 +204,7 @@ struct ViewOne: View {
                         .foregroundColor(.black)
                     
                     Spacer()
-                    Text(triages.hentiNafas?.rawValue ?? " ")
+                    Text(triages.status == 6 ? " " : triages.hentiNafas?.rawValue ?? " ")
                         .font(Font.custom(nameBold, size: 16))
                         .foregroundColor(convertHelper.hnToColor(input: triages.hentiNafas!))
                     
@@ -216,7 +216,7 @@ struct ViewOne: View {
                         .foregroundColor(.black)
                     
                     Spacer()
-                    Text(triages.hipoventilasi?.description ?? " ")
+                    Text(triages.status == 6 ? " " : triages.hipoventilasi?.description ?? " ")
                         .font(Font.custom(nameBold, size: 16))
                         .foregroundColor(convertHelper.hvToColor(input: triages.hipoventilasi!))
                     
@@ -228,7 +228,7 @@ struct ViewOne: View {
                         .foregroundColor(.black)
                     
                     Spacer()
-                    Text(triages.hemodinamik?.rawValue ?? " ")
+                    Text(triages.status == 6 ? " " : triages.hemodinamik?.rawValue ?? " ")
                         .font(Font.custom(nameBold, size: 16))
                         .foregroundColor(convertHelper.hdToColor(input: triages.hemodinamik!))
                     
@@ -240,7 +240,7 @@ struct ViewOne: View {
                         .foregroundColor(.black)
                     
                     Spacer()
-                    Text(triages.nadi?.rawValue ?? " ")
+                    Text(triages.status == 6 ? " " : triages.nadi?.rawValue ?? " ")
                         .font(Font.custom(nameBold, size: 16))
                         .foregroundColor(convertHelper.nadiToColor(input: triages.nadi!))
                     
@@ -252,7 +252,7 @@ struct ViewOne: View {
                         .foregroundColor(.black)
                     
                     Spacer()
-                    Text(triages.denyutNadi?.rawValue ?? " ")
+                    Text(triages.status == 6 ? " " : triages.denyutNadi?.rawValue ?? " ")
                         .font(Font.custom(nameBold, size: 16))
                         .foregroundColor(convertHelper.bleedingToColor(input: triages.denyutNadi!))
                     
@@ -264,7 +264,7 @@ struct ViewOne: View {
                         .foregroundColor(.black)
                     
                     Spacer()
-                    Text(triages.warnaKulit?.rawValue ?? " ")
+                    Text(triages.status == 6 ? " " : triages.warnaKulit?.rawValue ?? " ")
                         .font(Font.custom(nameBold, size: 16))
                         .foregroundColor(convertHelper.wkToColor(input: triages.warnaKulit!))
                     
@@ -276,7 +276,7 @@ struct ViewOne: View {
                             .foregroundColor(.black)
                         
                         Spacer()
-                        Text(triages.warnaKulit?.rawValue ?? " ")
+                        Text(triages.status == 6 ? " " : triages.warnaKulit?.rawValue ?? " ")
                             .font(Font.custom(nameBold, size: 16))
                             .foregroundColor(convertHelper.wkToColor(input: triages.warnaKulit!))
                         
@@ -288,7 +288,7 @@ struct ViewOne: View {
                             .foregroundColor(.black)
                         
                         Spacer()
-                        Text("\((triages.gcs.rawValue))")
+                        Text(triages.status == 6 ? " " : triages.gcs.rawValue)
                             .font(Font.custom(nameBold, size: 16))
                             .foregroundColor(convertHelper.gcsToColor(input: triages.gcs))
                         
@@ -305,7 +305,7 @@ struct ViewOne: View {
                     .font(Font.custom(nameSemiBold, size: 16))
                     .foregroundColor(.black)
                 Spacer()
-                Text(triages.psikologis?.rawValue ?? " ")
+                Text(triages.status == 6 ? " " : triages.psikologis?.rawValue ?? " ")
                     .font(Font.custom(nameBold, size: 16))
                     .foregroundColor(convertHelper.psiToColor(input: triages.psikologis!))
             }.padding(.horizontal, 30)
