@@ -15,11 +15,11 @@ struct ContentView: View {
     @State private var greeting = ""
     @State private var name: String = ""
     @State var rootisActive: Bool
+    @State private var image = UIImage()
+    
+    @ObservedObject var profilePicture = ProfilePicture()
+    
     var body: some View {
-      
-        //DUMMY
-        let hospitalID = "SILOAM2122"
-        
         
         NavigationView{
             
@@ -45,14 +45,20 @@ struct ContentView: View {
                             NavigationLink(
                                 destination: Profile(),
                                 label: {
-                                    Image("doctor")
-                                        
-                                        .resizable()
-                                        .clipShape(Circle())
-                                        .scaledToFit()
-                                        .frame(width: 72, height: 72, alignment: .center)
-                                        
-                                        
+                                    if let images = profilePicture.profpic {
+                                        Image(uiImage: images)
+                                            .resizable()
+                                            .clipShape(Circle())
+                                            .scaledToFit()
+                                            .frame(width: 72, height: 72, alignment: .center)
+                                            .rotationEffect(.degrees(90.0))
+                                    } else {
+                                        Image("doctor")
+                                            .resizable()
+                                            .clipShape(Circle())
+                                            .scaledToFit()
+                                            .frame(width: 72, height: 72, alignment: .center)
+                                    }
                                 })
                             
                         }.padding(.horizontal)
@@ -75,16 +81,16 @@ struct ContentView: View {
                             .moveDisabled(true)
                         
                         //Title Laporan Harian and button
-                       
+                        
                         
                         //Horizontal View Stack  laporan harian
-//                        HStack{
-//                            ReportView()
-//                                .scaleEffect(0.8)
-//                            Spacer()
-//                            ReportView()
-//                                .scaleEffect(0.8)
-//                        }
+                        //                        HStack{
+                        //                            ReportView()
+                        //                                .scaleEffect(0.8)
+                        //                            Spacer()
+                        //                            ReportView()
+                        //                                .scaleEffect(0.8)
+                        //                        }
                         
                         
                     }
@@ -110,40 +116,40 @@ struct ContentView: View {
     
     
     
-     func greetingLogic() {
-           let date = NSDate()
-           let calendar = NSCalendar.current
-           let currentHour = calendar.component(.hour, from: date as Date)
-           let hourInt = Int(currentHour.description)!
-
-           if hourInt >= 12 && hourInt <= 16 {
-               greeting = "Good Afternoon"
-           }
-           else if hourInt >= 7 && hourInt <= 12 {
-               greeting = "Good Morning"
-           }
-           else if hourInt >= 16 && hourInt <= 20 {
-               greeting = "Good Evening"
-           }
-           else if hourInt >= 20 && hourInt <= 24 {
-               greeting = "Good Night"
-           }
-           else if hourInt >= 0 && hourInt <= 7 {
-               greeting = "You should be sleeping right now"
-           }
+    func greetingLogic() {
+        let date = NSDate()
+        let calendar = NSCalendar.current
+        let currentHour = calendar.component(.hour, from: date as Date)
+        let hourInt = Int(currentHour.description)!
+        
+        if hourInt >= 12 && hourInt <= 16 {
+            greeting = "Good Afternoon"
+        }
+        else if hourInt >= 7 && hourInt <= 12 {
+            greeting = "Good Morning"
+        }
+        else if hourInt >= 16 && hourInt <= 20 {
+            greeting = "Good Evening"
+        }
+        else if hourInt >= 20 && hourInt <= 24 {
+            greeting = "Good Night"
+        }
+        else if hourInt >= 0 && hourInt <= 7 {
+            greeting = "You should be sleeping right now"
+        }
         name = greeting
-//           helloLbl.text = greeting
-       }
-
+        //           helloLbl.text = greeting
+    }
     
     
     
     
-//    struct ContentView_Previews: PreviewProvider {
-//        static var previews: some View {
-//            ContentView()
-//        }
-//    }
+    
+    //    struct ContentView_Previews: PreviewProvider {
+    //        static var previews: some View {
+    //            ContentView()
+    //        }
+    //    }
     
     
     

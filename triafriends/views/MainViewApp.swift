@@ -29,7 +29,7 @@ struct MainViewApp: View {
             TabView(selection: $selection) {
                 
                 NavigationView{
-                    ContentView(rootisActive: self.rootIsActive)
+                    ContentView(rootisActive: rootIsActive)
                 }
                     .tabItem {
                         
@@ -101,7 +101,7 @@ struct MainViewApp: View {
                 
             }
         }
-        
+        .navigationBarBackButtonHidden(true)
         
         
     }

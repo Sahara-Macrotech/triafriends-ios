@@ -31,8 +31,11 @@
 		7FF5821225594CB800B3255C /* CongratulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5820F25594CB800B3255C /* CongratulationView.swift */; };
 		7FF5821325594CB800B3255C /* ThankYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5821025594CB800B3255C /* ThankYouView.swift */; };
 		7FF5821425594CB800B3255C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5821125594CB800B3255C /* SignUpView.swift */; };
+		8D1C0E9B2565015A0036595E /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C0E9A2565015A0036595E /* ProfilePicture.swift */; };
 		8D3DAB6825610AC300F7ED25 /* PatientDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3DAB6725610AC300F7ED25 /* PatientDetailViewModel.swift */; };
 		8D4A70A02548166E004035A0 /* FirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A709F2548166E004035A0 /* FirestoreController.swift */; };
+		8D595EEE25633D6A00B2BC87 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D595EED25633D6A00B2BC87 /* GoogleService-Info.plist */; };
+		8D595EF12563F93100B2BC87 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D595EF02563F93100B2BC87 /* ImagePicker.swift */; };
 		8D71830E2548D4D00004E139 /* RealtimeDBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D71830D2548D4D00004E139 /* RealtimeDBController.swift */; };
 		8D982AFC255EEADA006FD92E /* PatientDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D982AFB255EEADA006FD92E /* PatientDetailViewModel.swift */; };
 		8D99A43825416E67006FF45A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43725416E67006FF45A /* ContentView.swift */; };
@@ -41,7 +44,6 @@
 		8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43E25416E6A006FF45A /* Persistence.swift */; };
 		8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A44025416E6A006FF45A /* triafriends.xcdatamodeld */; };
 		8D99A44D25416E85006FF45A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D99A44C25416E85006FF45A /* CloudKit.framework */; };
-		C00E97362562BDDA00F9FB96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C00E97352562BDDA00F9FB96 /* GoogleService-Info.plist */; };
 		C0236FAE2548FCED004A1635 /* ListAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0236FAD2548FCED004A1635 /* ListAllView.swift */; };
 		C0792B292542DB9800A40B69 /* TriageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B282542DB9800A40B69 /* TriageListView.swift */; };
 		C0792B2D2542DBDD00A40B69 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B2B2542DBDD00A40B69 /* AccountData.swift */; };
@@ -106,8 +108,11 @@
 		7FF5820F25594CB800B3255C /* CongratulationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratulationView.swift; sourceTree = "<group>"; };
 		7FF5821025594CB800B3255C /* ThankYouView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouView.swift; sourceTree = "<group>"; };
 		7FF5821125594CB800B3255C /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		8D1C0E9A2565015A0036595E /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
 		8D3DAB6725610AC300F7ED25 /* PatientDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDetailViewModel.swift; sourceTree = "<group>"; };
 		8D4A709F2548166E004035A0 /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
+		8D595EED25633D6A00B2BC87 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8D595EF02563F93100B2BC87 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		8D71830D2548D4D00004E139 /* RealtimeDBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDBController.swift; sourceTree = "<group>"; };
 		8D982AFB255EEADA006FD92E /* PatientDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDetailViewModel.swift; sourceTree = "<group>"; };
 		8D99A43225416E67006FF45A /* triafriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = triafriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,7 +124,6 @@
 		8D99A44325416E6A006FF45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D99A44A25416E7A006FF45A /* triafriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = triafriends.entitlements; sourceTree = "<group>"; };
 		8D99A44C25416E85006FF45A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		C00E97352562BDDA00F9FB96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0236FAD2548FCED004A1635 /* ListAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllView.swift; sourceTree = "<group>"; };
 		C0792B282542DB9800A40B69 /* TriageListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriageListView.swift; sourceTree = "<group>"; };
 		C0792B2B2542DBDD00A40B69 /* AccountData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
@@ -236,9 +240,9 @@
 				8D99A44A25416E7A006FF45A /* triafriends.entitlements */,
 				8D99A43925416E6A006FF45A /* Assets.xcassets */,
 				8D99A43E25416E6A006FF45A /* Persistence.swift */,
-				C00E97352562BDDA00F9FB96 /* GoogleService-Info.plist */,
 				C0AA0D9A25529F1500D9FD1D /* TriageViewModel.swift */,
 				8D99A44325416E6A006FF45A /* Info.plist */,
+				8D595EED25633D6A00B2BC87 /* GoogleService-Info.plist */,
 				7F25BED72551E4BD006932BC /* Manager */,
 				C0E147B3254588BF00189E2E /* UI */,
 				C08AAAE02543E5B10001AFEA /* Helper */,
@@ -317,6 +321,8 @@
 				8D4A709F2548166E004035A0 /* FirestoreController.swift */,
 				8D71830D2548D4D00004E139 /* RealtimeDBController.swift */,
 				7FE75CDB255D360C00BE5ABA /* ValidationTextField.swift */,
+				8D595EF02563F93100B2BC87 /* ImagePicker.swift */,
+				8D1C0E9A2565015A0036595E /* ProfilePicture.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -415,10 +421,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E147C5254588F900189E2E /* NunitoSans-ExtraBold.ttf in Resources */,
+				8D595EEE25633D6A00B2BC87 /* GoogleService-Info.plist in Resources */,
 				C0E147C9254588F900189E2E /* NunitoSans-SemiBold.ttf in Resources */,
 				C0E147C7254588F900189E2E /* NunitoSans-Regular.ttf in Resources */,
 				C0E147CB254588F900189E2E /* NunitoSans-Black.ttf in Resources */,
-				C00E97362562BDDA00F9FB96 /* GoogleService-Info.plist in Resources */,
 				8D99A43D25416E6A006FF45A /* Preview Assets.xcassets in Resources */,
 				C0E147CC254588F900189E2E /* NunitoSans-Bold.ttf in Resources */,
 				8D99A43A25416E6A006FF45A /* Assets.xcassets in Resources */,
@@ -514,6 +520,7 @@
 				7FF5820D25594CAB00B3255C /* LoginView.swift in Sources */,
 				8D4A70A02548166E004035A0 /* FirestoreController.swift in Sources */,
 				C0E147B02545828000189E2E /* Interface.swift in Sources */,
+				8D1C0E9B2565015A0036595E /* ProfilePicture.swift in Sources */,
 				7F25BF062551EFC5006932BC /* RKColorSettings.swift in Sources */,
 				C0236FAE2548FCED004A1635 /* ListAllView.swift in Sources */,
 				EB3931C22562467200018B34 /* CloseButtonActionSheet.swift in Sources */,
@@ -521,6 +528,7 @@
 				C0792B312542DC1200A40B69 /* ReportView.swift in Sources */,
 				7F25BF022551EFC5006932BC /* RKMonth.swift in Sources */,
 				7FF5821325594CB800B3255C /* ThankYouView.swift in Sources */,
+				8D595EF12563F93100B2BC87 /* ImagePicker.swift in Sources */,
 				8D982AFC255EEADA006FD92E /* PatientDetailViewModel.swift in Sources */,
 				7F25BF032551EFC5006932BC /* RKWeekdayHeader.swift in Sources */,
 				C0AA0D5925529D1500D9FD1D /* HexToColor.swift in Sources */,
@@ -667,7 +675,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 3QN5S48CNC;
+				DEVELOPMENT_TEAM = 7QAVKC3WGP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -675,7 +683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriendsaaaaa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -694,7 +702,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 3QN5S48CNC;
+				DEVELOPMENT_TEAM = 7QAVKC3WGP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -702,7 +710,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriendsaaaaa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

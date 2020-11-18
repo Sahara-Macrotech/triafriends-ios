@@ -16,9 +16,14 @@ struct Profile: View {
     var dummyUID = "t7SQhXlozrMnWOghRaXHh4HWuUC3"
     var accountData = AccountData()
     
-//    var name = UserDefaults.standard.object(forKey: "name") as? String ?? "Name not registered"
-//    var email = UserDefaults.standard.object(forKey: "email") as? String ?? "Email not registered"
-//    var phone = UserDefaults.standard.object(forKey: "phone") as? String ?? "Phone not registered"
+    @State private var isShowPhotoLibrary = false
+    @State var image = UIImage()
+    
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    }
+    
+    @ObservedObject var profilePicture = ProfilePicture()
     
     var body: some View {
         
@@ -32,12 +37,28 @@ struct Profile: View {
             }
             
             HStack{
-                Image("2")
-                    .resizable()
-                       //will it distort an image?
-                    .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    .aspectRatio(1, contentMode: .fit)
+                if let images = profilePicture.profpic {
+                    Image(uiImage: images)
+                        .resizable()
+                           //will it distort an image?
+                        .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        .aspectRatio(1, contentMode: .fit)
+                        .rotationEffect(.degrees(90.0))
+                        .onTapGesture(perform: {
+                            self.isShowPhotoLibrary = true
+                        })
+                } else {
+                    Image("2")
+                        .resizable()
+                           //will it distort an image?
+                        .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        .aspectRatio(1, contentMode: .fit)
+                        .onTapGesture(perform: {
+                            self.isShowPhotoLibrary = true
+                        })
+                }
                     //Mask it round
                 VStack{
                     HStack{
@@ -208,6 +229,12 @@ struct Profile: View {
                 
             }.padding()
         }
+        .sheet(isPresented: $isShowPhotoLibrary) {
+            ImagePicker(sourceType: .camera, selectedImage: self.$image)
+        }
+        .onChange(of: image, perform: { value in
+            profilePicture.profpic = image
+        })
     }
 }
 
