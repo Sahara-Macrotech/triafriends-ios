@@ -43,7 +43,7 @@
 		8D99A43F25416E6A006FF45A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A43E25416E6A006FF45A /* Persistence.swift */; };
 		8D99A44225416E6A006FF45A /* triafriends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D99A44025416E6A006FF45A /* triafriends.xcdatamodeld */; };
 		8D99A44D25416E85006FF45A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D99A44C25416E85006FF45A /* CloudKit.framework */; };
-		C00E97362562BDDA00F9FB96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C00E97352562BDDA00F9FB96 /* GoogleService-Info.plist */; };
+		8DE6A7732566397B001F0367 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DE6A7722566397B001F0367 /* GoogleService-Info.plist */; };
 		C0236FAE2548FCED004A1635 /* ListAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0236FAD2548FCED004A1635 /* ListAllView.swift */; };
 		C0792B292542DB9800A40B69 /* TriageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B282542DB9800A40B69 /* TriageListView.swift */; };
 		C0792B2D2542DBDD00A40B69 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0792B2B2542DBDD00A40B69 /* AccountData.swift */; };
@@ -123,7 +123,7 @@
 		8D99A44325416E6A006FF45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D99A44A25416E7A006FF45A /* triafriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = triafriends.entitlements; sourceTree = "<group>"; };
 		8D99A44C25416E85006FF45A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		C00E97352562BDDA00F9FB96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8DE6A7722566397B001F0367 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0236FAD2548FCED004A1635 /* ListAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllView.swift; sourceTree = "<group>"; };
 		C0792B282542DB9800A40B69 /* TriageListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriageListView.swift; sourceTree = "<group>"; };
 		C0792B2B2542DBDD00A40B69 /* AccountData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
@@ -240,9 +240,9 @@
 				8D99A44A25416E7A006FF45A /* triafriends.entitlements */,
 				8D99A43925416E6A006FF45A /* Assets.xcassets */,
 				8D99A43E25416E6A006FF45A /* Persistence.swift */,
-				C00E97352562BDDA00F9FB96 /* GoogleService-Info.plist */,
 				C0AA0D9A25529F1500D9FD1D /* TriageViewModel.swift */,
 				8D99A44325416E6A006FF45A /* Info.plist */,
+				8DE6A7722566397B001F0367 /* GoogleService-Info.plist */,
 				7F25BED72551E4BD006932BC /* Manager */,
 				C0E147B3254588BF00189E2E /* UI */,
 				C08AAAE02543E5B10001AFEA /* Helper */,
@@ -421,10 +421,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E147C5254588F900189E2E /* NunitoSans-ExtraBold.ttf in Resources */,
+				8DE6A7732566397B001F0367 /* GoogleService-Info.plist in Resources */,
 				C0E147C9254588F900189E2E /* NunitoSans-SemiBold.ttf in Resources */,
 				C0E147C7254588F900189E2E /* NunitoSans-Regular.ttf in Resources */,
 				C0E147CB254588F900189E2E /* NunitoSans-Black.ttf in Resources */,
-				C00E97362562BDDA00F9FB96 /* GoogleService-Info.plist in Resources */,
 				8D99A43D25416E6A006FF45A /* Preview Assets.xcassets in Resources */,
 				C0E147CC254588F900189E2E /* NunitoSans-Bold.ttf in Resources */,
 				8D99A43A25416E6A006FF45A /* Assets.xcassets in Resources */,
@@ -673,9 +673,9 @@
 				CODE_SIGN_ENTITLEMENTS = triafriends/triafriends.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 3KS73FV5NW;
+				DEVELOPMENT_TEAM = 7QAVKC3WGP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -683,7 +683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.inatechno202020.triafriends1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -700,9 +700,9 @@
 				CODE_SIGN_ENTITLEMENTS = triafriends/triafriends.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 3KS73FV5NW;
+				DEVELOPMENT_TEAM = 7QAVKC3WGP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -710,7 +710,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.inatechno202020.triafriends1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
