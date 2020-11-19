@@ -12,21 +12,41 @@ import Foundation
 import FBSDKLoginKit
 
 let screen = UIScreen.main.bounds
-struct LoginView: View {
-   
+
+struct MotherView:View {
+    @EnvironmentObject var viewRouter: ViewRouter
     var body: some View {
-        ZStack {
-            VStack {
-                Spacer()
-                LoginCard()
+        VStack{
+            if viewRouter.currentPage == "onboardingView" {
+                OnboardingView()
+            }else if viewRouter.currentPage == "homeView" {
+                LoginView()
             }
         }
-        .frame(width: screen.width, height: screen.height, alignment: .center)
-        .background(Color.init(red: 75/255, green: 39/255, blue: 102/255, opacity: 1))
-        .ignoresSafeArea()
-        
     }
 }
+
+struct LoginView: View {
+  
+    var body: some View {
+        
+                ZStack {
+                    VStack {
+        //                MainViewApp().environmentObject(ViewRouter())
+                        Spacer()
+                        LoginCard()
+                    
+                }
+                .frame(width: screen.width, height: screen.height, alignment: .center)
+                .background(Color.init(red: 75/255, green: 39/255, blue: 102/255, opacity: 1))
+                .ignoresSafeArea()
+                
+            }
+            }
+        
+    
+}
+
 
 struct LoginCard: View {
 //    @State var isAuthorized = false

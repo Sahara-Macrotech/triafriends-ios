@@ -22,7 +22,7 @@ struct MainView: App {
     var body: some Scene {
         WindowGroup {
             if email == "" {
-                LoginView()
+                MotherView().environmentObject(ViewRouter())
             } else if ((email != "") && (UserDefaults.standard.dictionary(forKey: "credentials") == nil)) {
                 SignMeUpCard()
             } else {

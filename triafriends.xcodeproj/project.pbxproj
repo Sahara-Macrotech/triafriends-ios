@@ -26,6 +26,8 @@
 		7F9C2FF62559539A00DBD27C /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C2FF52559539A00DBD27C /* SignInWithApple.swift */; };
 		7F9C2FFA255953E100DBD27C /* FaceBookLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C2FF8255953E000DBD27C /* FaceBookLoginView.swift */; };
 		7F9C2FFB255953E100DBD27C /* SignMeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C2FF9255953E100DBD27C /* SignMeUpView.swift */; };
+		7FBB47DD2563786200868DD4 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB47DC2563786200868DD4 /* ViewRouter.swift */; };
+		7FBB47E1256378CE00868DD4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB47E0256378CE00868DD4 /* OnboardingView.swift */; };
 		7FE75CDC255D360C00BE5ABA /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE75CDB255D360C00BE5ABA /* ValidationTextField.swift */; };
 		7FF5820D25594CAB00B3255C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5820C25594CAB00B3255C /* LoginView.swift */; };
 		7FF5821225594CB800B3255C /* CongratulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF5820F25594CB800B3255C /* CongratulationView.swift */; };
@@ -101,6 +103,8 @@
 		7F9C2FF52559539A00DBD27C /* SignInWithApple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		7F9C2FF8255953E000DBD27C /* FaceBookLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceBookLoginView.swift; sourceTree = "<group>"; };
 		7F9C2FF9255953E100DBD27C /* SignMeUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignMeUpView.swift; sourceTree = "<group>"; };
+		7FBB47DC2563786200868DD4 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		7FBB47E0256378CE00868DD4 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		7FE75CDB255D360C00BE5ABA /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
 		7FF5820C25594CAB00B3255C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7FF5820F25594CB800B3255C /* CongratulationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratulationView.swift; sourceTree = "<group>"; };
@@ -293,7 +297,9 @@
 				8D982AFB255EEADA006FD92E /* PatientDetailViewModel.swift */,
 				C0792B382542DD9C00A40B69 /* AccountView.swift */,
 				8D99A43725416E67006FF45A /* ContentView.swift */,
+				7FBB47E0256378CE00868DD4 /* OnboardingView.swift */,
 				7F09E5E1255505F4004E47CD /* MainViewApp.swift */,
+				7FBB47DC2563786200868DD4 /* ViewRouter.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -488,6 +494,7 @@
 				7F9C2FF62559539A00DBD27C /* SignInWithApple.swift in Sources */,
 				C0DF563E255121B600F5A761 /* PieChartCell.swift in Sources */,
 				7F25BEF42551EF98006932BC /* RKWeeklyPage.swift in Sources */,
+				7FBB47DD2563786200868DD4 /* ViewRouter.swift in Sources */,
 				C0DF56262551202600F5A761 /* PieChart.swift in Sources */,
 				C0792B292542DB9800A40B69 /* TriageListView.swift in Sources */,
 				C09BABAC2542893900C985AA /* Algorithm.swift in Sources */,
@@ -524,6 +531,7 @@
 				8D982AFC255EEADA006FD92E /* PatientDetailViewModel.swift in Sources */,
 				7F25BF032551EFC5006932BC /* RKWeekdayHeader.swift in Sources */,
 				C0AA0D5925529D1500D9FD1D /* HexToColor.swift in Sources */,
+				7FBB47E1256378CE00868DD4 /* OnboardingView.swift in Sources */,
 				C0DF559325502ACB00F5A761 /* Profile.swift in Sources */,
 				C0AA0D9325529EE100D9FD1D /* PatientNameInput.swift in Sources */,
 				7F9C2FFB255953E100DBD27C /* SignMeUpView.swift in Sources */,
@@ -667,7 +675,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 3QN5S48CNC;
+				DEVELOPMENT_TEAM = 3KS73FV5NW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -675,7 +683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriendsaaaaa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inatechno202020.triafriends1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -694,7 +702,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"triafriends/Preview Content\"";
-				DEVELOPMENT_TEAM = 3QN5S48CNC;
+				DEVELOPMENT_TEAM = 3KS73FV5NW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = triafriends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -702,7 +710,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sahara.triafriendsaaaaa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inatechno202020.triafriends1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
